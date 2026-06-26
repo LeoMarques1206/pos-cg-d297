@@ -1,0 +1,40 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure likely shows a visual representation of the 'Emotional Tissue widget' and how it appears when configured.",
+      "relevance": "It demonstrates the user interface or visual aspect of the core component of the system, illustrating how users or developers would interact with or perceive the widget's configured state, which is central to the paper's contribution.",
+      "mode": "text_inferred"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure appears to be a diagram illustrating the fundamental structural design and components of the 'Emotional Tissue' system.",
+      "relevance": "It is crucial for understanding the underlying technical implementation and organization of the 'Emotional Tissue' system, which is the main subject of the paper.",
+      "mode": "text_inferred"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure likely provides a code snippet or a sequence diagram demonstrating how to interact with the system's API, specifically showing four different examples of its usage.",
+      "relevance": "It illustrates the practical application and programmability of the 'Emotional Tissue' system through its API, which is vital for developers to integrate and utilize the system as described in the paper.",
+      "mode": "text_inferred"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure appears to present simple examples of 'scenes' that demonstrate a specific functionality or aspect of the system.",
+      "relevance": "It shows practical applications or scenarios where the system's capabilities are put into use, helping to clarify the system's intended functionality and use cases, which supports the paper's overall contribution.",
+      "mode": "text_inferred"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure likely depicts a specific component, 'EmotionsSetup,' within a demonstration scene.",
+      "relevance": "It highlights a particular aspect of the system's configuration or a specific module used for setting up emotions, providing a detailed view of how emotion management is handled within the system, central to the paper's 'Emotional Tissue' concept.",
+      "mode": "text_inferred"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure likely displays a portion of the code that defines or controls a 'scene' within the system.",
+      "relevance": "It provides a concrete example of the underlying implementation, allowing readers to understand the technical details of how scenes are programmed or structured, which supports the overall explanation of the system's architecture and functionality.",
+      "mode": "text_inferred"
+    }
+  ]
+}

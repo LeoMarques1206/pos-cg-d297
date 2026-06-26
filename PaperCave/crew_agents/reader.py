@@ -1,4 +1,4 @@
-"""
+﻿"""
 crew_agents/reader.py
 Agente Reader: extrai texto limpo de um PDF.
 Prompts carregados de prompts/agents.yaml.
@@ -22,6 +22,7 @@ def make_reader_agent(llm) -> Agent:
         backstory=prompts["backstory"],
         tools=[PDFReaderTool()],
         llm=llm,
-        verbose=True,
+        verbose=False,
         allow_delegation=False,
     )
+

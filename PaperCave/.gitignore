@@ -2,8 +2,8 @@
 config/config.yaml
 .env
 
-# Outputs e logs gerados em execução
-outputs/
+# Outputs do pipeline Python — versionar (contém JSONs e imagens processadas)
+# outputs/  ← removido intencionalmente: outputs devem ir para o repo
 logs/
 *.db
 *.sqlite3

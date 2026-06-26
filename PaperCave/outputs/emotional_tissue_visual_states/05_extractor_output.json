@@ -1,0 +1,78 @@
+{
+  "paperTitle": "Emotional Tissue: A Novel UI Widget for Character Emotion Representation",
+  "centralContribution": "This work introduces Emotional Tissue, a novel UI widget designed to represent characters' emotional states in digital games, especially empathy games, as an organic, pulsating shaded cloth deformation. It directly correlates pulse frequency with emotion intensity and customizable colors with specific feelings defined by game designers, offering a flexible API for integration within the Unity Engine.",
+  "elements": [
+    {
+      "name": "Emotional Tissue Widget",
+      "category": "contribution",
+      "description": "A novel UI widget designed to represent characters' emotional states in digital games as an organic, pulsating shaded cloth deformation, with pulse frequency correlating with emotion intensity and customizable colors for specific feelings.",
+      "relevanceScore": 10,
+      "justification": "This is the core artifact and the central contribution of the paper, detailing the proposed solution for emotion representation.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "Emotional Tissue System Architecture (Fig. 2)",
+      "category": "graphical_representation",
+      "description": "The system's core architecture, involving `ClothController` and `EmotionalTissueControl`, packaged as a Unity prefab shown in Figure 2, which outlines the structural components and their interactions.",
+      "relevanceScore": 9,
+      "justification": "This element describes how the main contribution is structured for integration and is explicitly referenced with Figure 2, making it a key visual and conceptual representation.",
+      "groupingHint": "Emotional Tissue Control API"
+    },
+    {
+      "name": "Emotional Tissue Control API",
+      "category": "abstract",
+      "description": "An API provided via the `EmotionalTissueControl` component, offering methods like `InitColors`, `Add`, `GetColor`, `SetColor`, `GetValue`, and `SetValue` for programmatic control by game designers/developers.",
+      "relevanceScore": 8,
+      "justification": "The API is critical for the widget's usability and flexibility, serving as the designer's interface for integration and customization within games, and is shown with an example (Figure 3).",
+      "groupingHint": "Emotional Tissue System Architecture (Fig. 2)"
+    },
+    {
+      "name": "EmotionalShader and Cloth Component",
+      "category": "graphical_representation",
+      "description": "The custom `EmotionalShader` and Unity `Cloth` component applied to a plane mesh, animated with a pulsating motion and Voronoi procedural pattern to achieve the organic, cellular tissue-like visual deformation.",
+      "relevanceScore": 8,
+      "justification": "These are the core technical components that create the widget's unique organic and pulsating visual effect, directly defining its appearance and behavior.",
+      "groupingHint": "Emotional Tissue Widget"
+    },
+    {
+      "name": "Problem of Emotion Representation in Empathy Games",
+      "category": "abstract",
+      "description": "The challenge that emotional states are often neglected and complex to visualize in graphical user interfaces, particularly in empathy games where clear, objective communication of character emotions is essential for player decision-making.",
+      "relevanceScore": 7,
+      "justification": "This provides the fundamental motivation and context for the entire paper, highlighting the limitations of existing emotion visualization approaches.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "Performance Comparison Results (Table I)",
+      "category": "table",
+      "description": "Preliminary performance data presented in Table I, showing negligible increases in execution time (e.g., total time around 4ms) for the widget with increasing numbers of emotions (four, six, and eight) in the Unity Editor.",
+      "relevanceScore": 7,
+      "justification": "This element directly presents the quantitative evaluation demonstrating the widget's efficiency and scalability across different numbers of emotions, with explicit reference to Table I.",
+      "groupingHint": "Limitation: Preliminary Performance Study & Future Work"
+    },
+    {
+      "name": "Demonstration Scenes (Figures 4, 5, 6)",
+      "category": "image",
+      "description": "Two demonstration scenes showcasing characters expressing emotions with designer-defined colors and player-adjustable intensities, illustrating practical use cases and featuring components like `EmotionsSetup` and `DialsPanel` as depicted in Figures 4, 5, and 6.",
+      "relevanceScore": 7,
+      "justification": "These scenes provide concrete examples of the widget's practical application in a game-like context, validating its functionality and are explicitly illustrated by figures.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "Emotion Configuration Examples (Fig. 1)",
+      "category": "image",
+      "description": "Visual configurations of the Emotional Tissue widget (Figure 1) illustrating how four, six, and eight emotions are assigned specific colors and spatial arrangements within the circular 3D perspective.",
+      "relevanceScore": 6,
+      "justification": "This figure is essential for understanding the visual flexibility and configurable nature of the widget, demonstrating how different numbers of emotions are handled visually.",
+      "groupingHint": "EmotionalShader and Cloth Component"
+    },
+    {
+      "name": "Limitation: Preliminary Performance Study & Future Work",
+      "category": "abstract",
+      "description": "Acknowledgment that the performance study was preliminary, requiring more complex benchmarks, usability/UX testing, and validation across Unity's scriptable render pipelines (URP, HDRP), as well as experimentation with custom meshes.",
+      "relevanceScore": 6,
+      "justification": "This discusses the current boundaries of the research and outlines critical next steps for the widget's development and broader adoption, framing future research directions.",
+      "groupingHint": "Performance Comparison Results (Table I)"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-"""
+﻿"""
 crew_agents/summarizer.py
-Agente Summarizer: comprime o texto do paper em sumário denso estruturado.
+Agente Summarizer: comprime o texto do paper em sumÃ¡rio denso estruturado.
 Prompts carregados de prompts/agents.yaml.
 """
 import yaml
@@ -20,6 +20,7 @@ def make_summarizer_agent(llm) -> Agent:
         goal=prompts["goal"],
         backstory=prompts["backstory"],
         llm=llm,
-        verbose=True,
+        verbose=False,
         allow_delegation=False,
     )
+

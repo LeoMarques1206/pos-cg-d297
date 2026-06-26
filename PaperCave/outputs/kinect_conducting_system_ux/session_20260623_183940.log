@@ -1,0 +1,32 @@
+2026-06-23 18:39:40 [INFO] Session log: outputs\1_s2_0_s1875952120301075_joyce_2020\session_20260623_183940.log
+2026-06-23 18:39:40 [INFO] 
+============================================================
+2026-06-23 18:39:40 [INFO]   Paper Cave v5 — 1_s2_0_s1875952120301075_joyce_2020
+2026-06-23 18:39:40 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-23 18:39:40 [INFO]   20260623_183940
+2026-06-23 18:39:40 [INFO]   Mode: resuming from 'mapper'
+2026-06-23 18:39:40 [INFO] ============================================================
+
+2026-06-23 18:39:42 [INFO]   Vision Analyst: VISUAL mode
+2026-06-23 18:39:42 [INFO]   Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4, FIG6, FIG7, FIG8, FIG9
+2026-06-23 18:39:42 [INFO]   Figure captions extracted: 9/9
+2026-06-23 18:41:48 [INFO]   [1/6] Reader — usando output salvo.
+2026-06-23 18:41:48 [INFO]   [2/6] Vision Analyst — usando output salvo (9 figuras).
+2026-06-23 18:41:48 [INFO]   [3/6] Summarizer — usando output salvo.
+2026-06-23 18:41:48 [INFO]   [4/6] Extractor — usando output salvo.
+2026-06-23 18:41:48 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-23 18:41:48 [INFO]   Mapper attempt 1/3
+2026-06-23 18:42:12 [ERROR] Error executing listener call_llm_native_tools: Invalid response from LLM call - None or empty.
+2026-06-23 18:42:44 [WARNING]   Mapper attempt 1 schema error: ValidationError: 4 validation errors for UnitManifest
+units.0.summary
+  String should have at most 80 characters [type=string_too_long, input_value='Kinect-based system for ...r educational purposes.', input_type=str]
+2026-06-23 18:42:44 [INFO]   Mapper attempt 2/3
+2026-06-23 18:43:17 [WARNING]   Mapper attempt 2 schema error: ValidationError: 3 validation errors for UnitManifest
+units.0.summary
+  String should have at most 80 characters [type=string_too_long, input_value='A Kinect-based system vi...r conducting education.', input_type=str]
+2026-06-23 18:43:17 [INFO]   Mapper attempt 3/3
+2026-06-23 18:43:51 [WARNING]   Mapper attempt 3 schema error: ValidationError: 2 validation errors for UnitManifest
+units.0.summary
+  String should have at most 80 characters [type=string_too_long, input_value='Kinect-based system for ...rough gestural control.', input_type=str]
+2026-06-23 18:43:51 [ERROR]   +- ✗ 122s — falhou em todas as tentativas

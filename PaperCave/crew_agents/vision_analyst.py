@@ -1,11 +1,11 @@
-"""
+﻿"""
 crew_agents/vision_analyst.py
 Agente Vision Analyst: analisa imagens selecionadas do paper.
 
 MODO A (visual): recebe imagens como bytes via tool + contexto textual.
-MODO B (text_inferred): recebe apenas caption + parágrafos vizinhos.
+MODO B (text_inferred): recebe apenas caption + parÃ¡grafos vizinhos.
 
-O modo é determinado em crew.py com base no provider configurado.
+O modo Ã© determinado em crew.py com base no provider configurado.
 Prompts carregados de prompts/agents.yaml.
 """
 import yaml
@@ -22,7 +22,7 @@ def _load_agent_prompts() -> dict:
 def make_vision_analyst_agent(llm, vision_tool: BaseTool | None = None) -> Agent:
     """
     Args:
-        llm:         LLM configurado (deve suportar visão para MODO A).
+        llm:         LLM configurado (deve suportar visÃ£o para MODO A).
         vision_tool: Tool que fornece imagem como bytes ao agente.
                      Se None, o agente opera em MODO B (text_inferred).
     """
@@ -35,6 +35,7 @@ def make_vision_analyst_agent(llm, vision_tool: BaseTool | None = None) -> Agent
         backstory=prompts["backstory"],
         tools=tools,
         llm=llm,
-        verbose=True,
+        verbose=False,
         allow_delegation=False,
     )
+

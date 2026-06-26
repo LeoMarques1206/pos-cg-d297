@@ -1,0 +1,27 @@
+2026-06-23 19:57:32 [INFO] Session log: outputs\1_s2_0_s1875952120301075_joyce_2020\session_20260623_195732.log
+2026-06-23 19:57:32 [INFO] 
+============================================================
+2026-06-23 19:57:32 [INFO]   Paper Cave v5 — 1_s2_0_s1875952120301075_joyce_2020
+2026-06-23 19:57:32 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-23 19:57:32 [INFO]   20260623_195732
+2026-06-23 19:57:32 [INFO]   Mode: resuming from 'mapper'
+2026-06-23 19:57:32 [INFO] ============================================================
+
+2026-06-23 19:57:37 [INFO]   Vision Analyst: VISUAL mode
+2026-06-23 19:57:37 [INFO]   Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4, FIG6, FIG7, FIG8, FIG9
+2026-06-23 19:57:37 [INFO]   Figure captions extracted: 9/9
+2026-06-23 20:00:46 [INFO]   [1/6] Reader — usando output salvo.
+2026-06-23 20:00:46 [INFO]   [2/6] Vision Analyst — usando output salvo (9 figuras).
+2026-06-23 20:00:46 [INFO]   [3/6] Summarizer — usando output salvo.
+2026-06-23 20:00:46 [INFO]   [4/6] Extractor — usando output salvo.
+2026-06-23 20:00:46 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-23 20:00:46 [INFO]   Mapper attempt 1/3
+2026-06-23 20:01:43 [INFO]   Manifest approved on attempt 1.
+2026-06-23 20:01:44 [INFO]   +- ✓ 58s — 5 unidade(s), 1 tentativa(s)
+2026-06-23 20:01:44 [INFO] 
+============================================================
+2026-06-23 20:01:44 [INFO]   Done. Outputs at: outputs/1_s2_0_s1875952120301075_joyce_2020/
+2026-06-23 20:01:44 [INFO]   Paper figures referenced: FIG1, FIG10, FIG2, FIG3, FIG4, FIG6, FIG7, FIG8, FIG9
+2026-06-23 20:01:44 [INFO] ============================================================
+

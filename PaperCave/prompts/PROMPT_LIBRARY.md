@@ -1,4 +1,10 @@
-# Paper Cave — Prompt Library
+# Paper Cave — Prompt Library (v1)
+
+> **Note**: This file describes the v1 Card Manifest format. The pipeline now
+> uses the v2 Unit Manifest format (units/stacks, `unit_01` ids, `whyThisUnit`,
+> `table`/`text_panel` contentTypes). See `tasks.yaml` and `agents.yaml` for
+> the live v2 prompts used by the CrewAI pipeline. This file should be replaced
+> with `PROMPT_LIBRARY_V2.md` when available.
 
 Copy-paste prompts for producing and implementing Card Manifests outside the
 CrewAI pipeline.

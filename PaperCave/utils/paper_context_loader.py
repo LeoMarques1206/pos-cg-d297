@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).parent.parent
 
 # Matches FIG1.png, FIG_1.png, FIG2a.jpg, FIG_2a.jpg, FIG10.PNG, etc.
 # The underscore separator is optional to support both FIG1 and FIG_1 conventions.
-_FIG_PATTERN = re.compile(r"^FIG_?(\d+[a-z]?)\.(png|jpg|jpeg)$", re.IGNORECASE)
+_FIG_PATTERN = re.compile(r"^FIG_?(\d+(?:_[0-9a-z]+)?)\.(png|jpg|jpeg)$", re.IGNORECASE)
 
 # Matches "Fig. 3", "Figure 3", "Fig 3:", "Figura 3." in PDF text
 _CAPTION_PATTERN = re.compile(
@@ -44,16 +44,18 @@ def extract_figure_captions(text: str, figure_ids: list[str]) -> dict[str, str]:
     """
     Extracts captions for each figure ID from the raw PDF text.
     Only captures captions for figures that are in figure_ids.
-    Returns {FIG1: "caption text...", FIG2: "caption text...", ...}
+    Supports sub-figures (e.g. FIG1_1 gets caption of FIG1).
+    Returns {FIG1_1: "caption text...", FIG2: "caption text...", ...}
     """
     captions: dict[str, str] = {}
     for match in _CAPTION_PATTERN.finditer(text):
         num    = match.group(1).upper()
-        key    = f"FIG{num}"
+        base_key = f"FIG{num}"
         text_m = match.group(2).strip()
-        if key in figure_ids and key not in captions:
-            # Truncate overly long captions (some papers run on)
-            captions[key] = text_m[:200]
+        for fid in figure_ids:
+            fid_base = fid.split("_")[0]
+            if fid_base == base_key and fid not in captions:
+                captions[fid] = text_m[:200]
     return captions
 
 
@@ -62,6 +64,7 @@ def load_paper_context(paper_folder: Path) -> dict:
     Loads all injection context for the Mapper task.
 
     Returns a dict with:
+      paper_folder:       Path                — the paper folder path
       available_figures:  list[str]          — ['FIG1', 'FIG2', ...]
       figure_captions:    dict[str, str]      — {FIG1: caption, ...} (empty until Reader runs)
       asset_catalog:      str | None          — content of assets/catalog.md or None
@@ -85,6 +88,7 @@ def load_paper_context(paper_folder: Path) -> dict:
         )
 
     return {
+        "paper_folder":      paper_folder,
         "available_figures": available_figures,
         "figure_captions":   {},   # populated later via update_figure_captions()
         "asset_catalog":     asset_catalog,
@@ -95,8 +99,38 @@ def load_paper_context(paper_folder: Path) -> dict:
 def update_figure_captions(context: dict, pdf_text: str) -> None:
     """
     Populates context["figure_captions"] in-place after the PDF has been read.
-    Call this after the Reader step returns the full text.
+    Preferentially loads from paper_folder/captions.txt if it exists.
+    Otherwise falls back to extracting from pdf_text.
     """
+    paper_folder = context.get("paper_folder")
+    captions_txt_path = paper_folder / "captions.txt" if paper_folder else None
+    
+    if captions_txt_path and captions_txt_path.exists():
+        try:
+            content = captions_txt_path.read_text(encoding="utf-8")
+            lines = [l.strip() for l in content.split("\n")]
+            captions = {}
+            
+            i = 0
+            while i < len(lines):
+                filename = lines[i]
+                m = _FIG_PATTERN.match(filename)
+                if m:
+                    fig_id = f"FIG{m.group(1).upper()}"
+                    if i + 1 < len(lines):
+                        caption_text = lines[i+1]
+                        captions[fig_id] = caption_text
+                        i += 3
+                        continue
+                i += 1
+                
+            if captions:
+                context["figure_captions"] = captions
+                return
+        except Exception:
+            pass
+            
+    # Fallback to regex-based extraction from PDF text
     context["figure_captions"] = extract_figure_captions(
         pdf_text, context["available_figures"]
     )

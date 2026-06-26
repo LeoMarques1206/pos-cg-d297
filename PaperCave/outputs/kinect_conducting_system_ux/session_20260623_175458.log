@@ -1,0 +1,17 @@
+2026-06-23 17:54:58 [INFO] Session log: outputs\1_s2_0_s1875952120301075_joyce_2020\session_20260623_175458.log
+2026-06-23 17:54:58 [INFO] 
+============================================================
+2026-06-23 17:54:58 [INFO]   Paper Cave v5 — 1_s2_0_s1875952120301075_joyce_2020
+2026-06-23 17:54:58 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-23 17:54:58 [INFO]   20260623_175458
+2026-06-23 17:54:58 [INFO] ============================================================
+
+2026-06-23 17:55:29 [INFO]   Vision Analyst: VISUAL mode
+2026-06-23 17:55:30 [INFO]   Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4, FIG6, FIG7, FIG8, FIG9
+2026-06-23 17:55:30 [INFO]   Figure captions extracted: 9/9
+2026-06-23 17:59:02 [INFO]   [1/6] Reader — extracting text from PDF...
+2026-06-23 17:59:11 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-23 18:00:14 [INFO]   [2/6] Vision Analyst — describing paper figures...
+2026-06-23 18:00:19 [ERROR] Error executing listener call_llm_and_parse: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-23 18:00:23 [ERROR] Error executing listener call_llm_and_parse: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-23 18:00:30 [ERROR] Error executing listener call_llm_and_parse: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}

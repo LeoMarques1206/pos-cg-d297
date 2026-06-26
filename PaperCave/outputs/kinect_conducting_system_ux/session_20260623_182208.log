@@ -1,0 +1,29 @@
+2026-06-23 18:22:08 [INFO] Session log: outputs\1_s2_0_s1875952120301075_joyce_2020\session_20260623_182208.log
+2026-06-23 18:22:08 [INFO] 
+============================================================
+2026-06-23 18:22:08 [INFO]   Paper Cave v5 — 1_s2_0_s1875952120301075_joyce_2020
+2026-06-23 18:22:08 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-23 18:22:08 [INFO]   20260623_182208
+2026-06-23 18:22:08 [INFO] ============================================================
+
+2026-06-23 18:22:10 [INFO]   Vision Analyst: VISUAL mode
+2026-06-23 18:22:10 [INFO]   Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4, FIG6, FIG7, FIG8, FIG9
+2026-06-23 18:22:10 [INFO]   Figure captions extracted: 9/9
+2026-06-23 18:24:32 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-23 18:25:31 [INFO]   +- ✓ 59s — 57,100 chars
+2026-06-23 18:25:31 [INFO] 
+  +- [2/6] Vision Analyst — 9 figura(s)
+2026-06-23 18:25:44 [INFO]   Vision Analyst described 9 figure(s).
+2026-06-23 18:25:44 [INFO]   +- ✓ 13s — 9 figura(s) descritas
+2026-06-23 18:25:44 [INFO] 
+  +- [3/6] Summarizer
+2026-06-23 18:25:52 [ERROR] Error executing listener call_llm_and_parse: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-23 18:26:32 [INFO]   +- ✓ 47s — 9,245 chars
+2026-06-23 18:26:32 [INFO] 
+  +- [4/6] Extractor
+2026-06-23 18:26:56 [INFO]   +- ✓ 24s
+2026-06-23 18:26:56 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-23 18:26:56 [INFO]   Mapper attempt 1/3
+2026-06-23 18:27:24 [ERROR]   +- ✗ 28s — ValidationError

@@ -2,7 +2,6 @@ from .reader import make_reader_agent
 from .summarizer import make_summarizer_agent
 from .extractor import make_extractor_agent
 from .mapper import make_mapper_agent
-from .image_selector import make_image_selector_agent
 from .vision_analyst import make_vision_analyst_agent
 from .reviewer import make_reviewer_agent
 

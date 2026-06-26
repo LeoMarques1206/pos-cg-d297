@@ -1,0 +1,40 @@
+2026-06-26 18:27:46 [INFO] Session log: outputs\emotional_tissue_visual_states\session_20260626_182746.log
+2026-06-26 18:27:46 [INFO] 
+============================================================
+2026-06-26 18:27:46 [INFO]   Paper Cave v5 — emotional_tissue_visual_states
+2026-06-26 18:27:46 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-26 18:27:46 [INFO]   20260626_182746
+2026-06-26 18:27:46 [INFO] ============================================================
+
+2026-06-26 18:27:48 [INFO]   Vision Analyst: VISUAL mode
+2026-06-26 18:27:48 [INFO]   Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6
+2026-06-26 18:27:48 [INFO]   Figure captions extracted: 6/6
+2026-06-26 18:28:16 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-26 18:28:45 [INFO]   +- ✓ 29s — 30,001 chars
+2026-06-26 18:28:45 [INFO] 
+  +- [2/6] Vision Analyst — 6 figura(s)
+2026-06-26 18:28:53 [INFO]   Vision Analyst described 6 figure(s).
+2026-06-26 18:28:53 [INFO]   +- ✓ 8s — 6 figura(s) descritas
+2026-06-26 18:28:53 [INFO] 
+  +- [3/6] Summarizer
+2026-06-26 18:29:13 [INFO]   +- ✓ 20s — 6,761 chars
+2026-06-26 18:29:13 [INFO] 
+  +- [4/6] Extractor
+2026-06-26 18:29:47 [INFO]   +- ✓ 34s
+2026-06-26 18:29:47 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-26 18:29:47 [INFO]   Mapper attempt 1/3
+2026-06-26 18:30:18 [WARNING]   Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4
+  Value error, Unit 'unit_05' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_05', 'type':...one, 'looping':
+2026-06-26 18:30:18 [INFO]   Mapper attempt 2/3
+2026-06-26 18:31:08 [INFO]   Manifest approved on attempt 2.
+2026-06-26 18:31:08 [INFO]   +- ✓ 81s — 5 unidade(s), 2 tentativa(s)
+2026-06-26 18:31:08 [INFO]   [Export] Iniciando exportação automática para a pasta de assets do Unity...
+2026-06-26 18:31:08 [INFO] 
+============================================================
+2026-06-26 18:31:08 [INFO]   Done. Outputs at: outputs/emotional_tissue_visual_states/
+2026-06-26 18:31:08 [INFO]   Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6
+2026-06-26 18:31:08 [INFO] ============================================================
+

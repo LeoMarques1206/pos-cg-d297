@@ -1,0 +1,292 @@
+{
+  "paperTitle": "A Kinect-based conducting system that leverages gestural control for the real-time visualization of musical structures, primarily for educational purposes, and evaluates its user experience with professional conductors, musicians, and general users.",
+  "centralContribution": "The paper presents a Kinect-based conducting system that leverages gestural control for the real-time visualization of musical structures, primarily for educational purposes, and evaluates its user experience with professional conductors, musicians, and general users. This system provides an immersive tool for practicing conducting and understanding complex musical pieces without a live orchestra, offering audiovisual feedback via particle systems and gesture trajectory.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "unit_01",
+      "type": "card",
+      "priority": "primary",
+      "title": "Kinect Conducting System",
+      "category": "contribution",
+      "summary": "Kinect-based system for real-time visualization of musical structures for edu...",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG1",
+        "caption": "Main components of the Kinect-based conducting system.",
+        "description": "The system leverages a Kinect sensor and Unreal Engine to visualize musical structures in real-time for educational use, offering an immersive tool for conducting practice.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Section III — System Architecture, Fig. 1",
+      "whyThisUnit": "This unit represents the core innovation and artifact of the paper, detailing the overall system architecture that is the central contribution.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_02",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Challenges in Conducting",
+      "category": "problem",
+      "summary": "Existing systems lack accurate gesture recognition and engaging visualization...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Existing systems struggle with accurate gesture recognition, satisfactory 3D visualization of musical structures, and adequate support for aspiring conductors without a physical ensemble, motivating this research.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Section II — Related Work, Problem Statement",
+      "whyThisUnit": "This unit defines the problem space, highlighting the limitations of previous systems that the paper's contribution aims to overcome.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FF4444",
+        "colorName": "coral red"
+      }
+    },
+    {
+      "id": "unit_03",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "method",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "These items explain how musical characteristics are translated into real-time visual feedback using particle systems, a core method of the system.",
+      "stackLabel": "Visualizing Musical Structures",
+      "items": [
+        {
+          "index": 1,
+          "title": "Musical Data Visualization",
+          "contentType": "animation",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Visual representation of pitch (particle color), intensity (particle size), and timbre (3D object shapes as emitters).",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": 3,
+            "frames": [
+              {
+                "index": 1,
+                "label": "Pitch to Color",
+                "description": "Castel’s 1734 color mapping translates musical pitch to particle color for visual feedback.",
+                "assetReference": null
+              },
+              {
+                "index": 2,
+                "label": "Intensity to Size",
+                "description": "Particle size scales dynamically with musical intensity, allowing visual perception of loudness.",
+                "assetReference": null
+              },
+              {
+                "index": 3,
+                "label": "Timbre to Emitters",
+                "description": "3D object shapes (e.g., trombones) act as particle emitters, representing instrumental timbre.",
+                "assetReference": "FIG7"
+              }
+            ],
+            "transitionType": "slide",
+            "looping": false
+          }
+        },
+        {
+          "index": 2,
+          "title": "Particle System Manager",
+          "contentType": "text_panel",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "This component synchronizes audio and visual outputs, mapping extracted musical data from MIDI files to their real-time 3D visual representations.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_04",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Gesture Recognition Algorithm",
+      "category": "method",
+      "summary": "Algorithm processes Kinect hand joint data to identify conducting gestures us...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "An algorithm, based on Caramiaux et al., processes Kinect hand joint data by dividing gesture paths into segments and using dot product for similarity to identify conducting gestures.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Section IV — System Implementation, Gesture Recognition",
+      "whyThisUnit": "This unit details the technical foundation for how the system interprets user movements, a critical method for interactive control.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_05",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "metric",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "These units present the methodology and quantitative results of the system's evaluation, demonstrating its practical performance and user experience.",
+      "stackLabel": "Usability Evaluation",
+      "items": [
+        {
+          "index": 1,
+          "title": "Usability Study Design",
+          "contentType": "text_panel",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "A study with 18 participants (professional conductors, musicians, ordinary users) performed 11 tasks to evaluate controls, gesture recognition, and dynamic/tempo modification.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Key Performance Metrics",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Average time and median attempts for selected tasks (Task 1, Task 10) across user groups, revealing performance differences.",
+            "chartType": "table",
+            "title": "Task Performance: Selected Metrics",
+            "data": {
+              "columns": [
+                "Metric",
+                "Conductors",
+                "Musicians",
+                "Ordinary Users"
+              ],
+              "rows": [
+                [
+                  "Task 1 Avg Time (s)",
+                  "Low",
+                  "Medium",
+                  "High (75% > Conductors)"
+                ],
+                [
+                  "Task 1 Median Attempts",
+                  "1-2",
+                  "1-2",
+                  "1-2"
+                ],
+                [
+                  "Task 10 Avg Time (s)",
+                  "6.43",
+                  "11.24",
+                  "10.46"
+                ],
+                [
+                  "Task 10 Median Attempts",
+                  "Low",
+                  "Similar to G2",
+                  "Similar to G3"
+                ]
+              ]
+            },
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Kinect Conducting System",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Challenges in Conducting",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Visualizing Musical Structures",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Gesture Recognition Algorithm",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Usability Evaluation",
+      "score": 0.75,
+      "confidence": "medium",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "paperTitle": "Emotional Tissue: A Novel UI Widget for Character Emotion Representation",
+  "centralContribution": "This work introduces Emotional Tissue, a novel UI widget designed to represent characters' emotional states in digital games, especially empathy games, as an organic, pulsating shaded cloth deformation. It directly correlates pulse frequency with emotion intensity and customizable colors with specific feelings defined by game designers, offering a flexible API for integration within the Unity Engine.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "unit_01",
+      "type": "card",
+      "priority": "primary",
+      "title": "Emotional Tissue Widget",
+      "category": "contribution",
+      "summary": "A UI widget for emotional representation via pulsating cloth deformation in g...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work introduces Emotional Tissue, a novel UI widget designed to represent characters' emotional states in digital games, especially empathy games, as an organic, pulsating shaded cloth deformation. It directly correlates pulse frequency with emotion intensity and customizable colors with specific feelings defined by game designers, offering a flexible API for integration within the Unity Engine.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Central Contribution",
+      "whyThisUnit": "This is the paper's core innovation: a unique method for visualizing character emotions organically.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_02",
+      "type": "card",
+      "priority": "secondary",
+      "title": "System Architecture",
+      "category": "graphical_representation",
+      "summary": "Core architecture of Emotional Tissue, detailing structural components and in...",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG2",
+        "caption": "Emotional Tissue core architecture diagram.",
+        "description": "The system's core architecture, involving `ClothController` and `EmotionalTissueControl`, packaged as a Unity prefab which outlines the structural components and their interactions.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Figure 2",
+      "whyThisUnit": "Understanding the architecture is crucial to grasp how the Emotional Tissue widget is implemented and integrated.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_03",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Emotion Problems & API",
+      "category": "abstract",
+      "summary": "Challenges in emotion display for games and the flexible API provided for int...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The paper addresses the challenge that emotional states are often neglected and complex to visualize in graphical user interfaces, particularly in empathy games. The Emotional Tissue Control API, via the `EmotionalTissueControl` component, offers methods like `InitColors`, `Add`, `GetColor`, `SetColor`, `GetValue`, and `SetValue` for programmatic control by game designers/developers.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Abstract, Emotional Tissue Control API",
+      "whyThisUnit": "This unit sets the context for the problem Emotional Tissue solves and how developers can interact with it.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit_04",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "These figures provide concrete visual examples of the widget's appearance, configuration, and practical use cases in scenes.",
+      "stackLabel": "Visuals & API Examples",
+      "items": [
+        {
+          "index": 1,
+          "title": "Widget Configurations",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Image composition of the Emotional Tissue widget configured with",
+            "description": "Visual configurations of the Emotional Tissue widget illustrating how four, six, and eight emotions are assigned specific colors and spatial arrangements within the circular 3D perspective.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "API Example Use",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "gives an example of using the API, for four distinct",
+            "description": "An example of using the Emotional Tissue API to configure and manage emotions for four distinct emotional states.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Demo Scene 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "These scenes are also simple examples of how the",
+            "description": "A demonstration scene showcasing characters expressing emotions with designer-defined colors and player-adjustable intensities.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Demo Scene 2 Component",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Demonstration scene EmotionsSetup component.",
+            "description": "Details of the `EmotionsSetup` component within a demonstration scene, illustrating practical configuration.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "luminous blue"
+      }
+    },
+    {
+      "id": "unit_05",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Performance Results",
+      "category": "table",
+      "summary": "Table I shows negligible performance impact of widget with increasing emotions.",
+      "contentType": "table",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Preliminary performance data showing a slight increase in execution time for the widget with increasing numbers of emotions (four, six, and eight) in the Unity Editor.",
+        "chartType": "table",
+        "title": "Performance Comparison (Table I)",
+        "data": {
+          "columns": [
+            "Emotions",
+            "Total Time (ms)",
+            "ClothController (ms)",
+            "Camera.Render (ms)"
+          ],
+          "rows": [
+            [
+              "4",
+              "4.13",
+              "0.24",
+              "0.20"
+            ],
+            [
+              "6",
+              "4.22",
+              "0.25",
+              "0.22"
+            ],
+            [
+              "8",
+              "4.46",
+              "0.26",
+              "0.21"
+            ]
+          ]
+        },
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Section VII — A Preliminary Performance Comparison, Table I",
+      "whyThisUnit": "This unit provides quantitative evidence of the widget's efficiency and scalability, addressing potential performance concerns.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Emotional Tissue Widget",
+      "score": 0.7,
+      "confidence": "medium",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "System Architecture",
+      "score": 0.7,
+      "confidence": "medium",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Emotion Problems & API",
+      "score": 0.7,
+      "confidence": "medium",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Visuals & API Examples",
+      "score": 0.7,
+      "confidence": "medium",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Performance Results",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 2,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

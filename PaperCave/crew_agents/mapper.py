@@ -1,10 +1,10 @@
-"""
+﻿"""
 crew_agents/mapper.py
 Agente Mapper (ex-Designer v3): recebe ExtractionResult e produz CardManifest.
 
-- Não usa response_format=json_object pois pode receber search_tool.
+- NÃ£o usa response_format=json_object pois pode receber search_tool.
 - Suporta simple_mode: usa prompt mapper_simple do agents.yaml.
-- É o target do retry loop controlado pelo Reviewer.
+- Ã‰ o target do retry loop controlado pelo Reviewer.
 
 Prompts carregados de prompts/agents.yaml.
 """
@@ -28,11 +28,11 @@ def make_mapper_agent(
 ) -> Agent:
     """
     Args:
-        llm:         LLM padrão (make_llm).
+        llm:         LLM padrÃ£o (make_llm).
         search_tool: Ferramenta de busca RAG (opcional).
-        max_retries: Tentativas de re-geração em caso de falha de schema.
+        max_retries: Tentativas de re-geraÃ§Ã£o em caso de falha de schema.
         simple_mode: Se True, usa prompts mapper_simple (cards figure/chart apenas).
-        card_count:  Número de cards que o Mapper deve produzir (injetado no goal).
+        card_count:  NÃºmero de cards que o Mapper deve produzir (injetado no goal).
     """
     prompts_key = "mapper_simple" if simple_mode else "mapper"
     prompts = _load_agent_prompts()[prompts_key]
@@ -46,7 +46,8 @@ def make_mapper_agent(
         backstory=prompts["backstory"],
         tools=tools,
         llm=llm,
-        verbose=True,
+        verbose=False,
         allow_delegation=False,
         max_retry_limit=max_retries,
     )
+

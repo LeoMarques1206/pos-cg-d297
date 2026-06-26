@@ -73,7 +73,11 @@ def _build_llm(cfg: dict, extra_kwargs: dict | None = None) -> LLM:
     api_key  = _resolve_api_key(provider, cfg)
     base_url = _resolve_base_url(provider, cfg)
 
-    kwargs: dict = {"model": model}
+    kwargs: dict = {
+        "model":       model,
+        "num_retries": cfg.get("api_retries", 5),   # LiteLLM auto-retry on 429/503
+        "timeout":     cfg.get("api_timeout", 120),
+    }
 
     if provider in PROVIDER_NATIVE:
         if api_key:
