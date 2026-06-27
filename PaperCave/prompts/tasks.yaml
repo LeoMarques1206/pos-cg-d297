@@ -58,8 +58,10 @@ extract:
   expected_output: >
     Valid JSON with paperTitle, centralContribution, and a list of 8-10 elements,
     each with name, category, description, relevanceScore, justification,
-    and groupingHint (the name of a related element, or nullmap:
+    and groupingHint (the name of a related element, or null).
+map:
   description: >
+
     Com base nas informações do paper e nas classificações visuais das figuras fornecidas pelo Vision Analyst,
     produza um Unit Manifest organizando as cartas estritamente nas 6 categorias a seguir:
 

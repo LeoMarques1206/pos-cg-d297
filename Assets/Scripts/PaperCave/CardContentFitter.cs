@@ -62,6 +62,9 @@ namespace PaperCave
         public float gap = 5f;
         public float sideMargin = 6f;
 
+        [Tooltip("Quando true, esconde badge/titulo/caption/descricao e deixa so o visual preencher o card.")]
+        public bool hideText = false;
+
         public Orientation CurrentOrientation { get; private set; } = Orientation.Unknown;
 
         // refs
@@ -162,6 +165,13 @@ namespace PaperCave
             _lastTexture = _figureRawImage != null ? _figureRawImage.texture : null;
             _lastSprite  = _figureImage    != null ? _figureImage.sprite    : null;
 
+            if (hideText)
+            {
+                if (_titleRT   != null) _titleRT.gameObject.SetActive(false);
+                if (_captionRT != null) _captionRT.gameObject.SetActive(false);
+                if (_descRT    != null) _descRT.gameObject.SetActive(false);
+            }
+
             _cached = true;
         }
 
@@ -220,21 +230,25 @@ namespace PaperCave
             }
 
             float badgeH = _origBadgeSize.y;
-            float titleH = _titleTmp   != null ? Mathf.Max(12f, _titleTmp.GetPreferredValues(textAreaW, 0f).y)   + 2f : 0f;
-            float capH   = _captionTmp != null ? Mathf.Max(10f, _captionTmp.GetPreferredValues(textAreaW, 0f).y) + 2f : 0f;
-            float descH  = _descTmp    != null ? Mathf.Max(10f, _descTmp.GetPreferredValues(textAreaW, 0f).y)    + 2f : 0f;
+            float titleH = (hideText || _titleTmp   == null) ? 0f : Mathf.Max(12f, _titleTmp.GetPreferredValues(textAreaW, 0f).y)   + 2f;
+            float capH   = (hideText || _captionTmp == null) ? 0f : Mathf.Max(10f, _captionTmp.GetPreferredValues(textAreaW, 0f).y) + 2f;
+            float descH  = (hideText || _descTmp    == null) ? 0f : Mathf.Max(10f, _descTmp.GetPreferredValues(textAreaW, 0f).y)    + 2f;
 
             // Limita a imagem a uma fração máxima da altura TOTAL estimada do card
             float textBlocksH = badgeH + titleH + capH + descH;
-            float gapsH = gap * 4f; // topo + entre badge/título + título/caption + caption/desc
-            if (hasImage)
+            float gapsH = hideText ? (hasImage ? gap * 3f : gap * 2f) : gap * 4f;
+            if (hasImage && !hideText)
             {
-                float estimatedTotal = imageAreaH + textBlocksH + gapsH + gap; // + respiro pós-imagem
+                float estimatedTotal = imageAreaH + textBlocksH + gapsH + gap;
                 float maxImgH = estimatedTotal * maxImageHeightFraction;
                 if (imageAreaH > maxImgH) imageAreaH = maxImgH;
             }
 
-            float canvasH = (hasImage ? imageAreaH + gap : 0f) + textBlocksH + gapsH;
+            float canvasH;
+            if (hideText)
+                canvasH = hasImage ? badgeH + imageAreaH + gapsH : badgeH + gapsH;
+            else
+                canvasH = (hasImage ? imageAreaH + gap : 0f) + textBlocksH + gapsH;
 
             float worldHeight = canvasH * canvasScale;
 
@@ -288,6 +302,34 @@ namespace PaperCave
         private void ApplyInternalLayout(float canvasW, float canvasH, float imageAreaH,
             float badgeH, float titleH, float capH, float descH, bool hasImage)
         {
+            if (hideText)
+            {
+                float cy = -gap;
+                if (_badgeRT != null)
+                {
+                    _badgeRT.gameObject.SetActive(true);
+                    _badgeRT.anchorMin        = new Vector2(0f, 1f);
+                    _badgeRT.anchorMax        = new Vector2(0f, 1f);
+                    _badgeRT.pivot            = new Vector2(0f, 1f);
+                    _badgeRT.anchoredPosition = new Vector2(sideMargin, cy);
+                }
+                cy -= badgeH + gap;
+                if (hasImage && _figureRT != null)
+                {
+                    _figureRT.gameObject.SetActive(true);
+                    _figureRT.anchorMin        = new Vector2(0f, 1f);
+                    _figureRT.anchorMax        = new Vector2(1f, 1f);
+                    _figureRT.pivot            = new Vector2(0.5f, 1f);
+                    _figureRT.anchoredPosition = new Vector2(0f, cy);
+                    _figureRT.sizeDelta        = new Vector2(-sideMargin * 2f, imageAreaH);
+                }
+                else if (_figureRT != null)
+                {
+                    _figureRT.gameObject.SetActive(false);
+                }
+                return;
+            }
+
             float cursorY = -gap;
 
             if (hasImage && _figureRT != null)

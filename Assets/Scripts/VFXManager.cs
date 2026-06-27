@@ -76,4 +76,15 @@ public class VFXManager : MonoBehaviour
         if (effect.destroyAfter > 0)
             Destroy(spawned, effect.destroyAfter);
     }
+
+    /// <summary>Igual a PlayEffect, mas spawna numa posição de mundo arbitrária (usado por cards dinâmicos).</summary>
+    public void PlayEffectAt(int index, Vector3 worldPos)
+    {
+        if (index < 0 || index >= effects.Count) { Debug.LogWarning($"VFX index inválido: {index}"); return; }
+        VFXEntry effect = effects[index];
+        if (effect.prefab == null) { Debug.LogWarning($"Prefab não configurado no índice {index}"); return; }
+        GameObject spawned = Instantiate(effect.prefab, worldPos + effect.localOffset, Quaternion.identity);
+        spawned.transform.localScale = Vector3.Scale(spawned.transform.localScale, effect.scaleMultiplier);
+        if (effect.destroyAfter > 0) Destroy(spawned, effect.destroyAfter);
+    }
 }

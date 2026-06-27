@@ -1,0 +1,78 @@
+{
+  "paperTitle": "Claws of Fate: A 2D adventure serious game developed in Unity",
+  "centralContribution": "This work presents \"Claws of Fate,\" a 2D adventure serious game developed in Unity that integrates a customized AI-based guide, BiomesAI, using OpenAI's ChatGPT and Azure Speech Studio to deliver real-time, context-specific educational content via text and audio about Brazilian biomes (Amazon Rainforest and Caatinga). The central contribution is the design, implementation, and initial user experience evaluation of this game, demonstrating how generative AI can be integrated into educational games to foster awareness of animal welfare, ethical pet care, and environmental conservation, particularly for early adolescents.",
+  "elements": [
+    {
+      "name": "Claws of Fate Serious Game",
+      "category": "contribution",
+      "description": "A 2D adventure serious game developed in Unity, featuring a 15-year-old protagonist, Peter, on a quest through Brazilian biomes to learn about animal welfare and environmental conservation.",
+      "relevanceScore": 10,
+      "justification": "This is the primary artifact and central contribution of the paper, representing the tangible output of the research and the platform for integrating the AI guide.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "BiomesAI Integrated Guide",
+      "category": "contribution",
+      "description": "An AI-based guide system utilizing OpenAI's ChatGPT and Azure Speech Studio to deliver real-time, context-specific educational content about Brazilian biomes via text and audio.",
+      "relevanceScore": 9,
+      "justification": "BiomesAI is the core innovative component that provides personalized educational content within the game, representing a key aspect of the paper's contribution to AI integration in education.",
+      "groupingHint": "Claws of Fate Serious Game"
+    },
+    {
+      "name": "Generative AI for Educational Content",
+      "category": "contribution",
+      "description": "The overarching concept and implementation of integrating generative AI (ChatGPT) as a personalized in-game assistant to provide contextual knowledge and enhance learning in educational games.",
+      "relevanceScore": 9,
+      "justification": "This element highlights the conceptual breakthrough and methodology of using generative AI in serious games for environmental education, a significant contribution to the field.",
+      "groupingHint": "BiomesAI Integrated Guide"
+    },
+    {
+      "name": "Brazilian Biomes Game Setting",
+      "category": "contribution",
+      "description": "The game's setting across two primary Brazilian biomes, the Amazon Rainforest and Caatinga, featuring native fauna and flora as supportive elements and hazards.",
+      "relevanceScore": 8,
+      "justification": "The specific environmental context is crucial for the game's educational objectives, providing the domain for animal welfare and conservation awareness.",
+      "groupingHint": "Claws of Fate Serious Game"
+    },
+    {
+      "name": "User Experience Evaluation Findings",
+      "category": "table",
+      "description": "Results from a multi-instrument UX questionnaire with 20 young adults, including average scores for visual design, AI guide usefulness, narrative influence, and qualitative feedback on challenges and suggestions.",
+      "relevanceScore": 8,
+      "justification": "The evaluation findings provide critical insights into the game's effectiveness, user perceptions, and areas for improvement, essential for assessing the contribution.",
+      "groupingHint": "Claws of Fate Serious Game"
+    },
+    {
+      "name": "Low Perceived AI Guide Usefulness",
+      "category": "table",
+      "description": "The usefulness of the in-game AI guide (Q14) scored lowest at 2.57 on a 1-5 Likert scale, indicating players often overlooked optional interactive elements.",
+      "relevanceScore": 7,
+      "justification": "This specific metric highlights a significant limitation of the current AI integration, indicating a gap between design intent and user interaction, which is a key takeaway from the evaluation.",
+      "groupingHint": "User Experience Evaluation Findings"
+    },
+    {
+      "name": "Pre-generated AI Content Approach",
+      "category": "contribution",
+      "description": "The system utilizes preloaded, pre-approved educational material from a JSON file and pre-generated audio responses, disabling real-time ChatGPT queries for safety and age-appropriateness.",
+      "relevanceScore": 7,
+      "justification": "This specific architectural choice ensures content safety but limits the dynamic personalization potential of generative AI, representing a key design decision with trade-offs.",
+      "groupingHint": "BiomesAI Integrated Guide"
+    },
+    {
+      "name": "Linear Narrative Progression Limitation",
+      "category": "contribution",
+      "description": "The game's linear progression inadvertently limited players' perceived agency, reflected in a low score for narrative influence (3.07), leading players to focus on progression rather than optional learning.",
+      "relevanceScore": 6,
+      "justification": "This identifies a critical design limitation impacting player engagement and the effectiveness of the educational guide, directly stemming from the game's structure.",
+      "groupingHint": "Claws of Fate Serious Game"
+    },
+    {
+      "name": "Lack of Checkpoints Frustration",
+      "category": "contribution",
+      "description": "A significant friction point identified in user feedback was the absence of checkpoints, causing frustration and forcing players to restart entire levels upon failure.",
+      "relevanceScore": 6,
+      "justification": "This practical gameplay issue significantly impacted user experience and immersion, demonstrating how fundamental game design elements can detract from an otherwise innovative educational experience.",
+      "groupingHint": "Claws of Fate Serious Game"
+    }
+  ]
+}

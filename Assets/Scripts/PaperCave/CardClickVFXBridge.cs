@@ -16,6 +16,9 @@ namespace PaperCave
         [Tooltip("Índice do efeito na lista 'effects' do VFXManager.")]
         public int effectIndex = 0;
 
+        [Tooltip("Se true, o efeito spawna na posição deste card (usado por cards instanciados dinamicamente) em vez do spawnPoint fixo do VFXManager.")]
+        public bool spawnAtThisCard = false;
+
         private Card3D _card;
         private bool _wasExpanded;
 
@@ -37,7 +40,10 @@ namespace PaperCave
             if (isExpanded && !_wasExpanded)
             {
                 if (vfxManager != null)
-                    vfxManager.PlayEffect(effectIndex);
+                {
+                    if (spawnAtThisCard) vfxManager.PlayEffectAt(effectIndex, transform.position);
+                    else vfxManager.PlayEffect(effectIndex);
+                }
                 else
                     Debug.LogWarning("[CardClickVFXBridge] VFXManager não atribuído em " + gameObject.name);
             }

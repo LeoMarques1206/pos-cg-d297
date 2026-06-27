@@ -1,0 +1,24 @@
+2026-06-27 02:06:31 [INFO] Session log: outputs\papers\session_20260627_020631.log
+2026-06-27 02:06:31 [INFO] 
+============================================================
+2026-06-27 02:06:31 [INFO]   Paper Cave v5 — papers
+2026-06-27 02:06:31 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-27 02:06:31 [INFO]   20260627_020631
+2026-06-27 02:06:31 [INFO] ============================================================
+
+2026-06-27 02:06:33 [INFO]   Vision Analyst: VISUAL mode
+2026-06-27 02:06:33 [INFO]   No FIG*.png figures found in paper folder.
+2026-06-27 02:07:29 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-27 02:08:59 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:09:36 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:09:49 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:09:49 [WARNING]   API indisponível (tentativa 1/5): ServerError. Aguardando 3s...
+2026-06-27 02:10:43 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:10:43 [WARNING]   API indisponível (tentativa 2/5): ServerError. Aguardando 6s...
+2026-06-27 02:12:07 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:12:07 [WARNING]   API indisponível (tentativa 3/5): ServerError. Aguardando 12s...
+2026-06-27 02:12:54 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:12:54 [WARNING]   API indisponível (tentativa 4/5): ServerError. Aguardando 24s...
+2026-06-27 02:13:22 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-27 02:13:22 [ERROR]   +- ✗ 353s — RuntimeError
