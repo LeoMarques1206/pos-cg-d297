@@ -430,12 +430,51 @@ namespace PaperCave
         private void SpawnTitle(string paperTitle)
         {
             if (titlePrefab == null || string.IsNullOrEmpty(paperTitle)) return;
-            Vector3 p = titleAnchor != null ? titleAnchor.position : new Vector3(0f, 2.4f, 0.5f);
-            var t = Instantiate(titlePrefab, p, Quaternion.identity);
+
+            Vector3 cardsCenter = GetCardsCenter();
+
+            float yOffset = 1.7f; // altura acima dos cards
+
+            Vector3 spawnPos = cardsCenter + new Vector3(-1.2f, yOffset, 0f);
+
+            var t = Instantiate(titlePrefab, spawnPos, Quaternion.identity);
             t.name = "PaperTitle";
+
             var tmp = t.GetComponent<TMP_Text>() ?? t.GetComponentInChildren<TMP_Text>(true);
-            if (tmp != null) tmp.text = paperTitle;
+
+            if (tmp != null)
+            {
+                tmp.text = paperTitle;
+                tmp.fontSize = 0.3f;
+                tmp.alignment = TextAlignmentOptions.Center;
+            }
+
             _spawned.Add(t);
+        }
+        private Vector3 GetCardsCenter()
+        {
+            var cards = new List<Transform>();
+
+            foreach (var go in _spawned)
+            {
+                if (go == null) continue;
+
+                // só pega cards reais (não tabela nem título)
+                if (go.GetComponent<CardContentFitter>() != null)
+                    cards.Add(go.transform);
+            }
+
+            if (cards.Count == 0)
+                return Vector3.zero;
+
+            Vector3 center = Vector3.zero;
+
+            foreach (var c in cards)
+                center += c.position;
+
+            center /= cards.Count;
+
+            return center;
         }
 
         private void ComputeLayout(int i, int total, out Vector3 pos, out float rotY)

@@ -617,7 +617,7 @@ MonoBehaviour:
   openVfxIndex: 0
   titlePrefab: {fileID: 5285339667606234460, guid: 0199afd48d099a84fb46691cef4e76f6, type: 3}
   titleAnchor: {fileID: 0}
-  primaryPosition: {x: 0, y: 0.85, z: 0}
+  primaryPosition: {x: 0, y: 0.8, z: 0}
   perRow: 3
   xStep: 2.9
   yStep: 1.75
@@ -625,7 +625,7 @@ MonoBehaviour:
   stackDepthStep: 0.05
   stackRotZStep: 0
   stackPosStep: {x: 0.06, y: 0.06}
-  tableWorldWidth: 2.4
+  tableWorldWidth: 1
   tableLocalOffset: {x: 0, y: -0.15, z: -0.7}
   buildOnStart: 1
 --- !u!4 &2040111279
