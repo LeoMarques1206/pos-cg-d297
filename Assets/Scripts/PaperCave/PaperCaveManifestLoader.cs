@@ -413,7 +413,7 @@ private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int i
             }
         }
 
-        private void BuildTableFollower(GameObject card, CardSpec spec)
+private void BuildTableFollower(GameObject card, CardSpec spec)
         {
             int columns = (spec.headers != null && spec.headers.Count > 0) ? spec.headers.Count
                         : (spec.rows != null && spec.rows.Count > 0 ? spec.rows[0].Count : 2);
@@ -433,6 +433,9 @@ private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int i
             float scale = tableWorldWidth / totalWidth;
             go.transform.localScale = new Vector3(scale, scale, scale);
 
+            // Tamanho real da tabela no mundo (para o card poder cobri-la).
+            float tableWorldHeight = totalHeight * scale;
+
             var builder = go.AddComponent<TableBuilder>();
             builder.useStaticPaperData = false;     // usa os dados reais do manifest
             builder.totalWidth = totalWidth;
@@ -441,7 +444,13 @@ private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int i
 
             var follower = go.AddComponent<CardFollower>();
             follower.target = card.transform;
-            follower.localOffset = tableLocalOffset;
+            // Coloca a tabela SOBRE a face do card (centrada, logo a frente), em vez
+            // de flutuar a frente. O card e dimensionado para cobri-la (abaixo).
+            follower.localOffset = new Vector3(0f, -0.06f, -0.03f);
+
+            // Faz o card crescer para cobrir a tabela inteira quando expandido.
+            var fitter = card.GetComponent<CardContentFitter>();
+            if (fitter != null) fitter.SetTableContent(tableWorldWidth, tableWorldHeight);
 
             go.SetActive(false);
 

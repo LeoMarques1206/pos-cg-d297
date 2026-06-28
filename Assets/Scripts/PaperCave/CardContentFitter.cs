@@ -85,6 +85,10 @@ namespace PaperCave
         private Vector2 _currentSize, _targetSize;
         private bool _initializedSize;
 
+        // Conteudo de tabela: a tabela e um follower externo, de tamanho fixo no mundo.
+        private bool _hasTable;
+        private float _tableW, _tableH;
+
         void Awake()
         {
             _card     = GetComponent<Card3D>();
@@ -200,6 +204,8 @@ namespace PaperCave
         /// <summary>Recalcula orientação, tamanho do card e layout interno a partir do conteúdo atual.</summary>
         public void ComputeAndApply(bool immediate)
         {
+            if (_hasTable) { ComputeAndApplyTable(immediate); return; }
+
             float aspect = GetContentAspect();
             bool hasImage = aspect > 0f;
 
@@ -262,6 +268,57 @@ namespace PaperCave
             ApplyCardSize(_currentSize);
             ApplyInternalLayout(canvasW, canvasH, imageAreaH, badgeH, titleH, capH, descH, hasImage);
         }
+
+/// <summary>
+        /// Informa que este card contem uma tabela (follower externo) com o tamanho
+        /// em world units indicado, para que o card seja dimensionado de modo a
+        /// COBRIR a tabela inteira quando expandido.
+        /// </summary>
+        public void SetTableContent(float worldWidth, float worldHeight)
+        {
+            _hasTable = true;
+            _tableW = worldWidth;
+            _tableH = worldHeight;
+            hideText = true;
+            if (_cached) ComputeAndApply(true);
+        }
+
+        private void ComputeAndApplyTable(bool immediate)
+        {
+            float exp = (_card != null && _card.expandScale > 0.01f) ? _card.expandScale : 1f;
+            float canvasScale = (_canvasTf != null && _canvasTf.localScale.x != 0f) ? _canvasTf.localScale.x : 0.01f;
+
+            float marginWorld = 0.12f;
+            float badgeWorld = (_origBadgeSize.y * canvasScale) + 0.06f; // faixa do badge no topo
+
+            // Tamanho do card em escala 1, para que ao expandir (x exp) cubra a tabela com folga.
+            float widthWorldExpanded = _tableW + marginWorld * 2f;
+            float heightWorldExpanded = _tableH + badgeWorld + marginWorld * 2f;
+
+            float cardWidth = widthWorldExpanded / exp;
+            float worldHeight = heightWorldExpanded / exp;
+
+            CurrentOrientation = Orientation.Unknown;
+
+            _targetSize = new Vector2(cardWidth, worldHeight);
+            if (!_initializedSize || immediate) { _currentSize = _targetSize; _initializedSize = true; }
+            ApplyCardSize(_currentSize);
+
+            // Layout interno: apenas o badge no topo; sem figura/textos.
+            if (_badgeRT != null)
+            {
+                _badgeRT.gameObject.SetActive(true);
+                _badgeRT.anchorMin = new Vector2(0f, 1f);
+                _badgeRT.anchorMax = new Vector2(0f, 1f);
+                _badgeRT.pivot = new Vector2(0f, 1f);
+                _badgeRT.anchoredPosition = new Vector2(sideMargin, -gap);
+            }
+            if (_figureRT != null) _figureRT.gameObject.SetActive(false);
+            if (_titleRT != null) _titleRT.gameObject.SetActive(false);
+            if (_captionRT != null) _captionRT.gameObject.SetActive(false);
+            if (_descRT != null) _descRT.gameObject.SetActive(false);
+        }
+
 
         private void ApplyCardSize(Vector2 size)
         {
