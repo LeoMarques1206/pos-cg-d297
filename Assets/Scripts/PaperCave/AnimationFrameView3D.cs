@@ -13,7 +13,7 @@ namespace PaperCave
     /// planes (<see cref="Card3DButton"/>). When looping is enabled and the user
     /// has not interacted, frames auto-advance every interval.
     /// </summary>
-    public class AnimationFrameView3D : MonoBehaviour
+    public class AnimationFrameView3D : MonoBehaviour, IStepView
     {
         public enum Transition { Fade, Slide }
 

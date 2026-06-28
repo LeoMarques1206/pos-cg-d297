@@ -78,7 +78,7 @@ namespace PaperCave
             public string category = "";
             public Color color = new Color(0f, 0.83f, 1f, 1f);
             public Kind kind = Kind.Text;
-            public string imageRef = "";
+            public List<string> imageRefs = new List<string>();
             public List<string> headers;
             public List<List<string>> rows;
             public bool primary;
@@ -134,6 +134,8 @@ namespace PaperCave
                 Debug.LogError("[PaperCaveManifestLoader] cardBasePrefab não atribuído.");
                 return;
             }
+
+            specs = MergeGerminatedImages(specs);
 
             SpawnTitle(paperTitle);
 
@@ -239,7 +241,7 @@ namespace PaperCave
                 else if (contentType == "figure" || !string.IsNullOrEmpty(assetRef))
                 {
                     spec.kind = Kind.Image;
-                    spec.imageRef = assetRef ?? "";
+                    if (!string.IsNullOrEmpty(assetRef)) spec.imageRefs.Add(assetRef);
                 }
                 else
                 {
@@ -299,7 +301,7 @@ namespace PaperCave
                 else if (displayType == "image")
                 {
                     spec.kind = Kind.Image;
-                    spec.imageRef = (string)g["relatedImage"] ?? "";
+                    { var ri = (string)g["relatedImage"]; if (!string.IsNullOrEmpty(ri)) spec.imageRefs.Add(ri); }
                 }
                 else
                 {
@@ -320,7 +322,7 @@ namespace PaperCave
 
         // ------------------------------------------------------------------ build a card
 
-        private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int index)
+private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int index)
         {
             GameObject card = Instantiate(cardBasePrefab, pos, Quaternion.Euler(0f, rotY, rotZ));
             card.name = "Card" + (index + 1).ToString("00") + "_" + Sanitize(spec.title);
@@ -333,7 +335,7 @@ namespace PaperCave
             SetTmp(card.transform, "Canvas/Expanded/Description", spec.description);
             SetTmp(card.transform, "Canvas/Expanded/Caption", spec.caption);
 
-            // badge (cor + rótulo da categoria) nos dois estados
+            // badge (cor + rotulo da categoria) nos dois estados
             ApplyBadge(card.transform, "Canvas/Collapsed/CategoryBadge", spec);
             ApplyBadge(card.transform, "Canvas/Expanded/CategoryBadge", spec);
 
@@ -346,28 +348,44 @@ namespace PaperCave
                 bridge.spawnAtThisCard = true;
             }
 
-            // figura (card de imagem) — injeta no Figure_Box; CardContentFitter cuida da orientação
+            // figura(s) — injeta no Figure_Box; CardContentFitter cuida da orientacao
             var figureRaw = FindRawImage(card.transform, "Canvas/Expanded/Figure_Box/Figure");
+            ImageCarousel3D carousel = null;
+
             if (spec.kind == Kind.Image)
             {
-                Texture2D tex = LoadFigureTexture(spec.imageRef);
-                if (tex != null && figureRaw != null)
+                var texs = LoadFigureTextures(spec);
+                Texture2D first = texs.Count > 0 ? texs[0] : null;
+
+                if (first != null && figureRaw != null)
                 {
-                    figureRaw.texture = tex;
+                    figureRaw.texture = first;
                     figureRaw.color = Color.white;
                     figureRaw.enabled = true;
                     var arf = figureRaw.GetComponent<AspectRatioFitter>();
-                    if (arf != null && tex.height > 0)
+                    if (arf != null && first.height > 0)
                     {
                         arf.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
-                        arf.aspectRatio = (float)tex.width / tex.height;
+                        arf.aspectRatio = (float)first.width / first.height;
                     }
                 }
                 else if (figureRaw != null) figureRaw.enabled = false;
+
+                // Varias figuras germinadas (FIG_N_X) -> um unico card com setas laterais.
+                if (texs.Count > 1 && figureRaw != null)
+                {
+                    carousel = card.GetComponent<ImageCarousel3D>();
+                    if (carousel == null) carousel = card.AddComponent<ImageCarousel3D>();
+                    carousel.textures = texs;
+                    carousel.targetImage = figureRaw;
+                    carousel.aspectFitter = figureRaw.GetComponent<AspectRatioFitter>();
+                    carousel.tint = spec.color;
+                    carousel.Initialize(card.GetComponent<Card3D>(), figureRaw.GetComponent<RectTransform>());
+                }
             }
             else if (figureRaw != null)
             {
-                // card de texto/tabela não mostra a caixa de figura
+                // card de texto/tabela nao mostra a caixa de figura
                 figureRaw.texture = null;
                 figureRaw.enabled = false;
             }
@@ -384,7 +402,14 @@ namespace PaperCave
                 SetActiveChild(card.transform, "Canvas/Collapsed/Title", false);
                 SetActiveChild(card.transform, "Canvas/Collapsed/Summary", false);
                 if (spec.kind == Kind.Image && figureRaw != null && figureRaw.texture != null)
-                    InjectCollapsedImage(card.transform, figureRaw.texture);
+                {
+                    var collapsedRaw = InjectCollapsedImage(card.transform, figureRaw.texture);
+                    if (carousel != null && collapsedRaw != null)
+                    {
+                        carousel.collapsedImage = collapsedRaw;
+                        carousel.collapsedAspect = collapsedRaw.GetComponent<AspectRatioFitter>();
+                    }
+                }
             }
         }
 
@@ -521,10 +546,10 @@ namespace PaperCave
             if (t != null) t.gameObject.SetActive(active);
         }
 
-        private void InjectCollapsedImage(Transform card, Texture tex)
+private RawImage InjectCollapsedImage(Transform card, Texture tex)
         {
             var collapsed = card.Find("Canvas/Collapsed");
-            if (collapsed == null) return;
+            if (collapsed == null) return null;
             var go = new GameObject("CollapsedFigure",
                 typeof(RectTransform), typeof(CanvasRenderer), typeof(RawImage), typeof(AspectRatioFitter));
             go.transform.SetParent(collapsed, false);
@@ -540,7 +565,144 @@ namespace PaperCave
             var arf = go.GetComponent<AspectRatioFitter>();
             arf.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
             if (tex.height > 0) arf.aspectRatio = (float)tex.width / tex.height;
+            return raw;
         }
+
+// --------------------------------------------------- figuras germinadas
+
+        /// <summary>
+        /// Junta unidades de imagem que pertencem a MESMA figura do paper
+        /// (mesmo numero N em FIG_N_X) em um unico CardSpec, acumulando as refs.
+        /// Ex.: FIG_4_1, FIG_4_2, FIG_4_3 -> 1 card; FIG_5 -> outro card.
+        /// </summary>
+        private List<CardSpec> MergeGerminatedImages(List<CardSpec> specs)
+        {
+            var result = new List<CardSpec>();
+            var byFigure = new Dictionary<int, CardSpec>();
+
+            foreach (var s in specs)
+            {
+                if (s.kind != Kind.Image || s.imageRefs == null || s.imageRefs.Count == 0)
+                {
+                    result.Add(s);
+                    continue;
+                }
+
+                int n = FigureNumber(s.imageRefs[0]);
+                if (n < 0) { result.Add(s); continue; }
+
+                if (byFigure.TryGetValue(n, out var host))
+                {
+                    foreach (var r in s.imageRefs)
+                        if (!host.imageRefs.Contains(r)) host.imageRefs.Add(r);
+                }
+                else
+                {
+                    byFigure[n] = s;
+                    result.Add(s);
+                }
+            }
+
+            foreach (var s in result)
+                if (s.kind == Kind.Image && s.imageRefs != null && s.imageRefs.Count > 1)
+                    s.imageRefs.Sort((a, b) => PartIndex(a).CompareTo(PartIndex(b)));
+
+            return result;
+        }
+
+        /// <summary>Carrega, em ordem, todas as texturas de uma figura (parte por parte).</summary>
+        private List<Texture2D> LoadFigureTextures(CardSpec spec)
+        {
+            var texs = new List<Texture2D>();
+            if (spec.imageRefs == null) return texs;
+
+            string dir = paperDataFolder.TrimEnd('/') + "/images/";
+            var paths = new List<string>();
+
+            // 1) refs declaradas no manifest
+            foreach (var r in spec.imageRefs)
+            {
+                string p = ResolveFigurePath(r, dir);
+                if (!string.IsNullOrEmpty(p) && !paths.Contains(p)) paths.Add(p);
+            }
+
+            // 2) irmaos germinados existentes no disco (FIG_N_x.png) que o manifest
+            //    pode nao ter listado individualmente.
+            int n = spec.imageRefs.Count > 0 ? FigureNumber(spec.imageRefs[0]) : -1;
+            if (n >= 0)
+                foreach (var p in GerminatedSiblings(n, dir))
+                    if (!paths.Contains(p)) paths.Add(p);
+
+            paths.Sort((a, b) => PartIndex(a).CompareTo(PartIndex(b)));
+
+            foreach (var p in paths)
+            {
+                var t = LoadTextureAtPath(p);
+                if (t != null) texs.Add(t);
+            }
+
+            if (texs.Count == 0)
+                Debug.LogWarning("[PaperCaveManifestLoader] Nenhuma figura encontrada para o card '" + spec.title + "'.");
+            return texs;
+        }
+
+        private string ResolveFigurePath(string imageRef, string dir)
+        {
+            if (string.IsNullOrEmpty(imageRef)) return null;
+            foreach (var name in ImageCandidates(imageRef))
+            {
+                string p = dir + name;
+#if UNITY_EDITOR
+                if (AssetDatabase.LoadAssetAtPath<Texture2D>(p) != null) return p;
+#endif
+                if (System.IO.File.Exists(p)) return p;
+            }
+            return null;
+        }
+
+        private List<string> GerminatedSiblings(int n, string dir)
+        {
+            var list = new List<string>();
+            if (!System.IO.Directory.Exists(dir)) return list;
+            var rx = new Regex("^FIG_0*" + n + "_(\\d+)\\.png$", RegexOptions.IgnoreCase);
+            foreach (var full in System.IO.Directory.GetFiles(dir, "*.png"))
+            {
+                string file = System.IO.Path.GetFileName(full);
+                if (rx.IsMatch(file)) list.Add(dir + file);
+            }
+            return list;
+        }
+
+        private static Texture2D LoadTextureAtPath(string p)
+        {
+            if (string.IsNullOrEmpty(p)) return null;
+#if UNITY_EDITOR
+            var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(p);
+            if (tex != null) return tex;
+#endif
+            if (System.IO.File.Exists(p))
+            {
+                var bytes = System.IO.File.ReadAllBytes(p);
+                var t2 = new Texture2D(2, 2);
+                if (t2.LoadImage(bytes)) return t2;
+            }
+            return null;
+        }
+
+        private static int FigureNumber(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return -1;
+            var m = Regex.Match(s, "FIG_?(\\d+)", RegexOptions.IgnoreCase);
+            return m.Success ? int.Parse(m.Groups[1].Value) : -1;
+        }
+
+        private static int PartIndex(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return 0;
+            var m = Regex.Match(s, "FIG_?\\d+_(\\d+)", RegexOptions.IgnoreCase);
+            return m.Success ? int.Parse(m.Groups[1].Value) : 0;
+        }
+
 
         private static RawImage FindRawImage(Transform root, string path)
         {

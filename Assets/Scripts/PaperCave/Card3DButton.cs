@@ -14,9 +14,14 @@ namespace PaperCave
         public AnimationFrameView3D target;
         public int direction = 1; // -1 = previous, +1 = next
 
-        public void Invoke()
+        [Tooltip("Alvo generico (ex: ImageCarousel3D) usado quando 'target' nao for um AnimationFrameView3D.")]
+        public MonoBehaviour stepTarget;
+
+public void Invoke()
         {
-            if (target != null) target.Step(direction, true);
+            if (target != null) { target.Step(direction, true); return; }
+            var sv = stepTarget as IStepView;
+            if (sv != null) sv.Step(direction, true);
         }
     }
 }
