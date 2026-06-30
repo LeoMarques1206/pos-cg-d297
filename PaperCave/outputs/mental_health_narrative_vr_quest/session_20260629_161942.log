@@ -1,0 +1,36 @@
+2026-06-29 16:19:42 [INFO] Session log: outputs\mental_health_narrative_vr_quest\session_20260629_161942.log
+2026-06-29 16:19:42 [INFO] 
+============================================================
+2026-06-29 16:19:42 [INFO]   Paper Cave v5 — mental_health_narrative_vr_quest
+2026-06-29 16:19:42 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:19:42 [INFO]   20260629_161942
+2026-06-29 16:19:42 [INFO] ============================================================
+
+2026-06-29 16:19:43 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:19:43 [INFO]   Paper figures found: FIG1, FIG10, FIG11, FIG12, FIG13, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+2026-06-29 16:19:43 [INFO]   Figure captions extracted: 13/13
+2026-06-29 16:20:39 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-29 16:21:28 [INFO]   +- ✓ 49s — 50,734 chars
+2026-06-29 16:21:28 [INFO] 
+  +- [2/6] Vision Analyst — 13 figura(s)
+2026-06-29 16:21:49 [INFO]   Vision Analyst described 13 figure(s).
+2026-06-29 16:21:49 [INFO]   +- ✓ 21s — 13 figura(s) descritas
+2026-06-29 16:21:49 [INFO] 
+  +- [3/6] Summarizer
+2026-06-29 16:22:16 [INFO]   +- ✓ 26s — 9,880 chars
+2026-06-29 16:22:16 [INFO] 
+  +- [4/6] Extractor
+2026-06-29 16:22:47 [INFO]   +- ✓ 31s
+2026-06-29 16:22:47 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-29 16:22:47 [INFO]   Mapper attempt 1/3
+2026-06-29 16:23:46 [INFO]   Manifest approved on attempt 1.
+2026-06-29 16:23:46 [INFO]   +- ✓ 59s — 5 unidade(s), 1 tentativa(s)
+2026-06-29 16:23:46 [INFO]   [Export] Iniciando exportação automática para a pasta de assets do Unity...
+2026-06-29 16:23:46 [INFO] 
+============================================================
+2026-06-29 16:23:46 [INFO]   Done. Outputs at: outputs/mental_health_narrative_vr_quest/
+2026-06-29 16:23:46 [INFO]   Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG13, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+2026-06-29 16:23:46 [INFO] ============================================================
+

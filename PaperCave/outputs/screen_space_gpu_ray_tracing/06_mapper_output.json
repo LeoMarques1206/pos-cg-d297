@@ -1,0 +1,308 @@
+{
+  "paperTitle": "Hybrid Rendering for Dynamic Scene Reflections",
+  "centralContribution": "This work presents a hybrid rendering approach combining Screen Space Reflections (SSR) and GPU ray tracing to generate fast and realistic reflections in highly dynamic scenes involving both rigid and deformable body simulations. The central contribution is a custom CUDA-based ray tracing component, accelerated by a Linear Bounding Volume Hierarchy (LBVH), which demonstrates superior efficiency and scalability compared to a previous OptiX-based implementation, achieving interactive frame rates and higher visual quality for complex, dynamic geometries.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "unit_01",
+      "type": "card",
+      "priority": "primary",
+      "title": "Hybrid Reflect. System",
+      "category": "contribution",
+      "summary": "Hybrid rendering for dynamic reflections using SSR and custom CUDA ray tracing.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work presents a hybrid rendering approach combining Screen Space Reflections (SSR) and GPU ray tracing to generate fast and realistic reflections in highly dynamic scenes involving both rigid and deformable body simulations. The central contribution is a custom CUDA-based ray tracing component, accelerated by a Linear Bounding Volume Hierarchy (LBVH), which demonstrates superior efficiency and scalability compared to a previous OptiX-based implementation, achieving interactive frame rates and higher visual quality for complex, dynamic geometries.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Abstract, Section III",
+      "whyThisUnit": "This is the core innovation of the paper, detailing the combined approach for real-time, high-quality reflections in complex dynamic scenes.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_02",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Hybrid Alg. Diagram",
+      "category": "graphical_representation",
+      "summary": "Schematic of hybrid algorithm with ray traced bounces.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG3",
+        "caption": "Schematic representation of the hybrid reflection algorithm with ray traced bounces.",
+        "description": "The ray marching searches for a point of intersection for the reflection in screen space. If not found, the same pixel is alternatively rendered by ray tracing.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Figure 3",
+      "whyThisUnit": "This figure visually explains the core logic of the hybrid algorithm, showing how SSR and ray tracing complement each other.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_03",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Dynamic Reflection Problem",
+      "category": "abstract",
+      "summary": "Challenges of real-time, artifact-free reflections in dynamic scenes.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The core challenge of generating accurate, artifact-free, and efficient reflections for real-time applications, especially in highly dynamic scenes with rigid and deformable body simulations. Existing methods struggle with visual artifacts and performance in these complex environments.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Abstract, Introduction",
+      "whyThisUnit": "This unit sets the context for the paper, explaining the problem the hybrid rendering system aims to solve.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FF4444",
+        "colorName": "coral red"
+      }
+    },
+    {
+      "id": "unit_04",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "These figures visually demonstrate the challenging dynamic scenes and the visual quality and potential artifacts of the proposed solution.",
+      "stackLabel": "Dynamic Scene Visuals",
+      "items": [
+        {
+          "index": 1,
+          "title": "Artifacts: Ray Tracing",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Ganestam and Doggett solutions showing generation of artifacts.",
+            "description": "Comparison of ray tracing and hybrid approach showing artifacts caused by object occlusion. Brightness lowered to highlight issues.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Hybrid Alg. Components",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "The component diagram of our hybrid reflection algorithm.",
+            "description": "Detailed breakdown of the hybrid reflection algorithm's components, including SSR and custom CUDA ray tracing.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Dynamic Teapots Scene",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": "Frame animations of the dynamic teapots scene.",
+            "description": "Visuals of dynamic deformable Utah Teapots scene with ray distributions (SSR in blue, ray tracer in pink).",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Composition Artifacts",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG15",
+            "caption": "Artifacts during final image composition.",
+            "description": "Discontinuities between ray tracer and SSR reflections leading to artifacts in the final image.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#FFFFFF",
+        "colorName": "bright white"
+      }
+    },
+    {
+      "id": "unit_05",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "graph",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "These graphs provide quantitative results on the system's performance (frame rates) and visual quality (SSIM metric) across various dynamic scenarios.",
+      "stackLabel": "Performance & Quality",
+      "items": [
+        {
+          "index": 1,
+          "title": "Bunnies Exec. Timings",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Individual timings for each execution step (Morton, Sorting, Building, Traversal, and Bullet) over all tested configurations.",
+            "description": "Timings for 5 to 30 dynamic rigid Stanford Bunnies.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "SSIM: Rigid Bunnies",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "SSIM metric results for a rigid body simulation with 30 Stanford Bunnies generated in CUDA.",
+            "description": "Visual quality comparison using SSIM for 30 Stanford Bunnies.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Reflective Spheres Timings",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12",
+            "caption": "Processing time for the rigid body simulation with the reflective spheres in CUDA.",
+            "description": "Execution time for dynamic reflective spheres simulation in CUDA.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "SSIM: Reflective Spheres",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG14",
+            "caption": "SSIM metric results for a rigid body simulation with 10 reflective spheres generated in CUDA.",
+            "description": "Visual quality comparison using SSIM for 10 reflective spheres.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Hybrid Reflect. System",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Hybrid Alg. Diagram",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Dynamic Reflection Problem",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Dynamic Scene Visuals",
+      "score": 0.6,
+      "confidence": "medium",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Performance & Quality",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 2,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

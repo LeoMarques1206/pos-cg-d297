@@ -1,0 +1,39 @@
+{
+  "paperTitle": "Magic Journey Biomes Ai",
+  "centralContribution": "Esta contribuição foi gerada por meio de uma execução simulada para economizar tokens.",
+  "unitCount": 2,
+  "units": [
+    {
+      "unit_id": "unit_01",
+      "display_name": "Simulated Asset 1",
+      "description": "Primeiro ativo mockado.",
+      "whyThisUnit": "Raciocínio simulado",
+      "contentType": "figure",
+      "content_ref": "FIG_1.png"
+    },
+    {
+      "unit_id": "unit_02",
+      "display_name": "Simulated Asset 2",
+      "description": "Segundo ativo mockado.",
+      "whyThisUnit": "Raciocínio simulado",
+      "contentType": "figure",
+      "content_ref": "FIG_2.png"
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Simulated Asset 1",
+      "score": 0.98,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Simulated Asset 2",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false
+}

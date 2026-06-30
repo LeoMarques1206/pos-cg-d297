@@ -1,0 +1,86 @@
+{
+  "paperTitle": "QLattes: An Open-Source Browser Extension for Lattes CV Publication Analysis and Visualization",
+  "centralContribution": "QLattes is an open-source browser extension for Chrome and Firefox that automatically classifies, annotates, filters, analyzes, and visualizes journal publications listed on Brazil's Lattes CV platform using CAPES’ former Qualis ranking system. This paper presents QLattes' architecture and implementation, alongside a large-scale analysis of its real-world usage data from Google Analytics and an online survey of 1,495 anonymous participants, demonstrating its extensive reach (over 27,000 weekly active users as of October 2025) and impact within the Brazilian academic community, while highlighting its modular design for future adaptability beyond Qualis.",
+  "elements": [
+    {
+      "name": "QLattes Browser Extension",
+      "category": "contribution",
+      "description": "An open-source browser extension for Chrome and Firefox that automates classification, annotation, filtering, analysis, and visualization of journal publications on Brazil's Lattes CV platform using the Qualis ranking system.",
+      "relevanceScore": 10,
+      "justification": "It is the central contribution of the paper, directly providing the technological solution to a long-standing academic problem in Brazil.",
+      "groupingHint": ""
+    },
+    {
+      "name": "Qualis Classification System",
+      "category": "abstract",
+      "description": "CAPES' official system for ranking scientific publications (A1–C categories) in Brazil, based on metrics like Scopus citation percentile and JIF, used for evaluating graduate programs.",
+      "relevanceScore": 9,
+      "justification": "This is the core standard that QLattes applies to Lattes CV data, making the output meaningful for the Brazilian academic community and directly addressing the lack of standardized assessment.",
+      "groupingHint": "Lattes Platform"
+    },
+    {
+      "name": "QLattes Architecture (Fig 2)",
+      "category": "graphical_representation",
+      "description": "The core structure of QLattes, implemented as a Manifest V3 browser extension using standard web technologies, content scripts, and local data sources, as visually depicted in Figure 2.",
+      "relevanceScore": 9,
+      "justification": "This element visually explains the technical foundation and operation of the QLattes extension, crucial for understanding its method and implementation.",
+      "groupingHint": "QLattes User Interface (Figs 1a, 1b)"
+    },
+    {
+      "name": "Lattes Platform",
+      "category": "abstract",
+      "description": "Brazil's central repository for academic achievements, established by CNPq in 1999, which serves as the primary data source and operational context for QLattes.",
+      "relevanceScore": 8,
+      "justification": "It's the essential context and data source that defines the problem QLattes addresses and where it operates within the Brazilian academic landscape.",
+      "groupingHint": "Qualis Classification System"
+    },
+    {
+      "name": "Manual Cross-referencing Problem",
+      "category": "abstract",
+      "description": "The challenge faced by academic staff in manually cross-referencing Lattes CV publications with Qualis classifications due to the independent development of the two systems, leading to inefficiencies.",
+      "relevanceScore": 8,
+      "justification": "This is the core problem that QLattes was specifically designed to solve, providing the main motivation for its existence and demonstrating its value proposition.",
+      "groupingHint": "Lattes Platform"
+    },
+    {
+      "name": "QLattes User Interface (Figs 1a, 1b)",
+      "category": "graphical_representation",
+      "description": "The interactive elements of QLattes, including an annotated Lattes CV page that overlays Qualis information and a visualization page offering tabular or graphical views with controls, illustrated in Figures 1a and 1b.",
+      "relevanceScore": 8,
+      "justification": "The UI is the direct way users interact with and experience the core features of QLattes, making the automated classification and visualization accessible and understandable.",
+      "groupingHint": "QLattes Architecture (Fig 2)"
+    },
+    {
+      "name": "User Adoption and Geographic Reach (Figs 3-6, Table 3)",
+      "category": "graphical_representation",
+      "description": "Empirical evidence of QLattes' widespread impact, including nearly 34,000 installations, 27,000 weekly active users, and a detailed geographic distribution of users predominantly within Brazil, as shown in Figures 3, 4, 5, 6 and Table 3.",
+      "relevanceScore": 8,
+      "justification": "These results quantitatively demonstrate the real-world success, significant user base, and practical utility of QLattes within the Brazilian academic community.",
+      "groupingHint": "User Satisfaction Scores (Fig 7)"
+    },
+    {
+      "name": "Local Qualis Data Sources",
+      "category": "abstract",
+      "description": "Three integrated data sources (CAPES, PUC-RS, Scopus) containing pre-processed journal classifications and citation percentiles, bundled locally with the extension for offline, responsive classification.",
+      "relevanceScore": 7,
+      "justification": "These robust datasets are critical for QLattes' core classification functionality, ensuring accuracy and enabling its standalone, offline operation.",
+      "groupingHint": ""
+    },
+    {
+      "name": "User Satisfaction Scores (Fig 7)",
+      "category": "graph",
+      "description": "High average scores (e.g., Usability 4.38, Efficiency 4.53, Overall Satisfaction 4.39) and Net Positive Scores (NPS) derived from a 1,495-participant survey, visually represented in Figure 7.",
+      "relevanceScore": 7,
+      "justification": "These metrics from user feedback confirm the positive reception and effectiveness of QLattes, highlighting its successful user experience and perceived value.",
+      "groupingHint": "User Adoption and Geographic Reach (Figs 3-6, Table 3)"
+    },
+    {
+      "name": "HTML Parsing Vulnerability",
+      "category": "abstract",
+      "description": "A significant limitation where QLattes' functionality is vulnerable to breaking changes if CNPq alters the raw HTML structure of Lattes CV pages, requiring continuous adaptation.",
+      "relevanceScore": 6,
+      "justification": "This technical limitation is crucial for understanding the maintenance burden and potential instability of QLattes, impacting its long-term reliability.",
+      "groupingHint": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "paperTitle": "COEXIST: An Interactive Story Decision-Making Game for Mental Health Awareness",
+  "centralContribution": "This work presents COEXIST, a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders such as depression and social isolation.",
+  "elements": [
+    {
+      "name": "COEXIST Game",
+      "category": "contribution",
+      "description": "A short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders.",
+      "relevanceScore": 10,
+      "justification": "This is the central contribution and the core artifact presented by the paper, encompassing the entire system and its purpose.",
+      "groupingHint": ""
+    },
+    {
+      "name": "Mr Shadow (Depression Metaphor)",
+      "category": "image",
+      "description": "A black humanoid clone of the protagonist (Fig. 1) that serves as a metaphor for depression, dynamically shrinking or growing based on the protagonist's choices.",
+      "relevanceScore": 9,
+      "justification": "It is the primary visual and mechanical antagonist, directly illustrating the severity of depression within the game's narrative, and is explicitly linked to Fig. 1.",
+      "groupingHint": "Protagonist Character"
+    },
+    {
+      "name": "Freytag's Pyramid Narrative Structure",
+      "category": "graphical_representation",
+      "description": "The five-stage narrative framework (Exposition, Rising Action, Climax, Falling Action, Resolution) that structures the game's entire story progression (Fig. 2).",
+      "relevanceScore": 8,
+      "justification": "This structure is fundamental to the game's narrative design and emotional arc, defining how the story unfolds, and is explicitly shown in Fig. 2.",
+      "groupingHint": ""
+    },
+    {
+      "name": "Scoring System (Blue/Red Butterflies)",
+      "category": "contribution",
+      "description": "An internal game mechanic that visibly tracks the protagonist's mental health progress using blue (positive) and red (depressive) butterflies, directly influencing Mr Shadow's size.",
+      "relevanceScore": 8,
+      "justification": "It provides clear, real-time feedback to the player on the impact of their choices and is integral to the game's core loop, linking directly to Mr Shadow's transformation.",
+      "groupingHint": "Mr Shadow (Depression Metaphor)"
+    },
+    {
+      "name": "Protagonist Character",
+      "category": "contribution",
+      "description": "A socially isolated 3D humanoid character, colored in ice white, whose struggles with depression and daily decisions form the core of the game's interactive narrative.",
+      "relevanceScore": 7,
+      "justification": "The player experiences the game through this character, making their journey and mental state central to the game's emotional impact and educational purpose.",
+      "groupingHint": "Mr Shadow (Depression Metaphor)"
+    },
+    {
+      "name": "Dynamic Environment & Soundtrack",
+      "category": "contribution",
+      "description": "The game's visual environment (darkening/brightening) and background music (heavier/livelier) adapt in real-time to reflect the protagonist's deteriorating or improving mental state.",
+      "relevanceScore": 7,
+      "justification": "These elements enhance player immersion and provide continuous, non-verbal feedback on the protagonist's mental health, reinforcing the narrative's emotional weight.",
+      "groupingHint": "Scoring System (Blue/Red Butterflies)"
+    },
+    {
+      "name": "Decision-Making Gameplay",
+      "category": "contribution",
+      "description": "The interactive core of COEXIST where players make choices during the protagonist's daily routine, directly influencing their mental state and the narrative's path.",
+      "relevanceScore": 6,
+      "justification": "This mechanism is how the game engages players, allowing them to actively explore the consequences of self-care choices and understand mental health impacts.",
+      "groupingHint": "Scoring System (Blue/Red Butterflies)"
+    },
+    {
+      "name": "Climax Scene (Protagonist Collapse)",
+      "category": "image",
+      "description": "The narrative's peak moment where the protagonist collapses exhausted on the floor, with Mr Shadow standing impassively by (Fig. 5), designed to reinforce depression awareness.",
+      "relevanceScore": 6,
+      "justification": "This critical moment visually emphasizes the severity of depression and its impact, forming a pivotal emotional point in the narrative and is explicitly linked to Fig. 5.",
+      "groupingHint": "Freytag's Pyramid Narrative Structure"
+    },
+    {
+      "name": "Resolution End Scenes (Victory/Defeat)",
+      "category": "image",
+      "description": "Two distinct visual outcomes: 'victory of depression' (lifeless garden, enlarged Mr Shadow, Fig. 6a) or 'victory over depression' (lively garden, shrunken Mr Shadow, Fig. 6b).",
+      "relevanceScore": 6,
+      "justification": "These final visual states summarize the player's journey and reinforce the game's core message about the consequences of choices, directly referenced with Fig. 6a and 6b.",
+      "groupingHint": "Freytag's Pyramid Narrative Structure"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "paperTitle": "Hybrid Rendering for Dynamic Scene Reflections",
+  "centralContribution": "This work presents a hybrid rendering approach combining Screen Space Reflections (SSR) and GPU ray tracing to generate fast and realistic reflections in highly dynamic scenes involving both rigid and deformable body simulations. The central contribution is a custom CUDA-based ray tracing component, accelerated by a Linear Bounding Volume Hierarchy (LBVH), which demonstrates superior efficiency and scalability compared to a previous OptiX-based implementation, achieving interactive frame rates and higher visual quality for complex, dynamic geometries.",
+  "elements": [
+    {
+      "name": "Hybrid Rendering System",
+      "category": "contribution",
+      "description": "The proposed solution combining Screen Space Reflections (SSR) and a custom GPU ray tracing component for fast and realistic reflections in highly dynamic scenes.",
+      "relevanceScore": 10,
+      "justification": "This is the central contribution of the paper, offering a novel approach to achieving high-quality real-time reflections in complex, dynamic scenarios.",
+      "groupingHint": ""
+    },
+    {
+      "name": "Custom CUDA Ray Tracing Module",
+      "category": "graphical_representation",
+      "description": "A custom-implemented ray tracing module using CUDA, specifically designed for accelerated reflection calculations for dynamic scene geometries.",
+      "relevanceScore": 9,
+      "justification": "This is the primary technical innovation within the hybrid approach, demonstrating superior efficiency and scalability compared to OptiX, and would typically be shown in a system diagram (Figure 4).",
+      "groupingHint": "Hybrid Rendering System"
+    },
+    {
+      "name": "CUDA vs OptiX Performance Tables",
+      "category": "table",
+      "description": "Comparative performance data presented in tables (Tables 1 and 2) showing the custom CUDA module's significant superiority over OptiX in processing dynamic scenes.",
+      "relevanceScore": 9,
+      "justification": "These tables provide concrete quantitative evidence supporting the central contribution's claim of superior performance and scalability of the CUDA implementation, making the results impactful.",
+      "groupingHint": "Custom CUDA Ray Tracing Module"
+    },
+    {
+      "name": "Linear Bounding Volume Hierarchy (LBVH)",
+      "category": "graphical_representation",
+      "description": "An acceleration data structure employed in the GPU ray tracing step, chosen for its efficiency in frequent rebuilds, which is crucial for handling dynamic scene updates.",
+      "relevanceScore": 8,
+      "justification": "Critical for the performance of the ray tracing component in dynamic scenes by significantly speeding up ray traversal and often illustrated diagrammatically as a tree structure.",
+      "groupingHint": "Custom CUDA Ray Tracing Module"
+    },
+    {
+      "name": "Real-time Dynamic Scene Reflection Problem",
+      "category": "abstract",
+      "description": "The core challenge of generating accurate, artifact-free, and efficient reflections for real-time applications, especially in highly dynamic scenes with rigid and deformable body simulations.",
+      "relevanceScore": 8,
+      "justification": "Establishes the necessity for the proposed hybrid rendering system by detailing the limitations of existing real-time reflection techniques (e.g., artifacts shown in Figure 1).",
+      "groupingHint": ""
+    },
+    {
+      "name": "Rigid and Deformable Object Images",
+      "category": "image",
+      "description": "Images (e.g., Figure 1, Figure 8, Figure 11) depicting the Stanford Bunnies and Utah Teapots undergoing rigid and deformable body simulations, which are the challenging dynamic test scenes.",
+      "relevanceScore": 7,
+      "justification": "These images visually represent the complex dynamic scenes the system is designed to handle, highlighting the practical application and visual results, including occlusion scenarios.",
+      "groupingHint": "Real-time Dynamic Scene Reflection Problem"
+    },
+    {
+      "name": "Screen Space Reflections (SSR) Technique",
+      "category": "graphical_representation",
+      "description": "A rasterization-based reflection technique used as the initial step in the hybrid approach, handling reflections visible within the screen space, and also serving as a baseline for comparison.",
+      "relevanceScore": 7,
+      "justification": "It forms a crucial part of the hybrid pipeline and highlights the artifacts and limitations (like those in Figure 1) that the ray tracing component aims to overcome.",
+      "groupingHint": "Hybrid Rendering System"
+    },
+    {
+      "name": "Interactive Frame Rate Graphs",
+      "category": "graph",
+      "description": "Visual representations (e.g., Figures 6, 9, 12) illustrating the system's performance in terms of frames per second across different scenarios and complexities, crucial for real-time applications.",
+      "relevanceScore": 7,
+      "justification": "These graphs visually demonstrate whether the system meets the target interactive performance (30FPS), making the results immediately understandable for various test cases and showcasing scalability.",
+      "groupingHint": "CUDA vs OptiX Performance Tables"
+    },
+    {
+      "name": "SSIM Quality Comparison Graphs",
+      "category": "graph",
+      "description": "Graphs (e.g., Figures 7, 10, 14) showing the Structural Similarity Image Metric (SSIM) values, objectively comparing the hybrid solution's visual quality to pure ray tracing and pure SSR.",
+      "relevanceScore": 6,
+      "justification": "Provides visual evidence of the hybrid solution's high visual fidelity, indicating it closely approaches pure ray tracing quality and significantly surpasses pure SSR, especially with more bounces.",
+      "groupingHint": "Interactive Frame Rate Graphs"
+    },
+    {
+      "name": "Scalability Bottleneck (LBVH Rebuild)",
+      "category": "abstract",
+      "description": "A limitation where the computational cost of rebuilding the Linear Bounding Volume Hierarchy (LBVH) is constant regardless of ray tracing workload, affecting scalability with very large object counts.",
+      "relevanceScore": 6,
+      "justification": "Crucial for understanding the practical limits of the current system and guiding future research for further performance enhancements, despite the overall efficiency achieved.",
+      "groupingHint": "Linear Bounding Volume Hierarchy (LBVH)"
+    }
+  ]
+}

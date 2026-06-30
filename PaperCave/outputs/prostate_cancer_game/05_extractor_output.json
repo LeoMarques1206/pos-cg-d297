@@ -1,0 +1,78 @@
+{
+  "paperTitle": "Conceptual Element Extractor from Scientific Papers",
+  "centralContribution": "This work introduces CancerSP, a serious game designed to enhance decision-making and planning skills in prostate cancer management by replicating real-world symptoms, treatment patterns, and care pathways. The game allows players, in the role of medical professionals, to concurrently manage multiple prostate cancer patients, prioritizing care, making diagnoses through medical tests, and applying appropriate treatments, with the ultimate goal of saving patients' lives.",
+  "elements": [
+    {
+      "name": "CancerSP",
+      "category": "contribution",
+      "description": "This work introduces CancerSP, a serious game designed to enhance decision-making and planning skills in prostate cancer management by replicating real-world symptoms, treatment patterns, and care pathways.",
+      "relevanceScore": 10,
+      "justification": "This is the central innovation and the primary subject of the paper, detailing the proposed system and its core purpose.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "Game Home Screen (Fig. 3)",
+      "category": "graphical_representation",
+      "description": "The central visual interface (Fig. 3) where players concurrently manage three prostate cancer patients represented by dynamically falling/rising sprites, forming the core gameplay mechanic.",
+      "relevanceScore": 9,
+      "justification": "This figure directly illustrates the innovative multi-patient management system, a key aspect of CancerSP's contribution to decision-making training, enabling simultaneous patient care.",
+      "groupingHint": "CancerSP"
+    },
+    {
+      "name": "Action Buttons Interface (Fig. 4)",
+      "category": "graphical_representation",
+      "description": "The six distinct action buttons (Fig. 4) players use for diagnosis (e.g., PSA & DRE, US & MRI, Biopsy) and treatment (e.g., Radiotherapy, Surgery, Chemotherapy, Hormone therapy) within the game.",
+      "relevanceScore": 8,
+      "justification": "These buttons represent the direct interface for player decisions and actions, crucial for implementing strategies and interacting with the game's medical scenarios, as explicitly shown in Fig. 4.",
+      "groupingHint": "Game Home Screen (Fig. 3)"
+    },
+    {
+      "name": "Modeled Clinical Case Scenarios (Fig. 2)",
+      "category": "graphical_representation",
+      "description": "The 18 classic clinical case scenarios (Fig. 2) integrated into the game, covering a wide range of prostate conditions from healthy to metastatic, providing varied challenges for players.",
+      "relevanceScore": 8,
+      "justification": "These scenarios represent the complex patient data players must interpret, central to developing decision-making skills, and are likely visually summarized in Fig. 2 to convey scope.",
+      "groupingHint": "Game Home Screen (Fig. 3)"
+    },
+    {
+      "name": "Dynamic Symptom Animations",
+      "category": "graphical_representation",
+      "description": "Unity-created animations depict visual changes in patient symptoms, such as throbbing pain, incremental bleeding, and tumor growth, providing real-time feedback.",
+      "relevanceScore": 7,
+      "justification": "These visual cues are essential for players to monitor patient status and make timely, informed decisions, enhancing immersion and realism in the game.",
+      "groupingHint": "Game Home Screen (Fig. 3)"
+    },
+    {
+      "name": "Player Life Points System",
+      "category": "graphical_representation",
+      "description": "The in-game system where players start with five 'life points' (heart icons) and lose one for each patient lost or wrong decision, leading to game over if all are depleted.",
+      "relevanceScore": 6,
+      "justification": "This system visually communicates risk and consequences, providing a measurable impact of player decisions and influencing strategy and engagement in the medical simulation.",
+      "groupingHint": "Game Home Screen (Fig. 3)"
+    },
+    {
+      "name": "Victory Screen (Fig. 6)",
+      "category": "image",
+      "description": "A visual 'victory screen' (Fig. 6) displayed upon successful game completion, featuring scattered light blue prostate cancer awareness ribbons.",
+      "relevanceScore": 6,
+      "justification": "This image provides clear positive visual feedback for game success and reinforces the game's prostate cancer awareness theme, as depicted in Fig. 6.",
+      "groupingHint": "Funeral Scene (Fig. 7)"
+    },
+    {
+      "name": "Funeral Scene (Fig. 7)",
+      "category": "image",
+      "description": "A visual 'funeral scene' (Fig. 7) displayed upon patient loss, accompanied by a minute's silence and a personalized 'You were not able to save Patient's Name' message.",
+      "relevanceScore": 6,
+      "justification": "This image delivers strong negative visual and auditory feedback for failure, emphasizing the game's serious medical context and the consequences of player decisions, as depicted in Fig. 7.",
+      "groupingHint": "Victory Screen (Fig. 6)"
+    },
+    {
+      "name": "Start Screen (Fig. 1)",
+      "category": "image",
+      "description": "The game's initial 'near-dead silent start screen' (Fig. 1), which provides the entry point for players into the CancerSP experience.",
+      "relevanceScore": 5,
+      "justification": "As the initial visual impression for the user, it sets the tone for the game and is specifically referenced as Fig. 1 in the paper's description of audio elements.",
+      "groupingHint": "null"
+    }
+  ]
+}

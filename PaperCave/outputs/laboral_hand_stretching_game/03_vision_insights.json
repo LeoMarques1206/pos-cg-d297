@@ -1,0 +1,74 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "The figure likely shows a screenshot or visual representation of the serious game \"LABORAL\" in action, illustrating its user interface and gameplay elements.",
+      "relevance": "This image provides a primary visual introduction to the game, allowing readers to understand its appearance and how users interact with it, which is central to the paper's contribution of presenting \"LABORAL.\"",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_1.png",
+      "description": "This figure likely displays specific exercises or visual instructions designed to prevent Tendinitis, specifically the first set of such content, as indicated by '#1'.",
+      "relevance": "This image directly supports the paper's contribution by illustrating practical exercises and preventive measures integrated into the LABORAL game, demonstrating how it addresses workplace health issues by showing specific content players interact with for health prevention.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_2.png",
+      "description": "This figure likely displays specific exercises or visual instructions designed to prevent Tendinitis, specifically the first set of such content, as indicated by '#1'.",
+      "relevance": "This image directly supports the paper's contribution by illustrating practical exercises and preventive measures integrated into the LABORAL game, demonstrating how it addresses workplace health issues by showing specific content players interact with for health prevention.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure likely displays specific exercises or visual instructions designed to prevent Tendinitis, representing a second set of such content.",
+      "relevance": "This image directly supports the paper's contribution by illustrating practical exercises and preventive measures integrated into the LABORAL game, demonstrating how it addresses workplace health issues by showing specific content players interact with for health prevention.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure likely displays specific exercises or visual instructions designed to prevent Tendinitis, representing a third set of such content.",
+      "relevance": "This image directly supports the paper's contribution by illustrating practical exercises and preventive measures integrated into the LABORAL game, demonstrating how it addresses workplace health issues by showing specific content players interact with for health prevention.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure likely displays specific exercises or visual instructions designed to prevent Carpal Tunnel Syndrome.",
+      "relevance": "This image directly supports the paper's contribution by illustrating practical exercises and preventive measures integrated into the LABORAL game, demonstrating how it addresses workplace health issues by showing specific content players interact with for health prevention.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure likely displays specific exercises or visual instructions designed to prevent Lateral and Medial Epicondylitis.",
+      "relevance": "This image directly supports the paper's contribution by illustrating practical exercises and preventive measures integrated into the LABORAL game, demonstrating how it addresses workplace health issues by showing specific content players interact with for health prevention.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "The figure explicitly shows a diagram illustrating the various activities and their flow within the LABORAL game.",
+      "relevance": "This diagram is crucial for understanding the game's overall structure, player progression, and the interaction between different game components, thereby detailing the system design of \"LABORAL.\"",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG8_1.png",
+      "description": "This figure likely presents an example of the exercises that are part of the LABORAL game, showing how they are displayed or performed within the game environment.",
+      "relevance": "These images provide concrete examples of the physical activities or instructions provided by the game, reinforcing the paper's focus on integrating preventive exercises into a serious game for workplace health.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_2.png",
+      "description": "This figure likely presents an example of the exercises that are part of the LABORAL game, showing how they are displayed or performed within the game environment.",
+      "relevance": "These images provide concrete examples of the physical activities or instructions provided by the game, reinforcing the paper's focus on integrating preventive exercises into a serious game for workplace health.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

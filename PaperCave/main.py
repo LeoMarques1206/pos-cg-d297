@@ -124,6 +124,14 @@ def _ask_resume(paper_id: str, from_step_arg: str | None) -> str | None:
     if not detected:
         return None
 
+    import os
+    if os.environ.get("PAPERCAVE_NON_INTERACTIVE") == "1":
+        if os.environ.get("PAPERCAVE_FORCE_FRESH") == "1":
+            print(f"  [GUI] Progresso anterior detectado em {paper_id}, mas iniciando do zero conforme solicitado.")
+            return None
+        print(f"  [GUI] Progresso anterior detectado em {paper_id}. Retomando automaticamente de '{detected}'.")
+        return detected
+
     outputs_dir = Path(__file__).parent / "outputs" / paper_id
     existing = [f.name for f in sorted(outputs_dir.glob("0*.json"))]
     print(f"  Progresso anterior detectado em outputs/{paper_id}/:")
@@ -201,6 +209,7 @@ def cmd_batch(args) -> None:
         skip_figures = args.skip_figures,
         skip_export  = args.skip_export,
         only         = args.paper,
+        extract_only = args.extract_only,
     )
 
 
@@ -211,6 +220,27 @@ def cmd_export(args) -> None:
 
     paper_id = slugify(Path(args.paper).name) if Path(args.paper).exists() else args.paper
     _do_export(paper_id)
+
+
+def cmd_gui(args) -> None:
+    """Launch the Web Dashboard and GUI interface."""
+    import webbrowser
+    import subprocess
+    import sys
+    
+    port = args.port
+    _print_header(f"gui  >  servidor na porta {port}")
+    
+    app_path = Path(__file__).parent / "diagnostics" / "app.py"
+    cmd = [sys.executable, str(app_path), "--port", str(port)]
+    
+    print("  [GUI] Abrindo painel do dashboard no navegador...")
+    webbrowser.open(f"http://127.0.0.1:{port}")
+    
+    try:
+        subprocess.run(cmd, check=True)
+    except KeyboardInterrupt:
+        print("\n  [GUI] Servidor finalizado pelo usuário (Ctrl+C).")
 
 
 def _do_export(paper_id: str) -> None:
@@ -287,12 +317,20 @@ def build_parser() -> argparse.ArgumentParser:
     p_bat.add_argument("--simple", action="store_true")
     p_bat.add_argument("--skip-figures", action="store_true")
     p_bat.add_argument("--skip-export",  action="store_true")
+    p_bat.add_argument("--extract-only", action="store_true")
 
     # ── export ────────────────────────────────────────────────────────────────
     p_exp = sub.add_parser("export", help="Exporta resultado para Unity (sem IA)")
     p_exp.add_argument(
         "--paper", required=True,
         help="paper_id ou caminho da pasta (ex: joyce_2020)",
+    )
+
+    # ── gui ───────────────────────────────────────────────────────────────────
+    p_gui = sub.add_parser("gui", help="Inicia o Web Dashboard interativo e Executor de Pipeline")
+    p_gui.add_argument(
+        "--port", type=int, default=5000,
+        help="Porta para rodar o servidor Flask (padrão: 5000)"
     )
 
     return parser
@@ -313,5 +351,6 @@ if __name__ == "__main__":
         "run":     cmd_run,
         "batch":   cmd_batch,
         "export":  cmd_export,
+        "gui":     cmd_gui,
     }
     dispatch[args.command](args)

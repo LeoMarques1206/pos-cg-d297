@@ -1,0 +1,32 @@
+2026-06-29 16:48:36 [INFO] Session log: outputs\interactive_story_mental_health\session_20260629_164836.log
+2026-06-29 16:48:36 [INFO] 
+============================================================
+2026-06-29 16:48:36 [INFO]   Paper Cave v5 — interactive_story_mental_health
+2026-06-29 16:48:36 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:48:36 [INFO]   20260629_164836
+2026-06-29 16:48:36 [INFO]   Mode: resuming from 'reviewer'
+2026-06-29 16:48:36 [INFO] ============================================================
+
+2026-06-29 16:48:37 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:48:37 [INFO]   Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2
+2026-06-29 16:48:38 [INFO]   Figure captions extracted: 7/7
+2026-06-29 16:49:17 [INFO]   [1/6] Reader — usando output salvo.
+2026-06-29 16:49:17 [INFO]   [2/6] Vision Analyst — usando output salvo (7 figuras).
+2026-06-29 16:49:17 [INFO]   [3/6] Summarizer — usando output salvo.
+2026-06-29 16:49:17 [INFO]   [4/6] Extractor — usando output salvo.
+2026-06-29 16:49:17 [INFO] 
+  +- [6/6] Reviewer — re-avaliando manifest salvo
+2026-06-29 16:49:17 [INFO]   Mapper attempt 1/3
+2026-06-29 16:49:46 [WARNING]   Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4.category
+  Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_v
+2026-06-29 16:49:46 [INFO]   Mapper attempt 2/3
+2026-06-29 16:50:32 [INFO]   Manifest approved on attempt 2.
+2026-06-29 16:50:32 [INFO]   +- ✓ 75s — 4 unidade(s)
+2026-06-29 16:50:32 [INFO]   [Export] Iniciando exportação automática para a pasta de assets do Unity...
+2026-06-29 16:50:32 [INFO] 
+============================================================
+2026-06-29 16:50:32 [INFO]   Done. Outputs at: outputs/interactive_story_mental_health/
+2026-06-29 16:50:32 [INFO]   Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2
+2026-06-29 16:50:32 [INFO] ============================================================
+

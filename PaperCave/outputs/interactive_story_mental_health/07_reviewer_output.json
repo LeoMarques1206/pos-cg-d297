@@ -1,0 +1,215 @@
+{
+  "paperTitle": "COEXIST: An Interactive Story Decision-Making Game for Mental Health Awareness",
+  "centralContribution": "This work presents COEXIST, a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders such as depression and social isolation.",
+  "unitCount": 4,
+  "units": [
+    {
+      "id": "unit_01",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Narrative Structure",
+      "category": "graphical_representation",
+      "summary": "Game's story follows Freytag's Pyramid: Exposition, Rising Action, Climax, Fa...",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG2",
+        "caption": "Story structure diagram represented by Freytag’s Pyramid.",
+        "description": "The five-stage narrative framework (Exposition, Rising Action, Climax, Falling Action, Resolution) that structures the game's entire story progression.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Fig. 2. Story structure diagram represented by Freytag’s Pyramid.",
+      "whyThisUnit": "Explains the fundamental structure of the game's story, crucial for understanding its progression and emotional impact.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_02",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Game for Mental Health",
+      "category": "abstract",
+      "summary": "COEXIST is an interactive story game promoting self-care for mental health aw...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "COEXIST is a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders such as depression and social isolation.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Paper Abstract",
+      "whyThisUnit": "Provides a concise overview of the paper's purpose and the game's central theme.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit_03",
+      "type": "card",
+      "priority": "primary",
+      "title": "COEXIST: Mental Health Game",
+      "category": "contribution",
+      "summary": "COEXIST is an interactive game for mental health awareness focusing on self-c...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work presents COEXIST, a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders such as depression and social isolation.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Paper's Central Thesis",
+      "whyThisUnit": "This is the core innovation and the primary reason for the paper's existence, highlighting the game's unique purpose.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_04",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "These figures provide key visual context for the game's characters, gameplay, and emotional narrative arc.",
+      "stackLabel": "Game Visuals",
+      "items": [
+        {
+          "index": 1,
+          "title": "Protagonist & Mr Shadow",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Fig. 1. Main character of the COEXIST game and Mr Shadow.",
+            "description": "Visual of protagonist and Mr Shadow, a metaphor for depression changing with choices.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Gameplay Screenshots",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Fig. 4. Screenshots of the game environments.",
+            "description": "Gameplay showing protagonist and Mr Shadow exploring environments and interacting.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Climax Scene",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5. Screenshots of the climax scene.",
+            "description": "Climax: protagonist collapsed with Mr Shadow nearby, representing the narrative peak.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "End Scenes",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_1",
+            "caption": "Fig. 6. End scenes of the COEXIST game.",
+            "description": "End scenes: visual outcomes (lifeless/lively garden) reflecting player choices.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Narrative Structure",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game for Mental Health",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "COEXIST: Mental Health Game",
+      "score": 0.85,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Visuals",
+      "score": 0.98,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 2,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

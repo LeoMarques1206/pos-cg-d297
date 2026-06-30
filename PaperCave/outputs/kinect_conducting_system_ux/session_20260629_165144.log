@@ -1,0 +1,15 @@
+2026-06-29 16:51:44 [INFO] Session log: outputs\kinect_conducting_system_ux\session_20260629_165144.log
+2026-06-29 16:51:44 [INFO] 
+============================================================
+2026-06-29 16:51:44 [INFO]   Paper Cave v5 — kinect_conducting_system_ux
+2026-06-29 16:51:44 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:51:44 [INFO]   20260629_165144
+2026-06-29 16:51:44 [INFO]   Mode: resuming from 'reviewer'
+2026-06-29 16:51:44 [INFO] ============================================================
+
+2026-06-29 16:51:45 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:51:45 [INFO]   Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4_1, FIG4_2, FIG6, FIG7, FIG8, FIG9
+2026-06-29 16:51:46 [INFO]   Figure captions extracted: 10/10
+2026-06-29 16:52:45 [INFO]   [1/6] Reader — usando output salvo.
+2026-06-29 16:52:45 [INFO]   [2/6] Vision Analyst — output não encontrado, continuando sem insights visuais.
+2026-06-29 16:52:45 [INFO]   [3/6] Summarizer — usando output salvo.

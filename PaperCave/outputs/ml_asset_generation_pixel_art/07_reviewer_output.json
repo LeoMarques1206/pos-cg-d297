@@ -1,0 +1,257 @@
+{
+  "paperTitle": "A Deep Learning Assisted Pipeline for Pixel Art Sprite Generation",
+  "centralContribution": "This paper presents a deep-learning-assisted technique for generating pixel art sprites from line art sketches, aiming to reduce asset-making costs and time in game development. It proposes a novel variant of the Pix2Pix architecture to automatically convert line art into gray (shaded) and color sprites, demonstrating its effectiveness within the production pipeline of a 2D pixel-art fighting game, Trajes Fatais: Suits of Fate.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "unit_01",
+      "type": "card",
+      "priority": "primary",
+      "title": "DL Pixel Art Sprites",
+      "category": "contribution",
+      "summary": "Novel deep-learning pipeline for auto-generating pixel art sprites from line ...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This paper presents a deep-learning-assisted technique for generating pixel art sprites from line art sketches, aiming to reduce asset-making costs and time in game development. It proposes a novel variant of the Pix2Pix architecture to automatically convert line art into gray (shaded) and color sprites, demonstrating its effectiveness within the production pipeline of a 2D pixel-art fighting game, Trajes Fatais: Suits of Fate.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Central Contribution Statement",
+      "whyThisUnit": "This unit presents the core innovation and main purpose of the paper: automating pixel art sprite creation using deep learning.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_02",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "Automated pixel art sprite generation via deep learning for game development.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The paper introduces a deep-learning pipeline for generating pixel art sprites from line art, reducing game asset creation costs. It utilizes a modified Pix2Pix architecture to produce gray and color sprites, validated in a 2D fighting game production.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Paper Abstract",
+      "whyThisUnit": "Provides a quick overview of the paper's aim, method, and context, serving as an initial entry point for understanding.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit_03",
+      "type": "card",
+      "priority": "secondary",
+      "title": "U-Net Architecture",
+      "category": "graphical_representation",
+      "summary": "Overview of the U-Net architecture, showing encoder and decoder networks for ...",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG5",
+        "caption": "Figure 5: Overview of the U-Net architecture. The orange colored encoder network (on the left) and the green colored decoder network (on the right) are two components linked through standard and skip connections.",
+        "description": "This figure illustrates the U-Net architecture, a modified Pix2Pix variant, that forms the core of the deep learning pipeline for converting line art to pixel art sprites. It details the encoder-decoder structure and connections.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Figure 5",
+      "whyThisUnit": "FIG5 is the most representative diagram of the system's underlying technical method, essential for understanding how the sprites are generated.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_04",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "This stack groups various visual examples from the paper, showcasing the generation process, successful outputs, and key limitations.",
+      "stackLabel": "Sprite Examples & Issues",
+      "items": [
+        {
+          "index": 1,
+          "title": "Sprite Pipeline Steps",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Figure 2: From left to right, the rough sketch, line sprite, gray sprite, color sprite and final sprite, composed of grayscale lookup indices.",
+            "description": "Illustrates the transformation steps from a rough sketch to the final pixel art sprite, demonstrating the system's full pipeline.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Generated Sprite Samples",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Figure 7: A sample of the generated sprites to be handed to the design team. From top to bottom row, similar poses to the ones on the training set, absent poses on the training set, and radically different poses from all others.",
+            "description": "Shows examples of sprites generated by the system, including variations in poses and how the system handles known vs. unseen poses.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Inconsistent Shading",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10",
+            "caption": "Figure 10: Example of the inconsistent shading issue for a generated sprite sequence. This problem is evident on the platypus body. Over the course of the animation, this region is often shaded either darkly or brightly.",
+            "description": "Highlights a major limitation of the system: inconsistent shading across animation frames, leading to visual artifacts in sequences.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_05",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "This stack presents quantitative details about the problem and evaluation metrics, even if specific table data couldn't be extracted directly.",
+      "stackLabel": "Quantitative Insights",
+      "items": [
+        {
+          "index": 1,
+          "title": "Asset Creation Bottleneck",
+          "contentType": "text_panel",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Creating pixel art sprites manually is time-consuming, with shading alone taking 30-40 minutes per sprite. This bottleneck significantly increases game development costs and time, justifying the need for automated solutions.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Gray vs. Color Metrics",
+          "contentType": "text_panel",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Quantitative analysis using RMSE, MAE, and SSIM metrics showed that generated gray sprites performed significantly better and were visually more similar to ground truth than color ones. Color* results, while worse in mean error, showed reduced error standard deviation for color deviation.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "DL Pixel Art Sprites",
+      "score": 0.8,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "U-Net Architecture",
+      "score": 0.8,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Sprite Examples & Issues",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Quantitative Insights",
+      "score": 0.4,
+      "confidence": "low",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

@@ -1,0 +1,15 @@
+2026-06-29 16:53:55 [INFO] Session log: outputs\magic_journey_biomes_ai\session_20260629_165355.log
+2026-06-29 16:53:55 [INFO] 
+============================================================
+2026-06-29 16:53:55 [INFO]   Paper Cave v5 — magic_journey_biomes_ai
+2026-06-29 16:53:55 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:53:55 [INFO]   20260629_165355
+2026-06-29 16:53:55 [INFO]   Mode: resuming from 'reviewer'
+2026-06-29 16:53:55 [INFO] ============================================================
+
+2026-06-29 16:53:57 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:53:57 [INFO]   Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6
+2026-06-29 16:53:57 [INFO]   Figure captions extracted: 6/6
+2026-06-29 16:54:29 [INFO]   [1/6] Reader — usando output salvo.
+2026-06-29 16:54:29 [INFO]   [2/6] Vision Analyst — output não encontrado, continuando sem insights visuais.
+2026-06-29 16:54:29 [INFO]   [3/6] Summarizer — usando output salvo.

@@ -1,0 +1,47 @@
+2026-06-29 16:32:06 [INFO] Session log: outputs\qlattes_qualis_browser_extension\session_20260629_163206.log
+2026-06-29 16:32:06 [INFO] 
+============================================================
+2026-06-29 16:32:06 [INFO]   Paper Cave v5 — qlattes_qualis_browser_extension
+2026-06-29 16:32:06 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:32:06 [INFO]   20260629_163206
+2026-06-29 16:32:06 [INFO] ============================================================
+
+2026-06-29 16:32:07 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:32:07 [INFO]   Paper figures found: FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+2026-06-29 16:32:07 [INFO]   Figure captions extracted: 8/8
+2026-06-29 16:33:45 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-29 16:33:46 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-29 16:35:22 [INFO]   +- ✓ 96s — 94,099 chars
+2026-06-29 16:35:22 [INFO] 
+  +- [2/6] Vision Analyst — 8 figura(s)
+2026-06-29 16:35:36 [INFO]   Vision Analyst described 8 figure(s).
+2026-06-29 16:35:36 [INFO]   +- ✓ 14s — 8 figura(s) descritas
+2026-06-29 16:35:36 [INFO] 
+  +- [3/6] Summarizer
+2026-06-29 16:36:06 [INFO]   +- ✓ 30s — 8,451 chars
+2026-06-29 16:36:06 [INFO] 
+  +- [4/6] Extractor
+2026-06-29 16:36:43 [INFO]   +- ✓ 38s
+2026-06-29 16:36:43 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-29 16:36:43 [INFO]   Mapper attempt 1/3
+2026-06-29 16:37:10 [ERROR] Error executing listener call_llm_native_tools: Invalid response from LLM call - None or empty.
+2026-06-29 16:37:41 [ERROR] Error executing listener call_llm_native_tools: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-29 16:38:37 [WARNING]   Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4
+  Value error, Unit 'unit_05' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_05', 'type':...one, 'looping':
+2026-06-29 16:38:37 [INFO]   Mapper attempt 2/3
+2026-06-29 16:39:24 [WARNING]   Mapper attempt 2 schema error: ValidationError: 1 validation error for UnitManifest
+units.5
+  Value error, Unit 'unit_06' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_06', 'type':...me': 'luminous 
+2026-06-29 16:39:24 [INFO]   Mapper attempt 3/3
+2026-06-29 16:40:19 [INFO]   Manifest approved on attempt 3.
+2026-06-29 16:40:19 [INFO]   +- ✓ 216s — 5 unidade(s), 3 tentativa(s)
+2026-06-29 16:40:19 [INFO]   [Export] Iniciando exportação automática para a pasta de assets do Unity...
+2026-06-29 16:40:19 [INFO] 
+============================================================
+2026-06-29 16:40:19 [INFO]   Done. Outputs at: outputs/qlattes_qualis_browser_extension/
+2026-06-29 16:40:19 [INFO]   Paper figures referenced: FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+2026-06-29 16:40:19 [INFO] ============================================================
+

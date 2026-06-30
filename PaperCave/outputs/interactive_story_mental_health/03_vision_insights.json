@@ -1,0 +1,53 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This image likely shows the visual representation of the main character from the COEXIST game alongside Mr Shadow, who metaphorically represents the character's mental state of depression.",
+      "relevance": "This figure introduces the central characters of the game, visually defining the protagonist and the symbolic representation of their depression, which is core to the game's theme and narrative.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This diagram appears to represent the story structure of the COEXIST game, organized according to Freytag's Pyramid model.",
+      "relevance": "The figure is relevant as it outlines the narrative framework of the game, demonstrating how its story progresses through exposition, rising action, climax, falling action, and resolution, which is fundamental to its design and player experience.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This image likely displays a sequence of animation keyframes, showing the progression of the COEXIST game's splash screen from top to bottom.",
+      "relevance": "This figure provides insight into the game's visual presentation and aesthetic during its initial loading or title sequence, setting the tone for the player's experience.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure likely consists of several screenshots from the game, depicting the protagonist and Mr Shadow navigating through bedroom and bathroom areas, with the protagonist engaging with various objects.",
+      "relevance": "These screenshots are relevant as they illustrate actual gameplay, showcasing the game's environment, character models, and interactive elements, which are central to how players experience the narrative and mechanics.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure likely contains screenshots from the game's climax scene, showing the protagonist lying on the floor with Mr Shadow nearby in various household areas like the dining room, living room, and kitchen.",
+      "relevance": "This figure highlights a critical emotional and narrative peak within the game, demonstrating the visual representation of the protagonist's struggle during a pivotal moment of the story.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6_1.png",
+      "description": "This image appears to show one of the end scenes from the COEXIST game, illustrating a potential conclusion to the story.",
+      "relevance": "This figure is relevant for demonstrating the resolution or outcome of the game's narrative, providing insight into the game's potential messages or character development at its conclusion.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6_2.png",
+      "description": "This image likely displays another one of the end scenes from the COEXIST game, potentially representing an alternative or subsequent conclusion to the game's story.",
+      "relevance": "As part of the end scenes, this figure further illustrates the game's narrative resolution or outcomes, contributing to the understanding of the player's journey and its ultimate impact within the game's theme.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

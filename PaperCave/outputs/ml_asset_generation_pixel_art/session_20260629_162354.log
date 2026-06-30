@@ -1,0 +1,36 @@
+2026-06-29 16:23:54 [INFO] Session log: outputs\ml_asset_generation_pixel_art\session_20260629_162354.log
+2026-06-29 16:23:54 [INFO] 
+============================================================
+2026-06-29 16:23:54 [INFO]   Paper Cave v5 — ml_asset_generation_pixel_art
+2026-06-29 16:23:54 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:23:54 [INFO]   20260629_162354
+2026-06-29 16:23:54 [INFO] ============================================================
+
+2026-06-29 16:23:55 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:23:55 [INFO]   Paper figures found: FIG1, FIG10, FIG11, FIG12, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2, FIG6_3, FIG6_4, FIG6_5, FIG7, FIG8_1, FIG8_2, FIG8_3, FIG9
+2026-06-29 16:23:55 [INFO]   Figure captions extracted: 18/18
+2026-06-29 16:24:44 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-29 16:25:31 [INFO]   +- ✓ 48s — 44,691 chars
+2026-06-29 16:25:31 [INFO] 
+  +- [2/6] Vision Analyst — 18 figura(s)
+2026-06-29 16:25:58 [INFO]   Vision Analyst described 18 figure(s).
+2026-06-29 16:25:58 [INFO]   +- ✓ 27s — 18 figura(s) descritas
+2026-06-29 16:25:58 [INFO] 
+  +- [3/6] Summarizer
+2026-06-29 16:26:24 [INFO]   +- ✓ 26s — 7,592 chars
+2026-06-29 16:26:24 [INFO] 
+  +- [4/6] Extractor
+2026-06-29 16:26:49 [INFO]   +- ✓ 25s
+2026-06-29 16:26:49 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-29 16:26:49 [INFO]   Mapper attempt 1/3
+2026-06-29 16:27:50 [INFO]   Manifest approved on attempt 1.
+2026-06-29 16:27:50 [INFO]   +- ✓ 61s — 5 unidade(s), 1 tentativa(s)
+2026-06-29 16:27:50 [INFO]   [Export] Iniciando exportação automática para a pasta de assets do Unity...
+2026-06-29 16:27:51 [INFO] 
+============================================================
+2026-06-29 16:27:51 [INFO]   Done. Outputs at: outputs/ml_asset_generation_pixel_art/
+2026-06-29 16:27:51 [INFO]   Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2, FIG6_3, FIG6_4, FIG6_5, FIG7, FIG8_1, FIG8_2, FIG8_3, FIG9
+2026-06-29 16:27:51 [INFO] ============================================================
+

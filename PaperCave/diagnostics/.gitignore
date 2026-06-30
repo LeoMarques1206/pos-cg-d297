@@ -1,0 +1,12 @@
+# Ignore everything by default in this folder
+*
+
+# Allow directories to be traversed
+!*/
+
+# Do not ignore Python files
+!*.py
+!**/*.py
+
+# Do not ignore this .gitignore file
+!.gitignore

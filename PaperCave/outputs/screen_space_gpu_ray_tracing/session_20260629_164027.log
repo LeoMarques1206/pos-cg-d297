@@ -1,0 +1,41 @@
+2026-06-29 16:40:27 [INFO] Session log: outputs\screen_space_gpu_ray_tracing\session_20260629_164027.log
+2026-06-29 16:40:27 [INFO] 
+============================================================
+2026-06-29 16:40:27 [INFO]   Paper Cave v5 — screen_space_gpu_ray_tracing
+2026-06-29 16:40:27 [INFO]   Provider: google/gemini-2.5-flash
+2026-06-29 16:40:27 [INFO]   20260629_164027
+2026-06-29 16:40:27 [INFO] ============================================================
+
+2026-06-29 16:40:28 [INFO]   Vision Analyst: VISUAL mode
+2026-06-29 16:40:28 [INFO]   Paper figures found: FIG1, FIG10, FIG11, FIG12, FIG13, FIG14, FIG15, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+2026-06-29 16:40:28 [INFO]   Figure captions extracted: 15/15
+2026-06-29 16:41:14 [INFO] 
+  +- [1/6] Reader — extraindo texto do PDF
+2026-06-29 16:41:57 [INFO]   +- ✓ 43s — 42,136 chars
+2026-06-29 16:41:57 [INFO] 
+  +- [2/6] Vision Analyst — 15 figura(s)
+2026-06-29 16:42:19 [INFO]   Vision Analyst described 15 figure(s).
+2026-06-29 16:42:19 [INFO]   +- ✓ 22s — 15 figura(s) descritas
+2026-06-29 16:42:19 [INFO] 
+  +- [3/6] Summarizer
+2026-06-29 16:42:50 [INFO]   +- ✓ 31s — 8,059 chars
+2026-06-29 16:42:50 [INFO] 
+  +- [4/6] Extractor
+2026-06-29 16:43:33 [INFO]   +- ✓ 44s
+2026-06-29 16:43:33 [INFO] 
+  +- [5/6] Mapper → Reviewer (máx 3 tentativas)
+2026-06-29 16:43:33 [INFO]   Mapper attempt 1/3
+2026-06-29 16:44:09 [ERROR] Error executing listener call_llm_native_tools: Invalid response from LLM call - None or empty.
+2026-06-29 16:45:17 [WARNING]   Mapper attempt 1 schema error: ValidationError: 2 validation errors for UnitManifest
+units.2.category
+  Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_
+2026-06-29 16:45:17 [INFO]   Mapper attempt 2/3
+2026-06-29 16:46:26 [INFO]   Manifest approved on attempt 2.
+2026-06-29 16:46:26 [INFO]   +- ✓ 172s — 5 unidade(s), 2 tentativa(s)
+2026-06-29 16:46:26 [INFO]   [Export] Iniciando exportação automática para a pasta de assets do Unity...
+2026-06-29 16:46:26 [INFO] 
+============================================================
+2026-06-29 16:46:26 [INFO]   Done. Outputs at: outputs/screen_space_gpu_ray_tracing/
+2026-06-29 16:46:26 [INFO]   Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG13, FIG14, FIG15, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+2026-06-29 16:46:26 [INFO] ============================================================
+

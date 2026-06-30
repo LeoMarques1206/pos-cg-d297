@@ -1,0 +1,86 @@
+{
+  "paperTitle": "Porting and Enhancing a Mental Health Narrative Game from Desktop to Meta Quest 2 VR",
+  "centralContribution": "This paper details the intricate process of porting and enhancing a mental health narrative game from a desktop platform to the Meta Quest 2 virtual reality (VR) platform, offering valuable insights and a roadmap for future VR game design and development. The core contribution lies in adapting the game to VR's unique capabilities and limitations while innovatively incorporating new features—such as updated object interactions, direct VR interactions, an overhauled user interface, and a virtual body—to improve gameplay, intensify player presence and immersion, and enhance mental health awareness.",
+  "elements": [
+    {
+      "name": "VR Mental Health Game Port & Enhancement",
+      "category": "contribution",
+      "description": "The adaptation and enrichment of an existing mental health narrative game from desktop to Meta Quest 2 VR, introducing new features for immersion and mental health awareness.",
+      "relevanceScore": 10,
+      "justification": "This is the core, overarching contribution of the paper, detailing the transformation and improvement of a game for a new, immersive platform to address mental health.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "VR Redesign for Meta Quest 2",
+      "category": "abstract",
+      "description": "The comprehensive process of adapting the desktop game to the Meta Quest 2 VR platform, focusing on performance, comfort, interaction, UI, and other VR-specific aspects.",
+      "relevanceScore": 9,
+      "justification": "This represents the fundamental technical approach and methodology used to achieve the paper's central contribution, encapsulating the entire development effort.",
+      "groupingHint": "Performance Optimization"
+    },
+    {
+      "name": "Global Depression Challenge",
+      "category": "abstract",
+      "description": "Depression is a significant global health challenge affecting 280 million individuals, underscoring the critical need for mental disorder prevention, treatment, and awareness campaigns.",
+      "relevanceScore": 8,
+      "justification": "This element establishes the profound real-world problem that the paper's contribution aims to address, providing crucial context for its societal relevance.",
+      "groupingHint": "VR Technology Potential for Mental Health"
+    },
+    {
+      "name": "Performance Optimization",
+      "category": "abstract",
+      "description": "Techniques applied to reduce polygon counts, disable invisible objects, lower render buffer resolution, and simplify meshes to maintain high Frames Per Second (FPS) on Meta Quest 2 without sacrificing visual quality.",
+      "relevanceScore": 8,
+      "justification": "Crucial for the technical feasibility and user experience of any VR application, directly impacting comfort and playability by ensuring smooth, high-frame-rate performance.",
+      "groupingHint": "Comfort and Motion Sickness Prevention"
+    },
+    {
+      "name": "Comfort and Motion Sickness Prevention",
+      "category": "abstract",
+      "description": "Strategies like prioritizing high FPS, offering comfortable movement options (teleportation, snap turning), adding a 3D avatar, and carefully programming camera movements to mitigate VR motion sickness.",
+      "relevanceScore": 8,
+      "justification": "Addresses a significant hurdle in VR adoption, directly enhancing player comfort and accessibility, making the immersive experience viable for a broader audience.",
+      "groupingHint": "Performance Optimization"
+    },
+    {
+      "name": "Mental Health Level System and Object Interaction Mechanics",
+      "category": "abstract",
+      "description": "A core gameplay system where player actions (e.g., tidying, healthy eating) dynamically impact the protagonist's mental health level, visually reflected by the antagonist's size, enabled through interactable objects with colliders and animations.",
+      "relevanceScore": 7,
+      "justification": "This system directly ties player agency to the paper's goal of mental health awareness, making the abstract concept of mental well-being tangible and interactive within the game.",
+      "groupingHint": "Colliders for Interactable Objects"
+    },
+    {
+      "name": "Overhauled User Interface (UI)",
+      "category": "abstract",
+      "description": "A new floating dialogue system using a flat model that orbits the user's field of view via linear interpolation, ensuring dialogues remain visible and accessible without breaking VR immersion.",
+      "relevanceScore": 7,
+      "justification": "UI is critical for player interaction and narrative delivery in VR, and this specific design innovatively addresses VR challenges to enhance user experience and engagement.",
+      "groupingHint": "null"
+    },
+    {
+      "name": "Colliders for Interactable Objects",
+      "category": "image",
+      "description": "Colliders (Figure 5) were applied to interactable objects, enabling player engagement with environmental elements crucial for mental health level progression within the game.",
+      "relevanceScore": 7,
+      "justification": "Figure 5 is explicitly mentioned as illustrating a key technical aspect of object interaction, which is central to the game's mechanics and the mental health theme, demonstrating how abstract mechanics are materialized.",
+      "groupingHint": "Mental Health Level System and Object Interaction Mechanics"
+    },
+    {
+      "name": "VR Technology Potential for Mental Health",
+      "category": "abstract",
+      "description": "Standalone VR devices like Meta Quest 2, with high-resolution displays and 6 Degrees of Freedom tracking, offer unprecedented potential for creating immersive and engaging interactive experiences for mental health.",
+      "relevanceScore": 7,
+      "justification": "This element conceptualizes the technological opportunity and its specific advantages for the domain, framing why VR is a suitable platform for this mental health intervention.",
+      "groupingHint": "Global Depression Challenge"
+    },
+    {
+      "name": "Limitations of Current Implementation",
+      "category": "abstract",
+      "description": "Current limitations include challenges with protagonist's elbow articulation, the use of static hand positions, and the need for more realistic autonomous leg animations.",
+      "relevanceScore": 6,
+      "justification": "This conceptual element summarizes the identified shortcomings and areas for future research and development, providing a realistic view of the system's current state.",
+      "groupingHint": "null"
+    }
+  ]
+}

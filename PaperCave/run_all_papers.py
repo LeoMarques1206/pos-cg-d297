@@ -21,6 +21,11 @@ import traceback
 from pathlib import Path
 from datetime import datetime
 
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except AttributeError:
+    pass
+
 from utils.slug import slugify
 from utils.image_extractor import extract_figures_from_pdf
 
@@ -146,6 +151,7 @@ def run_all(
     skip_figures: bool = False,
     skip_export: bool = False,
     only: str | None = None,
+    extract_only: bool = False,
 ) -> None:
     ts_start = datetime.now()
     _start_keyboard_monitor()
@@ -182,6 +188,18 @@ def run_all(
                 fig_results[paper_folder] = f"ERRO: {e}"
                 print(f"    FALHOU: {e}")
             print()
+
+    if extract_only:
+        print(f"\n{'='*66}")
+        print("  Resumo da Extração de Figuras")
+        print(f"{'='*66}")
+        print(f"  {'Paper':<45}  Status")
+        print(f"  {'-'*45}  {'-'*15}")
+        for paper_folder, status in fig_results.items():
+            print(f"  {paper_folder.name[:45]:<45}  {status}")
+        print()
+        _cancel.set()
+        return
 
     # ──────────────────────────────────────────────────────────────────────────
     # FASE 2 — pipeline IA + export Unity (um paper por vez)
@@ -320,6 +338,11 @@ Exemplos:
         help="Pula o unity_export após cada paper.",
     )
     parser.add_argument(
+        "--extract-only",
+        action="store_true",
+        help="Executa apenas a extração de figuras de todos os papers e finaliza.",
+    )
+    parser.add_argument(
         "--paper",
         default=None,
         help="Processa só o paper cujo nome de pasta contém este texto.",
@@ -332,4 +355,5 @@ Exemplos:
         skip_figures = args.skip_figures,
         skip_export  = args.skip_export,
         only         = args.paper,
+        extract_only = args.extract_only,
     )

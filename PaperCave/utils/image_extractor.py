@@ -12,6 +12,12 @@ import fitz  # pymupdf
 from pathlib import Path
 from PIL import Image
 import io
+import sys
+
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except AttributeError:
+    pass
 
 MIN_WIDTH  = 80
 MIN_HEIGHT = 80
@@ -19,6 +25,10 @@ MAX_CAPTION_CHARS = 500   # truncate very long captions
 
 _CAPTION_START = re.compile(
     r"^\s*(?:[Ff]ig\.?\s*|[Ff]igure\s+|[Ff]igura\s+|FIG\.?\s*|FIGURE\s+|FIGURA\s+)(\d+(?:\([a-zA-Z]\))?|\d+[a-zA-Z]?)(?:[:.\-\u2013\u2014]|\s+[A-Z\"'\[({\*•]|\s*$)"
+)
+
+_SUBFIG_MARKER = re.compile(
+    r"\b(?:[Aa]\)|[Bb]\)|[Cc]\)|[Dd]\)|[Ee]\)|[Ff]\)|\([Aa]\)|\([Bb]\)|\([Cc]\)|\([Dd]\)|\([Ee]\)|\([Ff]\)|[Pp]anel\s+[A-F]|[Ff]ig(?:ure)?\s+\d+[a-f])\b"
 )
 
 # ── Column-Aware Page Analysis Helper Functions ──────────────────────────────
@@ -102,17 +112,6 @@ def slice_block_vertically(img: Image.Image, min_blank_width: int, tolerance: in
     prev_x = 0
     split_points = [g[0] + g[2]//2 for g in valid_gaps] + [w]
     
-    # Pre-check all parts for safety
-    for sx in split_points:
-        pw = sx - prev_x
-        # If any cell is too small or aspect ratio is extreme, reject slicing
-        if pw < 50:
-            return [img]
-        aspect = pw / h
-        if aspect < 0.22 or aspect > 4.5:
-            return [img]
-        prev_x = sx
-        
     # Slicing is safe, crop columns
     prev_x = 0
     for sx in split_points:
@@ -158,16 +157,6 @@ def slice_block_horizontally(img: Image.Image, min_blank_height: int, tolerance:
     prev_y = 0
     split_points = [g[0] + g[2]//2 for g in valid_gaps] + [h]
     
-    # Pre-check all parts for safety
-    for sy in split_points:
-        ph = sy - prev_y
-        if ph < 50:
-            return [img]
-        aspect = w / ph
-        if aspect < 0.22 or aspect > 4.5:
-            return [img]
-        prev_y = sy
-        
     # Slicing is safe, crop rows
     prev_y = 0
     for sy in split_points:
@@ -176,7 +165,7 @@ def slice_block_horizontally(img: Image.Image, min_blank_height: int, tolerance:
     return parts
 
 
-def slice_block(img: Image.Image, min_blank_width: int = 5, tolerance: int = 245) -> list[Image.Image]:
+def slice_block(img: Image.Image, min_blank_width: int = 15, tolerance: int = 245) -> list[Image.Image]:
     w, h = img.size
     if w < 150 or h < 150:
         return [img]
@@ -253,18 +242,27 @@ def slice_block(img: Image.Image, min_blank_width: int = 5, tolerance: int = 245
             row_images.append(row_img)
             prev_y = sy
             
-        final_cells = []
+        parts = []
         for r_img in row_images:
-            final_cells.extend(slice_block_vertically(r_img, min_blank_width, tolerance))
-        return final_cells
-        
+            parts.extend(slice_block_vertically(r_img, min_blank_width, tolerance))
     elif valid_col_gaps:
-        return slice_block_vertically(img, min_blank_width, tolerance)
+        parts = slice_block_vertically(img, min_blank_width, tolerance)
     else:
-        return slice_block_horizontally(img, min_blank_width, tolerance)
+        parts = slice_block_horizontally(img, min_blank_width, tolerance)
+        
+    # Post-check final cells for aspect ratios and minimum size
+    for p in parts:
+        pw, ph = p.size
+        if pw < 50 or ph < 50:
+            return [img]
+        aspect = pw / ph
+        if aspect < 0.22 or aspect > 4.5:
+            return [img]
+            
+    return parts
 
 
-def _split_germinated_image(image_bytes: bytes, min_blank_width: int = 5, tolerance: int = 245) -> list[bytes]:
+def _split_germinated_image(image_bytes: bytes, min_blank_width: int = 15, tolerance: int = 245) -> list[bytes]:
     """
     Tries to slice a composite/germinated image into sub-figures based on grid layout analysis.
     Returns a list of image bytes for each slice. If no slice is performed, returns [image_bytes].
@@ -349,12 +347,24 @@ def extract_figures_from_pdf(
                 # Look ahead for multi-line caption continuations
                 j = i + 1
                 while j < len(text_blocks):
+                    # Stop if current caption text already ends with a period
+                    if caption_text.strip().endswith('.'):
+                        break
+                    # Stop if caption rectangle is getting too tall
+                    if caption_rect.height > 75:
+                        break
+                        
                     next_b = text_blocks[j]
                     dy = next_b[1] - caption_rect.y1
                     if 0 <= dy < 15 and (next_b[0] < caption_rect.x1 + 20 and next_b[2] > caption_rect.x0 - 20):
+                        # Stop if next block starts with uppercase and current ends with typical punctuation
+                        next_text = next_b[4].replace("\n", " ").strip()
+                        if next_text and next_text[0].isupper() and caption_text.strip().endswith(('.', '!', '?')):
+                            break
+                            
                         caption_rect.include_point(fitz.Point(next_b[0], next_b[1]))
                         caption_rect.include_point(fitz.Point(next_b[2], next_b[3]))
-                        caption_text += " " + next_b[4].replace("\n", " ").strip()
+                        caption_text += " " + next_text
                         j += 1
                     else:
                         break
@@ -387,6 +397,9 @@ def extract_figures_from_pdf(
             above_rects = []
             for d in drawings:
                 dr = d["rect"]
+                # Ignore running headers/footers
+                if dr.y1 < 55 or dr.y0 > page.rect.height - 55:
+                    continue
                 # Ignore full-page border lines or backgrounds
                 if dr.width > page.rect.width - 40 and dr.height > page.rect.height - 40:
                     continue
@@ -397,6 +410,9 @@ def extract_figures_from_pdf(
                         above_rects.append(dr)
             for img in images:
                 ir = fitz.Rect(img["bbox"])
+                # Ignore running headers/footers
+                if ir.y1 < 55 or ir.y0 > page.rect.height - 55:
+                    continue
                 if ir.y0 >= y_min_above and ir.y1 <= y_max_above + 5:
                     if is_in_same_column(ir, caption_rect, page.rect.width):
                         above_rects.append(ir)
@@ -426,6 +442,9 @@ def extract_figures_from_pdf(
                 below_rects = []
                 for d in drawings:
                     dr = d["rect"]
+                    # Ignore running headers/footers
+                    if dr.y1 < 55 or dr.y0 > page.rect.height - 55:
+                        continue
                     if dr.width > page.rect.width - 40 and dr.height > page.rect.height - 40:
                         continue
                     if dr.width > page.rect.width - 60 and dr.height < 5:
@@ -435,6 +454,9 @@ def extract_figures_from_pdf(
                             below_rects.append(dr)
                 for img in images:
                     ir = fitz.Rect(img["bbox"])
+                    # Ignore running headers/footers
+                    if ir.y1 < 55 or ir.y0 > page.rect.height - 55:
+                        continue
                     if ir.y0 >= y_min_below - 5 and ir.y1 <= y_max_below:
                         if is_in_same_column(ir, caption_rect, page.rect.width):
                             below_rects.append(ir)
@@ -457,6 +479,34 @@ def extract_figures_from_pdf(
                     min(page.rect.width, caption_rect.x1 + 20),
                     caption_rect.y0 - 2
                 )
+            else:
+                # Sandwiched text block inclusion for figure labels (like (a), (b), or labels)
+                for b in text_blocks:
+                    bx0, by0, bx1, by1, btext, bno, btype = b
+                    b_rect = fitz.Rect(bx0, by0, bx1, by1)
+                    # Skip the caption block(s) themselves
+                    if b_rect.y0 >= caption_rect.y0 - 2 and b_rect.y1 <= caption_rect.y1 + 2:
+                        continue
+                    is_sandwiched = False
+                    if above_rects: # Figure is ABOVE caption
+                        if b_rect.y0 >= union_rect.y0 - 10 and b_rect.y1 <= caption_rect.y0 + 2:
+                            is_sandwiched = True
+                    else: # Figure is BELOW caption
+                        if b_rect.y0 >= caption_rect.y1 - 2 and b_rect.y1 <= union_rect.y1 + 10:
+                            is_sandwiched = True
+                    if is_sandwiched and is_in_same_column(b_rect, caption_rect, page.rect.width):
+                        union_rect.include_point(fitz.Point(b_rect.x0, b_rect.y0))
+                        union_rect.include_point(fitz.Point(b_rect.x1, b_rect.y1))
+
+            # Column boundary clipping: restrict horizontal bounds if caption is column-restricted
+            if union_rect:
+                mid_x = page.rect.width / 2
+                cap_left = caption_rect.x1 < mid_x + 30
+                cap_right = caption_rect.x0 > mid_x - 30
+                if cap_left and not cap_right:
+                    union_rect.x1 = min(union_rect.x1, mid_x + 10)
+                elif cap_right and not cap_left:
+                    union_rect.x0 = max(union_rect.x0, mid_x - 10)
                 
             try:
                 # Render using clip at 2x scale (144 DPI)
@@ -467,7 +517,33 @@ def extract_figures_from_pdf(
                     print(f"    [Extractor] Erro ao renderizar FIG_{fig_num}: {e}")
                 continue
                 
-            parts = _split_germinated_image(img_bytes)
+            # Calculate total bitmap image area and count images inside union_rect to avoid slicing flowcharts/labels
+            total_img_area = 0
+            candidate_images = []
+            for img in images:
+                ir = fitz.Rect(img["bbox"])
+                intersect = ir & union_rect
+                if intersect.is_valid and not intersect.is_empty:
+                    if intersect.width > 10 and intersect.height > 10:
+                        candidate_images.append(img)
+                        total_img_area += intersect.width * intersect.height
+                    
+            fig_area = union_rect.width * union_rect.height
+            img_ratio = total_img_area / fig_area if fig_area > 0 else 0
+            num_images = len(candidate_images)
+            
+            # Check for subfigure markers in caption text
+            has_subfigure_markers = bool(_SUBFIG_MARKER.search(caption_text))
+            
+            # Allow slicing only if:
+            # 1. We have multiple physical images and they cover a significant area (> 20%)
+            # 2. OR the caption explicitly marks subfigures (e.g. (a), (b), etc.)
+            allow_slicing = (num_images > 1 and img_ratio > 0.20) or has_subfigure_markers
+            
+            if allow_slicing:
+                parts = _split_germinated_image(img_bytes)
+            else:
+                parts = [img_bytes]
             
             if len(parts) == 1:
                 dest = paper_folder / f"FIG_{fig_num}.png"

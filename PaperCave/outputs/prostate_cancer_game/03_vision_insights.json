@@ -1,0 +1,60 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This image likely shows the initial screen presented to users when starting the CancerSP game.",
+      "relevance": "This figure introduces the user interface of the serious game developed for prostate cancer education, which is the core contribution of the paper.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This image appears to represent various classic clinical case scenarios related to prostate cancer, which are integrated into the CancerSP game.",
+      "relevance": "This figure highlights a key educational component of the CancerSP game, demonstrating how it presents realistic medical challenges for players to learn from.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This image likely depicts the main navigation or dashboard screen of the CancerSP game, where players can choose options or view their progress.",
+      "relevance": "This figure illustrates the central hub of the game's interface, providing insight into the user experience and accessibility of the serious game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This image appears to show the various medical tests, imaging techniques, biopsy procedures, and treatment options for prostate cancer that are simulated and available within the CancerSP game.",
+      "relevance": "This figure showcases the comprehensive range of medical interventions included in the game, emphasizing its educational depth and practical applicability for learning about prostate cancer management.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This image likely illustrates the overall logical progression and decision-making pathways within the CancerSP game using a flowchart format.",
+      "relevance": "This figure provides an overview of the game's structure and mechanics, which is crucial for understanding how players navigate and interact with the serious game designed for prostate cancer education.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This image appears to show a 'game over' screen from CancerSP, specifically indicating a successful outcome where the player managed to save many lives.",
+      "relevance": "This figure demonstrates a positive feedback mechanism and an example of a successful game outcome, reinforcing the educational goal of the serious game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This image likely depicts a somber funeral scene, which is displayed in the game as a consequence of losing a patient's life, followed by a moment of silence.",
+      "relevance": "This figure highlights a pedagogical design choice in the CancerSP game to evoke empathy and emphasize the real-world impact of medical decisions, reinforcing the gravity of the educational content.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8.png",
+      "description": "This image appears to show a 'game over' screen from CancerSP, specifically indicating an unsuccessful outcome where the player failed to save many lives.",
+      "relevance": "This figure illustrates a negative feedback mechanism and an example of an unsuccessful game outcome, underscoring the challenges and critical decision-making involved in prostate cancer management within the educational game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "paperTitle": "Conceptual Element Extractor from Scientific Papers",
+  "centralContribution": "This work introduces CancerSP, a serious game designed to enhance decision-making and planning skills in prostate cancer management by replicating real-world symptoms, treatment patterns, and care pathways. The game allows players, in the role of medical professionals, to concurrently manage multiple prostate cancer patients, prioritizing care, making diagnoses through medical tests, and applying appropriate treatments, with the ultimate goal of saving patients' lives.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "unit_01",
+      "type": "card",
+      "priority": "primary",
+      "title": "CancerSP Game",
+      "category": "contribution",
+      "summary": "Serious game for prostate cancer management, improving decision-making and pl...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work introduces CancerSP, a serious game designed to enhance decision-making and planning skills in prostate cancer management by replicating real-world symptoms, treatment patterns, and care pathways. The game allows players, in the role of medical professionals, to concurrently manage multiple prostate cancer patients, prioritizing care, making diagnoses through medical tests, and applying appropriate treatments, with the ultimate goal of saving patients' lives.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Extracted Element: CancerSP",
+      "whyThisUnit": "This is the central innovation and the primary subject of the paper, detailing the proposed system and its core purpose.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_02",
+      "type": "card",
+      "priority": "secondary",
+      "title": "CancerSP Abstract",
+      "category": "abstract",
+      "summary": "CancerSP enhances prostate cancer care skills through a multi-patient managem...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "CancerSP is a serious game designed to improve medical professionals' decision-making and planning skills in prostate cancer management. Players handle multiple patient cases simultaneously, performing diagnoses via medical tests and applying appropriate treatments to save lives, mimicking real-world clinical scenarios.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Paper Abstract Summary",
+      "whyThisUnit": "Provides a concise, objective summary of the paper's content and purpose.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit_03",
+      "type": "card",
+      "priority": "secondary",
+      "title": "CancerSP Game Flowchart",
+      "category": "graphical_representation",
+      "summary": "General flowchart of CancerSP game progression, from start to game over condi...",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG5",
+        "caption": "Fig. 5. General ﬂowchart of the CancerSP game.",
+        "description": "This flowchart illustrates the overall structure and sequence of gameplay in CancerSP, outlining player actions, decision points, and the progression from game start to various game over states.",
+        "chartType": null,
+        "title": null,
+        "data": null,
+        "frameCount": null,
+        "frames": null,
+        "transitionType": null,
+        "looping": null
+      },
+      "conceptualOrigin": "Available Figure: FIG5 - General ﬂowchart of the CancerSP game.",
+      "whyThisUnit": "This figure provides a critical high-level overview of the game's mechanics and player journey, essential for understanding its design.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_04",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Extracted Figures: FIG1, FIG3, FIG4",
+      "whyThisUnit": "These figures show the primary visual interfaces players interact with during the CancerSP game, from the start screen to core gameplay and action buttons.",
+      "stackLabel": "Game Interfaces",
+      "items": [
+        {
+          "index": 1,
+          "title": "Game Home Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Fig. 3. Game home screen of CancerSP game.",
+            "description": "The central interface where players manage multiple patients, represented by dynamically falling/rising sprites, forming the core gameplay mechanic.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Action Buttons",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Fig. 4. Medical tests and imaging, biopsy, and treatments for prostate cancer, available in the CancerSP game.",
+            "description": "The six distinct action buttons players use for diagnosis (e.g., PSA & DRE, US & MRI, Biopsy) and treatment (e.g., Radiotherapy, Surgery, Chemotherapy, Hormone therapy) within the game.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Start Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Fig. 1. Start screen of CancerSP game.",
+            "description": "The game's initial 'near-dead silent start screen', which provides the entry point for players into the CancerSP experience.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_05",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Extracted Figures: FIG6, FIG7, FIG8",
+      "whyThisUnit": "These figures depict the visual feedback provided to players at the conclusion of the game, based on their performance and outcomes.",
+      "stackLabel": "Game Outcomes",
+      "items": [
+        {
+          "index": 1,
+          "title": "Victory Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Fig. 6. Game over of CancerSP game: the player saved many lives.",
+            "description": "A visual 'victory screen' displayed upon successful game completion, featuring scattered light blue prostate cancer awareness ribbons.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Funeral Scene",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Fig. 7. Funeral scene, displayed every time a life is lost, followed by a minute’s silence.",
+            "description": "A visual 'funeral scene' displayed upon patient loss, accompanied by a minute's silence and a personalized 'You were not able to save Patient's Name' message.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Defeat Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": "Fig. 8. Game over screen of CancerSP game: player lost many lives.",
+            "description": "The 'game over' screen displayed when a player loses multiple lives, indicating an unsuccessful game.",
+            "chartType": null,
+            "title": null,
+            "data": null,
+            "frameCount": null,
+            "frames": null,
+            "transitionType": null,
+            "looping": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#FFFFFF",
+        "colorName": "bright white"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "CancerSP Game",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "CancerSP Abstract",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "CancerSP Game Flowchart",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Interfaces",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Outcomes",
+      "score": 0.95,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 2,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}
