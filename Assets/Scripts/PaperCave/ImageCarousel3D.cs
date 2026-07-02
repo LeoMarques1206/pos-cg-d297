@@ -229,28 +229,52 @@ private static Material BuildArrowMaterial(Color color)
         {
             if (_extraRoot == null || !_extraRoot.gameObject.activeInHierarchy) return;
             if (_figureRT == null) return;
-            if (_cam == null) { _cam = Camera.main; if (_cam == null) return; }
+            if (_cam == null)
+            {
+                _cam = Camera.main;
+                if (_cam == null) return;
+            }
 
             _figureRT.GetWorldCorners(_corners); // 0=BL, 1=TL, 2=TR, 3=BR
-            Vector3 leftMid = (_corners[0] + _corners[1]) * 0.5f;
-            Vector3 rightMid = (_corners[2] + _corners[3]) * 0.5f;
 
-            Vector3 across = rightMid - leftMid;
-            float halfW = across.magnitude * 0.5f;
+            // Cantos inferiores do card
+            Vector3 bottomLeft = _corners[0];
+            Vector3 bottomRight = _corners[3];
+
+            // Direção horizontal do card
+            Vector3 across = bottomRight - bottomLeft;
+            float width = across.magnitude;
             Vector3 dir = across.sqrMagnitude > 1e-6f ? across.normalized : _cam.transform.right;
 
-            Vector3 center = (leftMid + rightMid) * 0.5f;
+            // Direção vertical do card
+            Vector3 up = (_corners[1] - _corners[0]).normalized;
+            float height = Vector3.Distance(_corners[0], _corners[1]);
+
+            // Ajustes de posição
+            float horizontalInset = width * 0.35f;//edgeInset;
+            float verticalOffset = height * 0.18f; // Aumenta este valor para descer mais
+
+            Vector3 center = (bottomLeft + bottomRight) * 0.5f;
             Vector3 camPush = (_cam.transform.position - center).normalized * 0.03f;
 
             if (_prevArrow != null && _prevArrow.gameObject.activeSelf)
             {
-                Vector3 p = leftMid + dir * (halfW * edgeInset) + camPush;
+                Vector3 p = bottomLeft
+                            + dir * horizontalInset
+                            - up * verticalOffset
+                            + camPush;
+
                 _prevArrow.position = p;
                 _prevArrow.rotation = Quaternion.LookRotation(p - _cam.transform.position, Vector3.up);
             }
+
             if (_nextArrow != null && _nextArrow.gameObject.activeSelf)
             {
-                Vector3 p = rightMid - dir * (halfW * edgeInset) + camPush;
+                Vector3 p = bottomRight
+                            - dir * horizontalInset
+                            - up * verticalOffset
+                            + camPush;
+
                 _nextArrow.position = p;
                 _nextArrow.rotation = Quaternion.LookRotation(p - _cam.transform.position, Vector3.up);
             }
