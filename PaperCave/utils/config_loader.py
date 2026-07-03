@@ -87,6 +87,12 @@ def _build_llm(cfg: dict, extra_kwargs: dict | None = None) -> LLM:
         if base_url:
             kwargs["base_url"] = base_url
         kwargs["api_key"] = api_key or "local"
+        
+        # Se o modelo não começar com 'openai/' para um provider customizado,
+        # adicionamos o prefixo 'openai/' para evitar que o crewai tente instanciar
+        # provedores nativos com base em palavras-chave como 'google' no nome do modelo.
+        if not model.startswith("openai/"):
+            kwargs["model"] = f"openai/{model}"
 
     if extra_kwargs:
         kwargs.update(extra_kwargs)

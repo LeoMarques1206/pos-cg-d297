@@ -47,58 +47,54 @@ analyze_images:
 extract:
   description: >
     Based on the paper summary provided by the previous agent,
-    extract between 8 and 10 relevant conceptual elements following
+    extract between 6 and 10 relevant conceptual elements following
     exactly the ExtractionResult schema.
     If the summary includes a VISUAL INSIGHTS block, factor it into
-    the analysis. Also note which elements naturally group together
-    (same section, compared conditions, logical sequence) — mark them
-    with groupingHint pointing to the other element's name.
-    Order elements from most to least relevant.
-    Return ONLY valid JSON, no additional text, no markdown.
+    the analysis.
+    
+    CRITICAL EXTRACTS:
+    - You must extract exactly one "abstract" element containing a summary of the actual paper's abstract.
+    - You must extract exactly one "contribution" element describing the actual main contribution of the paper.
+    - Classify all other extracted elements under graphical_representation, image, graph, or table.
+    - **Table Data Extraction**: If an element is a "table", you MUST read the paper text (or use your knowledge/search) to extract its actual headers and rows, and format them into the `data` field as: `{"columns": ["Col1", "Col2"], "rows": [["val1", "val2"], ["val3", "val4"]]}`. Do not leave the `data` field as null or empty for tables.
+    - Order elements from most to least relevant.
+    - Return ONLY valid JSON, no additional text, no markdown.
   expected_output: >
-    Valid JSON with paperTitle, centralContribution, and a list of 8-10 elements,
-    each with name, category, description, relevanceScore, justification,
-    and groupingHint (the name of a related element, or null).
+    Valid JSON with paperTitle, centralContribution, and a list of elements,
+    each with name, category (abstract, contribution, graphical_representation, image, graph, table),
+    description, relevanceScore, justification, groupingHint, and table data (for tables).
+
 map:
   description: >
+    Based on the extracted elements and the visual insights of the figures,
+    produce a Unit Manifest organizing the elements and ALL figures into exactly up to 6 draggable units.
 
-    Com base nas informações do paper e nas classificações visuais das figuras fornecidas pelo Vision Analyst,
-    produza um Unit Manifest organizando as cartas estritamente nas 6 categorias a seguir:
-
-    1. graphical_representation (Tipo: "card", priority="secondary" ou "primary"):
-       - O elemento visual (figura) mais importante de todo o paper (ex: o diagrama geral da arquitetura, pipeline ou pipeline terminal).
-       - Selecione a FIG mais representativa para ser esta carta (contentType="figure" com assetReference correspondente).
-       - IMPORTANTE: Esta figura é excluída de qualquer outra stack abaixo.
-       - Se o paper não tiver figuras, descreva conceitualmente (contentType="text_panel").
-
-    2. abstract (Tipo: "card", priority="secondary"):
-       - Resumo objetivo do paper (contentType="text_panel").
-
-    3. contribution (Tipo: "card", priority="primary"):
-       - A contribuição principal e inovação do paper (contentType="text_panel"). Deve ser a única carta com priority="primary" (geralmente id="unit_01").
-
-    4. image (Tipo: "stack", priority="secondary"):
-       - Stack contendo de 2 a 4 sub-cartas (items) com figuras do paper classificadas pelo Vision Analyst como "photo_or_screenshot" ou "diagram_or_flowchart".
-       - Exclua a figura que já foi usada em "graphical_representation".
-       - contentType de cada item deve ser "figure" com seu assetReference correspondente.
-
-    5. graph (Tipo: "stack", priority="secondary"):
-       - Stack contendo de 2 a 4 sub-cartas (items) correspondentes aos gráficos e representações quantitativas do paper (Figuras classificadas como "chart_or_graph").
-       - IMPORTANTE: Não confunda "graph" de gráfico de barras/linhas com "graph" de grafos de redes de nós/fluxogramas (que devem ser mapeados como "diagram_or_flowchart" em "image").
-       - Use contentType="figure" e o correspondente assetReference (ex: FIG3 ou FIG1_2) para exibir a imagem do gráfico, e inclua quaisquer dados numéricos extraídos em content.data.
-
-    6. table (Tipo: "stack", priority="secondary"):
-       - Stack contendo de 2 a 4 sub-cartas (items) correspondentes às tabelas de dados do paper (incluindo figuras classificadas como "table_image" convertidas para texto estruturado).
-       - Cada item deve conter as colunas e linhas com dados reais do paper em content.data.
+    REGRAS DE CONSTRUÇÃO DE UNIDADES:
+    1. contribution (Tipo: "card", priority="primary", contentType="text_panel"):
+       - A contribuição principal do paper. Esta deve ser a única unidade com priority="primary" no manifest inteiro.
+    2. abstract (Tipo: "card", priority="secondary", contentType="text_panel"):
+       - Resumo conciso do abstract real do paper.
+    3. graphical_representation (Tipo: "card", priority="secondary", contentType="figure"):
+       - O elemento visual (figura) mais importante de todo o paper (ex: o diagrama geral da arquitetura, pipeline ou interface principal).
+       - Defina content.assetReference com o nome da figura correspondente (ex: FIG1). Esta figura deve ser excluída de qualquer outra stack abaixo.
+    4. image (Tipo: "stack", priority="secondary", category="image"):
+       - Stack contendo TODAS as figuras classificadas como "photo_or_screenshot" ou "diagram_or_flowchart" em ordem numérica sequencial. Exclua a figura usada em graphical_representation.
+       - Cada item deve ter contentType="figure" e o seu assetReference.
+    5. graph (Tipo: "stack", priority="secondary", category="graph"):
+       - Stack contendo TODAS as figuras correspondentes aos gráficos (Figuras classificadas como "chart_or_graph") em ordem numérica sequencial.
+       - Cada item deve ter contentType="figure" e o seu correspondente assetReference (ex: FIG3).
+    6. table (Tipo: "stack", priority="secondary", category="table"):
+       - Stack contendo TODAS as tabelas do paper (incluindo figuras classificadas como "table_image" ou tabelas descritas em texto) em ordem numérica sequencial.
+       - Cada item deve ter contentType="table" e conter as colunas e linhas estruturadas copiando o campo `data` obtido do elemento correspondente do Extractor diretamente para `content.data`. Nunca use contentType="figure" para tabelas.
 
     REGRAS CRÍTICAS:
-    - O número total de draggable units (cards + stacks) gerados deve ser colocado em unitCount e deve ser exatamente igual ao tamanho da lista de units criada.
-    - Se uma categoria de stack (image, graph, table) não tiver elementos no paper, não gere essa unidade. O total de unidades geradas variará de 3 a 6.
-    - Limites de caracteres:
+    - **Exaustividade de Figuras**: Todas as figuras listadas em available_figures devem ser mapeadas exatamente uma vez. Nenhuma figura pode ser deixada de fora.
+    - **Ordem Sequencial**: Os itens dentro de qualquer stack (image, graph, table) devem seguir estritamente a ordem numérica original das figuras (ex: FIG1, FIG2, FIG3...).
+    - **Limites de caracteres**:
       - title (cards) / stackLabel (stacks): máximo 30 caracteres.
       - summary (single cards only): máximo 80 caracteres.
-      - frames de animação não são necessários (remova templates antigos).
-      - Todos os dados numéricos de tabelas/gráficos devem vir limpos em content.data.
+      - description (para text_panel - Abstract e Contribution): máximo 500 caracteres (permita parágrafos completos, ricos e com profundidade metodológica).
+      - description (para figure, graph ou table): máximo 200 caracteres (legendas curtas e objetivas).
 
     {available_figures}
     {asset_catalog_section}
@@ -106,44 +102,23 @@ map:
 
     Retorne APENAS o JSON válido seguindo o schema UnitManifest.
   expected_output: >
-    JSON válido contendo paperTitle, centralContribution, unitCount (quantidade de unidades geradas, entre 3 e 6),
-    e a lista de units seguindo exatamente as 6 categorias definidas. Cada unit deve ter: id (unit_01...),
-    type ("card" ou "stack"), priority, title/stackLabel, category (uma das 6 listadas), contentType, content, styleHint.stadas), contentType, content, styleHint.
-
-map_simple:
-  description: >
-    Based on the extracted elements provided by the previous agent,
-    produce a Unit Manifest in SIMPLE MODE with exactly {card_count} single
-    cards (no stacks). contentType must be "figure", "chart", or "table" only
-    (no animation or text_panel).
-
-    Unit count required: {card_count}
-
-    SIMPLE MODE RULES:
-    - All units must be type="card" (no stacks)
-    - contentType must be "figure", "chart", or "table" only
-    - For figure cards: use assetReference if available; never use figure without FIG*.png
-    - For chart/table cards: always include real paper values in content.data
-    - title: maximum 30 characters
-    - summary: maximum 80 characters
-
-    Return ONLY valid JSON following the UnitManifest schema.
-  expected_output: >
-    Valid JSON following the UnitManifest schema with exactly {card_count}
-    single card units (type="card") using only contentType="figure",
-    "chart", or "table".
+    JSON válido contendo paperTitle, centralContribution, unitCount (quantidade de unidades geradas, máximo 6),
+    e a lista de units seguindo exatamente as 6 categorias definidas.
 
 review:
   description: >
     Evaluate the Unit Manifest provided by the previous agent.
     Assign a score (0.0 to 1.0) for each unit based on its grounding
-    in the actual paper content. Keep the scores in the SAME ORDER as the
+    in the actual content of the paper. Keep the scores in the SAME ORDER as the
     units appear in the manifest, using each unit's title or stackLabel
     (or id) as suggestedName.
     If 2 or more units have score < 0.6, set approved=false and provide
     specific per-unit feedback to guide the retry.
-    For stack units, evaluate whether the grouping is justified and whether
-    each item's contentType fits the data.
+    
+    Verify that:
+    - All available figures are represented.
+    - Table stack items have structured data (columns and rows populated).
+    - Titles are <= 30 characters and summaries <= 80 characters.
     Previous attempt history: {attempt_history}
     Current attempt: {current_attempt}
     Return ONLY valid JSON following the ReviewResult schema.

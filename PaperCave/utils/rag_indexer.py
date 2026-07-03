@@ -91,13 +91,13 @@ def _google_embed(api_key: str) -> tuple[Callable, Callable]:
     return _embed_doc, _embed_query
 
 
-def _openai_embed(api_key: str, base_url: Optional[str] = None) -> tuple[Callable, Callable]:
-    """OpenAI Embeddings — text-embedding-3-small (1536 dims)."""
+def _openai_embed(api_key: str, base_url: Optional[str] = None, model: str = "text-embedding-3-small") -> tuple[Callable, Callable]:
+    """OpenAI-compatible Embeddings — customizable model."""
     def _embed(text: str) -> list[float]:
         from openai import OpenAI
-        client = OpenAI(api_key=api_key, base_url=base_url)
+        client = OpenAI(api_key=api_key or "local", base_url=base_url)
         result = client.embeddings.create(
-            model = "text-embedding-3-small",
+            model = model,
             input = text[:8000],
         )
         return result.data[0].embedding
@@ -143,9 +143,9 @@ def get_embed_fns(cfg: dict) -> tuple[Callable, Callable]:
     Routing:
       google            → Gemini Embeddings API (gemini-embedding-2)
       openai /
-      openai_compatible → OpenAI Embeddings API (text-embedding-3-small)
+      openai_compatible /
+      lmstudio          → OpenAI Embeddings API (customizable base_url and model)
       anthropic /
-      lmstudio /
       ollama / outros   → SentenceTransformers local (CPU)
     """
     provider = cfg.get("provider", "google")
@@ -155,19 +155,24 @@ def get_embed_fns(cfg: dict) -> tuple[Callable, Callable]:
         embed_doc, embed_query = _google_embed(api_key)
         if _probe_embed_fn(embed_doc):
             return embed_doc, embed_query
-        print("  Aviso: Gemini Embeddings indisponível — usando embeddings locais.")
+        print("  Aviso: Gemini Embeddings indisponível - usando embeddings locais.")
         return _local_embed()
 
-    if provider in ("openai", "openai_compatible"):
+    if provider in ("openai", "openai_compatible", "lmstudio"):
         api_key  = cfg.get("api_key") or os.getenv("OPENAI_API_KEY", "")
-        base_url = cfg.get("base_url")
-        embed_doc, embed_query = _openai_embed(api_key, base_url)
+        base_url = cfg.get("embedding_base_url") or cfg.get("base_url")
+        if not base_url and provider == "lmstudio":
+            base_url = "http://localhost:1234/v1"
+
+        embed_model = cfg.get("embedding_model") or "text-embedding-3-small"
+
+        embed_doc, embed_query = _openai_embed(api_key, base_url, model=embed_model)
         if _probe_embed_fn(embed_doc):
             return embed_doc, embed_query
-        print("  Aviso: OpenAI Embeddings indisponível — usando embeddings locais.")
+        print(f"  Aviso: API de Embeddings ({provider}/{embed_model}) indisponível - usando embeddings locais.")
         return _local_embed()
 
-    # anthropic, lmstudio, ollama, desconhecido → embeddings locais diretamente
+    # anthropic, ollama, desconhecido → embeddings locais diretamente
     return _local_embed()
 
 
