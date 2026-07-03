@@ -723,14 +723,58 @@ private RawImage InjectCollapsedImage(Transform card, Texture tex)
         {
             var t = root.Find(path);
             if (t == null) return;
+
+            // Cor da badge
             var img = t.GetComponent<Image>();
-            if (img != null) img.color = spec.color;
+            if (img != null)
+                img.color = spec.color;
+
             var label = t.Find("Text");
-            if (label != null)
+            if (label == null) return;
+
+            var tmp = label.GetComponent<TMP_Text>();
+            if (tmp == null) return;
+
+            var badgeRT = t.GetComponent<RectTransform>();
+
+            // Normaliza a categoria
+            string category = (spec.category ?? "")
+                .Trim()
+                .Replace("_", " ");
+
+            // Texto exibido
+            if (category.Equals("Graphical Representation", System.StringComparison.OrdinalIgnoreCase))
+                tmp.text = "GRAPHICAL REPRESENTATION";
+            else
+                tmp.text = category.ToUpper();
+
+            // Atualiza o texto antes de medir
+            tmp.ForceMeshUpdate();
+
+            // Ajusta automaticamente a largura da badge
+            if (badgeRT != null)
             {
-                var tmp = label.GetComponent<TMP_Text>();
-                if (tmp != null) tmp.text = string.IsNullOrEmpty(spec.category) ? "" : spec.category.ToUpper();
+                float padding = 20f; // Espaço nas laterais
+                float width = tmp.preferredWidth + padding;
+
+                // Largura mínima para categorias pequenas
+                width = Mathf.Max(width, 60f);
+
+                badgeRT.sizeDelta = new Vector2(width, badgeRT.sizeDelta.y);
             }
+
+            // Faz o texto ocupar toda a badge
+            var textRT = tmp.GetComponent<RectTransform>();
+            if (textRT != null)
+            {
+                textRT.anchorMin = Vector2.zero;
+                textRT.anchorMax = Vector2.one;
+                textRT.offsetMin = Vector2.zero;
+                textRT.offsetMax = Vector2.zero;
+            }
+
+            // Centraliza o texto
+            tmp.alignment = TextAlignmentOptions.Center;
         }
 
         private Texture2D LoadFigureTexture(string imageRef)
@@ -783,7 +827,7 @@ private RawImage InjectCollapsedImage(Transform card, Texture tex)
                 case "Problem":
                 case "Abstract": return Hex("#FF4444");
                 case "Method":
-                case "Graphical rep.": return Hex("#00D4FF");
+                case "graphical_representation": return Hex("#00D4FF");
                 case "Metric":
                 case "Table": return Hex("#00FF88");
                 case "Image": return Hex("#B068FF");
