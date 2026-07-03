@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -525}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140740258
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24dd2562e1c8da4f9f7b027cb056b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  paperName: emotional_tissue_visual_states
+  paperName: laboral_hand_stretching_game
   sceneName: PaperCave_Cards_3D_Final
 --- !u!1 &1148864839
 GameObject:

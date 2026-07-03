@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 namespace PaperCave
 {
@@ -15,22 +16,20 @@ namespace PaperCave
     public class Card3D : MonoBehaviour
     {
         [Header("Views (toggled on expand)")]
-        public GameObject collapsedView;   // canvas child
-        public GameObject expandedView;    // canvas child
-        public GameObject expandedExtra;   // optional 3D child (e.g. anim buttons)
+        public GameObject collapsedView;
+        public GameObject expandedView;
+        public GameObject expandedExtra;
 
         [Header("Expand behaviour")]
         public float expandScale = 1.4f;
-        public float floatForward = 0.5f;  // world units toward the camera (-Z)
+        public float floatForward = 0.5f;
         public float tweenDuration = 0.18f;
 
         public bool Expanded { get; private set; }
 
-        // Resting pose (updated when the card is dropped after a drag).
         Vector3 _restPosition;
         Vector3 _baseScale;
 
-        // Tween state.
         bool _tweening;
         float _t;
         Vector3 _fromPos, _toPos, _fromScale, _toScale;
@@ -48,9 +47,12 @@ namespace PaperCave
 
             _t += Time.deltaTime / Mathf.Max(0.0001f, tweenDuration);
             float k = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(_t));
+
             transform.position = Vector3.Lerp(_fromPos, _toPos, k);
             transform.localScale = Vector3.Lerp(_fromScale, _toScale, k);
-            if (_t >= 1f) _tweening = false;
+
+            if (_t >= 1f)
+                _tweening = false;
         }
 
         void ApplyViews()
@@ -58,6 +60,30 @@ namespace PaperCave
             if (collapsedView) collapsedView.SetActive(!Expanded);
             if (expandedView) expandedView.SetActive(Expanded);
             if (expandedExtra) expandedExtra.SetActive(Expanded);
+
+            UpdateSummaryVisibility();
+        }
+
+        /// <summary>
+        /// Esconde o Summary apenas para cards de texto quando o card está recolhido.
+        /// Não afeta cards de imagem nem de tabela.
+        /// </summary>
+        void UpdateSummaryVisibility()
+        {
+            if (collapsedView == null)
+                return;
+
+            Transform summary = collapsedView.transform.Find("Summary");
+            if (summary == null)
+                return;
+
+            // Se existir uma imagem colapsada, é um card visual.
+            bool isVisualCard = collapsedView.transform.Find("CollapsedFigure") != null;
+
+            if (isVisualCard)
+                return;
+
+            summary.gameObject.SetActive(Expanded);
         }
 
         /// <summary>Click handler: flip between collapsed and expanded.</summary>
@@ -68,34 +94,29 @@ namespace PaperCave
 
             Vector3 pos = _restPosition;
             Vector3 scale = _baseScale;
+
             if (Expanded)
             {
-                // -Z is toward the camera in this scene.
                 pos = _restPosition + new Vector3(0f, 0f, -floatForward);
                 scale = _baseScale * expandScale;
             }
+
             StartTween(pos, scale);
         }
 
-        /// <summary>Called by the controller when a drag begins; halts any tween.</summary>
         public void BeginDrag()
         {
             _tweening = false;
         }
 
-        /// <summary>Called by the controller when the card is dropped after a drag.</summary>
         public void SetRest(Vector3 newRest)
         {
             _restPosition = newRest;
-            // Keep the expanded float offset consistent with the new rest pose.
+
             if (Expanded)
-            {
                 transform.position = _restPosition + new Vector3(0f, 0f, -floatForward);
-            }
             else
-            {
                 transform.position = _restPosition;
-            }
         }
 
         void StartTween(Vector3 toPos, Vector3 toScale)
