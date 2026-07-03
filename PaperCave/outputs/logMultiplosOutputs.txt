@@ -1,0 +1,1093 @@
+
+LIVE LOG STREAMING — stdout
+[CONTROL] Solicitando inicialização do pipeline para 10 paper(s)...
+[CONTROL] Pipeline iniciado com sucesso. Conectando canal de logs...
+
+=================== PROCESSANDO PAPER [1/10]: laboral_hand_stretching_game ===================
+[PIPELINE] Iniciando pipeline de agentes real para: laboral_hand_stretching_game
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper laboral_hand_stretching_game
+================================================================
+Paper Cave  >  run  >  laboral_hand_stretching_game
+================================================================
+[GUI] Progresso anterior detectado em laboral_hand_stretching_game. Retomando automaticamente de 'mapper'.
+Retomando de: mapper
+Session log: outputs\laboral_hand_stretching_game\session_20260629_161738.log
+============================================================
+Paper Cave v5 � laboral_hand_stretching_game
+Provider: google/gemini-2.5-flash
+20260629_161738
+Mode: resuming from 'mapper'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8_1, FIG8_2
+Figure captions extracted: 10/10
+Indexando 67 chunks para RAG ag�ntico...
+�ndice pronto: 67/67 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � usando output salvo (10 figuras).
+[3/6] Summarizer � usando output salvo.
+[4/6] Extractor � usando output salvo.
+--- Logging error ---
+Traceback (most recent call last):
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1113, in emit
+stream.write(msg + self.terminator)
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 20: character maps to <undefined>
+Call stack:
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 800, in run
+with _Step(logger, 5, 6, f"Mapper \u2192 Reviewer (m�x {max_retries} tentativas)") as step:
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 160, in __enter__
+self._logger.info(f"\n  +- {self._label}")
+Message: '\n  +- [5/6] Mapper \u2192 Reviewer (m�x 3 tentativas)'
+Arguments: ()
+Mapper attempt 1/3
+Manifest approved on attempt 1.
+INFO:paper_cave:  Manifest approved on attempt 1.
+--- Logging error ---
+Traceback (most recent call last):
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1113, in emit
+stream.write(msg + self.terminator)
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 5: character maps to <undefined>
+Call stack:
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 821, in run
+step.done(f"{reviewed.unitCount} unidade(s), {reviewed.totalAttempts} tentativa(s)")
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 166, in done
+self._logger.info(f"  +- \u2713 {elapsed:.0f}s{suffix}")
+Message: '  +- \u2713 54s � 5 unidade(s), 1 tentativa(s)'
+Arguments: ()
+INFO:paper_cave:  +- \u2713 54s � 5 unidade(s), 1 tentativa(s)
+[Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\laboral_hand_stretching_game\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\laboral_hand_stretching_game\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\laboral_hand_stretching_game para ..\Assets\PaperCaveData\laboral_hand_stretching_game\images...
+[Exporter] Exporta��o conclu�da com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\laboral_hand_stretching_game\manifest.json
+- Imagens copiadas: 10 arquivo(s) em ..\Assets\PaperCaveData\laboral_hand_stretching_game\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/laboral_hand_stretching_game/
+INFO:paper_cave:  Done. Outputs at: outputs/laboral_hand_stretching_game/
+Paper figures referenced: FIG1, FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8_1, FIG8_2
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8_1, FIG8_2
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/laboral_hand_stretching_game/
+[Exporter] Lendo output do reviewer de outputs\laboral_hand_stretching_game\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\laboral_hand_stretching_game\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\laboral_hand_stretching_game para ..\Assets\PaperCaveData\laboral_hand_stretching_game\images...
+[Exporter] Exporta��o conclu�da com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\laboral_hand_stretching_game\manifest.json
+- Imagens copiadas: 10 arquivo(s) em ..\Assets\PaperCaveData\laboral_hand_stretching_game\images
+Export conclu�do: Assets/PaperCaveData/laboral_hand_stretching_game/
+[PIPELINE] ✓ Paper laboral_hand_stretching_game concluído com código 0.
+
+=================== PROCESSANDO PAPER [2/10]: mental_health_narrative_vr_quest ===================
+[PIPELINE] Iniciando pipeline de agentes real para: mental_health_narrative_vr_quest
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper mental_health_narrative_vr_quest
+================================================================
+Paper Cave  >  run  >  mental_health_narrative_vr_quest
+================================================================
+Extraindo figuras...
+Removendo 13 FIG*.png anteriores.
+FIG_1.png  (pág.1)  Figure 1: Some screenshots from the perspective of Meta Quest 2 illustra
+FIG_2.png  (pág.4)  Figure 2: Meta Quest 2 VR headset and hand controllers mapped for the VR
+FIG_3.png  (pág.5)  Figure 3: In-game text messages and dialogue boxes are scat- tered throu
+FIG_5.png  (pág.5)  Figure 5: Colliders applied to all interactable game objects.
+FIG_4.png  (pág.5)  Figure 4: Screenshots of the accelerated in-game time mecha- nism, captu
+FIG_6.png  (pág.5)  Figure 6: The VR game rewards positive habits, like main- taining a tidy
+FIG_8.png  (pág.6)  Figure 8: In the VR game, players can interact with almost all objects,
+FIG_7.png  (pág.6)  Figure 7: Each consumable item in the sushi tray boosts the protagonist’
+FIG_9.png  (pág.6)  Figure 9: Interaction between protagonist and antagonist via a standing
+FIG_10.png  (pág.6)  Figure 10: Blue arrows guide navigation; protagonist’s depres- sion medi
+FIG_12.png  (pág.7)  Figure 12: Drawable Object: The image illustrates a player, acting as th
+FIG_11.png  (pág.7)  Figure 11: An example of a configurable joint object.
+FIG_13.png  (pág.8)  Figure 13: Wall painting generated from textual prompt using the DALL-E
+Total: 13 figura(s) extraída(s).
+Session log: outputs\mental_health_narrative_vr_quest\session_20260629_161942.log
+============================================================
+Paper Cave v5 — mental_health_narrative_vr_quest
+Provider: google/gemini-2.5-flash
+20260629_161942
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG10, FIG11, FIG12, FIG13, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+Tamanho estimado do paper: ~12,671 tokens
+Janela de contexto do modelo: 1,048,576 tokens
+Limite seguro (70%): 734,003 tokens
+OK: Paper dentro do limite seguro. Processando normalmente.
+Figure captions extracted: 13/13
+Indexando 64 chunks para RAG agêntico...
+Índice pronto: 64/64 chunks indexados.
++- [1/6] Reader — extraindo texto do PDF
++- ✓ 49s — 50,734 chars
+INFO:paper_cave:  +- \u2713 49s � 50,734 chars
++- [2/6] Vision Analyst — 13 figura(s)
+INFO:paper_cave:
++- [2/6] Vision Analyst � 13 figura(s)
+Vision Analyst described 13 figure(s).
+INFO:paper_cave:  Vision Analyst described 13 figure(s).
++- ✓ 21s — 13 figura(s) descritas
+INFO:paper_cave:  +- \u2713 21s � 13 figura(s) descritas
++- [3/6] Summarizer
+INFO:paper_cave:
++- [3/6] Summarizer
++- ✓ 26s — 9,880 chars
+INFO:paper_cave:  +- \u2713 26s � 9,880 chars
++- [4/6] Extractor
+INFO:paper_cave:
++- [4/6] Extractor
++- ✓ 31s
+INFO:paper_cave:  +- \u2713 31s
++- [5/6] Mapper → Reviewer (máx 3 tentativas)
+INFO:paper_cave:
++- [5/6] Mapper \u2192 Reviewer (m�x 3 tentativas)
+Mapper attempt 1/3
+INFO:paper_cave:  Mapper attempt 1/3
+Manifest approved on attempt 1.
+INFO:paper_cave:  Manifest approved on attempt 1.
++- ✓ 59s — 5 unidade(s), 1 tentativa(s)
+INFO:paper_cave:  +- \u2713 59s � 5 unidade(s), 1 tentativa(s)
+[Export] Iniciando exportação automática para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\mental_health_narrative_vr_quest\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\mental_health_narrative_vr_quest para ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\manifest.json
+- Imagens copiadas: 13 arquivo(s) em ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/mental_health_narrative_vr_quest/
+INFO:paper_cave:  Done. Outputs at: outputs/mental_health_narrative_vr_quest/
+Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG13, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG13, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/mental_health_narrative_vr_quest/
+[Exporter] Lendo output do reviewer de outputs\mental_health_narrative_vr_quest\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\mental_health_narrative_vr_quest para ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\manifest.json
+- Imagens copiadas: 13 arquivo(s) em ..\Assets\PaperCaveData\mental_health_narrative_vr_quest\images
+Export concluído: Assets/PaperCaveData/mental_health_narrative_vr_quest/
+[PIPELINE] ✓ Paper mental_health_narrative_vr_quest concluído com código 0.
+
+=================== PROCESSANDO PAPER [3/10]: ml_asset_generation_pixel_art ===================
+[PIPELINE] Iniciando pipeline de agentes real para: ml_asset_generation_pixel_art
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper ml_asset_generation_pixel_art
+================================================================
+Paper Cave  >  run  >  ml_asset_generation_pixel_art
+================================================================
+Extraindo figuras...
+Removendo 18 FIG*.png anteriores.
+FIG_1.png  (pág.2)  Figure 1: Two sprites in their early sketch stages.
+FIG_2.png  (pág.3)  Figure 2: From left to right, the rough sketch, line sprite, gray sprite
+FIG_3.png  (pág.3)  Figure 3: Several skins of the same character using the index sprite.
+FIG_5.png  (pág.3)  Figure 5: Overview of the U-Net architecture. The orange colored encoder
+FIG_4.png  (pág.3)  Figure 4: Several characters in their gray and color variants. The two c
+FIG_6_1.png  (composta/cortada, pág.6)  Figure 6: Results for six different sprites taken from Sarah animations.
+FIG_6_2.png  (composta/cortada, pág.6)  Figure 6: Results for six different sprites taken from Sarah animations.
+FIG_6_3.png  (composta/cortada, pág.6)  Figure 6: Results for six different sprites taken from Sarah animations.
+FIG_6_4.png  (composta/cortada, pág.6)  Figure 6: Results for six different sprites taken from Sarah animations.
+FIG_6_5.png  (composta/cortada, pág.6)  Figure 6: Results for six different sprites taken from Sarah animations.
+FIG_7.png  (pág.6)  Figure 7: A sample of the generated sprites to be handed to the design t
+FIG_8_1.png  (composta/cortada, pág.6)  Figure 8: Study on the color problem using the algorithm’s learned color
+FIG_8_2.png  (composta/cortada, pág.6)  Figure 8: Study on the color problem using the algorithm’s learned color
+FIG_8_3.png  (composta/cortada, pág.6)  Figure 8: Study on the color problem using the algorithm’s learned color
+FIG_9.png  (pág.7)  Figure 9: Results for six different sprites taken from Lucy animations.
+FIG_10.png  (pág.8)  Figure 10: Example of the inconsistent shading issue for a generated spr
+FIG_11.png  (pág.8)  Figure 11: Example of poses that are too different from the ones present
+FIG_12.png  (pág.8)  Figure 12: Example of color noise evidenced after the color rounding pos
+Total: 18 figura(s) extraída(s).
+Session log: outputs\ml_asset_generation_pixel_art\session_20260629_162354.log
+============================================================
+Paper Cave v5 — ml_asset_generation_pixel_art
+Provider: google/gemini-2.5-flash
+20260629_162354
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG10, FIG11, FIG12, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2, FIG6_3, FIG6_4, FIG6_5, FIG7, FIG8_1, FIG8_2, FIG8_3, FIG9
+Tamanho estimado do paper: ~11,160 tokens
+Janela de contexto do modelo: 1,048,576 tokens
+Limite seguro (70%): 734,003 tokens
+OK: Paper dentro do limite seguro. Processando normalmente.
+Figure captions extracted: 18/18
+Indexando 56 chunks para RAG agêntico...
+Índice pronto: 56/56 chunks indexados.
++- [1/6] Reader — extraindo texto do PDF
++- ✓ 48s — 44,691 chars
+INFO:paper_cave:  +- \u2713 48s � 44,691 chars
++- [2/6] Vision Analyst — 18 figura(s)
+INFO:paper_cave:
++- [2/6] Vision Analyst � 18 figura(s)
+Vision Analyst described 18 figure(s).
+INFO:paper_cave:  Vision Analyst described 18 figure(s).
++- ✓ 27s — 18 figura(s) descritas
+INFO:paper_cave:  +- \u2713 27s � 18 figura(s) descritas
++- [3/6] Summarizer
+INFO:paper_cave:
++- [3/6] Summarizer
++- ✓ 26s — 7,592 chars
+INFO:paper_cave:  +- \u2713 26s � 7,592 chars
++- [4/6] Extractor
+INFO:paper_cave:
++- [4/6] Extractor
++- ✓ 25s
+INFO:paper_cave:  +- \u2713 25s
++- [5/6] Mapper → Reviewer (máx 3 tentativas)
+INFO:paper_cave:
++- [5/6] Mapper \u2192 Reviewer (m�x 3 tentativas)
+Mapper attempt 1/3
+INFO:paper_cave:  Mapper attempt 1/3
+Manifest approved on attempt 1.
+INFO:paper_cave:  Manifest approved on attempt 1.
++- ✓ 61s — 5 unidade(s), 1 tentativa(s)
+INFO:paper_cave:  +- \u2713 61s � 5 unidade(s), 1 tentativa(s)
+[Export] Iniciando exportação automática para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\ml_asset_generation_pixel_art\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\ml_asset_generation_pixel_art para ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\manifest.json
+- Imagens copiadas: 18 arquivo(s) em ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/ml_asset_generation_pixel_art/
+INFO:paper_cave:  Done. Outputs at: outputs/ml_asset_generation_pixel_art/
+Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2, FIG6_3, FIG6_4, FIG6_5, FIG7, FIG8_1, FIG8_2, FIG8_3, FIG9
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2, FIG6_3, FIG6_4, FIG6_5, FIG7, FIG8_1, FIG8_2, FIG8_3, FIG9
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/ml_asset_generation_pixel_art/
+[Exporter] Lendo output do reviewer de outputs\ml_asset_generation_pixel_art\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\ml_asset_generation_pixel_art para ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\manifest.json
+- Imagens copiadas: 18 arquivo(s) em ..\Assets\PaperCaveData\ml_asset_generation_pixel_art\images
+Export concluído: Assets/PaperCaveData/ml_asset_generation_pixel_art/
+[PIPELINE] ✓ Paper ml_asset_generation_pixel_art concluído com código 0.
+
+=================== PROCESSANDO PAPER [4/10]: prostate_cancer_game ===================
+[PIPELINE] Iniciando pipeline de agentes real para: prostate_cancer_game
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper prostate_cancer_game
+================================================================
+Paper Cave  >  run  >  prostate_cancer_game
+================================================================
+Extraindo figuras...
+Removendo 8 FIG*.png anteriores.
+FIG_1.png  (pág.2)  Fig. 1. Start screen of CancerSP game.
+FIG_3.png  (pág.4)  Fig. 3. Game home screen of CancerSP game.
+FIG_4.png  (pág.4)  Fig. 4. Medical tests and imaging, biopsy, and treatments for prostate c
+FIG_2.png  (pág.4)  Fig. 2. Classic clinical case scenarios of prostate cancer, designed for
+FIG_5.png  (pág.5)  Fig. 5. General ﬂowchart of the CancerSP game.
+FIG_6.png  (pág.6)  Fig. 6. Game over of CancerSP game: the player saved many lives.
+FIG_7.png  (pág.6)  Fig. 7. Funeral scene, displayed every time a life is lost, followed by
+FIG_8.png  (pág.6)  Fig. 8. Game over screen of CancerSP game: player lost many lives.
+Total: 8 figura(s) extraída(s).
+Session log: outputs\prostate_cancer_game\session_20260629_162757.log
+============================================================
+Paper Cave v5 — prostate_cancer_game
+Provider: google/gemini-2.5-flash
+20260629_162757
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+Tamanho estimado do paper: ~9,999 tokens
+Janela de contexto do modelo: 1,048,576 tokens
+Limite seguro (70%): 734,003 tokens
+OK: Paper dentro do limite seguro. Processando normalmente.
+Figure captions extracted: 8/8
+Indexando 50 chunks para RAG agêntico...
+Índice pronto: 50/50 chunks indexados.
++- [1/6] Reader — extraindo texto do PDF
++- ✓ 38s — 40,058 chars
+INFO:paper_cave:  +- \u2713 38s � 40,058 chars
++- [2/6] Vision Analyst — 8 figura(s)
+INFO:paper_cave:
++- [2/6] Vision Analyst � 8 figura(s)
+Vision Analyst described 8 figure(s).
+INFO:paper_cave:  Vision Analyst described 8 figure(s).
++- ✓ 12s — 8 figura(s) descritas
+INFO:paper_cave:  +- \u2713 12s � 8 figura(s) descritas
++- [3/6] Summarizer
+INFO:paper_cave:
++- [3/6] Summarizer
++- ✓ 21s — 6,193 chars
+INFO:paper_cave:  +- \u2713 21s � 6,193 chars
++- [4/6] Extractor
+INFO:paper_cave:
++- [4/6] Extractor
++- ✓ 50s
+INFO:paper_cave:  +- \u2713 50s
++- [5/6] Mapper → Reviewer (máx 3 tentativas)
+INFO:paper_cave:
++- [5/6] Mapper \u2192 Reviewer (m�x 3 tentativas)
+Mapper attempt 1/3
+INFO:paper_cave:  Mapper attempt 1/3
+Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_v
+WARNING:paper_cave:  Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_v
+Mapper attempt 2/3
+INFO:paper_cave:  Mapper attempt 2/3
+Manifest approved on attempt 2.
+INFO:paper_cave:  Manifest approved on attempt 2.
++- ✓ 75s — 5 unidade(s), 2 tentativa(s)
+INFO:paper_cave:  +- \u2713 75s � 5 unidade(s), 2 tentativa(s)
+[Export] Iniciando exportação automática para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\prostate_cancer_game\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\prostate_cancer_game\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\prostate_cancer_game para ..\Assets\PaperCaveData\prostate_cancer_game\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\prostate_cancer_game\manifest.json
+- Imagens copiadas: 8 arquivo(s) em ..\Assets\PaperCaveData\prostate_cancer_game\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/prostate_cancer_game/
+INFO:paper_cave:  Done. Outputs at: outputs/prostate_cancer_game/
+Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/prostate_cancer_game/
+[Exporter] Lendo output do reviewer de outputs\prostate_cancer_game\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\prostate_cancer_game\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\prostate_cancer_game para ..\Assets\PaperCaveData\prostate_cancer_game\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\prostate_cancer_game\manifest.json
+- Imagens copiadas: 8 arquivo(s) em ..\Assets\PaperCaveData\prostate_cancer_game\images
+Export concluído: Assets/PaperCaveData/prostate_cancer_game/
+[PIPELINE] ✓ Paper prostate_cancer_game concluído com código 0.
+
+=================== PROCESSANDO PAPER [5/10]: qlattes_qualis_browser_extension ===================
+[PIPELINE] Iniciando pipeline de agentes real para: qlattes_qualis_browser_extension
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper qlattes_qualis_browser_extension
+================================================================
+Paper Cave  >  run  >  qlattes_qualis_browser_extension
+================================================================
+Extraindo figuras...
+Removendo 7 FIG*.png anteriores.
+FIG_2_1.png  (composta/cortada, pág.4)  Figure 2. QLattes’ architecture
+FIG_2_2.png  (composta/cortada, pág.4)  Figure 2. QLattes’ architecture
+FIG_4.png  (pág.6)  Figure 4. Geographic distribution of QLattes’s total active users around
+FIG_3.png  (pág.6)  Figure 3. QLattes’ number of weekly active users over time since its lau
+FIG_5.png  (pág.7)  Figure 5. Distribution of active QLattes users across the five regions o
+FIG_6.png  (pág.8)  Figure 6. Distribution of active QLattes users across the top 50 cities
+FIG_7.png  (pág.12)  Figure 7. Visual summary of the average Likert-scale ratings (1–5) for Q
+FIG_8.png  (pág.14)  Figure 8. Example of a Lattes CV page annotated by the QLattesCC prototy
+Total: 8 figura(s) extraída(s).
+Session log: outputs\qlattes_qualis_browser_extension\session_20260629_163206.log
+============================================================
+Paper Cave v5 — qlattes_qualis_browser_extension
+Provider: google/gemini-2.5-flash
+20260629_163206
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+Tamanho estimado do paper: ~23,275 tokens
+Janela de contexto do modelo: 1,048,576 tokens
+Limite seguro (70%): 734,003 tokens
+OK: Paper dentro do limite seguro. Processando normalmente.
+Figure captions extracted: 8/8
+Indexando 117 chunks para RAG agêntico...
+Índice pronto: 117/117 chunks indexados.
++- [1/6] Reader — extraindo texto do PDF
+ERROR:root:Google Gemini API error: 503 - This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
++- ✓ 96s — 94,099 chars
+INFO:paper_cave:  +- \u2713 96s � 94,099 chars
++- [2/6] Vision Analyst — 8 figura(s)
+INFO:paper_cave:
++- [2/6] Vision Analyst � 8 figura(s)
+Vision Analyst described 8 figure(s).
+INFO:paper_cave:  Vision Analyst described 8 figure(s).
++- ✓ 14s — 8 figura(s) descritas
+INFO:paper_cave:  +- \u2713 14s � 8 figura(s) descritas
++- [3/6] Summarizer
+INFO:paper_cave:
++- [3/6] Summarizer
++- ✓ 30s — 8,451 chars
+INFO:paper_cave:  +- \u2713 30s � 8,451 chars
++- [4/6] Extractor
+INFO:paper_cave:
++- [4/6] Extractor
++- ✓ 38s
+INFO:paper_cave:  +- \u2713 38s
++- [5/6] Mapper → Reviewer (máx 3 tentativas)
+INFO:paper_cave:
++- [5/6] Mapper \u2192 Reviewer (m�x 3 tentativas)
+Mapper attempt 1/3
+INFO:paper_cave:  Mapper attempt 1/3
+ERROR:root:Google Gemini API error: 503 - This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4
+Value error, Unit 'unit_05' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_05', 'type':...one, 'looping':
+WARNING:paper_cave:  Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4
+Value error, Unit 'unit_05' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_05', 'type':...one, 'looping':
+Mapper attempt 2/3
+INFO:paper_cave:  Mapper attempt 2/3
+Mapper attempt 2 schema error: ValidationError: 1 validation error for UnitManifest
+units.5
+Value error, Unit 'unit_06' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_06', 'type':...me': 'luminous
+WARNING:paper_cave:  Mapper attempt 2 schema error: ValidationError: 1 validation error for UnitManifest
+units.5
+Value error, Unit 'unit_06' (stack) must have 2-4 items, got 1 [type=value_error, input_value={'id': 'unit_06', 'type':...me': 'luminous
+Mapper attempt 3/3
+INFO:paper_cave:  Mapper attempt 3/3
+Manifest approved on attempt 3.
+INFO:paper_cave:  Manifest approved on attempt 3.
++- ✓ 216s — 5 unidade(s), 3 tentativa(s)
+INFO:paper_cave:  +- \u2713 216s � 5 unidade(s), 3 tentativa(s)
+[Export] Iniciando exportação automática para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\qlattes_qualis_browser_extension\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\qlattes_qualis_browser_extension para ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\manifest.json
+- Imagens copiadas: 8 arquivo(s) em ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/qlattes_qualis_browser_extension/
+INFO:paper_cave:  Done. Outputs at: outputs/qlattes_qualis_browser_extension/
+Paper figures referenced: FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+INFO:paper_cave:  Paper figures referenced: FIG2_1, FIG2_2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/qlattes_qualis_browser_extension/
+[Exporter] Lendo output do reviewer de outputs\qlattes_qualis_browser_extension\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\qlattes_qualis_browser_extension para ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\manifest.json
+- Imagens copiadas: 8 arquivo(s) em ..\Assets\PaperCaveData\qlattes_qualis_browser_extension\images
+Export concluído: Assets/PaperCaveData/qlattes_qualis_browser_extension/
+[PIPELINE] ✓ Paper qlattes_qualis_browser_extension concluído com código 0.
+
+=================== PROCESSANDO PAPER [6/10]: screen_space_gpu_ray_tracing ===================
+[PIPELINE] Iniciando pipeline de agentes real para: screen_space_gpu_ray_tracing
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper screen_space_gpu_ray_tracing
+================================================================
+Paper Cave  >  run  >  screen_space_gpu_ray_tracing
+================================================================
+Extraindo figuras...
+Removendo 16 FIG*.png anteriores.
+FIG_1.png  (pág.3)  Fig. 1. Ganestam and Doggett solutions [12] showing the generation of ar
+FIG_2.png  (pág.4)  Fig. 2. Left: Reflections generated by our hybrid solution using ray tra
+FIG_3.png  (pág.5)  Fig. 3. Schematic representation of the hybrid reflection algorithm with
+FIG_4.png  (pág.6)  Fig. 4. The component diagram of our hybrid reflection algorithm.
+FIG_5.png  (pág.8)  Fig. 5. Frame animations of the dynamic bunnies scene on the left and th
+FIG_6.png  (pág.9)  Fig. 6. Individual timings for each execution step (Morton, Sorting, Bui
+FIG_7.png  (pág.9)  Fig. 7. SSIM metric results for a rigid body simulation with 30 Stanford
+FIG_8.png  (pág.11)  Fig. 8. Frame animations of the dynamic teapots scene on the left, and t
+FIG_9.png  (pág.12)  Fig. 9. Individual timings for each execution step (Morton, Sorting, Bui
+FIG_10.png  (pág.13)  Fig. 10. SSIM metric results for a deformable body simulation with 30 Ut
+FIG_11.png  (pág.14)  Fig. 11. Frame animations of the dynamic reflective spheres scene using
+FIG_12.png  (pág.15)  Fig. 12. Processing time for the rigid body simulation with the reflecti
+FIG_13.png  (pág.15)  Fig. 13. Detailed data for each execution step of the CUDA implementatio
+FIG_14.png  (pág.16)  Fig. 14. SSIM metric results for a rigid body simulation with 10 reflect
+FIG_15.png  (pág.16)  Fig. 15. Artifacts generated during the final image composition step due
+Total: 15 figura(s) extraída(s).
+Session log: outputs\screen_space_gpu_ray_tracing\session_20260629_164027.log
+============================================================
+Paper Cave v5 — screen_space_gpu_ray_tracing
+Provider: google/gemini-2.5-flash
+20260629_164027
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG10, FIG11, FIG12, FIG13, FIG14, FIG15, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+Tamanho estimado do paper: ~10,547 tokens
+Janela de contexto do modelo: 1,048,576 tokens
+Limite seguro (70%): 734,003 tokens
+OK: Paper dentro do limite seguro. Processando normalmente.
+Figure captions extracted: 15/15
+Indexando 53 chunks para RAG agêntico...
+Índice pronto: 53/53 chunks indexados.
++- [1/6] Reader — extraindo texto do PDF
++- ✓ 43s — 42,136 chars
+INFO:paper_cave:  +- \u2713 43s � 42,136 chars
++- [2/6] Vision Analyst — 15 figura(s)
+INFO:paper_cave:
++- [2/6] Vision Analyst � 15 figura(s)
+Vision Analyst described 15 figure(s).
+INFO:paper_cave:  Vision Analyst described 15 figure(s).
++- ✓ 22s — 15 figura(s) descritas
+INFO:paper_cave:  +- \u2713 22s � 15 figura(s) descritas
++- [3/6] Summarizer
+INFO:paper_cave:
++- [3/6] Summarizer
++- ✓ 31s — 8,059 chars
+INFO:paper_cave:  +- \u2713 31s � 8,059 chars
++- [4/6] Extractor
+INFO:paper_cave:
++- [4/6] Extractor
++- ✓ 44s
+INFO:paper_cave:  +- \u2713 44s
++- [5/6] Mapper → Reviewer (máx 3 tentativas)
+INFO:paper_cave:
++- [5/6] Mapper \u2192 Reviewer (m�x 3 tentativas)
+Mapper attempt 1/3
+INFO:paper_cave:  Mapper attempt 1/3
+Mapper attempt 1 schema error: ValidationError: 2 validation errors for UnitManifest
+units.2.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_
+WARNING:paper_cave:  Mapper attempt 1 schema error: ValidationError: 2 validation errors for UnitManifest
+units.2.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_
+Mapper attempt 2/3
+INFO:paper_cave:  Mapper attempt 2/3
+Manifest approved on attempt 2.
+INFO:paper_cave:  Manifest approved on attempt 2.
++- ✓ 172s — 5 unidade(s), 2 tentativa(s)
+INFO:paper_cave:  +- \u2713 172s � 5 unidade(s), 2 tentativa(s)
+[Export] Iniciando exportação automática para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\screen_space_gpu_ray_tracing\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\screen_space_gpu_ray_tracing para ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\manifest.json
+- Imagens copiadas: 15 arquivo(s) em ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/screen_space_gpu_ray_tracing/
+INFO:paper_cave:  Done. Outputs at: outputs/screen_space_gpu_ray_tracing/
+Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG13, FIG14, FIG15, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG10, FIG11, FIG12, FIG13, FIG14, FIG15, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8, FIG9
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/screen_space_gpu_ray_tracing/
+[Exporter] Lendo output do reviewer de outputs\screen_space_gpu_ray_tracing\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\screen_space_gpu_ray_tracing para ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\images...
+[Exporter] Exportação concluída com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\manifest.json
+- Imagens copiadas: 15 arquivo(s) em ..\Assets\PaperCaveData\screen_space_gpu_ray_tracing\images
+Export concluído: Assets/PaperCaveData/screen_space_gpu_ray_tracing/
+[PIPELINE] ✓ Paper screen_space_gpu_ray_tracing concluído com código 0.
+
+=================== PROCESSANDO PAPER [7/10]: bone_cancer_serious_game ===================
+[PIPELINE] Iniciando pipeline de agentes real para: bone_cancer_serious_game
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper bone_cancer_serious_game
+================================================================
+Paper Cave  >  run  >  bone_cancer_serious_game
+================================================================
+[GUI] Progresso anterior detectado em bone_cancer_serious_game. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\bone_cancer_serious_game\session_20260629_164633.log
+============================================================
+Paper Cave v5 � bone_cancer_serious_game
+Provider: google/gemini-2.5-flash
+20260629_164633
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+Figure captions extracted: 8/8
+Indexando 52 chunks para RAG ag�ntico...
+�ndice pronto: 52/52 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � usando output salvo (8 figuras).
+[3/6] Summarizer � usando output salvo.
+[4/6] Extractor � usando output salvo.
++- [6/6] Reviewer � re-avaliando manifest salvo
+Mapper attempt 1/3
+Manifest approved on attempt 1.
+INFO:paper_cave:  Manifest approved on attempt 1.
+--- Logging error ---
+Traceback (most recent call last):
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1113, in emit
+stream.write(msg + self.terminator)
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 5: character maps to <undefined>
+Call stack:
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 838, in run
+step.done(f"{reviewed.unitCount} unidade(s)")
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 166, in done
+self._logger.info(f"  +- \u2713 {elapsed:.0f}s{suffix}")
+Message: '  +- \u2713 77s � 5 unidade(s)'
+Arguments: ()
+INFO:paper_cave:  +- \u2713 77s � 5 unidade(s)
+[Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\bone_cancer_serious_game\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\bone_cancer_serious_game\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\bone_cancer_serious_game para ..\Assets\PaperCaveData\bone_cancer_serious_game\images...
+[Exporter] Exporta��o conclu�da com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\bone_cancer_serious_game\manifest.json
+- Imagens copiadas: 8 arquivo(s) em ..\Assets\PaperCaveData\bone_cancer_serious_game\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/bone_cancer_serious_game/
+INFO:paper_cave:  Done. Outputs at: outputs/bone_cancer_serious_game/
+Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6, FIG7, FIG8
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/bone_cancer_serious_game/
+[Exporter] Lendo output do reviewer de outputs\bone_cancer_serious_game\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\bone_cancer_serious_game\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\bone_cancer_serious_game para ..\Assets\PaperCaveData\bone_cancer_serious_game\images...
+[Exporter] Exporta��o conclu�da com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\bone_cancer_serious_game\manifest.json
+- Imagens copiadas: 8 arquivo(s) em ..\Assets\PaperCaveData\bone_cancer_serious_game\images
+Export conclu�do: Assets/PaperCaveData/bone_cancer_serious_game/
+[PIPELINE] ✓ Paper bone_cancer_serious_game concluído com código 0.
+
+=================== PROCESSANDO PAPER [8/10]: interactive_story_mental_health ===================
+[PIPELINE] Iniciando pipeline de agentes real para: interactive_story_mental_health
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper interactive_story_mental_health
+================================================================
+Paper Cave  >  run  >  interactive_story_mental_health
+================================================================
+[GUI] Progresso anterior detectado em interactive_story_mental_health. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\interactive_story_mental_health\session_20260629_164836.log
+============================================================
+Paper Cave v5 � interactive_story_mental_health
+Provider: google/gemini-2.5-flash
+20260629_164836
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2
+Figure captions extracted: 7/7
+Indexando 53 chunks para RAG ag�ntico...
+�ndice pronto: 53/53 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � usando output salvo (7 figuras).
+[3/6] Summarizer � usando output salvo.
+[4/6] Extractor � usando output salvo.
++- [6/6] Reviewer � re-avaliando manifest salvo
+Mapper attempt 1/3
+Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_v
+WARNING:paper_cave:  Mapper attempt 1 schema error: ValidationError: 1 validation error for UnitManifest
+units.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_v
+Mapper attempt 2/3
+INFO:paper_cave:  Mapper attempt 2/3
+Manifest approved on attempt 2.
+INFO:paper_cave:  Manifest approved on attempt 2.
+--- Logging error ---
+Traceback (most recent call last):
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1113, in emit
+stream.write(msg + self.terminator)
+File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 5: character maps to <undefined>
+Call stack:
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 838, in run
+step.done(f"{reviewed.unitCount} unidade(s)")
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 166, in done
+self._logger.info(f"  +- \u2713 {elapsed:.0f}s{suffix}")
+Message: '  +- \u2713 75s � 4 unidade(s)'
+Arguments: ()
+INFO:paper_cave:  +- \u2713 75s � 4 unidade(s)
+[Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+INFO:paper_cave:  [Export] Iniciando exporta��o autom�tica para a pasta de assets do Unity...
+[Exporter] Lendo output do reviewer de outputs\interactive_story_mental_health\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\interactive_story_mental_health\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\papers\interactive_story_mental_health para ..\Assets\PaperCaveData\interactive_story_mental_health\images...
+[Exporter] Exporta��o conclu�da com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\interactive_story_mental_health\manifest.json
+- Imagens copiadas: 7 arquivo(s) em ..\Assets\PaperCaveData\interactive_story_mental_health\images
+============================================================
+INFO:paper_cave:
+============================================================
+Done. Outputs at: outputs/interactive_story_mental_health/
+INFO:paper_cave:  Done. Outputs at: outputs/interactive_story_mental_health/
+Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2
+INFO:paper_cave:  Paper figures referenced: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6_1, FIG6_2
+============================================================
+INFO:paper_cave:============================================================
+Pipeline concluido. Outputs em: outputs/interactive_story_mental_health/
+[Exporter] Lendo output do reviewer de outputs\interactive_story_mental_health\07_reviewer_output.json...
+[Exporter] Salvando manifest.json flat em ..\Assets\PaperCaveData\interactive_story_mental_health\manifest.json...
+[Exporter] Copiando imagens FIG_*.png de papers\interactive_story_mental_health para ..\Assets\PaperCaveData\interactive_story_mental_health\images...
+[Exporter] Exporta��o conclu�da com sucesso!
+- Manifest salvo: ..\Assets\PaperCaveData\interactive_story_mental_health\manifest.json
+- Imagens copiadas: 7 arquivo(s) em ..\Assets\PaperCaveData\interactive_story_mental_health\images
+Export conclu�do: Assets/PaperCaveData/interactive_story_mental_health/
+[PIPELINE] ✓ Paper interactive_story_mental_health concluído com código 0.
+
+=================== PROCESSANDO PAPER [9/10]: kinect_conducting_system_ux ===================
+[PIPELINE] Iniciando pipeline de agentes real para: kinect_conducting_system_ux
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper kinect_conducting_system_ux
+================================================================
+Paper Cave  >  run  >  kinect_conducting_system_ux
+================================================================
+[GUI] Progresso anterior detectado em kinect_conducting_system_ux. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\kinect_conducting_system_ux\session_20260629_165038.log
+============================================================
+Paper Cave v5 � kinect_conducting_system_ux
+Provider: google/gemini-2.5-flash
+20260629_165038
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4_1, FIG4_2, FIG6, FIG7, FIG8, FIG9
+Figure captions extracted: 10/10
+Indexando 72 chunks para RAG ag�ntico...
+�ndice pronto: 72/72 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � output n�o encontrado, continuando sem insights visuais.
+[3/6] Summarizer � usando output salvo.
+Traceback (most recent call last):
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 795, in run
+extraction = ExtractionResult.model_validate(ext_data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+return cls.__pydantic_validator__.validate_python(
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for ExtractionResult
+elements.1.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.2.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.3.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='problem', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.5.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='artifact', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.6.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='artifact', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.7.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='limitation', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.8.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='metric', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.9.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+[PIPELINE] ✗ Pipeline falhou com código de erro 1.
+
+[PIPELINE] ⚠️ Tentativa 2/3 para o paper: kinect_conducting_system_ux...
+[PIPELINE] Iniciando pipeline de agentes real para: kinect_conducting_system_ux
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper kinect_conducting_system_ux
+================================================================
+Paper Cave  >  run  >  kinect_conducting_system_ux
+================================================================
+[GUI] Progresso anterior detectado em kinect_conducting_system_ux. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\kinect_conducting_system_ux\session_20260629_165144.log
+============================================================
+Paper Cave v5 � kinect_conducting_system_ux
+Provider: google/gemini-2.5-flash
+20260629_165144
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4_1, FIG4_2, FIG6, FIG7, FIG8, FIG9
+Figure captions extracted: 10/10
+Indexando 72 chunks para RAG ag�ntico...
+�ndice pronto: 72/72 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � output n�o encontrado, continuando sem insights visuais.
+[3/6] Summarizer � usando output salvo.
+Traceback (most recent call last):
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 795, in run
+extraction = ExtractionResult.model_validate(ext_data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+return cls.__pydantic_validator__.validate_python(
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for ExtractionResult
+elements.1.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.2.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.3.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='problem', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.5.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='artifact', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.6.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='artifact', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.7.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='limitation', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.8.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='metric', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.9.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+[PIPELINE] ✗ Pipeline falhou com código de erro 1.
+
+[PIPELINE] ⚠️ Tentativa 3/3 para o paper: kinect_conducting_system_ux...
+[PIPELINE] Iniciando pipeline de agentes real para: kinect_conducting_system_ux
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper kinect_conducting_system_ux
+================================================================
+Paper Cave  >  run  >  kinect_conducting_system_ux
+================================================================
+[GUI] Progresso anterior detectado em kinect_conducting_system_ux. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\kinect_conducting_system_ux\session_20260629_165253.log
+============================================================
+Paper Cave v5 � kinect_conducting_system_ux
+Provider: google/gemini-2.5-flash
+20260629_165253
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG10, FIG2, FIG3, FIG4_1, FIG4_2, FIG6, FIG7, FIG8, FIG9
+Figure captions extracted: 10/10
+Indexando 72 chunks para RAG ag�ntico...
+�ndice pronto: 72/72 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � output n�o encontrado, continuando sem insights visuais.
+[3/6] Summarizer � usando output salvo.
+Traceback (most recent call last):
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 795, in run
+extraction = ExtractionResult.model_validate(ext_data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+return cls.__pydantic_validator__.validate_python(
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for ExtractionResult
+elements.1.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.2.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.3.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='problem', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.4.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.5.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='artifact', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.6.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='artifact', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.7.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='limitation', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.8.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='metric', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+elements.9.category
+Input should be 'graphical_representation', 'abstract', 'contribution', 'image', 'graph' or 'table' [type=literal_error, input_value='method', input_type=str]
+For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+[PIPELINE] ✗ Pipeline falhou com código de erro 1.
+[ERRO] Paper 'kinect_conducting_system_ux' falhou após 3 tentativas. Pulando...
+
+=================== PROCESSANDO PAPER [10/10]: magic_journey_biomes_ai ===================
+[PIPELINE] Iniciando pipeline de agentes real para: magic_journey_biomes_ai
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper magic_journey_biomes_ai
+================================================================
+Paper Cave  >  run  >  magic_journey_biomes_ai
+================================================================
+[GUI] Progresso anterior detectado em magic_journey_biomes_ai. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\magic_journey_biomes_ai\session_20260629_165355.log
+============================================================
+Paper Cave v5 � magic_journey_biomes_ai
+Provider: google/gemini-2.5-flash
+20260629_165355
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6
+Figure captions extracted: 6/6
+Indexando 40 chunks para RAG ag�ntico...
+�ndice pronto: 40/40 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � output n�o encontrado, continuando sem insights visuais.
+[3/6] Summarizer � usando output salvo.
+Traceback (most recent call last):
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 795, in run
+extraction = ExtractionResult.model_validate(ext_data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+return cls.__pydantic_validator__.validate_python(
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for ExtractionResult
+paperTitle
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+centralContribution
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+elements
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+[PIPELINE] ✗ Pipeline falhou com código de erro 1.
+
+[PIPELINE] ⚠️ Tentativa 2/3 para o paper: magic_journey_biomes_ai...
+[PIPELINE] Iniciando pipeline de agentes real para: magic_journey_biomes_ai
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper magic_journey_biomes_ai
+================================================================
+Paper Cave  >  run  >  magic_journey_biomes_ai
+================================================================
+[GUI] Progresso anterior detectado em magic_journey_biomes_ai. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\magic_journey_biomes_ai\session_20260629_165438.log
+============================================================
+Paper Cave v5 � magic_journey_biomes_ai
+Provider: google/gemini-2.5-flash
+20260629_165438
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6
+Figure captions extracted: 6/6
+Indexando 40 chunks para RAG ag�ntico...
+�ndice pronto: 40/40 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � output n�o encontrado, continuando sem insights visuais.
+[3/6] Summarizer � usando output salvo.
+Traceback (most recent call last):
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 795, in run
+extraction = ExtractionResult.model_validate(ext_data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+return cls.__pydantic_validator__.validate_python(
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for ExtractionResult
+paperTitle
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+centralContribution
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+elements
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+[PIPELINE] ✗ Pipeline falhou com código de erro 1.
+
+[PIPELINE] ⚠️ Tentativa 3/3 para o paper: magic_journey_biomes_ai...
+[PIPELINE] Iniciando pipeline de agentes real para: magic_journey_biomes_ai
+[PIPELINE] Executando comando: D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Scripts\python.exe D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py run --paper magic_journey_biomes_ai
+================================================================
+Paper Cave  >  run  >  magic_journey_biomes_ai
+================================================================
+[GUI] Progresso anterior detectado em magic_journey_biomes_ai. Retomando automaticamente de 'reviewer'.
+Retomando de: reviewer
+Session log: outputs\magic_journey_biomes_ai\session_20260629_165520.log
+============================================================
+Paper Cave v5 � magic_journey_biomes_ai
+Provider: google/gemini-2.5-flash
+20260629_165520
+Mode: resuming from 'reviewer'
+============================================================
+Vision Analyst: VISUAL mode
+Paper figures found: FIG1, FIG2, FIG3, FIG4, FIG5, FIG6
+Figure captions extracted: 6/6
+Indexando 40 chunks para RAG ag�ntico...
+�ndice pronto: 40/40 chunks indexados.
+[1/6] Reader � usando output salvo.
+[2/6] Vision Analyst � output n�o encontrado, continuando sem insights visuais.
+[3/6] Summarizer � usando output salvo.
+Traceback (most recent call last):
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 356, in <module>
+dispatch[args.command](args)
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\main.py", line 186, in cmd_run
+result = crew_run(
+^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\crew.py", line 795, in run
+extraction = ExtractionResult.model_validate(ext_data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\3DCG\Fork Leonardo\pos-cg-d297\PaperCave\.venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+return cls.__pydantic_validator__.validate_python(
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for ExtractionResult
+paperTitle
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+centralContribution
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+elements
+Field required [type=missing, input_value={'simulated': True}, input_type=dict]
+For further information visit https://errors.pydantic.dev/2.12/v/missing
+[PIPELINE] ✗ Pipeline falhou com código de erro 1.
+[ERRO] Paper 'magic_journey_biomes_ai' falhou após 3 tentativas. Pulando...
+
+[FALHA] Processamento finalizado. Papers com falhas: kinect_conducting_system_ux, magic_journey_biomes_ai
+
+[FALHA] Execução interrompida com erros ou cancelada.

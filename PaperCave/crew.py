@@ -81,7 +81,7 @@ def paper_id_from_folder(paper_folder: Path) -> str:
 
 
 def save_output(paper_id: str, step: str, data: dict | str) -> Path:
-    out_dir = Path("outputs") / paper_id
+    out_dir = Path(__file__).parent / "outputs" / paper_id
     out_dir.mkdir(parents=True, exist_ok=True)
     filepath = out_dir / f"{step}.json"
     content = (
@@ -98,7 +98,7 @@ def load_task_prompts() -> dict:
 
 
 def _load_json_output(paper_id: str, filename: str) -> dict:
-    filepath = Path("outputs") / paper_id / filename
+    filepath = Path(__file__).parent / "outputs" / paper_id / filename
     if not filepath.exists():
         raise FileNotFoundError(
             f"Intermediate output not found: {filepath}\n"
@@ -110,7 +110,7 @@ def _load_json_output(paper_id: str, filename: str) -> dict:
 # ── Logging ────────────────────────────────────────────────────────────────────
 
 def setup_logging(paper_id: str) -> logging.Logger:
-    log_dir = Path("outputs") / paper_id
+    log_dir = Path(__file__).parent / "outputs" / paper_id
     log_dir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -162,12 +162,12 @@ class _Step:
 
     def done(self, detail: str = ""):
         elapsed = time.time() - self._t0
-        suffix  = f" — {detail}" if detail else ""
-        self._logger.info(f"  +- ✓ {elapsed:.0f}s{suffix}")
+        suffix  = f" - {detail}" if detail else ""
+        self._logger.info(f"  +- [OK] {elapsed:.0f}s{suffix}")
 
     def fail(self, reason: str = ""):
         elapsed = time.time() - self._t0
-        self._logger.error(f"  +- ✗ {elapsed:.0f}s — {reason}")
+        self._logger.error(f"  +- [FAIL] {elapsed:.0f}s - {reason}")
 
     def __exit__(self, exc_type, *_):
         if exc_type is not None:
@@ -248,7 +248,7 @@ def _process_output(task_out, model_cls, logger=None):
     if task_out.pydantic is not None:
         return task_out.pydantic, raw
     if has_thinking_tags(raw) and logger:
-        logger.info("  Reasoning tags detected — stripping...")
+        logger.info("  Reasoning tags detected - stripping...")
     recovered = _recover_pydantic(raw, model_cls)
     if recovered is not None and logger:
         logger.info("  Schema recovered after output cleaning.")
@@ -291,7 +291,7 @@ def _describe_paper_figures(
     available_figs = paper_context.get("available_figures", [])
     if not available_figs:
         if logger:
-            logger.info("  No FIG*.png in paper folder — skipping Vision Analyst.")
+            logger.info("  No FIG*.png in paper folder - skipping Vision Analyst.")
         return None
 
     captions = paper_context.get("figure_captions", {})
@@ -358,8 +358,8 @@ def _run_mapper_reviewer_loop(
     Runs the Mapper → Reviewer loop with attempt history.
     Assembles the best manifest from the highest-scoring units across attempts.
     """
-    map_task_key = "map_simple" if simple_mode else "map"
-    if map_task_base_description and not simple_mode:
+    map_task_key = "map"
+    if map_task_base_description:
         base_desc = map_task_base_description
     else:
         base_desc = tp[map_task_key]["description"].replace("{card_count}", str(card_count))
@@ -548,15 +548,21 @@ def run(
     paper_folder: Path,
     from_step: str | None = None,
     simple_mode: bool = False,
+    cfg_override: dict | None = None,
 ):
     cfg      = load_config()
+    if cfg_override:
+        cfg.update(cfg_override)
     paper_id = paper_id_from_folder(paper_folder)
     ts       = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     logger = setup_logging(paper_id)
-    mode_label = " [SIMPLE MODE]" if simple_mode else ""
+    if simple_mode:
+        logger.warning("  [Deprecated] Simple mode is deprecated. Forcing standard card/stack mode.")
+        simple_mode = False
+
     logger.info(f"\n{'='*60}")
-    logger.info(f"  Paper Cave v5{mode_label} — {paper_id}")
+    logger.info(f"  Paper Cave v5 - {paper_id}")
     logger.info(f"  Provider: {get_config_summary(cfg)}")
     logger.info(f"  {ts}")
     if from_step:
@@ -662,7 +668,7 @@ def run(
 
     # ── Step 1: Reader ─────────────────────────────────────────────────────────
     if from_step is None:
-        with _Step(logger, 1, 6, "Reader — extraindo texto do PDF") as step:
+        with _Step(logger, 1, 6, "Reader - extraindo texto do PDF") as step:
             read_task = Task(
                 description=tp["read"]["description"].format(pdf_path=pdf_path),
                 expected_output=tp["read"]["expected_output"],
@@ -690,9 +696,9 @@ def run(
             full_text = _load_json_output(paper_id, "01_reader_output.json").get("raw", full_text)
             if available_figs and full_text:
                 update_figure_captions(paper_context, full_text)
-            logger.info("  [1/6] Reader — usando output salvo.")
+            logger.info("  [1/6] Reader - usando output salvo.")
         except FileNotFoundError:
-            logger.info("  [1/6] Reader — output não encontrado, usando texto do PDF.")
+            logger.info("  [1/6] Reader - output não encontrado, usando texto do PDF.")
 
     # Rebuild map task description with updated captions after Reader
     if not simple_mode and full_text:
@@ -705,7 +711,7 @@ def run(
         if from_step in (None, "vision_analyst"):
             n_figs = len(paper_context.get("available_figures", []))
             if n_figs:
-                with _Step(logger, 2, 6, f"Vision Analyst — {n_figs} figura(s)") as step:
+                with _Step(logger, 2, 6, f"Vision Analyst - {n_figs} figura(s)") as step:
                     insights = _describe_paper_figures(paper_folder, paper_context, agents, tp, logger)
                     if insights:
                         save_output(paper_id, "03_vision_insights", insights.model_dump())
@@ -713,14 +719,14 @@ def run(
                     else:
                         step.done("sem figuras para descrever")
             else:
-                logger.info("  [2/6] Vision Analyst — sem FIG*.png, etapa ignorada.")
+                logger.info("  [2/6] Vision Analyst - sem FIG*.png, etapa ignorada.")
     else:
         try:
             ins_data  = _load_json_output(paper_id, "03_vision_insights.json")
             insights  = ImageInsights.model_validate(ins_data)
-            logger.info(f"  [2/6] Vision Analyst — usando output salvo ({len(insights.insights)} figuras).")
+            logger.info(f"  [2/6] Vision Analyst - usando output salvo ({len(insights.insights)} figuras).")
         except (FileNotFoundError, Exception):
-            logger.info("  [2/6] Vision Analyst — output não encontrado, continuando sem insights visuais.")
+            logger.info("  [2/6] Vision Analyst - output não encontrado, continuando sem insights visuais.")
 
     # ── Step 3: Summarizer ─────────────────────────────────────────────────────
     if from_step not in ("extractor", "mapper", "reviewer"):
@@ -763,7 +769,7 @@ def run(
             step.done(f"{len(sum_clean):,} chars")
     else:
         summary_text = _load_json_output(paper_id, "04_summarizer_output.json").get("raw", "")
-        logger.info("  [3/6] Summarizer — usando output salvo.")
+        logger.info("  [3/6] Summarizer - usando output salvo.")
 
     # ── Step 4: Extractor ──────────────────────────────────────────────────────
     if from_step not in ("mapper", "reviewer"):
@@ -786,18 +792,41 @@ def run(
             extraction, _ = _process_output(ext_result.tasks_output[0], ExtractionResult, logger)
 
             if extraction is None:
-                step.fail("falha no schema — abortando pipeline")
+                step.fail("falha no schema - abortando pipeline")
                 return None
             save_output(paper_id, "05_extractor_output", extraction.model_dump())
             step.done()
     else:
-        ext_data   = _load_json_output(paper_id, "05_extractor_output.json")
-        extraction = ExtractionResult.model_validate(ext_data)
-        logger.info("  [4/6] Extractor — usando output salvo.")
+        try:
+            ext_data   = _load_json_output(paper_id, "05_extractor_output.json")
+            extraction = ExtractionResult.model_validate(ext_data)
+            logger.info("  [4/6] Extractor - usando output salvo.")
+        except Exception as e:
+            logger.warning(f"  [4/6] Extractor - output salvo inválido ou antigo ({e}). Re-executando Extractor...")
+            extract_task = Task(
+                description=tp["extract"]["description"] + f"\n\nSummary:\n\n{summary_text}",
+                expected_output=tp["extract"]["expected_output"],
+                agent=agents["extractor"],
+                output_pydantic=ExtractionResult,
+            )
+            ext_result = call_with_backoff(
+                lambda: Crew(
+                    agents=[agents["extractor"]],
+                    tasks=[extract_task],
+                    process=Process.sequential,
+                    verbose=False,
+                ).kickoff(),
+                logger=logger,
+            )
+            extraction, _ = _process_output(ext_result.tasks_output[0], ExtractionResult, logger)
+            if extraction is None:
+                logger.error("  [4/6] Extractor - falha no schema ao re-executar - abortando pipeline")
+                return None
+            save_output(paper_id, "05_extractor_output", extraction.model_dump())
 
     # ── Steps 5+6: Mapper → Reviewer (retry loop) ─────────────────────────────
     if from_step != "reviewer":
-        with _Step(logger, 5, 6, f"Mapper → Reviewer (máx {max_retries} tentativas)") as step:
+        with _Step(logger, 5, 6, f"Mapper -> Reviewer (máx {max_retries} tentativas)") as step:
             manifest_context = extraction.model_dump_json(indent=2)
 
             reviewed = _run_mapper_reviewer_loop(
@@ -820,7 +849,7 @@ def run(
             save_output(paper_id, "07_reviewer_output", reviewed.model_dump())
             step.done(f"{reviewed.unitCount} unidade(s), {reviewed.totalAttempts} tentativa(s)")
     else:
-        with _Step(logger, 6, 6, "Reviewer — re-avaliando manifest salvo") as step:
+        with _Step(logger, 6, 6, "Reviewer - re-avaliando manifest salvo") as step:
             manifest_context = extraction.model_dump_json(indent=2)
             reviewed = _run_mapper_reviewer_loop(
                 manifest_context=manifest_context,
@@ -845,7 +874,7 @@ def run(
             export_assets_to_unity(
                 paper_id=paper_id,
                 paper_folder=Path(paper_folder),
-                unity_project_root=Path("..")
+                unity_project_root=Path(__file__).parent.parent
             )
         except Exception as e:
             logger.warning(f"  [Export] Falha na exportação automática para o Unity: {e}")

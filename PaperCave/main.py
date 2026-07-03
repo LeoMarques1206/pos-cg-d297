@@ -183,11 +183,22 @@ def cmd_run(args) -> None:
         if not captions:
             print("  Aviso: nenhuma figura extraída. Continuando sem figuras visuais.\n")
 
+    cfg_override = None
+    if getattr(args, "local", False):
+        cfg_override = {
+            "provider": "lmstudio",
+            "model": "google/gemma-4-12b-qat",
+            "base_url": "http://127.0.0.1:1234/v1",
+            "embedding_model": "text-embedding-bge-m3",
+            "embedding_base_url": "http://127.0.0.1:1234/v1"
+        }
+
     result = crew_run(
         pdf_path     = str(pdf_path),
         paper_folder = paper_folder,
         from_step    = from_step,
         simple_mode  = getattr(args, "simple", False),
+        cfg_override = cfg_override,
     )
 
     if result:
@@ -203,6 +214,17 @@ def cmd_batch(args) -> None:
     """Run the full pipeline for all papers in papers/."""
     from run_all_papers import run_all
     _print_header("batch")
+    
+    cfg_override = None
+    if getattr(args, "local", False):
+        cfg_override = {
+            "provider": "lmstudio",
+            "model": "google/gemma-4-12b-qat",
+            "base_url": "http://127.0.0.1:1234/v1",
+            "embedding_model": "text-embedding-bge-m3",
+            "embedding_base_url": "http://127.0.0.1:1234/v1"
+        }
+
     run_all(
         from_step    = args.from_step,
         simple_mode  = args.simple,
@@ -210,6 +232,7 @@ def cmd_batch(args) -> None:
         skip_export  = args.skip_export,
         only         = args.paper,
         extract_only = args.extract_only,
+        cfg_override = cfg_override,
     )
 
 
@@ -245,12 +268,13 @@ def cmd_gui(args) -> None:
 
 def _do_export(paper_id: str) -> None:
     from utils.unity_asset_exporter import export_assets_to_unity
-    paper_folder = Path("papers") / paper_id
+    base_dir = Path(__file__).parent
+    paper_folder = base_dir / "papers" / paper_id
     try:
         export_assets_to_unity(
             paper_id=paper_id,
             paper_folder=paper_folder,
-            unity_project_root=Path(".."),
+            unity_project_root=base_dir.parent,
         )
         print(f"  Export concluído: Assets/PaperCaveData/{paper_id}/")
     except FileNotFoundError as e:
@@ -302,6 +326,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--skip-export", action="store_true",
         help="Pula o export para Unity ao final",
     )
+    p_run.add_argument(
+        "--local", action="store_true",
+        help="Usa LLM local gemma-4 e embedding bge-m3 via LM Studio",
+    )
 
     # ── batch ─────────────────────────────────────────────────────────────────
     p_bat = sub.add_parser("batch", help="Pipeline para todos os papers em papers/")
@@ -318,6 +346,10 @@ def build_parser() -> argparse.ArgumentParser:
     p_bat.add_argument("--skip-figures", action="store_true")
     p_bat.add_argument("--skip-export",  action="store_true")
     p_bat.add_argument("--extract-only", action="store_true")
+    p_bat.add_argument(
+        "--local", action="store_true",
+        help="Usa LLM local gemma-4 e embedding bge-m3 via LM Studio",
+    )
 
     # ── export ────────────────────────────────────────────────────────────────
     p_exp = sub.add_parser("export", help="Exporta resultado para Unity (sem IA)")

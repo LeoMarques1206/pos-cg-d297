@@ -129,7 +129,7 @@ class ImageInsights(BaseModel):
     insights: List[ImageInsight]
 
 
-CONTENT_TYPES = Literal["figure", "chart", "table", "animation", "text_panel"]
+CONTENT_TYPES = Literal["figure", "chart", "table", "text_panel"]
 CATEGORIES    = Literal[
     "graphical_representation", "abstract", "contribution",
     "image", "graph", "table"
@@ -143,6 +143,7 @@ class ConceptualElement(BaseModel):
     relevanceScore: int = Field(ge=1, le=10)
     justification: str
     groupingHint: Optional[str] = None
+    data: Optional[Dict[str, Any]] = None
 
 
 class ExtractionResult(BaseModel):
@@ -158,23 +159,15 @@ class CardStyleHint(BaseModel):
     colorName: str     = Field(description="Human-readable color name")
 
 
-class AnimationFrame(BaseModel):
-    index: int
-    label: str       = Field(max_length=20)
-    description: str = Field(max_length=120)
-    assetReference: Optional[str] = None
-
-
 class CardContent(BaseModel):
     """
     Union-style content block. Fields used depend on contentType:
       figure      → assetReference, caption, description
       chart       → chartType, title, description, data
       table       → chartType ("table"/"comparison_table"), title, description, data
-      animation   → description, frameCount, frames, transitionType, looping
       text_panel  → description
     """
-    # figure / animation fields
+    # figure fields
     assetReference: Optional[str]  = None
     caption:        Optional[str]  = None
 
@@ -186,16 +179,40 @@ class CardContent(BaseModel):
     title:     Optional[str]            = None
     data:      Optional[Dict[str, Any]] = None
 
-    # animation fields
-    frameCount:     Optional[int]                = None
-    frames:         Optional[List[AnimationFrame]] = None
-    transitionType: Optional[Literal["fade", "slide"]] = None
-    looping:        Optional[bool]               = None
-
     @model_validator(mode="after")
     def validate_description_present(self) -> "CardContent":
         if not self.description:
             raise ValueError("CardContent.description must not be empty")
+        return self
+
+    @model_validator(mode="after")
+    def clean_table_data(self) -> "CardContent":
+        if self.data and isinstance(self.data, dict):
+            # Truncate columns to 15 characters max
+            if "columns" in self.data and isinstance(self.data["columns"], list):
+                new_cols = []
+                for c in self.data["columns"]:
+                    c_str = str(c)
+                    if len(c_str) > 15:
+                        c_str = c_str[:12] + "..."
+                    new_cols.append(c_str)
+                self.data["columns"] = new_cols
+            
+            # Truncate row cell values to 20 characters max
+            if "rows" in self.data and isinstance(self.data["rows"], list):
+                new_rows = []
+                for r in self.data["rows"]:
+                    if isinstance(r, list):
+                        new_row = []
+                        for cell in r:
+                            cell_str = str(cell)
+                            if len(cell_str) > 20:
+                                cell_str = cell_str[:17] + "..."
+                            new_row.append(cell_str)
+                        new_rows.append(new_row)
+                    else:
+                        new_rows.append(r)
+                self.data["rows"] = new_rows
         return self
 
 
@@ -208,6 +225,13 @@ class StackItem(BaseModel):
     title:       str = Field(max_length=30)
     contentType: CONTENT_TYPES
     content:     CardContent
+
+    @field_validator("title", mode="before")
+    @classmethod
+    def truncate_item_title(cls, v):
+        if v and len(v) > 30:
+            return v[:27] + "..."
+        return v
 
 
 class Unit(BaseModel):
@@ -224,6 +248,20 @@ class Unit(BaseModel):
     title:           Optional[str]         = Field(None, max_length=30)
     category:        Optional[CATEGORIES]  = None
     summary:         Optional[str]         = None
+
+    @field_validator("title", mode="before")
+    @classmethod
+    def truncate_title(cls, v):
+        if v and len(v) > 30:
+            return v[:27] + "..."
+        return v
+
+    @field_validator("stackLabel", mode="before")
+    @classmethod
+    def truncate_stack_label(cls, v):
+        if v and len(v) > 30:
+            return v[:27] + "..."
+        return v
 
     @field_validator("summary", mode="before")
     @classmethod
@@ -242,6 +280,23 @@ class Unit(BaseModel):
     items:      Optional[List[StackItem]] = None
 
     styleHint: CardStyleHint
+
+    @model_validator(mode="after")
+    def enforce_type_category_alignment(self) -> "Unit":
+        if self.type == "card":
+            if self.category == "table":
+                self.contentType = "table"
+            elif self.category in ("image", "graph", "graphical_representation"):
+                self.contentType = "figure"
+            elif self.category in ("abstract", "contribution"):
+                self.contentType = "text_panel"
+        elif self.type == "stack" and self.items:
+            for item in self.items:
+                if self.category == "table":
+                    item.contentType = "table"
+                elif self.category in ("image", "graph"):
+                    item.contentType = "figure"
+        return self
 
     @model_validator(mode="after")
     def validate_by_type(self) -> "Unit":
@@ -265,21 +320,15 @@ class Unit(BaseModel):
                 raise ValueError(
                     f"Unit '{self.id}' has contentType='table' but content.data is null."
                 )
-            if self.contentType == "animation":
-                frames = self.content.frames or []
-                if len(frames) < 2:
-                    raise ValueError(
-                        f"Unit '{self.id}' has contentType='animation' but fewer than 2 frames."
-                    )
         elif self.type == "stack":
             if not self.stackLabel:
                 raise ValueError(f"Unit '{self.id}' (stack) must have a stackLabel")
             if not self.category:
                 raise ValueError(f"Unit '{self.id}' (stack) must have a category")
             items = self.items or []
-            if len(items) < 2 or len(items) > 4:
+            if len(items) < 1:
                 raise ValueError(
-                    f"Unit '{self.id}' (stack) must have 2-4 items, got {len(items)}"
+                    f"Unit '{self.id}' (stack) must have at least 1 item, got {len(items)}"
                 )
         return self
 

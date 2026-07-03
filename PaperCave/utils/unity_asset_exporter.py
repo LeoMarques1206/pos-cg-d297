@@ -35,7 +35,7 @@ def export_assets_to_unity(paper_id: str, paper_folder: Path, unity_project_root
       - Images:   {unity_project_root}/Assets/PaperCaveData/{paper_id}/images/FIG_*.png
     """
     # 1. Localizar o output do Reviewer
-    output_dir = Path("outputs") / paper_id
+    output_dir = Path(__file__).parent.parent / "outputs" / paper_id
     reviewer_output_path = output_dir / "07_reviewer_output.json"
     
     if not reviewer_output_path.exists():

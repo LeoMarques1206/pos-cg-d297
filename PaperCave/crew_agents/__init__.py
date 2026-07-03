@@ -5,6 +5,4 @@ from .mapper import make_mapper_agent
 from .vision_analyst import make_vision_analyst_agent
 from .reviewer import make_reviewer_agent
 
-# Aliases de compatibilidade v2
-from .classifier import make_classifier_agent
-from .designer import make_designer_agent
+# Aliases de compatibilidade v2 removed because classifier and designer are legacy/deprecated.

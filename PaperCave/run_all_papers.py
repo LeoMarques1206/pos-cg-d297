@@ -152,6 +152,7 @@ def run_all(
     skip_export: bool = False,
     only: str | None = None,
     extract_only: bool = False,
+    cfg_override: dict | None = None,
 ) -> None:
     ts_start = datetime.now()
     _start_keyboard_monitor()
@@ -252,6 +253,7 @@ def run_all(
                 paper_folder = paper_folder,
                 from_step    = from_step,
                 simple_mode  = simple_mode,
+                cfg_override = cfg_override,
             )
             if reviewed is None:
                 status["pipeline"] = "FALHOU (sem output)"
@@ -280,7 +282,7 @@ def run_all(
                 export_assets_to_unity(
                     paper_id=paper_id,
                     paper_folder=paper_folder,
-                    unity_project_root=Path("..")
+                    unity_project_root=Path(__file__).parent.parent
                 )
                 status["export"] = "ok"
             except FileNotFoundError as e:
