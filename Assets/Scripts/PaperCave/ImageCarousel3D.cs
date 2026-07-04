@@ -252,7 +252,7 @@ private static Material BuildArrowMaterial(Color color)
 
             // Ajustes de posição
             float horizontalInset = width * 0.35f;//edgeInset;
-            float verticalOffset = height * 0.18f; // Aumenta este valor para descer mais
+            float verticalOffset = height * 0.21f; // Aumenta este valor para descer mais
 
             Vector3 center = (bottomLeft + bottomRight) * 0.5f;
             Vector3 camPush = (_cam.transform.position - center).normalized * 0.03f;

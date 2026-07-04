@@ -417,7 +417,7 @@ namespace PaperCave
                 _titleRT.anchorMin        = new Vector2(0f, 1f);
                 _titleRT.anchorMax        = new Vector2(1f, 1f);
                 _titleRT.pivot            = new Vector2(0.5f, 1f);
-                _titleRT.anchoredPosition = new Vector2(0f, cursorY);
+                _titleRT.anchoredPosition = new Vector2(0f, cursorY - 0.2f);
                 _titleRT.sizeDelta        = new Vector2(-sideMargin * 2f, titleH);
             }
             cursorY -= titleH + gap;

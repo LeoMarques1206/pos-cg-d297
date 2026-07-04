@@ -42,6 +42,7 @@ namespace PaperCave
         [Tooltip("Opcional: prefab de título (TMP). Se vazio, o título é ignorado.")]
         public GameObject titlePrefab;
         public Transform titleAnchor;
+        public float titleWidth = 8f;
 
         [Header("Layout (leque centrado)")]
         public Vector3 primaryPosition = new Vector3(0f, 0.4f, 0f);
@@ -463,24 +464,34 @@ private void BuildTableFollower(GameObject card, CardSpec spec)
 
         private void SpawnTitle(string paperTitle)
         {
-            if (titlePrefab == null || string.IsNullOrEmpty(paperTitle)) return;
+            if (titlePrefab == null || string.IsNullOrEmpty(paperTitle))
+                return;
 
             Vector3 cardsCenter = GetCardsCenter();
 
             float yOffset = 1.7f; // altura acima dos cards
-
-            Vector3 spawnPos = cardsCenter + new Vector3(-1.2f, yOffset, 0f);
+            Vector3 spawnPos = cardsCenter + new Vector3(0f, yOffset, 0f);
 
             var t = Instantiate(titlePrefab, spawnPos, Quaternion.identity);
             t.name = "PaperTitle";
 
+            // Procura o TMP (tanto no objeto principal quanto em filhos)
             var tmp = t.GetComponent<TMP_Text>() ?? t.GetComponentInChildren<TMP_Text>(true);
 
             if (tmp != null)
             {
+                // Ajusta a largura do retângulo do texto
+                RectTransform rt = tmp.GetComponent<RectTransform>();
+                if (rt != null)
+                {
+                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, titleWidth);
+                }
+
                 tmp.text = paperTitle;
                 tmp.fontSize = 0.3f;
                 tmp.alignment = TextAlignmentOptions.Center;
+                tmp.enableWordWrapping = true;
+                tmp.overflowMode = TextOverflowModes.Overflow;
             }
 
             _spawned.Add(t);
