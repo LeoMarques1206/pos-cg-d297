@@ -65,8 +65,9 @@ from crew_agents import (
     make_vision_analyst_agent,
     make_reviewer_agent,
 )
+from crew_agents.corrector import make_corrector_agent
 from models.schemas import (
-    ImageInsights, ExtractionResult,
+    ImageInsights, TableInsights, ExtractionResult,
     UnitManifest, ReviewResult, ReviewedUnitManifest,
     ObjectScore, ImplementationNotes,
 )
@@ -176,7 +177,7 @@ class _Step:
 
 # ── Transient API error retry ──────────────────────────────────────────────────
 
-def call_with_backoff(fn, max_attempts: int = 5, base_delay: float = 3.0, logger=None):
+def call_with_backoff(fn, max_attempts: int = 15, base_delay: float = 15.0, logger=None):
     """
     Retries a callable on transient API errors (rate limits, 503s) with
     exponential backoff. Catches both LiteLLM exceptions and generic HTTP errors
@@ -206,7 +207,10 @@ def call_with_backoff(fn, max_attempts: int = 5, base_delay: float = 3.0, logger
             last_exc = exc
             if attempt == max_attempts:
                 break
-            delay = base_delay * (2 ** (attempt - 1))
+            
+            # Capped exponential backoff up to 300s (5 minutes)
+            delay = min(base_delay * (1.5 ** (attempt - 1)), 300.0)
+            
             msg = (
                 f"  API indisponível (tentativa {attempt}/{max_attempts}): "
                 f"{type(exc).__name__}. Aguardando {delay:.0f}s..."
@@ -322,6 +326,53 @@ def _describe_paper_figures(
     insights, _ = _process_output(analyst_result.tasks_output[0], ImageInsights, logger)
     if logger and insights:
         logger.info(f"  Vision Analyst described {len(insights.insights)} figure(s).")
+    return insights
+
+
+def _transcribe_paper_tables(
+    paper_folder: Path,
+    paper_context: dict,
+    agents: dict,
+    tp: dict,
+    full_text: str,
+    logger=None,
+) -> TableInsights | None:
+    """
+    Runs the Vision Analyst on TAB_*.png files.
+    """
+    available_tabs = paper_context.get("available_tables", [])
+    if not available_tabs:
+        if logger:
+            logger.info("  No TAB*.png in paper folder - skipping Table Transcription.")
+        return None
+
+    analyst_context = "\n\n".join(
+        f"[{tab}.png]" for tab in available_tabs
+    )
+
+    analyst_task = Task(
+        description=(
+            tp["analyze_tables"]["description"]
+            + f"\n\nTables to transcribe:\n{analyst_context}"
+            + f"\n\nContext from paper text to resolve ambiguities:\n{full_text}"
+        ),
+        expected_output=tp["analyze_tables"]["expected_output"],
+        agent=agents["vision_analyst"],
+        output_pydantic=TableInsights,
+    )
+    analyst_result = call_with_backoff(
+        lambda: Crew(
+            agents=[agents["vision_analyst"]],
+            tasks=[analyst_task],
+            process=Process.sequential,
+            verbose=False,
+        ).kickoff(),
+        logger=logger,
+    )
+
+    insights, _ = _process_output(analyst_result.tasks_output[0], TableInsights, logger)
+    if logger and insights:
+        logger.info(f"  Vision Analyst transcribed {len(insights.transcriptions)} table(s).")
     return insights
 
 
@@ -663,6 +714,7 @@ def run(
     }
 
     insights: ImageInsights | None = None
+    table_insights: TableInsights | None = None
     summary_text = ""
     extraction: ExtractionResult | None = None
 
@@ -728,6 +780,28 @@ def run(
         except (FileNotFoundError, Exception):
             logger.info("  [2/6] Vision Analyst - output não encontrado, continuando sem insights visuais.")
 
+    # ── Step 2.5: Vision Analyst (Tables) ──────────────────────────────────────
+    if not skip_vision:
+        if from_step in (None, "vision_analyst"):
+            n_tabs = len(paper_context.get("available_tables", []))
+            if n_tabs:
+                with _Step(logger, 2, 6, f"Vision Analyst (Tables) - {n_tabs} tabela(s)") as step:
+                    table_insights = _transcribe_paper_tables(paper_folder, paper_context, agents, tp, full_text, logger)
+                    if table_insights:
+                        save_output(paper_id, "03b_table_transcriptions", table_insights.model_dump())
+                        step.done(f"{len(table_insights.transcriptions)} tabela(s) transcritas")
+                    else:
+                        step.done("sem tabelas para transcrever")
+            else:
+                logger.info("  [2/6] Vision Analyst (Tables) - sem TAB*.png, etapa ignorada.")
+    else:
+        try:
+            tab_data  = _load_json_output(paper_id, "03b_table_transcriptions.json")
+            table_insights  = TableInsights.model_validate(tab_data)
+            logger.info(f"  [2/6] Vision Analyst (Tables) - usando output salvo ({len(table_insights.transcriptions)} tabelas).")
+        except (FileNotFoundError, Exception):
+            pass
+
     # ── Step 3: Summarizer ─────────────────────────────────────────────────────
     if from_step not in ("extractor", "mapper", "reviewer"):
         with _Step(logger, 3, 6, "Summarizer") as step:
@@ -741,11 +815,19 @@ def run(
                         + (" [text inferred]" if ins.mode == "text_inferred" else "")
                     )
                 visual_block = "\n" + "\n".join(lines)
+            
+            table_block = ""
+            if table_insights and table_insights.transcriptions:
+                lines = ["TABLE TRANSCRIPTIONS (from pre-extracted paper tables):"]
+                for t in table_insights.transcriptions:
+                    lines.append(f"  [{t.filename}]\n{t.markdown_content}\n")
+                table_block = "\n" + "\n".join(lines)
 
             summarize_desc = (
                 tp["summarize"]["description"]
                 + f"\n\nFull paper text:\n\n{full_text[:60000]}"
                 + visual_block
+                + table_block
             )
             summarize_task = Task(
                 description=summarize_desc,
@@ -775,7 +857,12 @@ def run(
     if from_step not in ("mapper", "reviewer"):
         with _Step(logger, 4, 6, "Extractor") as step:
             extract_task = Task(
-                description=tp["extract"]["description"] + f"\n\nSummary:\n\n{summary_text}",
+                description=(
+                    tp["extract"]["description"] 
+                    + f"\n\nSummary:\n\n{summary_text}"
+                    + (f"\n\n{visual_block}" if visual_block else "")
+                    + (f"\n\n{table_block}" if table_block else "")
+                ),
                 expected_output=tp["extract"]["expected_output"],
                 agent=agents["extractor"],
                 output_pydantic=ExtractionResult,
@@ -804,7 +891,12 @@ def run(
         except Exception as e:
             logger.warning(f"  [4/6] Extractor - output salvo inválido ou antigo ({e}). Re-executando Extractor...")
             extract_task = Task(
-                description=tp["extract"]["description"] + f"\n\nSummary:\n\n{summary_text}",
+                description=(
+                    tp["extract"]["description"] 
+                    + f"\n\nSummary:\n\n{summary_text}"
+                    + (f"\n\n{visual_block}" if visual_block else "")
+                    + (f"\n\n{table_block}" if table_block else "")
+                ),
                 expected_output=tp["extract"]["expected_output"],
                 agent=agents["extractor"],
                 output_pydantic=ExtractionResult,
@@ -889,6 +981,67 @@ def run(
 
     return reviewed
 
+
+def run_correction(paper_id: str, step_to_fix: str, user_prompt: str, edited_json: str) -> tuple[bool, str]:
+    """
+    Executes a specific correction task given user input and the partially edited JSON.
+    """
+    logger = logging.getLogger("PaperCave.Correction")
+    logger.info(f"  [Correction] Invocando agente para corrigir a fase: {step_to_fix}")
+    
+    paper_folder = Path("papers") / paper_id
+    context, err = load_paper_context(paper_folder, Path("outputs") / paper_id)
+    if err:
+        logger.error(f"  [Error] {err}")
+        return False, err
+        
+    llm_json = make_json_llm()
+    corrector = make_corrector_agent(llm_json)
+    
+    desc = f"""Você deve regenerar o JSON da fase '{step_to_fix}'.
+O usuário alterou parcialmente o output original para corrigir alguns erros e deixou as seguintes instruções do que você deve ajustar.
+Instrução do usuário:
+"{user_prompt}"
+
+Aqui está o JSON parcialmente editado pelo usuário. Você DEVE usar este JSON como base e manter a mesma estrutura de chaves.
+```json
+{edited_json}
+```
+
+Informações de Apoio do Paper (Use para extrair e validar fatos):
+{context.paper_text[:8000]}
+
+Regras Absolutas:
+1. Retorne APENAS um JSON válido.
+2. Não altere os nomes das chaves do JSON base, apenas os valores conforme solicitado.
+3. Se o usuário pediu para consertar algo específico, concentre-se naquilo.
+"""
+    
+    task = Task(
+        description=desc,
+        expected_output="JSON perfeitamente corrigido.",
+        agent=corrector,
+    )
+    
+    crew = Crew(
+        agents=[corrector],
+        tasks=[task],
+        process=Process.sequential,
+        verbose=True
+    )
+    
+    logger.info("  [Correction] Rodando Agente de Correção...")
+    try:
+        result = crew.kickoff()
+        clean_json = extract_json_from_output(result.raw)
+        parsed = json.loads(clean_json)
+        
+        # Save output overwriting the existing file
+        save_output(paper_id, step_to_fix, parsed)
+        return True, "Correção salva com sucesso."
+    except Exception as e:
+        logger.error(f"  [Correction Error] Falha ao gerar/salvar correção: {e}")
+        return False, f"Erro: {str(e)}"
 
 # ── Entry point ────────────────────────────────────────────────────────────────
 

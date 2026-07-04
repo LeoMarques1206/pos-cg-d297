@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperCave - Figure Extraction Studio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-base: #0f0f13;
+            --bg-surface: #18181e;
+            --bg-panel: #23232c;
+            --bg-hover: #2d2d38;
+            --color-primary: #6366f1; /* Indigo - Figures */
+            --color-primary-glow: rgba(99, 102, 241, 0.15);
+            --color-warning: #f59e0b; /* Amber - Captions */
+            --color-success: #10b981; /* Emerald */
+            --color-error: #ef4444; /* Rose */
+            --color-sub: #a855f7; /* Purple - Sub-captions */
+            --color-table: #14b8a6; /* Teal - Tables */
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #333342;
+            --toolbar-width: 60px;
+            --right-panel-width: 320px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-base); color: var(--text-main); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+
+        /* HEADER */
+        header { background-color: var(--bg-surface); border-bottom: 1px solid var(--border-color); padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 60px; z-index: 100; }
+        .logo { display: flex; align-items: center; gap: 10px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.2em; color: white; }
+        
+        .top-controls { display: flex; align-items: center; gap: 16px; }
+        
+        .page-nav { display: flex; align-items: center; gap: 12px; background: var(--bg-panel); padding: 4px 12px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .page-nav button { background: none; border: none; color: var(--text-main); cursor: pointer; padding: 4px; font-size: 1.1em; transition: color 0.2s; }
+        .page-nav button:hover:not(:disabled) { color: var(--color-primary); }
+        .page-nav button:disabled { color: #4b5563; cursor: not-allowed; }
+        
+        button.btn { font-family: inherit; font-weight: 600; font-size: 0.9em; padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-panel); color: var(--text-main); cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.2s; }
+        button.btn:hover:not(:disabled) { background-color: var(--bg-hover); }
+        button.btn-primary { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+        button.btn-primary:hover:not(:disabled) { filter: brightness(1.1); box-shadow: 0 0 12px rgba(99, 102, 241, 0.4); }
+
+        /* WORKSPACE */
+        .workspace { display: flex; flex: 1; overflow: hidden; position: relative; }
+
+        /* TOOLBAR */
+        .toolbar { width: var(--toolbar-width); background-color: var(--bg-surface); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; padding: 12px 0; gap: 12px; z-index: 50; }
+        .tool-btn { width: 40px; height: 40px; border-radius: 8px; border: 1px solid transparent; background: transparent; color: var(--text-muted); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.15s; position: relative; }
+        .tool-btn i { font-size: 1.1em; }
+        .tool-btn:hover { background-color: var(--bg-hover); color: white; }
+        .tool-btn.active { background-color: var(--color-primary-glow); color: var(--color-primary); border-color: rgba(99,102,241,0.3); }
+        
+        /* Tooltip */
+        .tool-btn[data-tip]::after {
+            content: attr(data-tip); position: absolute; left: 50px; background: #000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 12px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000;
+        }
+        .tool-btn:hover::after { opacity: 1; }
+
+        /* EDITOR AREA */
+        .editor-area { flex: 1; position: relative; overflow: hidden; display: block; background-color: #050508; }
+        .canvas-container { position: absolute; top: 0; left: 0; box-shadow: 0 10px 40px rgba(0,0,0,0.8); background: #fff; transform-origin: top left; transition: transform 0.1s ease-out; }
+        .paper-img { display: block; max-width: none; pointer-events: none; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* BBOX */
+        .bbox-element { position: absolute; border: 1px solid var(--color-primary); background-color: rgba(99, 102, 241, 0.04); cursor: move; box-sizing: border-box; }
+        .bbox-element.caption-bbox { border-color: var(--color-warning); background-color: rgba(245, 158, 11, 0.04); }
+        .bbox-element.subcaption-bbox { border-color: var(--color-sub); background-color: rgba(168, 85, 247, 0.04); }
+        .bbox-element.table-bbox { border-color: var(--color-table); background-color: rgba(20, 184, 166, 0.04); }
+        .bbox-element:hover { background-color: rgba(99, 102, 241, 0.15); }
+        .bbox-element.caption-bbox:hover { background-color: rgba(245, 158, 11, 0.15); }
+        .bbox-element.subcaption-bbox:hover { background-color: rgba(168, 85, 247, 0.15); }
+        .bbox-element.table-bbox:hover { background-color: rgba(20, 184, 166, 0.15); }
+        
+        .bbox-element.selected { border: 2px solid var(--color-success) !important; background-color: rgba(16, 185, 129, 0.1) !important; box-shadow: 0 0 10px rgba(16,185,129,0.3); z-index: 10; }
+        
+        .bbox-label { position: absolute; top: -20px; left: -2px; background-color: var(--color-primary); color: white; font-size: 10px; font-weight: 700; padding: 2px 4px; border-radius: 4px 4px 0 0; white-space: nowrap; pointer-events: none; }
+        .bbox-element.caption-bbox .bbox-label { background-color: var(--color-warning); color: black; }
+        .bbox-element.subcaption-bbox .bbox-label { background-color: var(--color-sub); }
+        .bbox-element.table-bbox .bbox-label { background-color: var(--color-table); }
+        .bbox-element.selected .bbox-label { background-color: var(--color-success) !important; color: white !important; }
+
+        .bbox-dimension { position: absolute; bottom: 2px; right: 2px; background: rgba(0,0,0,0.6); color: white; font-size: 8px; padding: 1px 3px; border-radius: 2px; pointer-events: none; font-family: monospace; }
+
+        /* RESIZE HANDLES */
+        .resize-handle { position: absolute; width: 6px; height: 6px; background-color: white; border: 1px solid black; z-index: 11; }
+        .handle-nw { top: -3px; left: -3px; cursor: nwse-resize; }
+        .handle-ne { top: -3px; right: -3px; cursor: nesw-resize; }
+        .handle-se { bottom: -3px; right: -3px; cursor: nwse-resize; }
+        .handle-sw { bottom: -3px; left: -3px; cursor: nesw-resize; }
+        .handle-n  { top: -3px; left: calc(50% - 3px); cursor: ns-resize; }
+        .handle-s  { bottom: -3px; left: calc(50% - 3px); cursor: ns-resize; }
+        .handle-e  { top: calc(50% - 3px); right: -3px; cursor: ew-resize; }
+        .handle-w  { top: calc(50% - 3px); left: -3px; cursor: ew-resize; }
+
+        /* AREA SELECT */
+        .selection-rect { position: absolute; border: 1px solid rgba(16, 185, 129, 0.8); background-color: rgba(16, 185, 129, 0.2); pointer-events: none; z-index: 50; }
+
+        /* RIGHT PANEL */
+        .right-panel { width: var(--right-panel-width); background-color: var(--bg-surface); border-left: 1px solid var(--border-color); display: flex; flex-direction: column; z-index: 50; height: 100%; }
+        .panel-section { padding: 20px; border-bottom: 1px solid var(--border-color); }
+        .panel-title { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.1em; margin-bottom: 16px; color: white; display: flex; align-items: center; justify-content: space-between;}
+        
+        .input-group { margin-bottom: 12px; }
+        .input-group label { display: block; font-size: 0.8em; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
+        .input-group input, .input-group select { width: 100%; background-color: var(--bg-panel); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 6px; color: var(--text-main); font-family: inherit; font-size: 0.9em; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: var(--color-primary); }
+        
+        .multi-select-info { font-size: 0.9em; color: var(--color-success); background: rgba(16,185,129,0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(16,185,129,0.2); margin-bottom: 12px; text-align: center;}
+        
+        .btn-row { display: flex; gap: 8px; margin-top: 12px; }
+        .btn-row button { flex: 1; justify-content: center; }
+        .btn-danger { background-color: rgba(239, 68, 68, 0.1); color: var(--color-error); border-color: rgba(239, 68, 68, 0.2); }
+        .btn-danger:hover { background-color: var(--color-error); color: white; }
+
+        /* TOAST */
+        #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--color-success); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.3);}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-pen-ruler" style="color: var(--color-primary)"></i> 
+            <span id="headerPaperTitle">Loading...</span>
+        </div>
+        
+        <div class="top-controls">
+            <div class="page-nav">
+                <button onclick="changePage(-1)" id="prevPageBtn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                <span style="font-size: 0.9em;">Page <strong id="currentPageNum">1</strong> / <strong id="totalPageCount">1</strong></span>
+                <button onclick="changePage(1)" id="nextPageBtn" disabled><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <button class="btn btn-primary" onclick="saveData()">
+                <i class="fa-solid fa-save"></i> Save Corrections
+            </button>
+            <button class="btn btn-secondary" onclick="resetCorrectData()" style="background-color: var(--accent-rose); border-color: var(--accent-rose); color: white;">
+                <i class="fa-solid fa-trash"></i> Clean Slate (Reset)
+            </button>
+        </div>
+    </header>
+
+    <div class="workspace">
+        
+        <!-- TOOLBAR -->
+        <div class="toolbar">
+            <button class="tool-btn active" id="btnToolMove" onclick="setTool('move')" data-tip="Select / Move (V)">
+                <i class="fa-solid fa-arrow-pointer"></i>
+            </button>
+            <button class="tool-btn" id="btnToolDraw" onclick="setTool('draw')" data-tip="Draw Box (D)">
+                <i class="fa-solid fa-vector-square"></i>
+            </button>
+            <div style="width: 30px; height: 1px; background: var(--border-color); margin: 4px 0;"></div>
+            <button class="tool-btn" id="btnToolSnap" onclick="toggleSnap()" data-tip="Toggle Snap (S) - Off">
+                <i class="fa-solid fa-magnet" style="opacity: 0.4"></i>
+            </button>
+            <button class="tool-btn" onclick="undo()" data-tip="Undo (Ctrl+Z)">
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+        </div>
+
+        <!-- EDITOR CANVAS -->
+        <div class="editor-area" id="editorArea">
+            <div class="canvas-container" id="canvasContainer">
+                <img id="pageImg" class="paper-img" alt="PDF Page">
+                <div class="overlay" id="overlay"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+            <div class="panel-section">
+                <div class="panel-title">Properties</div>
+                
+                <div id="propsEmpty" style="color: var(--text-muted); font-size: 0.9em; font-style: italic;">
+                    Select one or more boxes to edit properties.
+                </div>
+                
+                <div id="propsMulti" style="display: none;">
+                    <div class="multi-select-info">
+                        <strong id="multiCount">0</strong> boxes selected
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-danger" onclick="deleteSelectedBoxes()">
+                            <i class="fa-solid fa-trash-can"></i> Delete All
+                        </button>
+                    </div>
+                </div>
+
+                <div id="propsSingle" style="display: none;">
+                    <div class="input-group">
+                        <label>Element Type</label>
+                        <select id="propType" onchange="updateSelectedBoxProperty('type', this.value)">
+                            <option value="figure">Figure</option>
+                            <option value="caption">Caption</option>
+                            <option value="sub-caption">Sub-caption</option>
+                            <option value="table">Table</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label id="propKeyLabel">Label Key</label>
+                        <input type="text" id="propKey" onchange="updateSelectedBoxProperty('key', this.value)" autocomplete="off">
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="duplicateSelectedBoxes()" style="margin-right: 8px;">
+                            <i class="fa-solid fa-copy"></i> Duplicate
+                        </button>
+                        <button class="btn btn-danger" onclick="deleteSelectedBoxes()">
+                            <i class="fa-solid fa-trash-can"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery -->
+            <div class="panel-section" style="flex: 1; display: flex; flex-direction: column; padding-bottom: 0; min-height: 0;">
+                <div class="panel-title">Extracted Figures</div>
+                <div id="galleryContainer" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-bottom: 20px; min-height: 0;">
+                    <!-- Thumbs go here -->
+                </div>
+            </div>
+            
+            <!-- Instructions -->
+            <div class="panel-section" style="padding-top: 10px;">
+                <div style="font-size: 0.8em; color: var(--text-muted); line-height: 1.5;">
+                    <strong>Shortcuts:</strong><br><br>
+                    <kbd>V</kbd> - Select Tool<br>
+                    <kbd>D</kbd> - Draw Tool<br>
+                    <kbd>S</kbd> - Toggle Snap<br>
+                    <kbd>Ctrl+Z</kbd> - Undo<br>
+                    <kbd>Del</kbd> - Delete Selected<br>
+                    <kbd>Ctrl + D</kbd> - Duplicate Box<br>
+                    <kbd>Ctrl</kbd> + Scroll - Zoom<br>
+                    Middle Click - Pan Canvas<br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast"><i class="fa-solid fa-check"></i> Saved successfully</div>
+
+    <script>
+        // --- STATE ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const paperId = urlParams.get('paper');
+        
+        let currentPage = 1;
+        let totalPages = 1;
+        let pdfName = "";
+        let pageDimensions = {};
+        let pdfScale = 1.0;
+        
+        let correctData = {}; // Full database representation: { "1": { figures:[], captions:[], sub_captions:[], tables:[] } }
+        let currentBboxes = []; // Flat UI representation for current page: [{id, type, key, x0, y0, x1, y1}]
+        
+        let selectedBoxIds = new Set();
+        let historyStack = []; // Array of serialized currentBboxes strings
+        
+        let currentTool = 'move'; // 'move' or 'draw'
+        let isSnappingEnabled = false;
+        
+        // Canvas interaction state
+        let scale = 1.0;
+        let panX = 0, panY = 0;
+        let isPanning = false, startPanX, startPanY;
+        
+        let isDrawing = false;
+        let isDragging = false;
+        let isResizing = false;
+        let isAreaSelecting = false;
+        
+        let dragStartX, dragStartY;
+        let originalBoxesRects = {}; // Store starting rects of all selected boxes during a drag
+        let resizeDirection = null;
+        let selectionRectDiv = null;
+        
+        // --- INIT ---
+        document.getElementById("headerPaperTitle").innerText = paperId || "No paper selected";
+        
+        if (paperId) {
+            fetchPaperData();
+        } else {
+            alert("Error: No paper specified in URL.");
+        }
+
+        async function fetchPaperData() {
+            try {
+                const res = await fetch(`/api/paper/${paperId}`);
+                const data = await res.json();
+                if(data.error) throw new Error(data.error);
+                
+                totalPages = data.page_count;
+                pdfName = data.extracted?.pdf_name || "";
+                pageDimensions = data.page_dimensions || {};
+                document.getElementById('totalPageCount').innerText = totalPages;
+                
+                // Load corrected or fallback to extracted
+                correctData = (data.correct && data.correct.pages) ? data.correct.pages : {};
+                
+                // Fallback & Merge logic: inject extracted items that aren't in correctData yet
+                if (data.extracted && data.extracted.details) {
+                    data.extracted.details.forEach(det => {
+                        const pStr = String(det.page);
+                        if (!correctData[pStr]) correctData[pStr] = { figures: [], captions: [], sub_captions: [], tables: [] };
+                        
+                        let injected = false;
+                        if (det.match_found && det.matched_bbox) {
+                            if (det.is_table) {
+                                correctData[pStr].tables = correctData[pStr].tables || [];
+                                const exists = correctData[pStr].tables.some(t => t.tab_key === det.fig_key || String(t.tab_key).startsWith(det.fig_key + '_'));
+                                if (!exists) { correctData[pStr].tables.push({ tab_key: det.fig_key, bbox: det.matched_bbox }); injected = true; }
+                            } else {
+                                correctData[pStr].figures = correctData[pStr].figures || [];
+                                const exists = correctData[pStr].figures.some(f => f.fig_key === det.fig_key || String(f.fig_key).startsWith(det.fig_key + '_'));
+                                if (!exists) { correctData[pStr].figures.push({ fig_key: det.fig_key, bbox: det.matched_bbox }); injected = true; }
+                            }
+                        }
+                        if (injected && det.caption_bbox) {
+                            const exists = correctData[pStr].captions.some(c => c.fig_num === det.fig_num);
+                            if (!exists) correctData[pStr].captions.push({ fig_num: det.fig_num, bbox: det.caption_bbox });
+                        }
+                    });
+                }
+                
+                // Render Gallery now that data is populated
+                renderGallery();
+                
+                loadPage(1);
+            } catch(e) {
+                alert("Failed to load paper data: " + e.message);
+            }
+        }
+        
+        // --- PAGE LOADING & DATA SYNC ---
+        function loadPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+            
+            // Sync current ui to db before switching
+            if (currentBboxes.length > 0 || historyStack.length > 0) {
+                syncUIToDB();
+            }
+            
+            currentPage = pageNum;
+            document.getElementById('currentPageNum').innerText = currentPage;
+            document.getElementById('prevPageBtn').disabled = currentPage <= 1;
+            document.getElementById('nextPageBtn').disabled = currentPage >= totalPages;
+            
+            selectedBoxIds.clear();
+            historyStack = []; // Reset history for new page
+            
+            const img = document.getElementById('pageImg');
+            img.src = `/api/paper/${paperId}/page/${currentPage}/render`;
+            
+            img.onload = () => {
+                // Set pdfScale to match image resolution to PDF coordinates
+                const dims = pageDimensions[String(currentPage)];
+                pdfScale = (dims && dims.width) ? (img.naturalWidth / dims.width) : 1.0;
+                
+                // Reset zoom and pan
+                scale = 1.0; panX = 0; panY = 0;
+                // Center image
+                const ea = document.getElementById('editorArea');
+                const pad = 40;
+                const scaleW = (ea.clientWidth - pad) / img.naturalWidth;
+                const scaleH = (ea.clientHeight - pad) / img.naturalHeight;
+                scale = Math.min(scaleW, scaleH, 1.5);
+                
+                panX = (ea.clientWidth - (img.naturalWidth * scale)) / 2;
+                panY = (ea.clientHeight - (img.naturalHeight * scale)) / 2;
+                
+                updateCanvasTransform();
+                
+                syncDBToUI();
+                pushHistory(); // Initial state
+                renderBoxes();
+                updatePropsPanel();
+            };
+        }
+        
+        function changePage(dir) { loadPage(currentPage + dir); }
+
+        function syncDBToUI() {
+            currentBboxes = [];
+            const pData = correctData[String(currentPage)] || { figures: [], captions: [], sub_captions: [], tables: [] };
+            
+            const addBox = (arr, type) => {
+                (arr || []).forEach(item => {
+                    currentBboxes.push({
+                        id: 'box_' + Math.random().toString(36).substr(2, 9),
+                        type: type,
+                        key: item.fig_key || item.fig_num || item.tab_key || '',
+                        x0: item.bbox[0], y0: item.bbox[1], x1: item.bbox[2], y1: item.bbox[3]
+                    });
+                });
+            };
+            addBox(pData.figures, 'figure');
+            addBox(pData.captions, 'caption');
+            addBox(pData.sub_captions, 'sub-caption');
+            addBox(pData.tables, 'table');
+        }
+        
+        function syncUIToDB() {
+            const figs = [], caps = [], subcaps = [], tabs = [];
+            currentBboxes.forEach(b => {
+                const bArr = [b.x0, b.y0, b.x1, b.y1];
+                if (b.type === 'figure') figs.push({ fig_key: b.key, bbox: bArr });
+                else if (b.type === 'caption') caps.push({ fig_num: b.key, bbox: bArr });
+                else if (b.type === 'table') tabs.push({ tab_key: b.key, bbox: bArr });
+                else subcaps.push({ fig_key: b.key, bbox: bArr });
+            });
+            correctData[String(currentPage)] = { figures: figs, captions: caps, sub_captions: subcaps, tables: tabs };
+        }
+        
+        async function saveData() {
+            syncUIToDB();
+            const payload = { paper_id: paperId, pdf_name: pdfName, pages: correctData };
+            
+            try {
+                const res = await fetch(`/api/paper/${paperId}/save_correct`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await res.json();
+                if(result.success) {
+                    showToast();
+                    renderGallery();
+                } else alert("Failed to save: " + result.error);
+            } catch(e) { alert("Network error saving."); }
+        }
+
+        async function resetCorrectData() {
+            if (!confirm("Isso apagará todas as edições manuais deste paper e restaurará a última extração automática. Tem certeza?")) return;
+            try {
+                const res = await fetch(`/api/paper/${paperId}/reset_correct`, { method: 'POST' });
+                const result = await res.json();
+                if(result.success) {
+                    location.reload();
+                } else alert("Failed to reset: " + result.error);
+            } catch(e) { alert("Network error resetting."); }
+        }
+
+        // --- HISTORY (Undo) ---
+        function pushHistory() {
+            const state = JSON.stringify(currentBboxes);
+            // Don't push if same as last
+            if (historyStack.length > 0 && historyStack[historyStack.length - 1] === state) return;
+            historyStack.push(state);
+            if (historyStack.length > 30) historyStack.shift(); // Max 30 undo steps
+        }
+        
+        function undo() {
+            if (historyStack.length > 1) {
+                historyStack.pop(); // Remove current state
+                const prevState = historyStack[historyStack.length - 1];
+                currentBboxes = JSON.parse(prevState);
+                // Validate selection
+                const validIds = new Set(currentBboxes.map(b => b.id));
+                const newSel = new Set();
+                selectedBoxIds.forEach(id => { if(validIds.has(id)) newSel.add(id); });
+                selectedBoxIds = newSel;
+                
+                renderBoxes();
+                updatePropsPanel();
+            }
+        }
+
+        // --- UI & TOOLS ---
+        function setTool(t) {
+            currentTool = t;
+            document.getElementById('btnToolMove').classList.toggle('active', t === 'move');
+            document.getElementById('btnToolDraw').classList.toggle('active', t === 'draw');
+            document.getElementById('overlay').style.cursor = t === 'draw' ? 'crosshair' : 'default';
+            if (t === 'draw') selectedBoxIds.clear();
+            renderBoxes();
+            updatePropsPanel();
+        }
+        
+        function toggleSnap() {
+            isSnappingEnabled = !isSnappingEnabled;
+            const btn = document.getElementById('btnToolSnap');
+            btn.classList.toggle('active', isSnappingEnabled);
+            btn.innerHTML = `<i class="fa-solid fa-magnet" style="opacity: ${isSnappingEnabled ? '1' : '0.4'}"></i>`;
+            btn.setAttribute('data-tip', `Toggle Snap (S) - ${isSnappingEnabled ? 'On' : 'Off'}`);
+        }
+        
+        function showToast() {
+            const t = document.getElementById('toast');
+            t.style.opacity = 1;
+            setTimeout(() => t.style.opacity = 0, 2000);
+        }
+
+        // --- MOUSE EVENTS ON CANVAS ---
+        const overlay = document.getElementById('overlay');
+        const editorArea = document.getElementById('editorArea');
+        
+        function getMousePos(e) {
+            const rect = overlay.getBoundingClientRect();
+            // Real image coordinates based on CSS scale
+            const imgX = (e.clientX - rect.left) / scale;
+            const imgY = (e.clientY - rect.top) / scale;
+            // Convert to PDF coordinates
+            return {
+                x: imgX / pdfScale,
+                y: imgY / pdfScale
+            };
+        }
+        
+        overlay.addEventListener('mousedown', (e) => {
+            if (e.button === 1 || e.altKey) return; // Middle click / pan
+            
+            const pos = getMousePos(e);
+            dragStartX = pos.x;
+            dragStartY = pos.y;
+            
+            // Handle Resize
+            if (e.target.classList.contains('resize-handle')) {
+                isResizing = true;
+                resizeDirection = e.target.dataset.dir;
+                const boxId = e.target.dataset.id;
+                if (!selectedBoxIds.has(boxId)) {
+                    selectedBoxIds.clear();
+                    selectedBoxIds.add(boxId);
+                    updatePropsPanel();
+                }
+                const b = currentBboxes.find(x => x.id === boxId);
+                originalBoxesRects = { [b.id]: { x0: b.x0, y0: b.y0, x1: b.x1, y1: b.y1 } };
+                return;
+            }
+            
+            // Handle Box Click (Drag)
+            const clickedBoxElement = e.target.closest('.bbox-element');
+            if (clickedBoxElement) {
+                const boxId = clickedBoxElement.dataset.id;
+                
+                if (currentTool === 'draw') {
+                    // Ignore clicks on boxes if drawing, allow drawing over them
+                } else {
+                    // Move tool selection logic
+                    if (e.shiftKey) {
+                        if (selectedBoxIds.has(boxId)) selectedBoxIds.delete(boxId);
+                        else selectedBoxIds.add(boxId);
+                    } else {
+                        if (!selectedBoxIds.has(boxId)) {
+                            selectedBoxIds.clear();
+                            selectedBoxIds.add(boxId);
+                        }
+                    }
+                    
+                    if (selectedBoxIds.has(boxId)) {
+                        isDragging = true;
+                        originalBoxesRects = {};
+                        currentBboxes.forEach(b => {
+                            if (selectedBoxIds.has(b.id)) {
+                                originalBoxesRects[b.id] = { x0: b.x0, y0: b.y0, x1: b.x1, y1: b.y1 };
+                            }
+                        });
+                    }
+                    renderBoxes();
+                    updatePropsPanel();
+                    return; // Stop here so we drag
+                }
+            }
+            
+            // Empty Space Click
+            if (currentTool === 'draw') {
+                isDrawing = true;
+                selectedBoxIds.clear();
+                const newId = 'box_' + Date.now();
+                currentBboxes.push({ id: newId, type: 'figure', key: '', x0: pos.x, y0: pos.y, x1: pos.x, y1: pos.y });
+                selectedBoxIds.add(newId);
+                updatePropsPanel();
+            } else if (currentTool === 'move') {
+                isAreaSelecting = true;
+                selectedBoxIds.clear();
+                updatePropsPanel();
+                renderBoxes();
+                
+                selectionRectDiv = document.createElement('div');
+                selectionRectDiv.className = 'selection-rect';
+                overlay.appendChild(selectionRectDiv);
+            }
+        });
+        
+        window.addEventListener('mousemove', (e) => {
+            if (!isDrawing && !isDragging && !isResizing && !isAreaSelecting) return;
+            
+            const pos = getMousePos(e);
+            const dx = pos.x - dragStartX;
+            const dy = pos.y - dragStartY;
+            
+            if (isDrawing) {
+                const b = currentBboxes.find(x => selectedBoxIds.has(x.id));
+                b.x0 = Math.min(dragStartX, pos.x);
+                b.y0 = Math.min(dragStartY, pos.y);
+                b.x1 = Math.max(dragStartX, pos.x);
+                b.y1 = Math.max(dragStartY, pos.y);
+            } 
+            else if (isDragging) {
+                // Move all selected
+                let finalDx = dx; let finalDy = dy;
+                // Apply Snapping (only single selection for simplicity, or anchor box)
+                if (isSnappingEnabled && selectedBoxIds.size === 1) {
+                    const snapDist = 8 / pdfScale;
+                    const bId = Array.from(selectedBoxIds)[0];
+                    const startR = originalBoxesRects[bId];
+                    let nx = startR.x0 + dx, ny = startR.y0 + dy;
+                    let nx1 = startR.x1 + dx, ny1 = startR.y1 + dy;
+                    
+                    for (let other of currentBboxes) {
+                        if (selectedBoxIds.has(other.id)) continue;
+                        if (Math.abs(nx - other.x0) < snapDist) finalDx = other.x0 - startR.x0;
+                        if (Math.abs(nx - other.x1) < snapDist) finalDx = other.x1 - startR.x0;
+                        if (Math.abs(nx1 - other.x0) < snapDist) finalDx = other.x0 - startR.x1;
+                        if (Math.abs(nx1 - other.x1) < snapDist) finalDx = other.x1 - startR.x1;
+                        
+                        if (Math.abs(ny - other.y0) < snapDist) finalDy = other.y0 - startR.y0;
+                        if (Math.abs(ny - other.y1) < snapDist) finalDy = other.y1 - startR.y0;
+                        if (Math.abs(ny1 - other.y0) < snapDist) finalDy = other.y0 - startR.y1;
+                        if (Math.abs(ny1 - other.y1) < snapDist) finalDy = other.y1 - startR.y1;
+                    }
+                }
+                
+                selectedBoxIds.forEach(id => {
+                    const b = currentBboxes.find(x => x.id === id);
+                    const orig = originalBoxesRects[id];
+                    b.x0 = orig.x0 + finalDx;
+                    b.x1 = orig.x1 + finalDx;
+                    b.y0 = orig.y0 + finalDy;
+                    b.y1 = orig.y1 + finalDy;
+                });
+            }
+            else if (isResizing) {
+                const bId = Array.from(selectedBoxIds)[0];
+                const b = currentBboxes.find(x => x.id === bId);
+                const startR = originalBoxesRects[bId];
+                
+                if (resizeDirection.includes('w')) b.x0 = Math.min(startR.x0 + dx, startR.x1 - 5);
+                if (resizeDirection.includes('e')) b.x1 = Math.max(startR.x1 + dx, startR.x0 + 5);
+                if (resizeDirection.includes('n')) b.y0 = Math.min(startR.y0 + dy, startR.y1 - 5);
+                if (resizeDirection.includes('s')) b.y1 = Math.max(startR.y1 + dy, startR.y0 + 5);
+            }
+            else if (isAreaSelecting) {
+                const rx0 = Math.min(dragStartX, pos.x);
+                const ry0 = Math.min(dragStartY, pos.y);
+                const rx1 = Math.max(dragStartX, pos.x);
+                const ry1 = Math.max(dragStartY, pos.y);
+                
+                selectionRectDiv.style.left = (rx0 * pdfScale) + 'px';
+                selectionRectDiv.style.top = (ry0 * pdfScale) + 'px';
+                selectionRectDiv.style.width = ((rx1 - rx0) * pdfScale) + 'px';
+                selectionRectDiv.style.height = ((ry1 - ry0) * pdfScale) + 'px';
+                
+                // Highlight overlapping boxes visually
+                currentBboxes.forEach(b => {
+                    const intersect = !(b.x1 < rx0 || b.x0 > rx1 || b.y1 < ry0 || b.y0 > ry1);
+                    const el = document.getElementById(b.id);
+                    if (el) {
+                        if (intersect) el.classList.add('selected');
+                        else el.classList.remove('selected');
+                    }
+                });
+            }
+            
+            if (!isAreaSelecting) renderBoxes();
+        });
+        
+        window.addEventListener('mouseup', (e) => {
+            if (isAreaSelecting) {
+                const pos = getMousePos(e);
+                const rx0 = Math.min(dragStartX, pos.x);
+                const ry0 = Math.min(dragStartY, pos.y);
+                const rx1 = Math.max(dragStartX, pos.x);
+                const ry1 = Math.max(dragStartY, pos.y);
+                
+                selectedBoxIds.clear();
+                currentBboxes.forEach(b => {
+                    const intersect = !(b.x1 < rx0 || b.x0 > rx1 || b.y1 < ry0 || b.y0 > ry1);
+                    if (intersect) selectedBoxIds.add(b.id);
+                });
+                
+                selectionRectDiv.remove();
+                selectionRectDiv = null;
+                isAreaSelecting = false;
+                renderBoxes();
+                updatePropsPanel();
+            }
+            else if (isDrawing || isDragging || isResizing) {
+                isDrawing = false; isDragging = false; isResizing = false;
+                pushHistory();
+                
+                // If just finished drawing, focus the input field for key
+                if (selectedBoxIds.size === 1) {
+                    const el = document.getElementById('propKey');
+                    if (el && !el.disabled) el.focus();
+                }
+            }
+        });
+        
+        // --- PAN AND ZOOM ---
+        editorArea.addEventListener('mousedown', e => {
+            if (e.button === 1 || (e.button === 0 && e.altKey)) {
+                isPanning = true;
+                startPanX = e.clientX - panX;
+                startPanY = e.clientY - panY;
+                editorArea.style.cursor = 'grabbing';
+            }
+        });
+        window.addEventListener('mousemove', e => {
+            if (isPanning) {
+                panX = e.clientX - startPanX;
+                panY = e.clientY - startPanY;
+                updateCanvasTransform();
+            }
+        });
+        window.addEventListener('mouseup', e => {
+            if (isPanning) {
+                isPanning = false;
+                editorArea.style.cursor = 'default';
+            }
+        });
+        editorArea.addEventListener('wheel', e => {
+            if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+                const zoomDelta = e.deltaY > 0 ? -0.1 : 0.1;
+                const newScale = Math.max(0.1, Math.min(4.0, scale + zoomDelta));
+                scale = newScale;
+                updateCanvasTransform();
+                renderBoxes(); // Rescale div absolute coordinates
+            }
+        }, {passive: false});
+        
+        function updateCanvasTransform() {
+            const container = document.getElementById('canvasContainer');
+            container.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+        }
+
+        // --- RENDERING ---
+        function renderGallery() {
+            const container = document.getElementById('galleryContainer');
+            container.innerHTML = '';
+            
+            const details = [];
+            for (const pStr in correctData) {
+                if (correctData[pStr]) {
+                    if (correctData[pStr].figures) {
+                        correctData[pStr].figures.forEach(fig => {
+                            details.push({ key: fig.fig_key, page: parseInt(pStr), type: 'figure' });
+                        });
+                    }
+                    if (correctData[pStr].tables) {
+                        correctData[pStr].tables.forEach(tab => {
+                            details.push({ key: tab.tab_key, page: parseInt(pStr), type: 'table' });
+                        });
+                    }
+                }
+            }
+            
+            if (!details.length) {
+                container.innerHTML = '<span style="color:var(--text-muted); font-size: 0.85em;">No images extracted.</span>';
+                return;
+            }
+            
+            const grouped = {};
+            details.forEach(det => {
+                const prefix = det.type === 'table' ? 'TAB' : 'FIG';
+                const fNum = String(det.key).split('_')[0]; // Gets '1' from '1' or '1_2'
+                const gKey = prefix + '_' + fNum;
+                if (!grouped[gKey]) grouped[gKey] = [];
+                grouped[gKey].push(det);
+            });
+            
+            const cacheBuster = new Date().getTime();
+            
+            // Sort keys naturally (e.g. FIG_1, FIG_2, TAB_1)
+            Object.keys(grouped).sort((a,b) => {
+                const prefixA = a.split('_')[0];
+                const prefixB = b.split('_')[0];
+                if (prefixA !== prefixB) return prefixA.localeCompare(prefixB);
+                const numA = parseInt(a.split('_')[1]) || 0;
+                const numB = parseInt(b.split('_')[1]) || 0;
+                return numA - numB;
+            }).forEach(gKey => {
+                const isTable = gKey.startsWith('TAB');
+                const titleColor = isTable ? 'var(--color-table)' : 'var(--color-primary)';
+                const groupTitle = isTable ? 'Table ' + gKey.split('_')[1] : 'Figure ' + gKey.split('_')[1];
+                
+                const groupDiv = document.createElement('div');
+                groupDiv.style.cssText = `margin-bottom: 12px; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 8px; border: 1px solid var(--border-color);`;
+                groupDiv.innerHTML = `<div style="font-size: 0.9em; font-weight: bold; margin-bottom: 8px; color: ${titleColor};">${groupTitle}</div>`;
+                
+                grouped[gKey].forEach(det => {
+                    const prefix = isTable ? 'TAB' : 'FIG';
+                    const fullKey = prefix + '_' + det.key;
+                    const isSub = fullKey !== gKey;
+                    
+                    const card = document.createElement('div');
+                    card.style.cssText = `background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: 6px; padding: 6px; cursor: pointer; transition: all 0.2s; margin-bottom: 6px; ${isSub ? `margin-left: 16px; border-left: 3px solid ${titleColor};` : ''}`;
+                    card.onmouseover = () => card.style.borderColor = titleColor;
+                    card.onmouseout = () => card.style.borderColor = 'var(--border-color)';
+                    card.onclick = () => loadPage(det.page);
+                    
+                    card.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; font-size: 0.8em; margin-bottom: 4px; font-weight: 600;">
+                            <span>${det.key}</span>
+                            <span style="color:var(--text-muted)">Pg ${det.page}</span>
+                        </div>
+                        <img src="/api/paper/${paperId}/images/${prefix}_${det.key}.png?t=${cacheBuster}" style="width:100%; max-height:100px; object-fit:contain; background:#111; border-radius:4px;" onerror="this.style.display='none'">
+                    `;
+                    groupDiv.appendChild(card);
+                });
+                
+                container.appendChild(groupDiv);
+            });
+        }
+
+        function renderBoxes() {
+            // Keep selection div if it exists
+            const existingRect = selectionRectDiv;
+            overlay.innerHTML = '';
+            if (existingRect) overlay.appendChild(existingRect);
+            
+            currentBboxes.forEach(box => {
+                const div = document.createElement('div');
+                div.id = box.id;
+                div.className = `bbox-element ${box.type}-bbox ${selectedBoxIds.has(box.id) ? 'selected' : ''}`;
+                div.dataset.id = box.id;
+                
+                div.style.left = (box.x0 * pdfScale) + 'px';
+                div.style.top = (box.y0 * pdfScale) + 'px';
+                div.style.width = ((box.x1 - box.x0) * pdfScale) + 'px';
+                div.style.height = ((box.y1 - box.y0) * pdfScale) + 'px';
+                
+                const prefix = box.type === 'figure' ? 'FIG' : (box.type === 'caption' ? 'CAP' : (box.type === 'table' ? 'TAB' : 'SUB'));
+                div.innerHTML = `
+                    <span class="bbox-label">${box.key ? prefix + '_' + box.key : 'UNLABELED'}</span>
+                    <span class="bbox-dimension">${Math.round(box.x1 - box.x0)}x${Math.round(box.y1 - box.y0)}</span>
+                `;
+                
+                if (selectedBoxIds.has(box.id) && selectedBoxIds.size === 1) {
+                    const handles = ['nw','ne','se','sw','n','s','e','w'];
+                    handles.forEach(h => {
+                        const hd = document.createElement('div');
+                        hd.className = `resize-handle handle-${h}`;
+                        hd.dataset.dir = h;
+                        hd.dataset.id = box.id;
+                        div.appendChild(hd);
+                    });
+                }
+                overlay.appendChild(div);
+            });
+        }
+        
+        function updatePropsPanel() {
+            const empty = document.getElementById('propsEmpty');
+            const single = document.getElementById('propsSingle');
+            const multi = document.getElementById('propsMulti');
+            
+            if (selectedBoxIds.size === 0) {
+                empty.style.display = 'block'; single.style.display = 'none'; multi.style.display = 'none';
+            } else if (selectedBoxIds.size === 1) {
+                empty.style.display = 'none'; single.style.display = 'block'; multi.style.display = 'none';
+                
+                const box = currentBboxes.find(b => selectedBoxIds.has(b.id));
+                document.getElementById('propType').value = box.type;
+                document.getElementById('propKey').value = box.key;
+                document.getElementById('propKeyLabel').innerText = box.type === 'caption' ? 'Caption Number' : (box.type === 'table' ? 'Table Key' : 'Figure Key');
+            } else {
+                empty.style.display = 'none'; single.style.display = 'none'; multi.style.display = 'block';
+                document.getElementById('multiCount').innerText = selectedBoxIds.size;
+            }
+        }
+        
+        function updateSelectedBoxProperty(prop, value) {
+            if (selectedBoxIds.size === 1) {
+                const bId = Array.from(selectedBoxIds)[0];
+                const box = currentBboxes.find(b => b.id === bId);
+                box[prop] = value;
+                if(prop === 'type') updatePropsPanel(); // update label text
+                renderBoxes();
+                pushHistory();
+            }
+        }
+        
+        function deleteSelectedBoxes() {
+            if (selectedBoxIds.size > 0) {
+                currentBboxes = currentBboxes.filter(b => !selectedBoxIds.has(b.id));
+                selectedBoxIds.clear();
+                renderBoxes();
+                updatePropsPanel();
+                pushHistory();
+            }
+        }
+
+        function duplicateSelectedBoxes() {
+            if (selectedBoxIds.size === 0) return;
+            
+            syncUIToDB();
+            
+            const allKeys = [];
+            for (const pStr in correctData) {
+                (correctData[pStr].figures || []).forEach(f => allKeys.push(f.fig_key));
+                (correctData[pStr].tables || []).forEach(t => allKeys.push(t.tab_key));
+            }
+            
+            const newBoxes = [];
+            const newSelection = new Set();
+            
+            const boxesToDuplicate = currentBboxes.filter(b => selectedBoxIds.has(b.id));
+            
+            boxesToDuplicate.forEach(box => {
+                if (box.type !== 'figure' && box.type !== 'table') return;
+                
+                const baseKey = String(box.key).split('_')[0];
+                const relatedKeys = allKeys.filter(k => k === baseKey || String(k).startsWith(baseKey + '_'));
+                
+                let maxIdx = 0;
+                relatedKeys.forEach(k => {
+                    if (k === baseKey) maxIdx = Math.max(maxIdx, 1);
+                    else {
+                        const parts = String(k).split('_');
+                        if (parts.length > 1) {
+                            const val = parseInt(parts[1], 10);
+                            if (!isNaN(val)) maxIdx = Math.max(maxIdx, val);
+                        }
+                    }
+                });
+                
+                if (String(box.key) === baseKey) {
+                    box.key = baseKey + '_1';
+                    const idx = allKeys.indexOf(baseKey);
+                    if (idx > -1) allKeys[idx] = baseKey + '_1';
+                    if (maxIdx === 0) maxIdx = 1;
+                }
+                
+                const newIdx = maxIdx + 1;
+                const newKey = baseKey + '_' + newIdx;
+                allKeys.push(newKey);
+                
+                const newId = 'box_' + Math.random().toString(36).substr(2, 9);
+                newBoxes.push({
+                    id: newId,
+                    type: 'figure',
+                    key: newKey,
+                    x0: box.x0 + 20,
+                    y0: box.y0 + 20,
+                    x1: box.x1 + 20,
+                    y1: box.y1 + 20
+                });
+                newSelection.add(newId);
+            });
+            
+            if (newBoxes.length > 0) {
+                currentBboxes.push(...newBoxes);
+                selectedBoxIds = newSelection;
+                pushHistory();
+                renderBoxes();
+                updatePropsPanel();
+            }
+        }
+
+        // --- KEYBOARD SHORTCUTS ---
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+            if (e.key === 'Delete' || e.key === 'Backspace') deleteSelectedBoxes();
+            if (e.ctrlKey && (e.key === 'd' || e.key === 'D')) {
+                e.preventDefault();
+                duplicateSelectedBoxes();
+            }
+            if (e.key === 'v' || e.key === 'V') setTool('move');
+            if (e.key === 'd' || e.key === 'D') setTool('draw');
+            if (e.key === 's' || e.key === 'S') toggleSnap();
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z')) {
+                e.preventDefault();
+                undo();
+            }
+        });
+
+    </script>
+</body>
+</html>

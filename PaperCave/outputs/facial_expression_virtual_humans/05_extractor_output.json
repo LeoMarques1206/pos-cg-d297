@@ -1,0 +1,87 @@
+{
+  "paperTitle": "Comparative Study of Facial Expression Recognition Systems for Virtual Humans",
+  "centralContribution": "This research presents a comparative study evaluating the applicability and reliability of two pre-trained Facial Expression Recognition (FER) systems, the FER library and Deepface, for recognizing emotional states in virtual humans, a domain for which they were not originally designed. The study establishes a reproducible analysis process for rendering and emotionally modifying diverse virtual human facial images and offers insights into the systems' accuracy across six basic emotions (anger, disgust, fear, happiness, sadness, surprise) and a neutral state, aiming to inform the development of support tools for facial animation.",
+  "elements": [
+    {
+      "name": "Central Contribution of the Study",
+      "category": "contribution",
+      "description": "This research presents a comparative study evaluating the applicability and reliability of two pre-trained Facial Expression Recognition (FER) systems, the FER library and Deepface, for recognizing emotional states in virtual humans, a domain for which they were not originally designed. The study establishes a reproducible analysis process for rendering and emotionally modifying diverse virtual human facial images and offers insights into the systems' accuracy across six basic emotions (anger, disgust, fear, happiness, sadness, surprise) and a neutral state, aiming to inform the development of support tools for facial animation.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the main innovation and purpose of the paper, representing its core contribution.",
+      "groupingHint": "Overall Paper Scope",
+      "data": {}
+    },
+    {
+      "name": "Paper Abstract",
+      "category": "abstract",
+      "description": "Facial animation in virtual humans is challenging, often leading to the 'Uncanny Valley' without expert animators. Novice animators require tools for reference and validation of facial expressions, especially when using morph targets. Existing Facial Expression Recognition (FER) systems are designed for real humans, and their effectiveness for virtual humans is unknown, which prevents their use as support tools in digital animation workflows. This paper investigates this gap by evaluating the performance of FER library and Deepface on virtual human faces.",
+      "relevanceScore": 9,
+      "justification": "This element provides a concise summary of the paper's context, the problem addressed, and the general approach, which is the definition of an abstract.",
+      "groupingHint": "Overall Paper Scope",
+      "data": {}
+    },
+    {
+      "name": "Facial Camera Rig Setup in Unity",
+      "category": "graphical_representation",
+      "description": "This figure depicts the experimental setup within the Unity engine, showcasing the 'FacialCameraRig gameObject' positioned to capture facial images from a virtual character's head model. The bottom portion of the figure displays examples of the resulting rendered facial images. This setup is crucial for generating the dataset used to evaluate FER systems on virtual humans.",
+      "relevanceScore": 9,
+      "justification": "This graphical representation illustrates the core technical methodology and system used to generate the experimental data, making it fundamental to understanding the paper's approach.",
+      "groupingHint": "Methodology",
+      "data": {}
+    },
+    {
+      "name": "FER System Performance by Morph Intensity",
+      "category": "table",
+      "description": "This table presents the accuracy of the FER library and Deepface systems in identifying emotions across different morph intensity levels (0%, 25%, 50%, 75%, 100%). It shows a clear trend of increasing accuracy with higher morph target intensity, indicating that more pronounced expressions are easier for the systems to recognize.",
+      "relevanceScore": 8,
+      "justification": "This table provides key quantitative results on how emotion intensity affects recognition, a crucial aspect of the comparative study.",
+      "groupingHint": "Results and Analysis",
+      "data": {}
+    },
+    {
+      "name": "FER System Performance by Labelled Emotion",
+      "category": "table",
+      "description": "This table details the recognition accuracy of FER library and Deepface for each of the seven labelled emotional states (neutral, angry, disgust, fear, happy, sad, surprise). It highlights significant variations in performance across emotions, with 'neutral' and 'happy' being the most recognized, and 'disgust' showing no correct identifications.",
+      "relevanceScore": 8,
+      "justification": "This table directly addresses the primary goal of the study by showing the performance of the FER systems for each distinct emotion, providing essential comparative data.",
+      "groupingHint": "Results and Analysis",
+      "data": {}
+    },
+    {
+      "name": "Face Detection Failure Rates by Camera Position",
+      "category": "table",
+      "description": "This table compares the number and percentage of 'Not Applicable' (NA) face detection counts for the FER library and Deepface systems across different camera perspectives: Left shifted, Right shifted, and Frontal. It demonstrates that frontal camera images resulted in significantly fewer detection failures, guiding the experimental setup choice.",
+      "relevanceScore": 7,
+      "justification": "This table provides critical data that influenced a major methodological decision (using only frontal cameras), ensuring the reliability of the experiment.",
+      "groupingHint": "Methodology and Initial Findings",
+      "data": {}
+    },
+    {
+      "name": "Deepface Misrecognition of Angry as Disgust",
+      "category": "image",
+      "description": "This figure illustrates a specific instance where a virtual Genesis 9 male character displaying a 100% intensity 'angry' expression was incorrectly identified as 'disgust' by the Deepface FER system. This serves as a concrete example of the challenges and inaccuracies faced by FER systems when applied to virtual humans.",
+      "relevanceScore": 7,
+      "justification": "This image visually exemplifies a significant finding (misclassification), making the abstract results more tangible and highlighting a core challenge of the study.",
+      "groupingHint": "Results and Case Study",
+      "data": {}
+    },
+    {
+      "name": "FER System Performance by Character Ethnicity",
+      "category": "table",
+      "description": "This table breaks down the accuracy of FER library and Deepface based on the ethnicity of the virtual human characters (African, Asian, Cartoon, Caucasian, Indian). It reveals variations in recognition rates, notably lower success for characters with darker skin tones compared to Caucasian and Asian characters, highlighting potential biases.",
+      "relevanceScore": 6,
+      "justification": "This table offers important insights into the systems' performance across diverse virtual human characteristics, indicating potential biases and limitations in real-world applicability.",
+      "groupingHint": "Demographic Analysis of Results",
+      "data": {}
+    },
+    {
+      "name": "Virtual Character Dataset Overview",
+      "category": "table",
+      "description": "This table lists the 20 unique 3D Genesis character models chosen from Daz Studio for the study, detailing their specific names, assigned ethnicity (e.g., Indian, Cartoon, Asian, African, Caucasian), and gender. This dataset ensures diversity in the virtual human population tested.",
+      "relevanceScore": 5,
+      "justification": "This table describes the foundational dataset of virtual characters, which is crucial for understanding the scope and representativeness of the experimental subjects.",
+      "groupingHint": "Dataset Characteristics",
+      "data": {}
+    }
+  ]
+}

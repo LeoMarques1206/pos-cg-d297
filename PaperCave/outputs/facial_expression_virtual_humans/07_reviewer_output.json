@@ -1,0 +1,878 @@
+{
+  "paperTitle": "Comparative Study of Facial Expression Recognition Systems for Virtual Humans",
+  "centralContribution": "This research presents a comparative study evaluating the applicability and reliability of two pre-trained Facial Expression Recognition (FER) systems, the FER library and Deepface, for recognizing emotional states in virtual humans, a domain for which they were not originally designed. The study establishes a reproducible analysis process for rendering and emotionally modifying diverse virtual human facial images and offers insights into the systems' accuracy across six basic emotions (anger, disgust, fear, happiness, sadness, surprise) and a neutral state, aiming to inform the development of support tools for facial animation.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "Main Study Contribution",
+      "category": "contribution",
+      "summary": "Comparative study of FER systems on virtual humans, establishing a reproducib...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This research presents a comparative study evaluating the applicability and reliability of two pre-trained Facial Expression Recognition (FER) systems, the FER library and Deepface, for recognizing emotional states in virtual humans, a domain for which they were not originally designed. The study establishes a reproducible analysis process for rendering and emotionally modifying diverse virtual human facial images and offers insights into the systems' accuracy across six basic emotions (anger, disgust, fear, happiness, sadness, surprise) and a neutral state, aiming to inform the development of support tools for facial animation.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract Summary",
+      "category": "abstract",
+      "summary": "Evaluation of FER systems on virtual humans to aid facial animation development.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Facial animation in virtual humans is challenging, often leading to the 'Uncanny Valley' without expert animators. Novice animators require tools for reference and validation of facial expressions, especially when using morph targets. Existing Facial Expression Recognition (FER) systems are designed for real humans, and their effectiveness for virtual humans is unknown, which prevents their use as support tools in digital animation workflows. This paper investigates this gap by evaluating the performance of FER library and Deepface on virtual human faces.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Facial Camera Rig Setup",
+      "category": "graphical_representation",
+      "summary": "Experimental setup in Unity for capturing virtual human facial images.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG2",
+        "caption": "Figure 2: The FacialCameraRig gameObject is positioned in the 3D scene, facing the model head of the character. At the bottom, the facial images rendered by the FacialCameraRig are displayed.",
+        "description": "Depicts the Unity engine setup with 'FacialCameraRig' capturing facial images from a virtual character's head. The bottom shows rendered facial images. Crucial for generating the dataset to evaluate FER systems.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_image_stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": "Visual elements from the study, including virtual humans and expressions.",
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Various figures from the paper",
+      "whyThisUnit": "Groups all supplementary visual content, providing a comprehensive view of the study's graphical elements.",
+      "stackLabel": "Study Images",
+      "items": [
+        {
+          "index": 0,
+          "title": "Virtual Human Expressions 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_1",
+            "caption": "Figure 1.1: A virtual human expressing an emotion.",
+            "description": "One of several visual elements depicting virtual human facial expressions, used in the comparative studies to evaluate FER systems.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "Virtual Human Expressions 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_2",
+            "caption": "Figure 1.2: A virtual human expressing an emotion.",
+            "description": "One of several visual elements depicting virtual human facial expressions, used in the comparative studies to evaluate FER systems.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Virtual Human Expressions 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_3",
+            "caption": "Figure 1.3: A virtual human expressing an emotion.",
+            "description": "One of several visual elements depicting virtual human facial expressions, used in the comparative studies to evaluate FER systems.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Virtual Human Expressions 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_4",
+            "caption": "Figure 1.4: A virtual human expressing an emotion.",
+            "description": "One of several visual elements depicting virtual human facial expressions, used in the comparative studies to evaluate FER systems.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Virtual Human Expressions 5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_5",
+            "caption": "Figure 1.5: A virtual human expressing an emotion.",
+            "description": "One of several visual elements depicting virtual human facial expressions, used in the comparative studies to evaluate FER systems.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Fear Morph Target 25%",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_1",
+            "caption": "Figure 3.1: Character (Zaniyah) with fear emotion morph target at 25%.",
+            "description": "An example of a virtual character demonstrating a fear emotion morph target at an intensity level of 25%.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Fear Morph Target 50%",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_2",
+            "caption": "Figure 3.2: Character (Zaniyah) with fear emotion morph target at 50%.",
+            "description": "An example of a virtual character demonstrating a fear emotion morph target at an intensity level of 50%.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Fear Morph Target 75%",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_3",
+            "caption": "Figure 3.3: Character (Zaniyah) with fear emotion morph target at 75%.",
+            "description": "An example of a virtual character demonstrating a fear emotion morph target at an intensity level of 75%.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Fear Morph Target 100%",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_4",
+            "caption": "Figure 3.4: Character (Zaniyah) with fear emotion morph target at 100%.",
+            "description": "An example of a virtual character demonstrating a fear emotion morph target at an intensity level of 100%.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Virtual Humans Gallery 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_1",
+            "caption": "Figure 4.1: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Virtual Humans Gallery 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_2",
+            "caption": "Figure 4.2: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Virtual Humans Gallery 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_3",
+            "caption": "Figure 4.3: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Virtual Humans Gallery 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_4",
+            "caption": "Figure 4.4: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Virtual Humans Gallery 5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_5",
+            "caption": "Figure 4.5: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Virtual Humans Gallery 6",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_6",
+            "caption": "Figure 4.6: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "Virtual Humans Gallery 7",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_7",
+            "caption": "Figure 4.7: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
+          "title": "Virtual Humans Gallery 8",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_8",
+            "caption": "Figure 4.8: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 17,
+          "title": "Virtual Humans Gallery 9",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_9",
+            "caption": "Figure 4.9: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 18,
+          "title": "Virtual Humans Gallery 10",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_10",
+            "caption": "Figure 4.10: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 19,
+          "title": "Virtual Humans Gallery 11",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_11",
+            "caption": "Figure 4.11: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 20,
+          "title": "Virtual Humans Gallery 12",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_12",
+            "caption": "Figure 4.12: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 21,
+          "title": "Virtual Humans Gallery 13",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_13",
+            "caption": "Figure 4.13: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 22,
+          "title": "Virtual Humans Gallery 14",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_14",
+            "caption": "Figure 4.14: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 23,
+          "title": "Virtual Humans Gallery 15",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_15",
+            "caption": "Figure 4.15: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 24,
+          "title": "Virtual Humans Gallery 16",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_16",
+            "caption": "Figure 4.16: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 25,
+          "title": "Virtual Humans Gallery 17",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_17",
+            "caption": "Figure 4.17: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 26,
+          "title": "Virtual Humans Gallery 18",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_18",
+            "caption": "Figure 4.18: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 27,
+          "title": "Virtual Humans Gallery 19",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_19",
+            "caption": "Figure 4.19: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 28,
+          "title": "Virtual Humans Gallery 20",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_20",
+            "caption": "Figure 4.20: Gallery of virtual humans used in our comparative studies.",
+            "description": "One of twenty virtual human models from the Daz Studio Genesis series, showcasing diversity in ethnicity and gender for the study.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 29,
+          "title": "Deepface Misrecognition",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Figure 5: The Genesis 9 male expresses the emotion “angry” at an intensity level of 100%. This was the solitary case where the emotion “disgust” was recognized (by Deepface) in our studies.",
+            "description": "This figure illustrates a specific instance where a virtual Genesis 9 male character displaying a 100% intensity 'angry' expression was incorrectly identified as 'disgust' by the Deepface FER system.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit_table_stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": "Key tables detailing performance, failures, and dataset specifics.",
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Various tables from the paper",
+      "whyThisUnit": "Consolidates all tabular data, providing detailed quantitative insights into the study's results and methodology.",
+      "stackLabel": "Study Data Tables",
+      "items": [
+        {
+          "index": 0,
+          "title": "Face Detection Failure Rates",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB1",
+            "caption": "Table 1: Number of NA count values (face not detected by the FER systems), by camera relative position, in 300 images.",
+            "description": "This table compares the number and percentage of 'Not Applicable' (NA) face detection counts for FER library and Deepface systems across different camera perspectives.",
+            "chartType": "table",
+            "title": "Face Detection Failures by Camera Position",
+            "data": {
+              "columns": [
+                "Camera (rela...",
+                "FER library ...",
+                "Deepface (NA...",
+                "Camera (total)"
+              ],
+              "rows": [
+                [
+                  "Left shifted",
+                  "(82, 27.33%)",
+                  "(98, 32.67%)",
+                  "(180, 60.0%)"
+                ],
+                [
+                  "Right shifted",
+                  "(64, 21.33%)",
+                  "(91, 30.33%)",
+                  "(155, 51.67%)"
+                ],
+                [
+                  "Frontal",
+                  "(1, 0.33%)",
+                  "(8, 2.67%)",
+                  "(9, 3.00%)"
+                ],
+                [
+                  "FER system (total)",
+                  "(147, 24.50%)",
+                  "(197, 32.83%)",
+                  ""
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Virtual Character Dataset",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB2",
+            "caption": "Table 2: The list of characters and their classification regarding ethnicity and gender.",
+            "description": "This table lists the 20 unique 3D Genesis character models chosen from Daz Studio for the study, detailing their specific names, assigned ethnicity, and gender.",
+            "chartType": "table",
+            "title": "Virtual Character Dataset Overview",
+            "data": {
+              "columns": [
+                "Character",
+                "Ethnicity",
+                "Gender"
+              ],
+              "rows": [
+                [
+                  "G2F_Aneta",
+                  "indian",
+                  "Female"
+                ],
+                [
+                  "G2F_Keiko",
+                  "cartoon",
+                  "Female"
+                ],
+                [
+                  "G2F_Mayuree",
+                  "asian",
+                  "Female"
+                ],
+                [
+                  "G2F_Monique",
+                  "african",
+                  "Female"
+                ],
+                [
+                  "G2F_Zaniyah",
+                  "asian",
+                  "Female"
+                ],
+                [
+                  "G2M_Atticus",
+                  "caucasian",
+                  "Male"
+                ],
+                [
+                  "G2M_Goblin",
+                  "cartoon",
+                  "Male"
+                ],
+                [
+                  "G2M_JaLong",
+                  "asian",
+                  "Male"
+                ],
+                [
+                  "G3M_Khalan",
+                  "african",
+                  "Male"
+                ],
+                [
+                  "G3M_Strange",
+                  "cartoon",
+                  "Male"
+                ],
+                [
+                  "G8M_ToonLarry",
+                  "cartoon",
+                  "Male"
+                ],
+                [
+                  "G9_Base_Anhe",
+                  "asian",
+                  "Female"
+                ],
+                [
+                  "G9FemaleTex1",
+                  "indian",
+                  "Female"
+                ],
+                [
+                  "G9FemaleTex2",
+                  "caucasian",
+                  "Female"
+                ],
+                [
+                  "G9FemaleTe",
+                  "unknown",
+                  "unknown"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 2,
+          "title": "Performance by Morph Intensity",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB4",
+            "caption": "Table 4: Counting of hits, per FER system, grouped by morph target activation level.",
+            "description": "This table presents the accuracy of the FER library and Deepface systems in identifying emotions across different morph intensity levels.",
+            "chartType": "table",
+            "title": "FER Performance by Morph Intensity",
+            "data": {
+              "columns": [
+                "Morph Intensity",
+                "Images",
+                "FER Hits",
+                "Deepface Hits"
+              ],
+              "rows": [
+                [
+                  "0",
+                  "20",
+                  "(15, 75.0%)",
+                  "(12, 60.0%)"
+                ],
+                [
+                  "25",
+                  "120",
+                  "(4, 3.33%)",
+                  "(3, 2.5%)"
+                ],
+                [
+                  "50",
+                  "120",
+                  "(17, 14.17%)",
+                  "(13, 10.83%)"
+                ],
+                [
+                  "75",
+                  "120",
+                  "(27, 22.5%)",
+                  "(17, 14.17%)"
+                ],
+                [
+                  "100",
+                  "120",
+                  "(36, 30.0%)",
+                  "(21, 17.5%)"
+                ],
+                [
+                  "Total",
+                  "500",
+                  "(99, 19.8%)",
+                  "(66, 13.2%)"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 3,
+          "title": "Performance by Labelled Emo...",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB5",
+            "caption": "Table 5: Counting of hits, per FER system, grouped by morph target labelled emotion.",
+            "description": "This table details the recognition accuracy of FER library and Deepface for each of the seven labelled emotional states.",
+            "chartType": "table",
+            "title": "FER Performance by Labelled Emotion",
+            "data": {
+              "columns": [
+                "Labelled Emo...",
+                "Images",
+                "FER Hits",
+                "Deepface Hits"
+              ],
+              "rows": [
+                [
+                  "neutral",
+                  "20",
+                  "(15, 75.0%)",
+                  "(12, 60.0%)"
+                ],
+                [
+                  "angry",
+                  "80",
+                  "(8, 10.0%)",
+                  "(11, 13.75%)"
+                ],
+                [
+                  "disgust",
+                  "80",
+                  "NA",
+                  "NA"
+                ],
+                [
+                  "fear",
+                  "80",
+                  "(14, 17.5%)",
+                  "(7, 8.75%)"
+                ],
+                [
+                  "happy",
+                  "80",
+                  "(36, 45.0%)",
+                  "(17, 21.25%)"
+                ],
+                [
+                  "sad",
+                  "80",
+                  "(18, 22.5%)",
+                  "(12, 15.0%)"
+                ],
+                [
+                  "surprise",
+                  "80",
+                  "(8, 10.0%)",
+                  "(7, 8.75%)"
+                ],
+                [
+                  "Total",
+                  "500",
+                  "(99, 19.8%)",
+                  "(66, 13.2%)"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 4,
+          "title": "Performance by Character Et...",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB12",
+            "caption": "Table 12: Count of successful recognitions by virtual human ethnicity classification.",
+            "description": "This table breaks down the accuracy of FER library and Deepface based on the ethnicity of the virtual human characters.",
+            "chartType": "table",
+            "title": "FER Performance by Ethnicity",
+            "data": {
+              "columns": [
+                "Ethnicity",
+                "Total",
+                "FER library ...",
+                "Deepface Hits"
+              ],
+              "rows": [
+                [
+                  "african",
+                  "100",
+                  "(7, 7.0%)",
+                  "(5, 5.0%)"
+                ],
+                [
+                  "asian",
+                  "100",
+                  "(28, 28.0%)",
+                  "(20, 20.0%)"
+                ],
+                [
+                  "cartoon",
+                  "100",
+                  "(22, 22.0%)",
+                  "(12, 12.0%)"
+                ],
+                [
+                  "caucasian",
+                  "100",
+                  "(28, 28.0%)",
+                  "(22, 22.0%)"
+                ],
+                [
+                  "indian",
+                  "100",
+                  "(14, 14.0%)",
+                  "(7, 7.0%)"
+                ],
+                [
+                  "Total",
+                  "500",
+                  "(99, 19.6%)",
+                  "(66, 13.2%)"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#FFFFFF",
+        "colorName": "bright white"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Main Study Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract Summary",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Facial Camera Rig Setup",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Study Images",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Study Data Tables",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 2,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

@@ -101,16 +101,22 @@ def extract_captions_from_pdf(pdf_path: Path) -> list[dict]:
 
 def find_extracted_figures(paper_folder: Path) -> dict[str, Path]:
     """
-    Finds all FIG_*.png in the paper folder.
-    Returns dict mapping figure key (e.g. '1', '3_1') to image Path.
+    Finds all FIG_*.png and TAB_*.png in the paper folder.
+    Returns dict mapping figure key (e.g. 'FIG_1', 'TAB_3_1') to image Path.
     """
     figs = {}
     for p in paper_folder.glob("FIG_*.png"):
-        # Match FIG_([a-zA-Z0-9_]+)\.png
-        m = re.match(r"^FIG_([a-zA-Z0-9_]+)\.png$", p.name)
+        m = re.match(r"^(FIG_[a-zA-Z0-9_]+)\.png$", p.name)
         if m:
             fig_key = m.group(1).upper()
             figs[fig_key] = p
+            
+    for p in paper_folder.glob("TAB_*.png"):
+        m = re.match(r"^(TAB_[a-zA-Z0-9_]+)\.png$", p.name)
+        if m:
+            fig_key = m.group(1).upper()
+            figs[fig_key] = p
+            
     return figs
 
 def evaluate_layout_heuristics(fig_rect: list, caption_rect: list, page_width: float, page_height: float) -> tuple[str, str]:
@@ -203,18 +209,18 @@ def run_diagnostics_for_paper(paper_folder: Path, pdf_path: Path) -> dict:
     # Match extracted figures to pages
     for fig_key, fig_path in sorted(extracted_figs.items()):
         # Find which expected figure number this corresponds to
-        # e.g., fig_key is '3_1' -> base fig_num is '3'
-        base_num = fig_key.split("_")[0]
+        parts = fig_key.split("_")
+        if len(parts) > 2:
+            base_num = f"{parts[0]}_{parts[1]}"
+        else:
+            base_num = fig_key
         
-        # Find caption detail
         caption_info = None
         for cap in expected_captions:
             if cap["fig_num"] == base_num:
                 caption_info = cap
                 break
-                
-        # If no caption was found in text, maybe the extractor found a caption we missed
-        # or we check other numbers. Let's fallback
+        
         if not caption_info:
             details.append({
                 "fig_key": fig_key,
@@ -266,7 +272,6 @@ def run_diagnostics_for_paper(paper_folder: Path, pdf_path: Path) -> dict:
         # Match template
         h_fig, w_fig = fig_gray.shape
         if h_fig > page_gray.shape[0] or w_fig > page_gray.shape[1]:
-            # Extracted image is somehow larger than the page image
             details.append({
                 "fig_key": fig_key,
                 "fig_num": base_num,
@@ -287,7 +292,6 @@ def run_diagnostics_for_paper(paper_folder: Path, pdf_path: Path) -> dict:
         match_found = max_val >= 0.85
         
         # Bounding box in PDF coordinates (1x scale)
-        # max_loc is (x0, y0) in 2x pixels
         fx0 = max_loc[0] / 2.0
         fy0 = max_loc[1] / 2.0
         fx1 = (max_loc[0] + w_fig) / 2.0
@@ -315,262 +319,61 @@ def run_diagnostics_for_paper(paper_folder: Path, pdf_path: Path) -> dict:
             "heuristic_notes": heuristic_notes
         })
         
-    # Render marked pages for visual reporting
+    # Render marked pages
     marked_pages = {}
     for p_num in pages_to_render:
         page = doc[p_num - 1]
-        # Render at 2x
         pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))
         page_img_np = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.h, pix.w, pix.n)
         if pix.n == 4:
             page_img_np = cv2.cvtColor(page_img_np, cv2.COLOR_RGBA2BGR)
-        elif pix.n == 3:
+        else:
             page_img_np = cv2.cvtColor(page_img_np, cv2.COLOR_RGB2BGR)
             
-        # Draw bounding boxes (remember to multiply PDF coordinates by 2 for the 2x scale image)
-        # Blue/Cyan for captions
-        # Green for ok figures
-        # Yellow for warnings
-        # Red for errors / mismatches
         for det in details:
-            if det["page"] != p_num:
-                continue
-                
-            # Draw caption
+            if det["page"] != p_num: continue
             cx0, cy0, cx1, cy1 = [int(val * 2) for val in det["caption_bbox"]]
-            cv2.rectangle(page_img_np, (cx0, cy0), (cx1, cy1), (255, 127, 0), 2)  # BGR Cyan/Light Blue
-            cv2.putText(
-                page_img_np, f"CAP {det['fig_num']}", (cx0, cy0 - 5),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 127, 0), 1
-            )
-            
+            cv2.rectangle(page_img_np, (cx0, cy0), (cx1, cy1), (255, 127, 0), 2)
             if det["match_found"]:
                 fx0, fy0, fx1, fy1 = [int(val * 2) for val in det["matched_bbox"]]
-                color = (0, 255, 0)  # Green
-                if det["heuristic_status"] == "warning":
-                    color = (0, 255, 255)  # Yellow
-                elif det["heuristic_status"] == "error":
-                    color = (0, 0, 255)  # Red
-                    
+                color = (0, 255, 0) if det["heuristic_status"] == "ok" else (0, 255, 255) if det["heuristic_status"] == "warning" else (0, 0, 255)
                 cv2.rectangle(page_img_np, (fx0, fy0), (fx1, fy1), color, 2)
-                cv2.putText(
-                    page_img_np, f"FIG {det['fig_key']} ({det['heuristic_status']})",
-                    (fx0, fy0 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1
-                )
-                
-        # Save marked page
+        
         out_name = f"{paper_folder.name}_p{p_num}_marked.png"
-        out_path = VISUAL_REPORT_DIR / out_name
-        cv2.imwrite(str(out_path), page_img_np)
+        cv2.imwrite(str(VISUAL_REPORT_DIR / out_name), page_img_np)
         marked_pages[str(p_num)] = out_name
         
     doc.close()
     
-    # Build summary
-    has_errors = any(d["heuristic_status"] == "error" for d in details) or len(missing_figs) > 0
-    status_str = "errors" if has_errors else "ok"
-    
-    summary_text = (
-        f"Extracted {len(extracted_keys)} figures. "
-        f"Expected {len(expected_nums)} from captions. "
-        f"Missing: {len(missing_figs)}. "
-        f"Errors/Warnings in layout: {sum(1 for d in details if d['heuristic_status'] != 'ok')}."
-    )
-    
-    result_json = {
+    return {
         "paper_id": paper_folder.name,
         "pdf_name": pdf_path.name,
-        "status": status_str,
-        "summary": summary_text,
-        "figures_expected": expected_nums,
-        "figures_extracted": extracted_keys,
-        "missing_figures": missing_figs,
+        "status": "errors" if any(d["heuristic_status"] != "ok" for d in details) else "ok",
         "marked_pages": marked_pages,
         "details": details
     }
-    
-    # Write JSON to diagnostics folder
-    json_path = DIAGNOSTICS_DIR / f"extracted_{paper_folder.name}.json"
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(result_json, f, indent=2, ensure_ascii=False)
-        
-    return result_json
 
 def generate_html_report(results: list[dict]):
-    """
-    Compiles all result JSONs into a beautiful side-by-side HTML page report.
-    """
     html_content = """<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PaperCave - Figure Extraction Diagnostics Report</title>
+    <title>PaperCave Report</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #ffffff;
-        }
-        .header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .summary-card {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-left: 5px solid #2196F3;
-        }
-        .paper-section {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        .paper-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-        .badge {
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-        .badge-ok {
-            background-color: #2e7d32;
-            color: #ffffff;
-        }
-        .badge-errors {
-            background-color: #c62828;
-            color: #ffffff;
-        }
-        .grid-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .detail-row {
-            background-color: #252526;
-            border-radius: 6px;
-            padding: 15px;
-            border: 1px solid #3c3c3c;
-        }
-        .detail-meta {
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-        .side-by-side {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        .image-container {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            background-color: #121212;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #444;
-            text-align: center;
-        }
-        .image-container img {
-            max-width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-        }
-        .image-label {
-            margin-top: 5px;
-            font-size: 0.85em;
-            color: #aaa;
-        }
-        .status-ok { color: #81c784; }
-        .status-warning { color: #ffd54f; }
-        .status-error { color: #e57373; }
-        
-        .missing-list {
-            background-color: rgba(198, 40, 40, 0.1);
-            border: 1px solid #c62828;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
+        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; }
+        .paper-section { background: #1e1e1e; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .status-ok { color: #81c784; } .status-warning { color: #ffd54f; } .status-error { color: #e57373; }
+        .side-by-side { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+        .image-container { max-width: 450px; }
+        .image-container img { max-width: 100%; border: 1px solid #444; }
     </style>
 </head>
-<body>
-    <div class="header">
-        <h1>PaperCave - Figure Extraction Diagnostics</h1>
-        <p>Report compiled to verify layout extraction accuracy, template matching, and potential errors.</p>
-    </div>
-"""
-    
-    # General stats
-    total_papers = len(results)
-    papers_with_errors = sum(1 for r in results if r["status"] == "errors")
-    
-    html_content += f"""
-    <div class="summary-card">
-        <h3>Diagnostic Summary</h3>
-        <p>Total papers analyzed: <strong>{total_papers}</strong> | Papers with errors/warnings: <strong style="color: #e57373;">{papers_with_errors}</strong></p>
-    </div>
-    <div class="grid-container">
-    """
+<body><h1>Diagnostics Report</h1>"""
     
     for r in results:
         paper_id = r["paper_id"]
-        status_badge = f'<span class="badge badge-{r["status"]}">{r["status"].upper()}</span>'
-        
-        html_content += f"""
-        <div class="paper-section">
-            <div class="paper-header">
-                <h2>Paper: {paper_id}</h2>
-                {status_badge}
-            </div>
-            <p><strong>Summary:</strong> {r["summary"]}</p>
-        """
-        
-        if r["missing_figures"]:
-            html_content += f"""
-            <div class="missing-list">
-                <strong>CRITICAL: Missing Figures (expected but not extracted):</strong> {", ".join(r["missing_figures"])}
-            </div>
-            """
-            
+        html_content += f'<div class="paper-section"><h2>Paper: {paper_id}</h2>'
         for det in r["details"]:
-            status_class = f"status-{det['heuristic_status']}"
-            
-            # Paths to images (relative to diagnostics dir)
-            marked_page_img = r["marked_pages"].get(str(det["page"]), "")
-            # Extracted image is inside papers/paper_id/FIG_fig_key.png
-            # From diagnostics/, it's ../papers/paper_id/FIG_fig_key.png
-            extracted_img_path = f"../papers/{paper_id}/FIG_{det['fig_key']}.png"
-            
-            html_content += f"""
-            <div class="detail-row">
-                <div class="detail-meta">
-                    <strong>Figure {det['fig_key']}</strong> (Corresponds to caption {det['fig_num']}) on <strong>Page {det['page']}</strong> | 
-                    Status: <span class="{status_class}" style="font-weight:bold;">{det['heuristic_status'].upper()}</span>
-                    <br>
-                    <small>Heuristic notes: {det['heuristic_notes']}</small>
-                    <br>
-                    <small>Caption text: <em>"{det['caption_text']}"</em></small>
-                </div>
-                <div class="side-by-side">
-            """
             
             if marked_page_img:
                 html_content += f"""
@@ -588,8 +391,8 @@ def generate_html_report(results: list[dict]):
                 
             html_content += f"""
                     <div class="image-container">
-                        <img src="{extracted_img_path}" alt="Extracted Figure {det['fig_key']}">
-                        <div class="image-label">Extracted Figure image: FIG_{det['fig_key']}.png</div>
+                        <img src="{extracted_img_path}" alt="Extracted {det['fig_key']}">
+                        <div class="image-label">Extracted image: {det['fig_key']}.png</div>
                     </div>
                 </div>
             </div>

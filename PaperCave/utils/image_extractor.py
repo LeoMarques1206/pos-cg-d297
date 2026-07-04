@@ -24,7 +24,11 @@ MIN_HEIGHT = 80
 MAX_CAPTION_CHARS = 500   # truncate very long captions
 
 _CAPTION_START = re.compile(
-    r"^\s*(?:[Ff]ig\.?\s*|[Ff]igure\s+|[Ff]igura\s+|FIG\.?\s*|FIGURE\s+|FIGURA\s+)(\d+(?:\([a-zA-Z]\))?|\d+[a-zA-Z]?)(?:[:.\-\u2013\u2014]|\s+[A-Z\"'\[({\*•]|\s*$)"
+    r"^\s*(?:[Ff]ig\.?|[Ff]igure|[Ff]igura|FIG\.?|FIGURE|FIGURA)\s*(\d+(?:\([a-zA-Z]\))?|\d+[a-zA-Z]?|[IVXLC]+)(?:\s*[:.\-\u2013\u2014]|\s+[A-Z\"'\[({\*•]|\s*$)"
+)
+
+_TAB_CAPTION_START = re.compile(
+    r"^\s*(?:[Tt]able|[Tt]abela|TABLE|TABELA)\s*(\d+(?:\([a-zA-Z]\))?|\d+[a-zA-Z]?|[IVXLC]+)(?:\s*[:.\-\u2013\u2014]|\s+[A-Z\"'\[({\*•]|\s*$)"
 )
 
 _SUBFIG_MARKER = re.compile(
@@ -286,10 +290,10 @@ def _split_germinated_image(image_bytes: bytes, min_blank_width: int = 15, toler
 # ── Cleanup ────────────────────────────────────────────────────────────────────
 
 def _clear_figures(paper_folder: Path, verbose: bool) -> None:
-    """Remove all FIG_*.png and captions.txt from the paper folder."""
-    to_remove = set(paper_folder.glob("FIG*.png"))
+    """Remove all FIG_*.png, TAB_*.png and captions.txt from the paper folder."""
+    to_remove = set(paper_folder.glob("FIG*.png")) | set(paper_folder.glob("TAB*.png"))
     if verbose and to_remove:
-        print(f"    Removendo {len(to_remove)} FIG*.png anteriores.")
+        print(f"    Removendo {len(to_remove)} arquivos FIG*.png/TAB*.png anteriores.")
     for f in to_remove:
         f.unlink()
     cap = paper_folder / "captions.txt"
@@ -338,9 +342,12 @@ def extract_figures_from_pdf(
         while i < len(text_blocks):
             b = text_blocks[i]
             text = b[4].replace("\n", " ").strip()
-            m = _CAPTION_START.match(text)
-            if m:
-                fig_num = (m.group(1) or "").upper()
+            m_fig = _CAPTION_START.match(text)
+            m_tab = _TAB_CAPTION_START.match(text)
+            
+            if m_fig or m_tab:
+                fig_num = (m_fig.group(1) if m_fig else m_tab.group(1)).upper()
+                is_table = bool(m_tab)
                 caption_rect = fitz.Rect(b[0], b[1], b[2], b[3])
                 caption_text = text
                 
@@ -371,6 +378,7 @@ def extract_figures_from_pdf(
                 caption_text = re.sub(r"\s{2,}", " ", caption_text).strip()
                 captions_on_page.append({
                     "fig_num": fig_num,
+                    "is_table": is_table,
                     "rect": caption_rect,
                     "text": caption_text
                 })
@@ -381,10 +389,11 @@ def extract_figures_from_pdf(
         # Process each caption
         for cap in captions_on_page:
             fig_num = cap["fig_num"]
+            is_table = cap.get("is_table", False)
             caption_rect = cap["rect"]
             caption_text = cap["text"]
             
-            # Determine the search band ABOVE the caption
+            # 1) Determine the search band ABOVE the caption
             y_max_above = caption_rect.y0 - 2
             y_min_above = 40
             for other_cap in captions_on_page:
@@ -397,88 +406,103 @@ def extract_figures_from_pdf(
             above_rects = []
             for d in drawings:
                 dr = d["rect"]
-                # Ignore running headers/footers
-                if dr.y1 < 55 or dr.y0 > page.rect.height - 55:
-                    continue
-                # Ignore full-page border lines or backgrounds
-                if dr.width > page.rect.width - 40 and dr.height > page.rect.height - 40:
-                    continue
-                if dr.width > page.rect.width - 60 and dr.height < 5:
-                    continue
+                if dr.y1 < 55 or dr.y0 > page.rect.height - 55: continue
+                if dr.width > page.rect.width - 40 and dr.height > page.rect.height - 40: continue
+                if dr.width > page.rect.width - 60 and dr.height < 5: continue
                 if dr.y0 >= y_min_above and dr.y1 <= y_max_above + 5:
                     if is_in_same_column(dr, caption_rect, page.rect.width):
                         above_rects.append(dr)
             for img in images:
                 ir = fitz.Rect(img["bbox"])
-                # Ignore running headers/footers
-                if ir.y1 < 55 or ir.y0 > page.rect.height - 55:
-                    continue
+                if ir.y1 < 55 or ir.y0 > page.rect.height - 55: continue
                 if ir.y0 >= y_min_above and ir.y1 <= y_max_above + 5:
                     if is_in_same_column(ir, caption_rect, page.rect.width):
                         above_rects.append(ir)
                     
-            union_rect = None
+            union_rect_above = None
             if above_rects:
-                union_rect = fitz.Rect(above_rects[0])
+                union_rect_above = fitz.Rect(above_rects[0])
                 for r in above_rects[1:]:
-                    union_rect.include_point(fitz.Point(r.x0, r.y0))
-                    union_rect.include_point(fitz.Point(r.x1, r.y1))
-                # Add horizontal/vertical padding
-                union_rect.x0 = max(0, union_rect.x0 - 5)
-                union_rect.y0 = max(y_min_above, union_rect.y0 - 5)
-                union_rect.x1 = min(page.rect.width, union_rect.x1 + 5)
-                union_rect.y1 = min(caption_rect.y0 - 2, union_rect.y1 + 5)
-            else:
-                # Try finding components BELOW the caption (typical for tables)
-                y_min_below = caption_rect.y1 + 2
-                y_max_below = page.rect.height - 40
-                for other_cap in captions_on_page:
-                    if other_cap != cap:
-                        if are_captions_in_same_column(caption_rect, other_cap["rect"], page.rect.width):
-                            or_rect = other_cap["rect"]
-                            if or_rect.y0 > caption_rect.y1:
-                                y_max_below = min(y_max_below, or_rect.y0)
-                            
-                below_rects = []
-                for d in drawings:
-                    dr = d["rect"]
-                    # Ignore running headers/footers
-                    if dr.y1 < 55 or dr.y0 > page.rect.height - 55:
-                        continue
-                    if dr.width > page.rect.width - 40 and dr.height > page.rect.height - 40:
-                        continue
-                    if dr.width > page.rect.width - 60 and dr.height < 5:
-                        continue
-                    if dr.y0 >= y_min_below - 5 and dr.y1 <= y_max_below:
-                        if is_in_same_column(dr, caption_rect, page.rect.width):
-                            below_rects.append(dr)
-                for img in images:
-                    ir = fitz.Rect(img["bbox"])
-                    # Ignore running headers/footers
-                    if ir.y1 < 55 or ir.y0 > page.rect.height - 55:
-                        continue
-                    if ir.y0 >= y_min_below - 5 and ir.y1 <= y_max_below:
-                        if is_in_same_column(ir, caption_rect, page.rect.width):
-                            below_rects.append(ir)
+                    union_rect_above.include_point(fitz.Point(r.x0, r.y0))
+                    union_rect_above.include_point(fitz.Point(r.x1, r.y1))
+                union_rect_above.x0 = max(0, union_rect_above.x0 - 5)
+                union_rect_above.y0 = max(y_min_above, union_rect_above.y0 - 5)
+                union_rect_above.x1 = min(page.rect.width, union_rect_above.x1 + 5)
+                union_rect_above.y1 = min(caption_rect.y0 - 2, union_rect_above.y1 + 5)
+
+            # 2) Try finding components BELOW the caption (typical for tables)
+            y_min_below = caption_rect.y1 + 2
+            y_max_below = page.rect.height - 40
+            for other_cap in captions_on_page:
+                if other_cap != cap:
+                    if are_captions_in_same_column(caption_rect, other_cap["rect"], page.rect.width):
+                        or_rect = other_cap["rect"]
+                        if or_rect.y0 > caption_rect.y1:
+                            y_max_below = min(y_max_below, or_rect.y0)
                         
-                if below_rects:
-                    union_rect = fitz.Rect(below_rects[0])
-                    for r in below_rects[1:]:
-                        union_rect.include_point(fitz.Point(r.x0, r.y0))
-                        union_rect.include_point(fitz.Point(r.x1, r.y1))
-                    union_rect.x0 = max(0, union_rect.x0 - 5)
-                    union_rect.y0 = max(caption_rect.y1 + 2, union_rect.y0 - 5)
-                    union_rect.x1 = min(page.rect.width, union_rect.x1 + 5)
-                    union_rect.y1 = min(y_max_below, union_rect.y1 + 5)
+            below_rects = []
+            for d in drawings:
+                dr = d["rect"]
+                if dr.y1 < 55 or dr.y0 > page.rect.height - 55: continue
+                if dr.width > page.rect.width - 40 and dr.height > page.rect.height - 40: continue
+                if dr.width > page.rect.width - 60 and dr.height < 5: continue
+                if dr.y0 >= y_min_below - 5 and dr.y1 <= y_max_below:
+                    if is_in_same_column(dr, caption_rect, page.rect.width):
+                        below_rects.append(dr)
+            for img in images:
+                ir = fitz.Rect(img["bbox"])
+                if ir.y1 < 55 or ir.y0 > page.rect.height - 55: continue
+                if ir.y0 >= y_min_below - 5 and ir.y1 <= y_max_below:
+                    if is_in_same_column(ir, caption_rect, page.rect.width):
+                        below_rects.append(ir)
                     
+            union_rect_below = None
+            if below_rects:
+                union_rect_below = fitz.Rect(below_rects[0])
+                for r in below_rects[1:]:
+                    union_rect_below.include_point(fitz.Point(r.x0, r.y0))
+                    union_rect_below.include_point(fitz.Point(r.x1, r.y1))
+                union_rect_below.x0 = max(0, union_rect_below.x0 - 5)
+                union_rect_below.y0 = max(caption_rect.y1 + 2, union_rect_below.y0 - 5)
+                union_rect_below.x1 = min(page.rect.width, union_rect_below.x1 + 5)
+                union_rect_below.y1 = min(y_max_below, union_rect_below.y1 + 5)
+                
+            # 3) Heuristic Selection: Tables prioritize below, Figures prioritize above
+            union_rect = None
+            is_above = True
+            if is_table:
+                union_rect = union_rect_below
+                is_above = False
+                if not union_rect or union_rect.width < 10 or union_rect.height < 10:
+                    union_rect = union_rect_above
+                    is_above = True
+            else:
+                union_rect = union_rect_above
+                is_above = True
+                if not union_rect or union_rect.width < 10 or union_rect.height < 10:
+                    union_rect = union_rect_below
+                    is_above = False
+                    
+            # 4) Fallback box if everything failed
             if not union_rect or union_rect.width < 10 or union_rect.height < 10:
-                # Fallback to the region above the caption
-                union_rect = fitz.Rect(
-                    max(0, caption_rect.x0 - 20),
-                    max(40, caption_rect.y0 - 220),
-                    min(page.rect.width, caption_rect.x1 + 20),
-                    caption_rect.y0 - 2
-                )
+                if is_table:
+                    # Fallback to the region below the caption
+                    union_rect = fitz.Rect(
+                        max(0, caption_rect.x0 - 20),
+                        caption_rect.y1 + 2,
+                        min(page.rect.width, caption_rect.x1 + 20),
+                        min(page.rect.height - 40, caption_rect.y1 + 220)
+                    )
+                    is_above = False
+                else:
+                    # Fallback to the region above the caption
+                    union_rect = fitz.Rect(
+                        max(0, caption_rect.x0 - 20),
+                        max(40, caption_rect.y0 - 220),
+                        min(page.rect.width, caption_rect.x1 + 20),
+                        caption_rect.y0 - 2
+                    )
+                    is_above = True
             else:
                 # Sandwiched text block inclusion for figure labels (like (a), (b), or labels)
                 for b in text_blocks:
@@ -488,7 +512,7 @@ def extract_figures_from_pdf(
                     if b_rect.y0 >= caption_rect.y0 - 2 and b_rect.y1 <= caption_rect.y1 + 2:
                         continue
                     is_sandwiched = False
-                    if above_rects: # Figure is ABOVE caption
+                    if is_above: # Figure is ABOVE caption
                         if b_rect.y0 >= union_rect.y0 - 10 and b_rect.y1 <= caption_rect.y0 + 2:
                             is_sandwiched = True
                     else: # Figure is BELOW caption
@@ -536,44 +560,46 @@ def extract_figures_from_pdf(
             has_subfigure_markers = bool(_SUBFIG_MARKER.search(caption_text))
             
             # Allow slicing only if:
-            # 1. We have multiple physical images and they cover a significant area (> 20%)
-            # 2. OR the caption explicitly marks subfigures (e.g. (a), (b), etc.)
-            allow_slicing = (num_images > 1 and img_ratio > 0.20) or has_subfigure_markers
+            # 1. Not a table (tables shouldn't be sliced)
+            # 2. We have multiple physical images and they cover a significant area (> 20%)
+            # 3. OR the caption explicitly marks subfigures (e.g. (a), (b), etc.)
+            allow_slicing = not is_table and ((num_images > 1 and img_ratio > 0.20) or has_subfigure_markers)
             
             if allow_slicing:
                 parts = _split_germinated_image(img_bytes)
             else:
                 parts = [img_bytes]
             
+            prefix = "TAB" if is_table else "FIG"
             if len(parts) == 1:
-                dest = paper_folder / f"FIG_{fig_num}.png"
+                dest = paper_folder / f"{prefix}_{fig_num}.png"
                 dest.write_bytes(parts[0])
-                captions[fig_num] = caption_text
+                captions[f"{prefix}_{fig_num}"] = caption_text
                 if verbose:
-                    print(f"    FIG_{fig_num}.png  (pág.{page_num})  {caption_text[:72]}")
+                    print(f"    {prefix}_{fig_num}.png  (pág.{page_num})  {caption_text[:72]}")
             else:
                 for idx, part_bytes in enumerate(parts, 1):
                     sub_fig_num = f"{fig_num}_{idx}"
-                    dest = paper_folder / f"FIG_{sub_fig_num}.png"
+                    dest = paper_folder / f"{prefix}_{sub_fig_num}.png"
                     dest.write_bytes(part_bytes)
-                    captions[sub_fig_num] = caption_text
+                    captions[f"{prefix}_{sub_fig_num}"] = caption_text
                     if verbose:
-                        print(f"    FIG_{sub_fig_num}.png  (composta/cortada, pág.{page_num})  {caption_text[:72]}")
+                        print(f"    {prefix}_{sub_fig_num}.png  (composta/cortada, pág.{page_num})  {caption_text[:72]}")
                         
     doc.close()
     
     if captions:
         lines = []
-        for num in sorted(captions, key=lambda x: (len(x), x)):
-            lines.append(f"FIG_{num}.png")
-            lines.append(captions[num])
+        for key in sorted(captions, key=lambda x: (len(x), x)):
+            lines.append(f"{key}.png")
+            lines.append(captions[key])
             lines.append("")
         (paper_folder / "captions.txt").write_text(
             "\n".join(lines), encoding="utf-8"
         )
         
     if verbose:
-        print(f"    Total: {len(captions)} figura(s) extraída(s).")
+        print(f"    Total: {len(captions)} elemento(s) visual(is) extraído(s).")
         
     return captions
 

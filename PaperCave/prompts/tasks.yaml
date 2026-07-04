@@ -44,6 +44,17 @@ analyze_images:
     filename (e.g. "FIG1.png"), description (1-2 sentences),
     relevance (how it relates to the paper's contribution), mode, and visualType.
 
+analyze_tables:
+  description: >
+    Receive the paper tables (already extracted as TAB_*.png files).
+    For each table, produce a perfect Markdown transcription of its contents, capturing headers, rows, and columns accurately.
+    Use the provided full text of the paper as context to resolve any ambiguous abbreviations or OCR issues in the table.
+    
+    Return ONLY valid JSON following the TableInsights schema.
+  expected_output: >
+    Valid JSON with transcriptions for each table:
+    filename (e.g. "TAB1.png"), markdown_content (perfectly formatted markdown table).
+
 extract:
   description: >
     Based on the paper summary provided by the previous agent,
@@ -57,6 +68,7 @@ extract:
     - You must extract exactly one "contribution" element describing the actual main contribution of the paper.
     - Classify all other extracted elements under graphical_representation, image, graph, or table.
     - **Table Data Extraction**: If an element is a "table", you MUST read the paper text (or use your knowledge/search) to extract its actual headers and rows, and format them into the `data` field as: `{"columns": ["Col1", "Col2"], "rows": [["val1", "val2"], ["val3", "val4"]]}`. Do not leave the `data` field as null or empty for tables.
+    - **Germinated Image Linking**: For table elements, evaluate if the table's rows describe sub-images (germinated images) of a figure. If so, add a `row_links` array to the `data` dict (e.g., `{"columns": [...], "rows": [...], "row_links": ["FIG_1_1.png", null]}`). `row_links` MUST have the exact same length as `rows`. Use the Vision Analyst descriptions to identify which sub-image filename (e.g., `FIG_X_Y.png`) matches each row.
     - Order elements from most to least relevant.
     - Return ONLY valid JSON, no additional text, no markdown.
   expected_output: >

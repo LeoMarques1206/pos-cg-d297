@@ -129,6 +129,17 @@ class ImageInsights(BaseModel):
     insights: List[ImageInsight]
 
 
+class TableInsight(BaseModel):
+    """Vision Analyst output for one table."""
+    filename: str
+    markdown_content: str
+
+
+class TableInsights(BaseModel):
+    """Full Vision Analyst output for tables."""
+    transcriptions: List[TableInsight]
+
+
 CONTENT_TYPES = Literal["figure", "chart", "table", "text_panel"]
 CATEGORIES    = Literal[
     "graphical_representation", "abstract", "contribution",
@@ -164,7 +175,7 @@ class CardContent(BaseModel):
     Union-style content block. Fields used depend on contentType:
       figure      → assetReference, caption, description
       chart       → chartType, title, description, data
-      table       → chartType ("table"/"comparison_table"), title, description, data
+      table       → chartType ("table"/"comparison_table"), title, description, data (with columns, rows, and optionally row_links)
       text_panel  → description
     """
     # figure fields
@@ -177,7 +188,7 @@ class CardContent(BaseModel):
     # chart / table fields
     chartType: Optional[Literal["bar", "grouped_bar", "table", "comparison_table"]] = None
     title:     Optional[str]            = None
-    data:      Optional[Dict[str, Any]] = None
+    data:      Optional[Dict[str, Any]] = Field(None, description="For tables, expect {'columns': [...], 'rows': [...], 'row_links': [...]}. row_links is an array of sub-image filenames (e.g. 'FIG_2_1.png') matching each row, or null if no relationship exists.")
 
     @model_validator(mode="after")
     def validate_description_present(self) -> "CardContent":

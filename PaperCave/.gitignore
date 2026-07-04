@@ -32,3 +32,15 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
+# Arquivos temporários e scripts de transição
+temp_scripts/
+temp_matches.json
+*_DEPRECATED.py
+
+# Logs (mesmo os de dentro da pasta outputs)
+*.log
+
+# Planos e artefatos de IA
+implementation_plan.md
+walkthrough.md
+

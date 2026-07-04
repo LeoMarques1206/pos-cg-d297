@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).parent.parent
 # Matches FIG1.png, FIG_1.png, FIG2a.jpg, FIG_2a.jpg, FIG10.PNG, etc.
 # The underscore separator is optional to support both FIG1 and FIG_1 conventions.
 _FIG_PATTERN = re.compile(r"^FIG_?(\d+(?:_[0-9a-z]+)?)\.(png|jpg|jpeg)$", re.IGNORECASE)
+_TAB_PATTERN = re.compile(r"^TAB_?(\d+(?:_[0-9a-z]+)?)\.(png|jpg|jpeg)$", re.IGNORECASE)
 
 # Matches "Fig. 3", "Figure 3", "Fig 3:", "Figura 3." in PDF text
 _CAPTION_PATTERN = re.compile(
@@ -38,6 +39,19 @@ def scan_available_figures(paper_folder: Path) -> list[str]:
             fig_id = f"FIG{_FIG_PATTERN.match(f.name).group(1).upper()}"
             figures.append(fig_id)
     return figures
+
+
+def scan_available_tables(paper_folder: Path) -> list[str]:
+    """
+    Returns a sorted list of table IDs available in the paper folder.
+    E.g. ['TAB1', 'TAB2']
+    """
+    tables = []
+    for f in sorted(paper_folder.iterdir()):
+        if f.is_file() and _TAB_PATTERN.match(f.name):
+            tab_id = f"TAB{_TAB_PATTERN.match(f.name).group(1).upper()}"
+            tables.append(tab_id)
+    return tables
 
 
 def extract_figure_captions(text: str, figure_ids: list[str]) -> dict[str, str]:
@@ -66,11 +80,13 @@ def load_paper_context(paper_folder: Path) -> dict:
     Returns a dict with:
       paper_folder:       Path                — the paper folder path
       available_figures:  list[str]          — ['FIG1', 'FIG2', ...]
+      available_tables:   list[str]          — ['TAB1', 'TAB2', ...]
       figure_captions:    dict[str, str]      — {FIG1: caption, ...} (empty until Reader runs)
       asset_catalog:      str | None          — content of assets/catalog.md or None
       visual_style:       str                 — content of assets/visual_style.md (mandatory)
     """
     available_figures = scan_available_figures(paper_folder)
+    available_tables = scan_available_tables(paper_folder)
 
     # Asset catalog (optional)
     catalog_path = BASE_DIR / "assets" / "catalog.md"
@@ -90,6 +106,7 @@ def load_paper_context(paper_folder: Path) -> dict:
     return {
         "paper_folder":      paper_folder,
         "available_figures": available_figures,
+        "available_tables":  available_tables,
         "figure_captions":   {},   # populated later via update_figure_captions()
         "asset_catalog":     asset_catalog,
         "visual_style":      visual_style,
@@ -167,6 +184,10 @@ def _build_map_task_description(tp: dict, context: dict, card_count: int = 5) ->
             "No FIG*.png figures found in the paper folder. "
             "Do not use contentType='figure' for any card."
         )
+
+    tabs = context.get("available_tables", [])
+    if tabs:
+        figures_text += "\n\nThe following tables are also available as TAB*.png files:\n" + "\n".join(f"  - {t}" for t in tabs)
 
     # ── Asset catalog section ─────────────────────────────────────────────────
     catalog = context.get("asset_catalog")

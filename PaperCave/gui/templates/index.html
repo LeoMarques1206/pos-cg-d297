@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperCave Dashboard</title>
+    <!-- Outfit & Fira Code Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #060810;
+            --card-bg: rgba(13, 17, 28, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-color: #e2e8f0;
+            --text-muted: #8b9eb5;
+            --primary: #4f46e5;
+            --primary-glow: rgba(79, 70, 229, 0.4);
+            --accent-cyan: #00e0ff;
+            --accent-emerald: #00e676;
+            --accent-rose: #ff2a5f;
+            --accent-amber: #ffaa00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(8, 9, 15, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary);
+            -webkit-text-fill-color: initial;
+        }
+
+        /* Tabs Container */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
+        }
+
+        .tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-btn.active {
+            color: #fff;
+            background: var(--primary);
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards & Glassmorphism */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            margin-bottom: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 24px;
+        }
+
+        .grid-papers {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Forms, Switches and Inputs */
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .select-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .select-input:focus {
+            border-color: var(--primary);
+        }
+
+        .switch-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .switch-label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .switch-sublabel {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Toggle switch styling */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--accent-emerald);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        /* Paper Lists & Details (Collapsible categories) */
+        .collapsible-group {
+            margin-bottom: 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .collapsible-header {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .collapsible-content {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .paper-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .paper-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .paper-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .paper-name {
+            font-size: 14px;
+            font-weight: 600;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .paper-meta-badge {
+            font-size: 11px;
+            padding: 2px 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Buttons styling */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-family: inherit;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        .btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: none;
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+            border-radius: 6px;
+            width: auto;
+        }
+
+        /* Progress Ring/Stats Panel */
+        .progress-stats-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .progress-status-badge {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-status-badge.running {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+            animation: pulse-glow 1.5s infinite alternate;
+        }
+
+        .progress-status-badge.completed {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-emerald);
+        }
+
+        .progress-status-badge.failed {
+            background: rgba(244, 63, 94, 0.2);
+            color: var(--accent-rose);
+        }
+
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 5px rgba(6, 182, 212, 0.2); }
+            to { box-shadow: 0 0 15px rgba(6, 182, 212, 0.5); }
+        }
+
+        .time-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .metric-box {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 4px;
+        }
+
+        /* Horizontal progress bar */
+        .progress-bar-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+            border-radius: 5px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        /* Live Terminal Console */
+        .terminal-container {
+            flex-grow: 1;
+            background: #020308;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .terminal-dot {
+            display: flex;
+            gap: 6px;
+        }
+
+        .terminal-dot span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot span:nth-child(1) { background: #ff5f56; }
+        .terminal-dot span:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot span:nth-child(3) { background: #27c93f; }
+
+        .terminal-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .terminal-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #d1d5db;
+            padding-right: 8px;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .terminal-line {
+            margin-bottom: 4px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* Log Line Color Coding */
+        .log-sim { color: var(--accent-cyan); }
+        .log-pipe { color: var(--accent-amber); }
+        .log-success { color: var(--accent-emerald); font-weight: 600; }
+        .log-error { color: var(--accent-rose); font-weight: 600; }
+        .log-done { color: var(--accent-emerald); }
+        .log-step { color: var(--primary); }
+        .log-header { color: #fff; font-weight: 600; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 4px; margin-top: 10px; }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Tab 2: Explorer list and detail styling */
+        .explorer-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            min-height: 600px;
+        }
+
+        .explorer-list {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            overflow-y: auto;
+            max-height: 650px;
+        }
+
+        .explorer-list-item {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 6px;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .explorer-list-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            color: #fff;
+        }
+
+        .explorer-list-item.active {
+            background: rgba(99, 102, 241, 0.15);
+            color: #fff;
+            border-left: 3px solid var(--primary);
+        }
+
+        .explorer-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .paper-header-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .paper-title-big {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .figures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .figure-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .figure-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .figure-img-wrapper {
+            width: 100%;
+            height: 150px;
+            background: #fff; /* standard paper background is white */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 8px;
+        }
+
+        .figure-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .figure-info {
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .placeholder-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            color: var(--text-muted);
+            gap: 16px;
+            text-align: center;
+        }
+
+        /* Tab 3: Unity Assets Status styling */
+        .assets-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 12px;
+        }
+
+        .assets-table th, .assets-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        .assets-table th {
+            font-weight: 700;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.02);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .assets-table tr:hover td {
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .assets-folder-name {
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .assets-folder-name span {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span>🕳️</span> PaperCave <span>Dashboard</span>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('pipeline-tab', this)">Pipeline Executor</button>
+            <button class="tab-btn" onclick="switchTab('explorer-tab', this)">Paper Explorer</button>
+            <button class="tab-btn" onclick="switchTab('unity-tab', this)">Unity Assets</button>
+            <button class="tab-btn" onclick="switchTab('settings-tab', this)">⚙️ Configurações</button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- ================= TAB 1: PIPELINE EXECUTOR ================= -->
+        <div id="pipeline-tab" class="tab-content active">
+            <div class="grid-2" style="grid-template-columns: 1.5fr 1fr;">
+                
+                <!-- Left: Paper selector & options -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <h2>📋 Selecionar Papers para Processamento</h2>
+                    
+                    <div style="margin-bottom: 12px; display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: var(--text-muted); align-items: center;">
+                        <span>Selecione os papers no formato visual de grid:</span>
+                        <a href="#" onclick="toggleSelectAll(true); return false;" style="color: var(--primary); text-decoration: none; padding: 4px 10px; background: rgba(0, 224, 255, 0.1); border-radius: 4px;">Selecionar Todos</a>
+                    </div>
+                    
+                    <!-- Grid of Unprocessed Papers -->
+                    <h3 style="margin-top: 15px; margin-bottom: 10px; font-size: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;">Pendentes / Parciais (<span id="unprocessed-count">0</span>)</h3>
+                    <div id="unprocessed-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; max-height: 400px; overflow-y: auto; margin-bottom: 20px; padding-right: 10px;">
+                        <!-- Paper cards populate here -->
+                    </div>
+                    
+                    <!-- Grid of Processed Papers -->
+                    <h3 style="margin-top: 5px; margin-bottom: 10px; font-size: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; color: var(--accent-emerald);">Processados (<span id="processed-count">0</span>)</h3>
+                    <div id="processed-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; max-height: 250px; overflow-y: auto; margin-bottom: 20px; padding-right: 10px; opacity: 0.8;">
+                        <!-- Paper cards populate here -->
+                    </div>
+                    
+                    <div style="margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 10px;">
+                        
+                        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="overwrite-checkbox" style="width: 16px; height: 16px; accent-color: var(--accent-rose);" onchange="document.getElementById('from-step-select').disabled = this.checked;">
+                                    <label for="overwrite-checkbox" style="font-size: 13px; font-weight: 600; cursor: pointer; color: var(--accent-rose);">Começar do Zero (Sobrescrever tudo)</label>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="simulate-toggle" style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                    <label for="simulate-toggle" style="font-size: 13px; font-weight: 600; cursor: pointer;">Modo Simulado (Dry Run)</label>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="simple-mode-checkbox" style="width: 16px; height: 16px; accent-color: var(--accent-cyan);">
+                                    <label for="simple-mode-checkbox" style="font-size: 13px; font-weight: 600; cursor: pointer;">Simple Mode (Apenas Cards)</label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px;">
+                                <label style="font-size: 13px; font-weight: 600; color: var(--text-muted);">Retomar de:</label>
+                                <select class="select-input" id="from-step-select" style="padding: 4px 8px; font-size: 12px; border-radius: 4px; background: rgba(0,0,0,0.5); color: #fff; border: 1px solid var(--border-color); flex-grow: 1;">
+                                    <option value="auto">Auto-detectar progresso e continuar</option>
+                                    <option value="none">Reiniciar tudo (mesmo que Sobrescrever)</option>
+                                    <option value="vision_analyst">Passo 2: Vision Analyst</option>
+                                    <option value="summarizer">Passo 3: Summarizer</option>
+                                    <option value="extractor">Passo 4: Extractor</option>
+                                    <option value="mapper">Passo 5: Mapper</option>
+                                    <option value="reviewer">Passo 6: Reviewer</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="btn" id="start-btn" onclick="startPipeline()" disabled style="width: 100%; font-size: 16px; padding: 15px;">🚀 Iniciar Processamento</button>
+                        <button class="btn" id="cancel-btn" onclick="cancelPipeline()" style="display: none; width: 100%; font-size: 16px; padding: 15px; background-color: var(--accent-rose); box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);">🛑 Cancelar Processamento</button>
+                    </div>
+                </div>
+                
+                <!-- Right: Real-time Terminal Log Console & Progress -->
+                <div style="display: flex; flex-direction: column;">
+                    <div class="progress-stats-panel">
+                        <div class="progress-header">
+                            <span class="progress-title" id="progress-text">Progresso Geral</span>
+                            <span class="progress-status-badge" id="status-badge">Pronto</span>
+                        </div>
+                        
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                        </div>
+                        
+                        <div class="time-metrics">
+                            <div class="metric-box">
+                                <div class="metric-label">Tempo Decorrido</div>
+                                <div class="metric-value" id="elapsed-time">00:00</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-label">Restante Estimado</div>
+                                <div class="metric-value" id="remaining-time">00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terminal-container" style="flex: 1; max-height: 350px;">
+                        <div class="terminal-header">
+                            <div class="terminal-dot">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">LIVE LOG STREAMING — stdout</div>
+                            <div style="width: 38px;"></div>
+                        </div>
+                        <div class="terminal-body" id="terminal-body" style="font-size: 11px;">
+                            <div class="terminal-line" style="color: var(--text-muted)">Selecione os papers e clique em "Iniciar Processamento" para acompanhar os logs em tempo real...</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom: Phase Blocks Editor -->
+                <div style="grid-column: 1 / -1; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 style="margin: 0; font-size: 16px; color: var(--text-light);">📝 Editor de Fases (Pipeline JSON)</h3>
+                        <span style="font-size: 12px; color: var(--text-muted);">Clique em "Ver Fases" em um paper processado para editar.</span>
+                    </div>
+                    <div id="phase-blocks-container" style="display: flex; flex-direction: column; gap: 15px;">
+                        <!-- JSON blocks will load here -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- ================= TAB 2: PAPER EXPLORER ================= -->
+        <div id="explorer-tab" class="tab-content">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="margin: 0;">🔍 Explorador de Papers</h2>
+                    <label style="margin-right: 15px; color: var(--accent-rose); font-size: 13px;">
+                        <input type="checkbox" id="hardResetCheck" style="accent-color: var(--accent-rose);"> Hard Reset (Apagar edições manuais)
+                    </label>
+                    <button class="btn btn-sm" onclick="runExtractionOnAll()" style="width: auto; background: var(--color-primary);"><i class="fa-solid fa-rocket"></i> Rodar Extração de Imagens em Todos</button>
+                </div>
+                <div class="explorer-layout">
+                    
+                    <!-- Left list -->
+                    <div class="explorer-list" id="explorer-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                    
+                    <!-- Right details (Extractor Iframe) -->
+                    <div class="explorer-detail" id="explorer-detail" style="display: flex; flex-direction: column; flex: 1;">
+                        <iframe id="extractor-iframe" src="" style="width: 100%; height: 800px; border: none; border-radius: 8px; background: #050508; display: none;"></iframe>
+                        <div class="placeholder-box" id="explorer-placeholder">
+                            <span style="font-size: 48px;">📄</span>
+                            <p>Selecione um paper à esquerda para visualizar suas figuras extraídas e acessar o editor de Bounding Boxes.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- ================= TAB 3: UNITY ASSETS ================= -->
+        <div id="unity-tab" class="tab-content">
+            <div class="card">
+                <h2>📦 Unity Asset Exports (Assets/PaperCaveData/)</h2>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+                    Esta tabela varre a subpasta de dados do projeto Unity conectado para listar quais papers foram exportados e quando.
+                </p>
+                
+                <table class="assets-table">
+                    <thead>
+                        <tr>
+                            <th>Nome do Paper</th>
+                            <th>Data de Exportação (Edição)</th>
+                            <th>Total de Arquivos</th>
+                            <th style="text-align: right;">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assets-table-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: var(--text-muted)">Carregando status dos ativos do Unity...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- ================= TAB 4: SETTINGS ================= -->
+        <div id="settings-tab" class="tab-content">
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <h2>⚙️ Configurações do Sistema</h2>
+                
+                <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
+                    <!-- LLM Configuration Panel -->
+                    <div class="card" style="padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="margin-top: 0; color: var(--accent-cyan); font-size: 15px;">🤖 Configuração do Provedor LLM</h3>
+                        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px;">Estas configurações afetam como a IA processa o texto. Modelos grandes (Gemini 1.5, GPT-4) são recomendados, mas você pode usar LM Studio para execução 100% local e gratuita.</p>
+                        
+                        <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                            <div style="flex: 1;">
+                                <label class="control-label" style="display: block; margin-bottom: 5px;">Provider:</label>
+                                <select class="select-input" id="llm-provider-select" style="width: 100%;">
+                                    <option value="google">Google Gemini (API Key)</option>
+                                    <option value="openai">OpenAI (API Key)</option>
+                                    <option value="anthropic">Anthropic Claude (API Key)</option>
+                                    <option value="lmstudio">LM Studio (Local /v1)</option>
+                                    <option value="ollama">Ollama (Local :11434)</option>
+                                </select>
+                            </div>
+                            <div style="flex: 2;">
+                                <label class="control-label" style="display: block; margin-bottom: 5px;">Model ID:</label>
+                                <input type="text" class="select-input" id="llm-model-input" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); background: rgba(0,0,0,0.5); color: #fff; border-radius: 4px;" placeholder="Ex: gemini-2.5-flash ou openai/gemma-4-12b-qat">
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary" style="width: 100%;" onclick="saveLlmSettings()">💾 Salvar Configurações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Unity Preview Modal -->
+    <div id="unity-preview-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 9999; flex-direction: column;">
+        <div style="padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5);">
+            <div style="font-size: 18px; font-weight: 700; color: #fff;">Unity Asset Layout Preview: <span id="preview-paper-id" style="color: var(--accent-cyan);"></span></div>
+            <button class="btn btn-secondary" onclick="document.getElementById('unity-preview-modal').style.display='none'">X Fechar</button>
+        </div>
+        <div id="unity-preview-canvas" style="flex: 1; position: relative; overflow: hidden; background: radial-gradient(circle at center, #111 0%, #030408 100%); display: flex; justify-content: center; align-items: center;">
+            <div id="preview-board" style="position: relative; width: 100%; height: 100%; transform-origin: center;">
+                <!-- Cards render here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Correction Agent Modal -->
+    <div id="regen-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 9999; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="card" style="width: 500px; max-width: 90vw; background: #0b0c10; border: 1px solid var(--primary); box-shadow: 0 0 30px rgba(0, 224, 255, 0.15);">
+            <h2 style="margin-top: 0;">Regenerar Fase: <span id="regen-step-name" style="color: var(--accent-cyan);"></span></h2>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px; line-height: 1.5;">O <strong style="color: var(--accent-rose);">Agente Corretor</strong> usará o JSON que você editou como molde e o texto original do PDF como contexto. Diga abaixo exatamente o que ele deve consertar ou reescrever de acordo com o esquema.</p>
+            
+            <textarea id="regen-prompt" style="width: 100%; height: 120px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); color: #fff; padding: 12px; border-radius: 6px; resize: vertical; font-size: 13px;" placeholder="Ex: Corriga as coordenadas da figura 2 que estão erradas, e certifique-se de preencher a descrição que está em branco. Respeite o modelo JSON."></textarea>
+            
+            <div id="regen-error-msg" style="color: var(--accent-rose); font-size: 12px; margin-top: 10px; display: none;"></div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="btn btn-secondary" style="flex: 1;" onclick="document.getElementById('regen-modal').style.display='none'">Cancelar</button>
+                <button class="btn" style="flex: 1;" id="regen-submit-btn" onclick="submitRegen()">🚀 Executar Agente</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentRegenPaper = null;
+        let currentRegenStep = null;
+        
+        function openRegenModal(paperId, step) {
+            currentRegenPaper = paperId;
+            currentRegenStep = step;
+            document.getElementById('regen-step-name').textContent = step;
+            document.getElementById('regen-prompt').value = '';
+            document.getElementById('regen-error-msg').style.display = 'none';
+            document.getElementById('regen-modal').style.display = 'flex';
+        }
+        
+        function submitRegen() {
+            const prompt = document.getElementById('regen-prompt').value.trim();
+            if (!prompt) return alert('Por favor digite uma instrução para o Agente Corretor.');
+            
+            const btn = document.getElementById('regen-submit-btn');
+            const errorMsg = document.getElementById('regen-error-msg');
+            
+            const editedJsonStr = document.getElementById(`json-${currentRegenStep}`).value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Aguarde. Agente rodando...';
+            errorMsg.style.display = 'none';
+            
+            fetch(`/api/paper/${currentRegenPaper}/correct_step`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    step_id: currentRegenStep,
+                    prompt: prompt,
+                    edited_json: editedJsonStr
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('regen-modal').style.display = 'none';
+                    // Reload UI
+                    viewPaperDetail(currentRegenPaper);
+                } else {
+                    errorMsg.textContent = 'Erro: ' + (data.error || 'Falha desconhecida');
+                    errorMsg.style.display = 'block';
+                }
+            })
+            .catch(err => {
+                errorMsg.textContent = 'Erro de rede: ' + err;
+                errorMsg.style.display = 'block';
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = '🚀 Executar Agente';
+            });
+        }
+        
+        function continuePipelineFrom(paperId, step) {
+            const editedJsonStr = JSON.stringify(window.editingPhaseJson[step], null, 4);
+            // Send the edited JSON to an API to save it first
+            fetch(`/api/paper/${paperId}/save_json_raw`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ step: step, content: editedJsonStr })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`JSON salvo. A pipeline será iniciada a partir do passo seguinte.`);
+                    // Now start pipeline!
+                    let nextStepMapping = {
+                        "01_reader_output": "vision_analyst",
+                        "02_vision_analyst_output": "summarizer",
+                        "03_summarizer_output": "extractor",
+                        "04_extractor_output": "mapper",
+                        "05_mapper_output": "reviewer",
+                        "06_reviewer_output": "none" // End
+                    };
+                    let resumeStep = nextStepMapping[step];
+                    
+                    if (resumeStep === "none") {
+                        alert("Pipeline já finalizada neste ponto. (Reviewer)");
+                        return;
+                    }
+                    
+                    if (!resumeStep) {
+                        resumeStep = "auto";
+                    }
+                    
+                    // Switch to Pipeline tab
+                    document.querySelector('.tab-btn').click(); 
+                    
+                    // Trigger run_pipeline
+                    fetch("/api/run_pipeline", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            papers: [paperId],
+                            simulate: document.getElementById("simulate-toggle").checked,
+                            from_step: resumeStep,
+                            simple_mode: document.getElementById("simple-mode-checkbox").checked
+                        })
+                    }).then(res => res.json()).then(resp => {
+                        if (resp.success) {
+                            connectEventSource();
+                            document.getElementById("start-btn").style.display = "none";
+                            document.getElementById("cancel-btn").style.display = "block";
+                            document.getElementById("cancel-btn").disabled = false;
+                        } else {
+                            alert("Erro ao rodar pipeline: " + resp.error);
+                        }
+                    });
+                } else {
+                    alert('Erro ao salvar: ' + data.error);
+                }
+            });
+        }
+        
+        function renderStaticManifest(paperId) {
+            const board = document.getElementById('static-manifest-canvas');
+            if (!board) return;
+            board.innerHTML = '<div style="color: var(--text-muted); margin-top: 40px;">Carregando...</div>';
+            
+            fetch(`/api/unity_assets/${paperId}/manifest`)
+                .then(res => res.json())
+                .then(data => {
+                    board.innerHTML = '';
+                    const details = data.gameObjects || [];
+                    if (details.length === 0) {
+                        board.innerHTML = '<div style="color: var(--text-muted); margin-top: 40px; text-align: center;">Nenhuma carta/elemento no manifest.<br><small>Aguardando conclusão da fase 07</small></div>';
+                        return;
+                    }
+                    
+                    details.forEach(det => {
+                        const card = document.createElement('div');
+                        card.style.cssText = `
+                            width: 140px; height: 180px;
+                            background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
+                            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+                            padding: 8px; display: flex; flex-direction: column;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.5); font-size: 10px;
+                        `;
+                        
+                        let contentHtml = '';
+                        if (det.displayType === "image" && det.imageFileName) {
+                            contentHtml = `<div style="flex:1; background: url('/api/unity_assets/${paperId}/images/${det.imageFileName}') center/contain no-repeat; margin-bottom: 5px;"></div>`;
+                        } else {
+                            const textCts = det.textContent || (det.visualElementData ? det.visualElementData.content : "Sem texto");
+                            contentHtml = `<div style="flex:1; overflow:hidden; color: #ccc; margin-bottom: 5px;">${textCts.substring(0, 100)}...</div>`;
+                        }
+                        
+                        card.innerHTML = `
+                            ${contentHtml}
+                            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4px; color: var(--accent-cyan); font-weight: 700;">${det.type || "Element"}</div>
+                            <div style="color: var(--text-muted);">${det.unitId || "No ID"}</div>
+                        `;
+                        board.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    board.innerHTML = `<div style="color: var(--accent-rose); margin-top: 40px;">Erro ao carregar preview: ${err}</div>`;
+                });
+        }
+    // Global variables
+    let papersData = [];
+        let eventSource = null;
+        let jobTimer = null;
+
+        // On document load
+        document.addEventListener("DOMContentLoaded", () => {
+            loadPapers();
+            loadAssetsStatus();
+        });
+
+        // Fetch discovered papers
+        function loadPapers() {
+            fetch("/api/papers")
+                .then(res => res.json())
+                .then(data => {
+                    papersData = data;
+                    renderPaperCheckboxes();
+                    renderExplorerList();
+                })
+                .catch(err => console.error("Error loading papers:", err));
+        }
+
+        // Render paper grid cards in Tab 1
+        function renderPaperCheckboxes() {
+            const unprocessedList = document.getElementById("unprocessed-list");
+            const processedList = document.getElementById("processed-list");
+            
+            unprocessedList.innerHTML = "";
+            processedList.innerHTML = "";
+            
+            let unprocessedCount = 0;
+            let processedCount = 0;
+            
+            papersData.forEach(paper => {
+                const coverUrl = `/api/paper/${paper.paper_id}/page/1/render`;
+                const itemHtml = `
+                    <div class="paper-grid-card" onclick="toggleCheckbox('${paper.paper_id}')" style="cursor: pointer; position: relative; border-radius: 8px; overflow: hidden; border: 2px solid transparent; background: #1a1c23; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; min-height: 240px; height: 100%;" id="card-${paper.paper_id}">
+                        <div style="height: 140px; flex-shrink: 0; background-image: url('${coverUrl}'); background-size: cover; background-position: top center; border-bottom: 1px solid var(--border-color); background-color: #2a2d36;"></div>
+                        <div style="padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; flex-grow: 1; z-index: 2;">
+                            <div style="font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; color: #ffffff;" title="${paper.paper_id}">${paper.paper_id}</div>
+                            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-top: auto; padding-top: 10px;">
+                                <div style="font-size: 11px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 10px; color: #fff;">${paper.image_count} figs</div>
+                                ${paper.fully_processed ? `<button class="btn btn-sm btn-secondary" onclick="event.stopPropagation(); loadPhaseEditor('${paper.paper_id}')" style="padding: 4px 8px; font-size: 11px; pointer-events: auto;">Ver Fases</button>` : ''}
+                            </div>
+                        </div>
+                        <input type="checkbox" id="check-${paper.paper_id}" value="${paper.paper_id}" style="position: absolute; top: 10px; left: 10px; width: 18px; height: 18px; pointer-events: none;" onchange="updateCardStyle('${paper.paper_id}')">
+                    </div>
+                `;
+                
+                if (paper.fully_processed) {
+                    processedList.insertAdjacentHTML("beforeend", itemHtml);
+                    processedCount++;
+                } else {
+                    unprocessedList.insertAdjacentHTML("beforeend", itemHtml);
+                    unprocessedCount++;
+                }
+            });
+            
+            document.getElementById("unprocessed-count").textContent = unprocessedCount;
+            document.getElementById("processed-count").textContent = processedCount;
+            
+            updateStartButtonState();
+        }
+        
+        function updateCardStyle(paperId) {
+            const check = document.getElementById(`check-${paperId}`);
+            const card = document.getElementById(`card-${paperId}`);
+            if (check && card) {
+                if (check.checked) {
+                    card.style.borderColor = 'var(--primary)';
+                    card.style.boxShadow = '0 0 15px rgba(0, 224, 255, 0.4)';
+                    card.style.transform = 'translateY(-2px)';
+                } else {
+                    card.style.borderColor = 'transparent';
+                    card.style.boxShadow = 'none';
+                    card.style.transform = 'none';
+                }
+            }
+        }
+
+        // Toggle checkbox helper
+        function toggleCheckbox(paperId) {
+            const check = document.getElementById(`check-${paperId}`);
+            if (check) {
+                check.checked = !check.checked;
+                updateCardStyle(paperId);
+                updateStartButtonState();
+            }
+        }
+
+        // Select all / Deselect all
+        function toggleSelectAll(select) {
+            const checkboxes = document.querySelectorAll('#unprocessed-list input[type="checkbox"], #processed-list input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                cb.checked = select;
+                const paperId = cb.value;
+                updateCardStyle(paperId);
+            });
+            updateStartButtonState();
+        }
+
+        // Enable/Disable start button
+        function updateStartButtonState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            // Filter out simulate switch and simple mode checkbox
+            const paperChecks = Array.from(checkboxes).filter(cb => cb.id !== "simulate-toggle" && cb.id !== "simple-mode-checkbox");
+            document.getElementById("start-btn").disabled = paperChecks.length === 0;
+        }
+
+        // Render paper explorer list in Tab 2
+        function renderExplorerList() {
+            const explorerList = document.getElementById("explorer-list");
+            explorerList.innerHTML = "";
+            
+            papersData.forEach(paper => {
+                const statusDot = paper.fully_processed ? 
+                    `<span style="color: var(--accent-emerald)">●</span>` : 
+                    `<span style="color: var(--text-muted)">○</span>`;
+                explorerList.insertAdjacentHTML("beforeend", `
+                    <div class="explorer-list-item" id="explore-${paper.paper_id}" onclick="viewPaperDetail('${paper.paper_id}')">
+                        <span>${paper.paper_id}</span>
+                        ${statusDot}
+                    </div>
+                `);
+            });
+        }
+
+        // View paper details in Tab 2
+        function viewPaperDetail(paperId) {
+            document.querySelectorAll('.explorer-list-item').forEach(el => el.classList.remove('active'));
+            const activeEl = document.getElementById(`explore-${paperId}`);
+            if(activeEl) activeEl.classList.add('active');
+
+            // Show iframe, hide placeholder
+            document.getElementById('explorer-placeholder').style.display = 'none';
+            const iframe = document.getElementById('extractor-iframe');
+            iframe.style.display = 'block';
+            
+            // Set source
+            iframe.src = `/extractor?paper=${paperId}`;
+        }
+        
+        window.editingPhaseJson = {};
+        
+        function updateJsonField(step, pathStr, value, type) {
+            let parts = pathStr.split('.');
+            let current = window.editingPhaseJson[step];
+            for (let i = 0; i < parts.length - 1; i++) {
+                current = current[parts[i]];
+            }
+            let finalPart = parts[parts.length - 1];
+            if (type === 'number') {
+                current[finalPart] = Number(value);
+            } else if (type === 'boolean') {
+                current[finalPart] = value === 'true';
+            } else {
+                current[finalPart] = value;
+            }
+        }
+        
+        function addJsonArrayItem(step, pathStr) {
+            let parts = pathStr.split('.');
+            let current = window.editingPhaseJson[step];
+            for (let i = 0; i < parts.length; i++) {
+                current = current[parts[i]];
+            }
+            // Add a new empty object or copy structure
+            let newItem = {};
+            if (current.length > 0) {
+                // simple structural copy of the first item
+                let template = current[0];
+                if (typeof template === 'object' && template !== null) {
+                    for (let k in template) newItem[k] = (typeof template[k] === 'string') ? "" : (typeof template[k] === 'number' ? 0 : null);
+                } else {
+                    newItem = "";
+                }
+            }
+            current.push(newItem);
+            renderPhaseForm(step);
+        }
+        
+        function removeJsonArrayItem(step, pathStr, index) {
+            let parts = pathStr.split('.');
+            let current = window.editingPhaseJson[step];
+            for (let i = 0; i < parts.length; i++) {
+                current = current[parts[i]];
+            }
+            current.splice(index, 1);
+            renderPhaseForm(step);
+        }
+
+        function buildJsonEditor(data, path, stepName) {
+            if (data === null || data === undefined) return `<div style="color: var(--text-muted);">null</div>`;
+            
+            if (Array.isArray(data)) {
+                let html = `<div style="padding-left: 15px; border-left: 2px solid var(--border-color); margin: 8px 0;">`;
+                data.forEach((item, index) => {
+                    let itemPath = path ? `${path}.${index}` : `${index}`;
+                    html += `
+                    <div style="background: rgba(255,255,255,0.03); padding: 10px; border-radius: 6px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-size: 11px; color: var(--text-muted); font-family: monospace;">Item [${index}]</span>
+                            <button class="btn btn-sm" style="background: var(--accent-rose); padding: 2px 6px; font-size: 10px;" onclick="removeJsonArrayItem('${stepName}', '${path}', ${index})">❌ Remover</button>
+                        </div>
+                        ${buildJsonEditor(item, itemPath, stepName)}
+                    </div>`;
+                });
+                html += `<button class="btn btn-sm btn-secondary" style="margin-top: 5px; font-size: 11px;" onclick="addJsonArrayItem('${stepName}', '${path}')">➕ Adicionar Item</button>`;
+                html += `</div>`;
+                return html;
+            } else if (typeof data === 'object') {
+                let html = `<div style="padding-left: 10px;">`;
+                for (let key in data) {
+                    let currentPath = path ? `${path}.${key}` : key;
+                    html += `<div style="margin-bottom: 12px;">`;
+                    html += `<label style="display: block; font-size: 12px; font-weight: 600; color: var(--accent-cyan); margin-bottom: 4px; font-family: monospace;">${key}:</label>`;
+                    html += buildJsonEditor(data[key], currentPath, stepName);
+                    html += `</div>`;
+                }
+                html += `</div>`;
+                return html;
+            } else if (typeof data === 'string') {
+                // If it's a long string, use textarea
+                if (data.length > 80 || data.includes('\n')) {
+                    return `<textarea style="width: 100%; min-height: 80px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; font-size: 12px; padding: 8px; border-radius: 4px; resize: vertical;" onchange="updateJsonField('${stepName}', '${path}', this.value, 'string')">${data}</textarea>`;
+                } else {
+                    return `<input type="text" value="${data.replace(/"/g, '&quot;')}" style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; font-size: 12px; padding: 6px 8px; border-radius: 4px;" onchange="updateJsonField('${stepName}', '${path}', this.value, 'string')">`;
+                }
+            } else if (typeof data === 'number') {
+                return `<input type="number" value="${data}" style="width: 150px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; font-size: 12px; padding: 6px 8px; border-radius: 4px;" onchange="updateJsonField('${stepName}', '${path}', this.value, 'number')">`;
+            } else if (typeof data === 'boolean') {
+                return `<select style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; font-size: 12px; padding: 6px 8px; border-radius: 4px;" onchange="updateJsonField('${stepName}', '${path}', this.value, 'boolean')">
+                    <option value="true" ${data ? 'selected' : ''}>true</option>
+                    <option value="false" ${!data ? 'selected' : ''}>false</option>
+                </select>`;
+            }
+            return ``;
+        }
+
+        function renderPhaseForm(stepName) {
+            const container = document.getElementById(`form-container-${stepName}`);
+            if (!container) return;
+            const data = window.editingPhaseJson[stepName];
+            container.innerHTML = buildJsonEditor(data, '', stepName);
+        }
+        
+        function loadPhaseEditor(paperId) {
+            currentRegenPaper = paperId;
+            const container = document.getElementById('phase-blocks-container');
+            container.innerHTML = '<div style="color: var(--text-muted); text-align: center; padding: 20px;">Carregando fases da pipeline...</div>';
+            
+            window.editingPhaseJson = {};
+
+            fetch('/api/paper/' + paperId)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        container.innerHTML = `<div style="color: var(--accent-rose); padding: 20px;">Erro: ${data.error}</div>`;
+                        return;
+                    }
+                    const pipelineData = data.pipeline_data || {};
+                    let blocksHtml = '';
+                    const steps = Object.keys(pipelineData).sort();
+
+                    if (steps.length === 0) {
+                        blocksHtml = '<div style="color: var(--text-muted); text-align: center; margin-top: 40px; padding: 20px; border: 1px dashed var(--border-color); border-radius: 8px;">Nenhum dado de pipeline encontrado.<br><br>Execute a pipeline na aba "Pipeline Executor" primeiro.</div>';
+                    } else {
+                        steps.forEach(step => {
+                            let rawContent = pipelineData[step];
+                            let parsedData = {};
+                            try {
+                                parsedData = JSON.parse(rawContent);
+                            } catch(e) {
+                                parsedData = { "raw": rawContent };
+                            }
+                            window.editingPhaseJson[step] = parsedData;
+                            
+                            blocksHtml += `
+                            <div class="card" style="padding: 15px; border-radius: 8px; margin: 0; background: rgba(0,0,0,0.15);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                                    <h3 style="margin: 0; font-size: 15px; color: var(--accent-cyan);">📋 ${step}</h3>
+                                </div>
+                                
+                                <div id="form-container-${step}" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); max-height: 400px; overflow-y: auto;">
+                                </div>
+                                
+                                <div style="display: flex; justify-content: flex-end; margin-top: 15px; gap: 10px;">
+                                    <button class="btn btn-sm" style="background-color: var(--accent-rose); box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);" onclick="openRegenModal('${paperId}', '${step}')">🤖 Regenerar esta fase</button>
+                                    <button class="btn btn-sm btn-secondary" onclick="continuePipelineFrom('${paperId}', '${step}')">⏩ Salvar & Continuar Pipeline</button>
+                                </div>
+                            </div>
+                            `;
+                        });
+                    }
+                    container.innerHTML = blocksHtml;
+                    
+                    // Render dynamically
+                    steps.forEach(step => {
+                        renderPhaseForm(step);
+                    });
+                })
+                .catch(err => {
+                    container.innerHTML = `<div style="color: var(--accent-rose); padding: 20px;">Erro ao carregar paper: ${err}</div>`;
+                });
+        }
+
+        // Fetch Assets status in Tab 3
+        function loadAssetsStatus() {
+            const list = document.getElementById("assets-table-body");
+            list.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Carregando status...</td></tr>`;
+            
+            fetch("/api/assets_status")
+                .then(res => res.json())
+                .then(data => {
+                    list.innerHTML = "";
+                    if (!data || data.length === 0) {
+                        list.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Nenhum projeto com assets exportados.</td></tr>`;
+                        return;
+                    }
+                    
+                    data.forEach(folder => {
+                        list.insertAdjacentHTML("beforeend", `
+                            <tr class="assets-row">
+                                <td>
+                                    <div class="assets-folder-name">
+                                        <span>📁</span> ${folder.folder_name}
+                                    </div>
+                                </td>
+                                <td style="color: var(--text-muted);">${folder.modification_date}</td>
+                                <td>
+                                    <span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 12px; font-size: 12px;">
+                                        ${folder.files_count} items
+                                    </span>
+                                </td>
+                                <td style="text-align: right;">
+                                    <button class="btn btn-secondary btn-sm" onclick="previewUnityLayout('${folder.folder_name}')" style="margin-right: 8px;">
+                                        👁️ Preview
+                                    </button>
+                                    <button class="btn btn-sm" onclick="exportToUnity('${folder.folder_name}')" style="background-color: var(--primary);">
+                                        🚀 Force Re-Export
+                                    </button>
+                                </td>
+                            </tr>
+                        `);
+                    });
+                })
+                .catch(err => {
+                    list.innerHTML = `<div style="text-align: center; color: var(--accent-rose);">Erro: ${err}</div>`;
+                });
+        }
+        
+        // Settings Loading & Saving
+        function loadSettings() {
+            fetch("/api/settings")
+                .then(res => res.json())
+                .then(data => {
+                    if (data.provider) document.getElementById('llm-provider-select').value = data.provider;
+                    if (data.model) document.getElementById('llm-model-input').value = data.model;
+                })
+                .catch(err => console.error("Error loading settings", err));
+        }
+        
+        function saveLlmSettings() {
+            const provider = document.getElementById('llm-provider-select').value;
+            const model = document.getElementById('llm-model-input').value.trim();
+            
+            if (!model) return alert('Por favor, informe o Model ID.');
+            
+            fetch("/api/settings", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ provider: provider, model: model })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    alert("Configurações salvas com sucesso!");
+                } else {
+                    alert("Erro ao salvar: " + data.error);
+                }
+            })
+            .catch(err => alert("Erro na requisição: " + err));
+        }
+
+        // Initialize
+        document.addEventListener("DOMContentLoaded", () => {
+            loadPapers();
+            loadAssetsStatus();
+            loadSettings();
+        });
+
+        // Trigger manual Unity Export
+        function exportAssetsToUnity(paperId, btnElement) {
+            btnElement.disabled = true;
+            btnElement.textContent = "Exportando...";
+            
+            fetch(`/api/export_unity/${paperId}`, { method: "POST" })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`Exportado com sucesso para Unity: ${paperId}`);
+                        loadAssetsStatus();
+                    } else {
+                        alert(`Erro ao exportar: ${data.error}`);
+                    }
+                })
+                .catch(err => alert(`Falha na requisição: ${err}`))
+                .finally(() => {
+                    btnElement.disabled = false;
+                    btnElement.textContent = "🔄 Re-exportar";
+                });
+        }
+
+        // Preview Unity Layout Modal
+        function previewUnityLayout(paperId) {
+            const modal = document.getElementById('unity-preview-modal');
+            document.getElementById('preview-paper-id').textContent = paperId;
+            const board = document.getElementById('preview-board');
+            board.innerHTML = '<div style="color: #fff; text-align: center; margin-top: 20%; font-size: 20px;">Carregando Cena...</div>';
+            modal.style.display = 'flex';
+            
+            fetch(`/api/unity_assets/${paperId}/manifest`)
+                .then(res => res.json())
+                .then(data => {
+                    board.innerHTML = '';
+                    board.style.display = 'flex';
+                    board.style.flexWrap = 'wrap';
+                    board.style.justifyContent = 'center';
+                    board.style.alignContent = 'flex-start';
+                    board.style.gap = '40px';
+                    board.style.padding = '60px';
+                    board.style.overflowY = 'auto';
+                    
+                    const details = data.gameObjects || [];
+                    if (details.length === 0) {
+                        board.innerHTML = '<div style="color: #fff; text-align: center; margin-top: 20%; font-size: 20px;">Nenhuma carta exportada no manifest.</div>';
+                        return;
+                    }
+                    
+                    details.forEach(det => {
+                        const cardWidth = 240;
+                        const cardHeight = 320;
+                        const rot = Math.random() * 8 - 4;
+                        
+                        const card = document.createElement('div');
+                        card.style.cssText = `
+                            position: relative; left: 0px; top: 0px;
+                            width: ${cardWidth}px; height: ${cardHeight}px;
+                            background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
+                            border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;
+                            padding: 12px; transform: rotate(${rot}deg);
+                            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+                            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+                            display: flex; flex-direction: column; cursor: grab; user-select: none;
+                            flex-shrink: 0;
+                        `;
+                        
+                        card.onmouseenter = () => { card.style.transform = `rotate(0deg) scale(1.15)`; card.style.zIndex = 100; card.style.boxShadow = '0 25px 50px rgba(0,224,255,0.2)'; };
+                        card.onmouseleave = () => { card.style.transform = `rotate(${rot}deg) scale(1)`; card.style.zIndex = 1; card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.6)'; };
+                        
+                        let isDragging = false;
+                        let startMouseX, startMouseY, startCardX, startCardY;
+                        
+                        card.onmousedown = (e) => {
+                            isDragging = true;
+                            card.style.cursor = 'grabbing';
+                            card.style.transition = 'none'; // remove transition for smooth drag
+                            startMouseX = e.clientX;
+                            startMouseY = e.clientY;
+                            startCardX = parseFloat(card.style.left) || 0;
+                            startCardY = parseFloat(card.style.top) || 0;
+                        };
+                        
+                        window.addEventListener('mousemove', (e) => {
+                            if (!isDragging) return;
+                            card.style.left = `${startCardX + (e.clientX - startMouseX)}px`;
+                            card.style.top = `${startCardY + (e.clientY - startMouseY)}px`;
+                        });
+                        
+                        window.addEventListener('mouseup', () => {
+                            if(isDragging) {
+                                isDragging = false;
+                                card.style.cursor = 'grab';
+                                card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s';
+                            }
+                        });
+                        
+                        let contentHtml = '';
+                        if (det.displayType === 'image') {
+                            contentHtml = `
+                                <div style="flex: 1; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 8px; background: rgba(0,0,0,0.6); pointer-events: none;">
+                                    <img src="/api/unity_assets/${paperId}/images/${det.relatedImage}" style="max-width: 100%; max-height: 100%; object-fit: contain;" onerror="this.outerHTML='<span style=\\'color:var(--accent-rose)\\'>Image Not Found</span>'">
+                                </div>
+                            `;
+                        } else {
+                            contentHtml = `
+                                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; border-radius: 8px; background: rgba(255,255,255,0.05); padding: 16px; pointer-events: none;">
+                                    <div style="font-size: 13px; color: #fff; text-align: justify; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical;">${det.visualMetaphor || det.suggestedName}</div>
+                                </div>
+                            `;
+                        }
+                        
+                        card.innerHTML = `
+                            ${contentHtml}
+                            <div style="padding-top: 12px; text-align: center; color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 13px; font-weight: bold; pointer-events: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                ${det.suggestedName || 'Unnamed'}
+                            </div>
+                        `;
+                        board.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    board.innerHTML = `<div style="color: var(--accent-rose); text-align: center; margin-top: 20%; font-size: 20px;">Erro ao carregar manifest: ${err}</div>`;
+                });
+        }
+
+        function closeUnityPreview() {
+            document.getElementById('unity-preview-modal').style.display = 'none';
+            document.getElementById('preview-board').innerHTML = '';
+        }
+
+        // Start pipeline execution
+        function startPipeline() {
+            const simulate = document.getElementById("simulate-toggle").checked;
+            let fromStep = document.getElementById("from-step-select").value;
+            const overwrite = document.getElementById("overwrite-checkbox").checked;
+            if (overwrite) {
+                fromStep = "none";
+            }
+            const simpleMode = document.getElementById("simple-mode-checkbox").checked;
+            
+            // Get selected papers
+            const selectedCheckboxElements = document.querySelectorAll('#unprocessed-list input[type="checkbox"]:checked, #processed-list input[type="checkbox"]:checked');
+            const paperIds = Array.from(selectedCheckboxElements).map(cb => cb.value);
+            
+            if (paperIds.length === 0) return;
+            
+            // Setup UI states
+            document.getElementById("start-btn").disabled = true;
+            const terminal = document.getElementById("terminal-body");
+            terminal.innerHTML = `<div class="terminal-line" style="color: var(--accent-cyan)">[CONTROL] Solicitando inicialização do pipeline para ${paperIds.length} paper(s)...</div>`;
+            
+            // Post execution call
+            fetch("/api/run_pipeline", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    papers: paperIds,
+                    simulate: simulate,
+                    from_step: fromStep,
+                    simple_mode: simpleMode
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    terminal.insertAdjacentHTML("beforeend", `<div class="terminal-line" style="color: var(--accent-emerald)">[CONTROL] Pipeline iniciado com sucesso. Conectando canal de logs...</div>`);
+                    
+                    // Toggle Buttons
+                    document.getElementById("start-btn").style.display = "none";
+                    document.getElementById("cancel-btn").style.display = "block";
+                    document.getElementById("cancel-btn").disabled = false;
+                    
+                    connectEventSource();
+                } else {
+                    terminal.insertAdjacentHTML("beforeend", `<div class="terminal-line" style="color: var(--accent-rose)">[ERRO] Falha ao iniciar: ${data.error}</div>`);
+                    document.getElementById("start-btn").disabled = false;
+                }
+            })
+            .catch(err => {
+                terminal.insertAdjacentHTML("beforeend", `<div class="terminal-line" style="color: var(--accent-rose)">[ERRO] Falha na rede: ${err}</div>`);
+                document.getElementById("start-btn").disabled = false;
+            });
+        }
+
+        // Cancel pipeline execution
+        function cancelPipeline() {
+            const cancelBtn = document.getElementById("cancel-btn");
+            cancelBtn.disabled = true;
+            cancelBtn.textContent = "Cancelando...";
+            
+            fetch("/api/cancel_pipeline", { method: "POST" })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        appendTerminalLine("\n[SISTEMA] Cancelamento enviado com sucesso.");
+                    } else {
+                        appendTerminalLine(`\n[ERRO] Erro ao cancelar: ${data.message || data.error}`);
+                        cancelBtn.disabled = false;
+                        cancelBtn.textContent = "Cancelar Processamento";
+                    }
+                })
+                .catch(err => {
+                    appendTerminalLine(`\n[ERRO] Falha ao enviar cancelamento: ${err}`);
+                    cancelBtn.disabled = false;
+                    cancelBtn.textContent = "Cancelar Processamento";
+                });
+        }
+
+        // EventSource pipeline status
+        let evtSource = null;
+        function connectEventSource() {
+            if (evtSource) {
+                evtSource.close();
+            }
+            
+            evtSource = new EventSource("/api/stream_pipeline");
+            
+            evtSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                if (data.event === "idle") {
+                    evtSource.close();
+                    return;
+                }
+                
+                if (data.event === "log") {
+                    appendTerminalLine(data.text);
+                }
+                
+                if (data.event === "progress") {
+                    document.getElementById("progress-bar-fill").style.width = `${(data.current_index / data.total_papers) * 100}%`;
+                    document.getElementById("progress-text").textContent = `Processando: ${data.current_index} de ${data.total_papers} papers`;
+                    document.getElementById("elapsed-time").textContent = formatTime(data.elapsed_time);
+                    document.getElementById("remaining-time").textContent = formatTime(data.estimated_remaining);
+                }
+                
+                if (data.event === "finished") {
+                    evtSource.close();
+                    if (data.status === "completed") {
+                        appendTerminalLine("\n[SISTEMA] Processamento concluído.");
+                    } else if (data.status === "failed") {
+                        appendTerminalLine("\n[ERRO] Processamento finalizado com falhas.");
+                    } else {
+                        appendTerminalLine(`\n[SISTEMA] Processamento cancelado ou interrompido (Status: ${data.status}).`);
+                    }
+                    
+                    document.getElementById("start-btn").style.display = "block";
+                    document.getElementById("start-btn").disabled = false;
+                    document.getElementById("cancel-btn").style.display = "none";
+                    document.getElementById("progress-text").textContent = "Aguardando inicialização...";
+                    document.getElementById("progress-bar-fill").style.width = "0%";
+                    
+                    // Atualiza listas para refletir novos arquivos JSON
+                    loadPapers();
+                }
+            };
+            
+            evtSource.onerror = function(err) {
+                console.error("EventSource failed:", err);
+                evtSource.close();
+                document.getElementById("start-btn").style.display = "block";
+                document.getElementById("start-btn").disabled = false;
+                document.getElementById("cancel-btn").style.display = "none";
+            };
+        }
+
+        // Parse log lines and color-code them in terminal
+        function appendTerminalLine(text) {
+            const terminal = document.getElementById("terminal-body");
+            let lineClass = "";
+            
+            // Detect lines
+            if (text.startsWith("[SIMULATOR]")) lineClass = "log-sim";
+            else if (text.startsWith("[PIPELINE]")) lineClass = "log-pipe";
+            else if (text.startsWith("[SUCESSO]") || text.startsWith("[FINISHED]")) lineClass = "log-success";
+            else if (text.includes("✗") || text.includes("FALHOU") || text.includes("error") || text.includes("ERRO") || text.includes("[FALHA]")) lineClass = "log-error";
+            else if (text.includes("✓") || text.includes("concluído")) lineClass = "log-done";
+            else if (text.includes("+-")) lineClass = "log-step";
+            else if (text.startsWith("===") || text.startsWith("====")) lineClass = "log-header";
+            
+            const lineHtml = `<div class="terminal-line ${lineClass}">${escapeHtml(text)}</div>`;
+            terminal.insertAdjacentHTML("beforeend", lineHtml);
+            
+            // Auto scroll to bottom
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        // Update progress panel UI elements
+        function updateProgressUI(data) {
+            const fill = document.getElementById("progress-bar-fill");
+            const statusBadge = document.getElementById("status-badge");
+            const progressText = document.getElementById("progress-text");
+            const elapsedVal = document.getElementById("elapsed-time");
+            const remainingVal = document.getElementById("remaining-time");
+            
+            const pct = data.total_papers > 0 ? (data.current_index / data.total_papers) * 100 : 0;
+            fill.style.width = `${pct}%`;
+            
+            statusBadge.className = `progress-status-badge ${data.status}`;
+            statusBadge.textContent = data.status === "running" ? "Executando" : (data.status === "completed" ? "Concluído" : "Falhou");
+            
+            if (data.status === "running") {
+                progressText.textContent = `Processando: ${data.current_paper_id} (${data.current_index + 1} de ${data.total_papers})`;
+            } else {
+                progressText.textContent = `Progresso Geral: ${data.current_index} de ${data.total_papers} papers`;
+            }
+            
+            elapsedVal.textContent = formatTime(data.elapsed_time);
+            remainingVal.textContent = formatTime(data.estimated_remaining);
+        }
+
+        function updateProgressFinished(data) {
+            const fill = document.getElementById("progress-bar-fill");
+            const statusBadge = document.getElementById("status-badge");
+            const progressText = document.getElementById("progress-text");
+            const remainingVal = document.getElementById("remaining-time");
+            
+            fill.style.width = "100%";
+            statusBadge.className = "progress-status-badge completed";
+            statusBadge.textContent = "Concluído";
+            progressText.textContent = "Lote finalizado!";
+            remainingVal.textContent = "00:00";
+        }
+
+        // Time formatter
+        function formatTime(seconds) {
+            if (isNaN(seconds) || seconds < 0) return "00:00";
+            const m = Math.floor(seconds / 60);
+            const s = Math.floor(seconds % 60);
+            return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        // Collapsible sections toggle
+        function toggleCollapsible(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector("span:last-child");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "none";
+                arrow.textContent = "▲";
+            }
+        }
+
+        // Shortcut to run PyMuPDF extraction on all papers from explorer
+        function runExtractionOnAll() {
+            const checkboxes = document.querySelectorAll('#unprocessed-list input[type="checkbox"], #processed-list input[type="checkbox"]');
+            const paperIds = Array.from(checkboxes).map(cb => cb.value);
+            
+            if (paperIds.length === 0) {
+                alert("Nenhum paper encontrado.");
+                return;
+            }
+            
+            // Switch to dashboard tab to show terminal
+            const firstTabBtn = document.querySelector('.tabs button:nth-child(1)');
+            if (firstTabBtn) firstTabBtn.click();
+            
+            const terminal = document.getElementById("terminal-body");
+            terminal.innerHTML = `<div class="terminal-line" style="color: var(--accent-cyan)">[CONTROL] Solicitando Extração Rápida de Imagens para ${paperIds.length} paper(s)...</div>`;
+            
+            const hardReset = document.getElementById("hardResetCheck") ? document.getElementById("hardResetCheck").checked : false;
+            
+            fetch("/api/extract_images", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ papers: paperIds, hard_reset: hardReset })
+            });
+            
+            // Polling loop
+            const pollInterval = setInterval(() => {
+                fetch("/api/extraction_status")
+                    .then(r => r.json())
+                    .then(st => {
+                        terminal.innerHTML = `<div class="terminal-line" style="color: var(--accent-cyan)">[CONTROL] Extraindo imagens...</div>`;
+                        terminal.insertAdjacentHTML("beforeend", `<div class="terminal-line" style="color: #bbb">${st.log}</div>`);
+                        if (st.completed) {
+                            clearInterval(pollInterval);
+                            terminal.insertAdjacentHTML("beforeend", `<div class="terminal-line" style="color: var(--accent-emerald)">[CONTROL] Extração de imagens concluída.</div>`);
+                            loadPapers();
+                        }
+                    })
+                    .catch(err => {
+                        clearInterval(pollInterval);
+                        terminal.insertAdjacentHTML("beforeend", `<div class="terminal-line" style="color: var(--accent-rose)">[ERRO] Falha na rede: ${err}</div>`);
+                    });
+            }, 2000);
+        }
+
+        // Tab switcher logic
+        function switchTab(tabId, btn) {
+            document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+            document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+            
+            document.getElementById(tabId).classList.add("active");
+            btn.classList.add("active");
+            
+            // Reload specific tab data on switch
+            if (tabId === "unity-tab") {
+                loadAssetsStatus();
+            } else if (tabId === "explorer-tab") {
+                loadPapers();
+            }
+        }
+
+        // Lightbox image viewer
+        function openLightbox(imgSrc) {
+            const modal = document.createElement("div");
+            modal.style.position = "fixed";
+            modal.style.top = "0";
+            modal.style.left = "0";
+            modal.style.width = "100vw";
+            modal.style.height = "100vh";
+            modal.style.background = "rgba(0, 0, 0, 0.95)";
+            modal.style.display = "flex";
+            modal.style.alignItems = "center";
+            modal.style.justifyContent = "center";
+            modal.style.zIndex = "1000";
+            modal.style.cursor = "zoom-out";
+            
+            modal.innerHTML = `
+                <img src="${imgSrc}" style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 0 30px rgba(0,0,0,0.8); background:#fff; padding:10px;">
+                <span style="position: absolute; top: 20px; right: 30px; color: #fff; font-size: 30px; font-weight: bold; cursor: pointer;">&times;</span>
+            `;
+            
+            modal.onclick = () => document.body.removeChild(modal);
+            document.body.appendChild(modal);
+        }
+
+        // HTML escaping
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>

@@ -15,15 +15,22 @@ def normalize_image_name(asset_ref: str) -> str:
     # Se já terminar com .png, remove para normalizar
     if ref.endswith(".PNG"):
         ref = ref[:-4]
-    # Se começar com FIG_ ou FIG
-    if ref.startswith("FIG_"):
+        
+    if ref.startswith("TAB_"):
         num = ref[4:]
+        return f"TAB_{num}.png"
+    elif ref.startswith("TAB"):
+        num = ref[3:]
+        return f"TAB_{num}.png"
+    elif ref.startswith("FIG_"):
+        num = ref[4:]
+        return f"FIG_{num}.png"
     elif ref.startswith("FIG"):
         num = ref[3:]
+        return f"FIG_{num}.png"
     else:
-        num = ref
-    # Retorna no padrão FIG_N.png
-    return f"FIG_{num}.png"
+        # Padrão para fallback caso mandem só o número
+        return f"FIG_{ref}.png"
 
 
 def export_assets_to_unity(paper_id: str, paper_folder: Path, unity_project_root: Path = Path("../")):
@@ -123,7 +130,11 @@ def export_assets_to_unity(paper_id: str, paper_folder: Path, unity_project_root
             graph_labels, graph_values = format_graph_data(content.get("data"))
             
             # Se for figura, verificar o relatedImage usando a normalização
-            related_img = normalize_image_name(asset_ref) if asset_ref else ""
+            # Se for tabela, não enviaremos imagem (renderização dinâmica no Unity)
+            if get_display_type(content_type) == "table":
+                related_img = ""
+            else:
+                related_img = normalize_image_name(asset_ref) if asset_ref else ""
             
             go_data = {
                 "suggestedName": title or unit.get("id", "card"),
@@ -164,7 +175,10 @@ def export_assets_to_unity(paper_id: str, paper_folder: Path, unity_project_root
                 cols, rows, headers, row_data = format_table_data(content.get("data"))
                 graph_labels, graph_values = format_graph_data(content.get("data"))
                 
-                related_img = normalize_image_name(asset_ref) if asset_ref else ""
+                if get_display_type(content_type) == "table":
+                    related_img = ""
+                else:
+                    related_img = normalize_image_name(asset_ref) if asset_ref else ""
                 
                 go_data = {
                     "suggestedName": item_title or f"{stack_label}_{idx}",
@@ -211,10 +225,11 @@ def export_assets_to_unity(paper_id: str, paper_folder: Path, unity_project_root
     # 5. Copiar todas as figuras da pasta do paper
     print(f"    [Exporter] Copiando imagens FIG_*.png de {paper_folder} para {unity_images_dir}...")
     copied_count = 0
-    for img_file in paper_folder.glob("FIG*.png"):
-        dest_file = unity_images_dir / img_file.name
-        shutil.copy2(img_file, dest_file)
-        copied_count += 1
+    for pattern in ["FIG*.png"]:
+        for img_file in paper_folder.glob(pattern):
+            dest_file = unity_images_dir / img_file.name
+            shutil.copy2(img_file, dest_file)
+            copied_count += 1
         
     print(f"    [Exporter] Exportação concluída com sucesso!")
     print(f"      - Manifest salvo: {unity_manifest_path}")

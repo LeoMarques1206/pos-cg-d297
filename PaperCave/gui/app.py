@@ -21,245 +21,45 @@ import subprocess
 from datetime import datetime
 
 # Setup Paths
-DIAGNOSTICS_DIR = Path(__file__).parent
-PAPERS_DIR = DIAGNOSTICS_DIR.parent / "papers"
+GUI_DIR = Path(__file__).parent
+PAPERS_DIR = GUI_DIR.parent / "papers"
 
 # Ensure directories exist
-DIAGNOSTICS_DIR.mkdir(exist_ok=True)
+GUI_DIR.mkdir(exist_ok=True)
 
 app = Flask(__name__)
 
-# --- Background Pipeline Running State & Logic ---
-class PipelineJob:
-    def __init__(self, paper_ids, simulate, from_step, simple_mode):
-        self.paper_ids = paper_ids
-        self.simulate = simulate
-        self.from_step = from_step
-        self.simple_mode = simple_mode
-        self.current_index = 0
-        self.total_papers = len(paper_ids)
-        self.log_queue = queue.Queue()
-        self.status = "running"  # "running", "completed", "failed"
-        self.start_time = time.time()
-        self.current_paper_start_time = time.time()
-        self.current_paper_id = ""
-        self.elapsed_time = 0.0
-        self.estimated_remaining = 0.0
-        self.thread = None
-        self.cancelled = False
-        self.current_process = None
-        self.failed_papers = []
+EXTRACTION_STATUS = {"total": 0, "current": 0, "completed": True, "log": ""}
 
-current_job = None
+@app.route("/api/extraction_status")
+def extraction_status():
+    return jsonify(EXTRACTION_STATUS)
 
-def run_simulated_paper(paper_id, job):
-    import random
-    
-    job.log_queue.put(f"[SIMULATOR] Iniciando extração simulada para: {paper_id}")
-    time.sleep(0.5)
-    
-    steps = [
-        ("Reader", "extraindo texto do PDF"),
-        ("Vision Analyst", "analisando FIG*.png pré-extraídas"),
-        ("Summarizer", "gerando resumo do paper"),
-        ("Extractor", "extraindo entidades"),
-        ("Mapper/Reviewer", "mapeando componentes e validando")
-    ]
-    
-    for idx, (agent_name, task_desc) in enumerate(steps, 1):
-        if job.cancelled:
-            return False
-        job.log_queue.put(f"  +- [{idx}/6] {agent_name} — {task_desc}...")
-        time.sleep(1.0)
-        job.log_queue.put(f"  +- ✓ done ({random.randint(1, 3)}s)")
-        
-    if job.cancelled:
-        return False
-        
-    out_dir = PAPERS_DIR.parent / "outputs" / paper_id
-    out_dir.mkdir(parents=True, exist_ok=True)
-    
-    mock_manifest = {
-        "paperTitle": paper_id.replace("_", " ").title(),
-        "centralContribution": "Esta contribuição foi gerada por meio de uma execução simulada para economizar tokens.",
-        "unitCount": 2,
-        "units": [
-            {
-                "unit_id": "unit_01",
-                "display_name": "Simulated Asset 1",
-                "description": "Primeiro ativo mockado.",
-                "whyThisUnit": "Raciocínio simulado",
-                "contentType": "figure",
-                "content_ref": "FIG_1.png"
-            },
-            {
-                "unit_id": "unit_02",
-                "display_name": "Simulated Asset 2",
-                "description": "Segundo ativo mockado.",
-                "whyThisUnit": "Raciocínio simulado",
-                "contentType": "figure",
-                "content_ref": "FIG_2.png"
-            }
-        ],
-        "objectScores": [
-            {"suggestedName": "Simulated Asset 1", "score": 0.98, "confidence": "high", "feedback": ""},
-            {"suggestedName": "Simulated Asset 2", "score": 0.95, "confidence": "high", "feedback": ""}
-        ],
-        "totalAttempts": 1,
-        "assembledFromMultipleAttempts": False
-    }
-    
-    # Save files to mark paper as processed
-    with open(out_dir / "06_mapper_output.json", "w", encoding="utf-8") as f:
-        json.dump(mock_manifest, f, indent=2, ensure_ascii=False)
-        
-    for step in ["01_reader_output", "03_vision_insights", "04_summarizer_output", "05_extractor_output"]:
-        with open(out_dir / f"{step}.json", "w", encoding="utf-8") as f:
-            json.dump({"simulated": True}, f)
-            
-    # Mock export to Unity
-    job.log_queue.put(f"  [SIMULATOR] Exportando ativos para Assets/PaperCaveData/{paper_id}/...")
-    time.sleep(0.5)
-    try:
-        from utils.unity_asset_exporter import export_assets_to_unity
-        export_assets_to_unity(
-            paper_id=paper_id,
-            paper_folder=PAPERS_DIR / paper_id,
-            unity_project_root=PAPERS_DIR.parent.parent
-        )
-        job.log_queue.put("  [SIMULATOR] ✓ Exportação Unity finalizada com sucesso!")
-    except Exception as e:
-        job.log_queue.put(f"  [SIMULATOR] ✗ Exportação Unity falhou: {e}")
-        
-    job.log_queue.put(f"[SIMULATOR] Finalizado paper: {paper_id}")
-    return True
 
-def run_real_paper(paper_id, job):
-    job.log_queue.put(f"[PIPELINE] Iniciando pipeline de agentes real para: {paper_id}")
-    
-    cmd = [sys.executable, str(PAPERS_DIR.parent / "main.py"), "run", "--paper", paper_id]
-    if job.from_step:
-        cmd.extend(["--from-step", job.from_step])
-    if job.simple_mode:
-        cmd.append("--simple")
-        
-    job.log_queue.put(f"[PIPELINE] Executando comando: {' '.join(cmd)}")
-    
-    if job.cancelled:
-        return False
-        
-    try:
-        # Pass non-interactive environment variables to bypass prompt
-        env = os.environ.copy()
-        env["PAPERCAVE_NON_INTERACTIVE"] = "1"
-        if getattr(job, "force_fresh", False):
-            env["PAPERCAVE_FORCE_FRESH"] = "1"
-            
-        # Use errors="replace" to prevent UnicodeDecodeError crashes when reading em-dashes or other cp1252 characters
-        process = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-            bufsize=1,
-            cwd=str(PAPERS_DIR.parent),
-            env=env
-        )
-        job.current_process = process
-        
-        for line in iter(process.stdout.readline, ""):
-            if job.cancelled:
-                try:
-                    process.terminate()
-                except Exception:
-                    pass
-                return False
-            if line:
-                job.log_queue.put(line.strip())
-                
-        process.stdout.close()
-        code = process.wait()
-        
-        job.current_process = None
-        
-        if code == 0:
-            job.log_queue.put(f"[PIPELINE] ✓ Paper {paper_id} concluído com código 0.")
-            return True
-        else:
-            job.log_queue.put(f"[PIPELINE] ✗ Pipeline falhou com código de erro {code}.")
-            return False
-    except Exception as e:
-        job.log_queue.put(f"[PIPELINE] ✗ Erro crítico ao invocar subprocesso: {e}")
-        job.current_process = None
-        return False
+sys.path.append(str(GUI_DIR.parent))
+from core.pipeline_manager import PipelineManager
+pipeline_manager = PipelineManager()
 
-def background_pipeline_runner(job):
-    for i, paper_id in enumerate(job.paper_ids):
-        if job.cancelled:
-            break
-            
-        job.current_index = i
-        job.current_paper_id = paper_id
-        job.current_paper_start_time = time.time()
-        job.log_queue.put(f"\n=================== PROCESSANDO PAPER [{i+1}/{job.total_papers}]: {paper_id} ===================")
-        
-        # Automatic retries on failure (up to 3 attempts)
-        max_attempts = 1 if job.simulate else 3
-        success = False
-        
-        for attempt in range(1, max_attempts + 1):
-            if job.cancelled:
-                break
-                
-            if attempt > 1:
-                job.log_queue.put(f"\n[PIPELINE] ⚠️ Tentativa {attempt}/{max_attempts} para o paper: {paper_id}...")
-                time.sleep(2.0)
-                
-            if job.simulate:
-                success = run_simulated_paper(paper_id, job)
-            else:
-                success = run_real_paper(paper_id, job)
-                
-            if success:
-                break
-                
-        if not success:
-            if job.cancelled:
-                job.log_queue.put(f"[CONTROL] Processamento cancelado para o paper: {paper_id}")
-                break
-            else:
-                job.log_queue.put(f"[ERRO] Paper '{paper_id}' falhou após {max_attempts} tentativas. Pulando...")
-                job.failed_papers.append(paper_id)
-                
-    if job.cancelled:
-        job.status = "failed"
-        job.log_queue.put("\n[CANCELADO] O processamento em lote foi interrompido pelo usuário.")
-    else:
-        job.current_index = job.total_papers
-        job.estimated_remaining = 0.0
-        if job.failed_papers:
-            job.status = "failed"
-            job.log_queue.put(f"\n[FALHA] Processamento finalizado. Papers com falhas: {', '.join(job.failed_papers)}")
-        else:
-            job.status = "completed"
-            job.log_queue.put("\n[SUCESSO] Processamento em lote concluído para todos os papers!")
+
 
 # Serve dashboard.html at root
 @app.route("/")
 def index():
-    return send_from_directory(DIAGNOSTICS_DIR / "templates", "dashboard.html")
+    resp = send_from_directory(GUI_DIR / "templates", "index.html")
+    resp.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    resp.headers["Pragma"] = "no-cache"
+    resp.headers["Expires"] = "0"
+    return resp
 
-# Serve index.html (bounding box editor) at /editor
-@app.route("/editor")
-def editor():
-    return send_from_directory(DIAGNOSTICS_DIR / "templates", "index.html")
+# Serve index.html (bounding box editor) at /extractor
+@app.route("/extractor")
+def extractor():
+    return send_from_directory(GUI_DIR / "templates", "extractor.html")
 
 # Serve other static files
 @app.route("/static/<path:path>")
 def serve_static(path):
-    return send_from_directory(DIAGNOSTICS_DIR / "static", path)
+    return send_from_directory(GUI_DIR / "static", path)
 
 # Serve files from the papers directory (specifically extracted figures)
 @app.route("/papers/<paper_id>/<filename>")
@@ -270,6 +70,20 @@ def serve_paper_file(paper_id, filename):
     if not filename.endswith(".png") and not filename.endswith(".txt"):
         abort(403)
     return send_from_directory(paper_dir, filename)
+
+# Serve Unity Assets from PaperCaveData
+@app.route("/api/unity_assets/<paper_id>/manifest")
+def get_unity_manifest(paper_id):
+    manifest_path = PAPERS_DIR.parent.parent / "Assets" / "PaperCaveData" / paper_id / "manifest.json"
+    if not manifest_path.exists():
+        abort(404)
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        return f.read()
+
+@app.route("/api/unity_assets/<paper_id>/images/<path:filename>")
+def serve_unity_image(paper_id, filename):
+    image_dir = PAPERS_DIR.parent.parent / "Assets" / "PaperCaveData" / paper_id / "images"
+    return send_from_directory(image_dir, filename)
 
 @app.route("/api/papers")
 def list_papers():
@@ -287,8 +101,8 @@ def list_papers():
             
         paper_id = entry.name
         
-        extracted_path = DIAGNOSTICS_DIR / f"extracted_{paper_id}.json"
-        correct_path = DIAGNOSTICS_DIR / f"correct_{paper_id}.json"
+        extracted_path = PAPERS_DIR / paper_id / "extracted.json"
+        correct_path = PAPERS_DIR / paper_id / "correct.json"
         
         has_extracted = extracted_path.exists()
         has_correct = correct_path.exists()
@@ -336,101 +150,145 @@ def list_papers():
 @app.route("/api/paper/<paper_id>")
 def get_paper_details(paper_id):
     """
-    Returns the extracted figure data and the corrected figure/caption data (if any).
-    Migrates old coordinate JSONs on-the-fly to separate figures and captions.
+    Returns the pipeline JSON outputs for a given paper, and PDF metadata.
     """
-    extracted_path = DIAGNOSTICS_DIR / f"extracted_{paper_id}.json"
-    correct_path = DIAGNOSTICS_DIR / f"correct_{paper_id}.json"
+    paper_folder = PAPERS_DIR / paper_id
+    pdfs = sorted(paper_folder.glob("*.pdf"))
+    if not pdfs:
+        return jsonify({"error": "Paper folder or PDF not found."}), 404
+        
+    page_count = 0
+    pdf_name = pdfs[0].name
+    page_dimensions = {}
+    try:
+        import fitz
+        doc = fitz.open(str(pdfs[0]))
+        page_count = len(doc)
+        for i, page in enumerate(doc, 1):
+            page_dimensions[str(i)] = {
+                "width": page.rect.width,
+                "height": page.rect.height
+            }
+        doc.close()
+    except Exception:
+        pass
+        
+    outputs_dir = Path(__file__).parent.parent / "outputs" / paper_id
+    pipeline_data = {}
     
-    if not extracted_path.exists():
-        # Run diagnostics on-the-fly if needed
-        paper_folder = PAPERS_DIR / paper_id
-        pdfs = sorted(paper_folder.glob("*.pdf"))
-        if not pdfs:
-            return jsonify({"error": "Paper folder or PDF not found."}), 404
-        try:
-            from run_diagnostics import run_diagnostics_for_paper
-            extracted_data = run_diagnostics_for_paper(paper_folder, pdfs[0])
-        except Exception as e:
-            return jsonify({"error": f"Failed to run diagnostics: {e}"}), 500
-    else:
-        with open(extracted_path, "r", encoding="utf-8") as f:
-            extracted_data = json.load(f)
-            
+    if outputs_dir.exists():
+        for json_file in outputs_dir.glob("*.json"):
+            step_name = json_file.stem
+            try:
+                with open(json_file, "r", encoding="utf-8") as f:
+                    pipeline_data[step_name] = f.read()
+            except Exception:
+                pass
+                
+    # --- Load diagnostic/correction data for the Visual Extractor ---
+    ext_data = None
     correct_data = None
+    extracted_path = PAPERS_DIR / paper_id / "extracted.json"
+    correct_path = PAPERS_DIR / paper_id / "correct.json"
+    
+    if extracted_path.exists():
+        try:
+            with open(extracted_path, "r", encoding="utf-8") as f:
+                ext_data = json.load(f)
+        except:
+            pass
+            
     if correct_path.exists():
         try:
             with open(correct_path, "r", encoding="utf-8") as f:
                 correct_data = json.load(f)
-                
-            # --- Format Migration Logic ---
-            # If the loaded JSON maps directly to an array of items, it's the old format.
-            # We migrate it to separate 'figures' and 'captions' lists under pages.
-            if correct_data and "pages" in correct_data:
-                migrated = False
-                for page_num, content in list(correct_data["pages"].items()):
-                    if isinstance(content, list):
-                        migrated = True
-                        figures = []
-                        captions = []
-                        for item in content:
-                            # If it has fig_key, it's a figure
-                            if "fig_key" in item:
-                                figures.append(item)
-                            elif "fig_num" in item:
-                                captions.append(item)
-                            else:
-                                # Default to figure
-                                figures.append({
-                                    "fig_key": item.get("fig_key", "UNLABELED"),
-                                    "bbox": item.get("bbox", [0, 0, 0, 0])
-                                })
-                        
-                        # Populate automatic captions as starting points if no manual captions exist yet
-                        for det in extracted_data.get("details", []):
-                            if str(det["page"]) == str(page_num):
-                                f_num = det["fig_num"]
-                                if not any(c.get("fig_num") == f_num for c in captions):
-                                    captions.append({
-                                        "fig_num": f_num,
-                                        "bbox": det["caption_bbox"]
-                                    })
-                                    
-                        correct_data["pages"][page_num] = {
-                            "figures": figures,
-                            "captions": captions,
-                            "sub_captions": []
-                        }
-                if migrated:
-                    # Save back the migrated format
-                    with open(correct_path, "w", encoding="utf-8") as f:
-                        json.dump(correct_data, f, indent=2, ensure_ascii=False)
-        except Exception as e:
-            print(f"Error migrating correct JSON: {e}")
-            
-    # Get total page count of PDF
-    pdf_path = PAPERS_DIR / paper_id / extracted_data["pdf_name"]
-    page_count = 0
-    page_dimensions = {}
-    if pdf_path.exists():
-        try:
-            doc = fitz.open(str(pdf_path))
-            page_count = len(doc)
-            for i, page in enumerate(doc, 1):
-                page_dimensions[str(i)] = {
-                    "width": page.rect.width,
-                    "height": page.rect.height
-                }
-            doc.close()
-        except Exception:
+        except:
             pass
             
     return jsonify({
-        "extracted": extracted_data,
-        "correct": correct_data,
+        "paper_id": paper_id,
+        "pdf_name": pdf_name,
         "page_count": page_count,
-        "page_dimensions": page_dimensions
+        "page_dimensions": page_dimensions,
+        "pipeline_data": pipeline_data,
+        "extracted": ext_data,
+        "correct": correct_data
     })
+
+@app.route("/api/paper/<paper_id>/correct_step", methods=["POST"])
+def correct_step(paper_id):
+    req = request.get_json()
+    step_id = req.get("step_id")
+    prompt = req.get("prompt")
+    edited_json = req.get("edited_json")
+    
+    if not step_id or not prompt or not edited_json:
+        return jsonify({"error": "Missing parameters"}), 400
+        
+    try:
+        sys.path.append(str(Path(__file__).parent.parent))
+        from crew import run_correction
+        
+        success, msg = run_correction(paper_id, step_id, prompt, edited_json)
+        if success:
+            return jsonify({"success": True, "message": msg})
+        else:
+            return jsonify({"error": msg}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/paper/<paper_id>/save_json_raw", methods=["POST"])
+def save_json_raw(paper_id):
+    req = request.get_json()
+    step_id = req.get("step")
+    content = req.get("content")
+    
+    if not step_id or not content:
+        return jsonify({"error": "Missing parameters"}), 400
+        
+    outputs_dir = Path(__file__).parent.parent / "outputs" / paper_id
+    outputs_dir.mkdir(parents=True, exist_ok=True)
+    
+    safe_step = "".join(c for c in step_id if c.isalnum() or c in ("_", "-"))
+    json_path = outputs_dir / f"{safe_step}.json"
+    
+    try:
+        parsed = json.loads(content)
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(parsed, f, indent=2, ensure_ascii=False)
+        return jsonify({"success": True})
+    except Exception as e:
+        return jsonify({"error": f"JSON inválido ou erro de disco: {e}"}), 400
+
+@app.route("/api/settings", methods=["GET", "POST"])
+def manage_settings():
+    import yaml
+    config_path = Path(__file__).parent.parent / "config" / "config.yaml"
+    
+    if request.method == "GET":
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config_data = yaml.safe_load(f) or {}
+            return jsonify(config_data)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+            
+    elif request.method == "POST":
+        try:
+            req_data = request.get_json()
+            # Preserve existing config that isn't overridden
+            config_data = {}
+            if config_path.exists():
+                with open(config_path, "r", encoding="utf-8") as f:
+                    config_data = yaml.safe_load(f) or {}
+                    
+            config_data.update(req_data)
+            
+            with open(config_path, "w", encoding="utf-8") as f:
+                yaml.dump(config_data, f, default_flow_style=False, allow_unicode=True)
+            return jsonify({"success": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
 @app.route("/api/paper/<paper_id>/page/<int:page_num>/render")
 def render_pdf_page(paper_id, page_num):
@@ -455,18 +313,119 @@ def render_pdf_page(paper_id, page_num):
     except Exception as e:
         return jsonify({"error": f"Failed to render page: {e}"}), 500
 
+def _crop_extracted_images(paper_id: str, extracted_data: dict):
+    import fitz
+    pdf_name = extracted_data.get("pdf_name")
+    if not pdf_name: return
+    paper_dir = PAPERS_DIR / paper_id
+    pdf_path = paper_dir / pdf_name
+    if not pdf_path.exists(): return
+    
+    try:
+        doc = fitz.open(pdf_path)
+        for det in extracted_data.get("details", []):
+            if det.get("match_found") and det.get("matched_bbox") and det.get("heuristic_status") == "ok":
+                fig_key = det.get("fig_key", "")
+                if not fig_key: continue
+                is_table = det.get("is_table", False)
+                prefix = "TAB" if is_table else "FIG"
+                img_name = f"{fig_key}.png" if fig_key.startswith(f"{prefix}_") else f"{prefix}_{fig_key}.png"
+                img_path = paper_dir / img_name
+                
+                # If image wasn't extracted directly, crop it based on spatial heuristics
+                if not img_path.exists():
+                    page_num = det.get("page", 1) - 1
+                    if 0 <= page_num < len(doc):
+                        page = doc[page_num]
+                        rect = fitz.Rect(det["matched_bbox"])
+                        mat = fitz.Matrix(4.16, 4.16)
+                        pix = page.get_pixmap(matrix=mat, clip=rect)
+                        pix.save(str(img_path))
+        doc.close()
+    except Exception as e:
+        print(f"Error cropping extracted heuristic images for {paper_id}: {e}")
+
+def _crop_corrected_images(paper_id: str, req_data: dict):
+    import fitz
+    pdf_name = req_data.get("pdf_name")
+    if not pdf_name: return
+    
+    pdf_path = PAPERS_DIR / paper_id / pdf_name
+    paper_dir = PAPERS_DIR / paper_id
+    
+    if not pdf_path.exists(): return
+    
+    try:
+        doc = fitz.open(pdf_path)
+        pages_data = req_data.get("pages", {})
+        
+        valid_fig_keys = set()
+        valid_tab_keys = set()
+        
+        for page_num_str, page_content in pages_data.items():
+            page_idx = int(page_num_str) - 1
+            if 0 <= page_idx < len(doc):
+                page = doc[page_idx]
+                for fig in page_content.get("figures", []):
+                    fig_key = fig.get("fig_key")
+                    bbox = fig.get("bbox")
+                    if fig_key:
+                        valid_fig_keys.add(f"FIG_{fig_key}.png")
+                    if fig_key and bbox and len(bbox) == 4:
+                        rect = fitz.Rect(bbox)
+                        mat = fitz.Matrix(4.16, 4.16)
+                        pix = page.get_pixmap(matrix=mat, clip=rect)
+                        out_path = paper_dir / f"FIG_{fig_key}.png"
+                        pix.save(str(out_path))
+                        
+                for tab in page_content.get("tables", []):
+                    tab_key = tab.get("tab_key")
+                    bbox = tab.get("bbox")
+                    if tab_key:
+                        img_name = f"{tab_key}.png" if tab_key.startswith("TAB_") else f"TAB_{tab_key}.png"
+                        valid_tab_keys.add(img_name)
+                    if tab_key and bbox and len(bbox) == 4:
+                        img_name = f"{tab_key}.png" if tab_key.startswith("TAB_") else f"TAB_{tab_key}.png"
+                        rect = fitz.Rect(bbox)
+                        mat = fitz.Matrix(4.16, 4.16)
+                        pix = page.get_pixmap(matrix=mat, clip=rect)
+                        out_path = paper_dir / img_name
+                        pix.save(str(out_path))
+        doc.close()
+        
+        for img_file in paper_dir.glob("FIG_*.png"):
+            if img_file.name not in valid_fig_keys:
+                try:
+                    img_file.unlink()
+                except:
+                    pass
+                    
+        for tab_file in paper_dir.glob("TAB_*.png"):
+            if tab_file.name not in valid_tab_keys:
+                try:
+                    tab_file.unlink()
+                except:
+                    pass
+    except Exception as e:
+        print(f"Error cropping corrected images for {paper_id}: {e}")
+
 @app.route("/api/paper/<paper_id>/save_correct", methods=["POST"])
 def save_corrected_bboxes(paper_id):
     req_data = request.get_json()
     if not req_data:
         return jsonify({"error": "Missing JSON body."}), 400
         
-    correct_path = DIAGNOSTICS_DIR / f"correct_{paper_id}.json"
+    correct_path = PAPERS_DIR / paper_id / "correct.json"
     with open(correct_path, "w", encoding="utf-8") as f:
         json.dump(req_data, f, indent=2, ensure_ascii=False)
         
+    # --- NOVO: Recorte arquitetural das imagens corrigidas ---
+    _crop_corrected_images(paper_id, req_data)
+    # ---------------------------------------------------------
+    # ---------------------------------------------------------
+        
     # Mark status as corrected
-    extracted_path = DIAGNOSTICS_DIR / f"extracted_{paper_id}.json"
+    extracted_path = PAPERS_DIR / paper_id / "extracted.json"
     if extracted_path.exists():
         try:
             with open(extracted_path, "r", encoding="utf-8") as f:
@@ -477,12 +436,33 @@ def save_corrected_bboxes(paper_id):
         except Exception:
             pass
             
-    return jsonify({"success": True, "message": f"Corrected bboxes saved for {paper_id}."})
+    return jsonify({"success": True, "message": f"Corrected bboxes saved and images cropped for {paper_id}."})
+
+
+@app.route("/api/paper/<paper_id>/reset_correct", methods=["POST"])
+def reset_correct(paper_id):
+    correct_path = PAPERS_DIR / paper_id / "correct.json"
+    if correct_path.exists():
+        correct_path.unlink()
+        
+    extracted_path = PAPERS_DIR / paper_id / "extracted.json"
+    if extracted_path.exists():
+        try:
+            with open(extracted_path, "r", encoding="utf-8") as f:
+                ext_data = json.load(f)
+            if ext_data.get("status") == "corrected":
+                ext_data["status"] = "errors" if any(d.get("heuristic_status") != "ok" for d in ext_data.get("details", [])) else "ok"
+            with open(extracted_path, "w", encoding="utf-8") as f:
+                json.dump(ext_data, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+    return jsonify({"success": True, "message": "Reset to extracted data."})
+
 
 @app.route("/api/random_page")
 def get_random_page():
     candidates = []
-    for extracted_file in DIAGNOSTICS_DIR.glob("extracted_*.json"):
+    for extracted_file in PAPERS_DIR.glob("*/extracted.json"):
         try:
             with open(extracted_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -532,7 +512,7 @@ def get_calibration_session():
     error_pages = []
     standard_pages = []
     
-    for extracted_file in DIAGNOSTICS_DIR.glob("extracted_*.json"):
+    for extracted_file in PAPERS_DIR.glob("*/extracted.json"):
         try:
             with open(extracted_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -623,13 +603,13 @@ def export_comparative_report():
     
     studies = []
     
-    for correct_file in DIAGNOSTICS_DIR.glob("correct_*.json"):
+    for correct_file in PAPERS_DIR.glob("*/correct.json"):
         try:
             with open(correct_file, "r", encoding="utf-8") as f:
                 correct_data = json.load(f)
             paper_id = correct_data.get("paper_id")
             
-            extracted_path = DIAGNOSTICS_DIR / f"extracted_{paper_id}.json"
+            extracted_path = PAPERS_DIR / paper_id / "extracted.json"
             if not extracted_path.exists():
                 continue
                 
@@ -888,7 +868,7 @@ Este relatório documenta as métricas matemáticas e análises textuais compara
             md_content += "---\n\n"
             
     # Write MD Report
-    md_report_path = DIAGNOSTICS_DIR / "study_cases_report.md"
+    md_report_path = PAPERS_DIR.parent / "outputs" / "study_cases_report.md"
     md_report_path.write_text(md_content, encoding="utf-8")
     
     # Generate HTML File Content (with full pages side by side)
@@ -999,7 +979,7 @@ Este relatório documenta as métricas matemáticas e análises textuais compara
 </html>
 """
     
-    html_report_path = DIAGNOSTICS_DIR / "study_cases_report.html"
+    html_report_path = PAPERS_DIR.parent / "outputs" / "study_cases_report.html"
     html_report_path.write_text(html_content, encoding="utf-8")
     
     # --- OPTIONAL: Disabled-by-default LLM Analysis route trigger ---
@@ -1026,7 +1006,7 @@ Relatório de discrepâncias:
 {md_content[:8000]}
 """
                 response = model.generate_content(prompt)
-                feedback_path = DIAGNOSTICS_DIR / "llm_feedback.txt"
+                feedback_path = PAPERS_DIR.parent / "outputs" / "llm_feedback.txt"
                 feedback_path.write_text(response.text, encoding="utf-8")
                 llm_analysis_msg = f"LLM analysis completed and saved to diagnostics/llm_feedback.txt"
             except Exception as e:
@@ -1075,10 +1055,151 @@ def get_assets_status():
     folders.sort(key=lambda x: x["timestamp"], reverse=True)
     return jsonify(folders)
 
+class BatchJob:
+    def __init__(self, paper_ids, simulate, from_step, simple_mode):
+        self.paper_ids = paper_ids
+        self.total_papers = len(paper_ids)
+        self.simulate = simulate
+        self.from_step = from_step
+        self.simple_mode = simple_mode
+        self.start_time = time.time()
+        self.status = "running"
+        self.current_index = 0
+        self.current_paper_id = paper_ids[0] if paper_ids else ""
+        self.current_paper_start_time = time.time()
+        self.elapsed_time = 0
+        self.estimated_remaining = 0
+        self.log_queue = queue.Queue()
+        self.failed_papers = []
+        self.cancelled = False
+        self.active_job_id = None
+
+current_batch = None
+
+def background_batch_runner(batch):
+    for i, paper_id in enumerate(batch.paper_ids):
+        if batch.cancelled:
+            break
+        
+        batch.current_index = i
+        batch.current_paper_id = paper_id
+        batch.current_paper_start_time = time.time()
+        batch.log_queue.put(f"\n=================== PROCESSANDO PAPER [{i+1}/{batch.total_papers}]: {paper_id} ===================")
+        
+        job_id = pipeline_manager.start_job(paper_id, simulate=batch.simulate, from_step=batch.from_step, simple_mode=batch.simple_mode)
+        batch.active_job_id = job_id
+        
+        last_log_idx = 0
+        job_finished = False
+        
+        while not job_finished:
+            if batch.cancelled:
+                job_obj = pipeline_manager.jobs.get(job_id)
+                if job_obj and job_obj.process:
+                    try:
+                        job_obj.process.terminate()
+                    except:
+                        pass
+                break
+                
+            status_dict = pipeline_manager.get_job_status(job_id)
+            if "error" in status_dict and status_dict["error"] == "Job not found":
+                time.sleep(0.2)
+                continue
+                
+            job_logs = pipeline_manager.jobs[job_id].logs
+            if last_log_idx < len(job_logs):
+                for msg in job_logs[last_log_idx:]:
+                    batch.log_queue.put(msg)
+                last_log_idx = len(job_logs)
+                
+            if status_dict["status"] in ["completed", "failed"]:
+                job_finished = True
+                if status_dict["status"] == "failed":
+                    batch.failed_papers.append(paper_id)
+                    batch.log_queue.put(f"[ERRO] Falha no processamento de {paper_id}: {status_dict.get('error', '')}")
+            else:
+                time.sleep(0.2)
+                
+    if batch.cancelled:
+        batch.status = "failed"
+        batch.log_queue.put("\n[CANCELADO] Processamento em lote cancelado.")
+    else:
+        batch.current_index = batch.total_papers
+        batch.estimated_remaining = 0
+        if batch.failed_papers:
+            batch.status = "failed"
+            batch.log_queue.put(f"\n[FALHA] Finalizado com erros nos papers: {', '.join(batch.failed_papers)}")
+        else:
+            batch.status = "completed"
+            batch.log_queue.put("\n[SUCESSO] Todos os papers processados com sucesso!")
+
+@app.route("/api/extract_images", methods=["POST"])
+def extract_images_endpoint():
+    req_data = request.get_json()
+    if not req_data or "papers" not in req_data:
+        return jsonify({"error": "Missing papers list in request body."}), 400
+        
+    paper_ids = req_data["papers"]
+    hard_reset = req_data.get("hard_reset", False)
+    
+    def run_extraction(paper_ids, hard_reset):
+        global EXTRACTION_STATUS
+        EXTRACTION_STATUS = {"total": len(paper_ids), "current": 0, "completed": False, "log": "Iniciando extração..."}
+        
+        import sys
+        sys.path.append(str(Path(__file__).parent.parent))
+        from utils.image_extractor import extract_figures_from_pdf
+        from utils.layout_matcher import find_image_layouts_in_pdf
+        
+        for paper_id in paper_ids:
+            EXTRACTION_STATUS["current"] += 1
+            EXTRACTION_STATUS["log"] = f"Analisando: {paper_id} ({EXTRACTION_STATUS['current']}/{EXTRACTION_STATUS['total']})"
+            
+            paper_folder = PAPERS_DIR / paper_id
+            pdf_path = paper_folder / f"{paper_id}.pdf"
+            if pdf_path.exists():
+                try:
+                    if hard_reset:
+                        correct_path = paper_folder / "correct.json"
+                        if correct_path.exists():
+                            correct_path.unlink()
+                            
+                    extract_figures_from_pdf(paper_folder, pdf_path, verbose=False)
+                    result_json = find_image_layouts_in_pdf(paper_folder, pdf_path)
+                    
+                    extracted_path = paper_folder / "extracted.json"
+                    with open(extracted_path, "w", encoding="utf-8") as f:
+                        json.dump(result_json, f, indent=2, ensure_ascii=False)
+                        
+                    correct_path = paper_folder / "correct.json"
+                    if correct_path.exists():
+                        try:
+                            with open(correct_path, "r", encoding="utf-8") as cf:
+                                correct_data = json.load(cf)
+                            _crop_corrected_images(paper_id, correct_data)
+                            print(f"Restored manual crops for {paper_id} after automatic extraction.")
+                        except Exception as ce:
+                            print(f"Error restoring correct crops for {paper_id}: {ce}")
+                    else:
+                        # Fallback for text tables: crop what layout matcher found via spatial heuristics
+                        _crop_extracted_images(paper_id, result_json)
+                            
+                except Exception as e:
+                    print(f"Error extracting images for {paper_id}: {e}")
+                    
+        EXTRACTION_STATUS["completed"] = True
+        EXTRACTION_STATUS["log"] = "Extração e análise 100% concluídas!"
+
+    t = threading.Thread(target=run_extraction, args=(paper_ids, hard_reset), daemon=True)
+    t.start()
+    
+    return jsonify({"success": True, "message": "Image extraction started.", "total_papers": len(paper_ids)})
+
 @app.route("/api/run_pipeline", methods=["POST"])
 def run_pipeline():
-    global current_job
-    if current_job and current_job.status == "running":
+    global current_batch
+    if current_batch and current_batch.status == "running":
         return jsonify({"error": "A pipeline job is already running."}), 400
         
     req_data = request.get_json()
@@ -1090,19 +1211,11 @@ def run_pipeline():
     from_step = req_data.get("from_step")
     simple_mode = req_data.get("simple_mode", False)
     
-    # Normalize from_step
-    force_fresh = False
-    if from_step == "none":
-        from_step = None
-        force_fresh = True
-    elif from_step == "auto" or from_step == "" or from_step is None:
+    if from_step == "none" or from_step == "auto" or from_step == "":
         from_step = None
         
-    current_job = PipelineJob(paper_ids, simulate, from_step, simple_mode)
-    current_job.force_fresh = force_fresh
-    
-    t = threading.Thread(target=background_pipeline_runner, args=(current_job,), daemon=True)
-    current_job.thread = t
+    current_batch = BatchJob(paper_ids, simulate, from_step, simple_mode)
+    t = threading.Thread(target=background_batch_runner, args=(current_batch,), daemon=True)
     t.start()
     
     return jsonify({"success": True, "message": "Pipeline started.", "total_papers": len(paper_ids)})
@@ -1110,52 +1223,51 @@ def run_pipeline():
 @app.route("/api/stream_pipeline")
 def stream_pipeline():
     def event_stream():
-        global current_job
-        if not current_job:
+        global current_batch
+        if not current_batch:
             yield "data: {\"event\": \"idle\"}\n\n"
             return
             
         while True:
             try:
-                log_line = current_job.log_queue.get(timeout=0.2)
+                log_line = current_batch.log_queue.get(timeout=0.2)
                 yield f"data: {json.dumps({'event': 'log', 'text': log_line}, ensure_ascii=False)}\n\n"
             except queue.Empty:
                 pass
                 
-            elapsed = time.time() - current_job.start_time
-            if current_job.status == "running":
-                current_job.elapsed_time = elapsed
+            elapsed = time.time() - current_batch.start_time
+            if current_batch.status == "running":
+                current_batch.elapsed_time = elapsed
                 
-                # Dynamic time estimation based on progress
-                i = current_job.current_index
+                i = current_batch.current_index
                 if i > 0:
                     avg_time = elapsed / i
-                    papers_left = current_job.total_papers - i
-                    current_paper_elapsed = time.time() - current_job.current_paper_start_time
+                    papers_left = current_batch.total_papers - i
+                    current_paper_elapsed = time.time() - current_batch.current_paper_start_time
                     remaining_for_current = max(0, avg_time - current_paper_elapsed)
                     remaining_for_others = avg_time * (papers_left - 1)
-                    current_job.estimated_remaining = remaining_for_current + remaining_for_others
+                    current_batch.estimated_remaining = remaining_for_current + remaining_for_others
                 else:
-                    default_time = (6.0 if current_job.simulate else 150.0) * current_job.total_papers
-                    current_job.estimated_remaining = max(0, default_time - elapsed)
+                    default_time = (6.0 if current_batch.simulate else 150.0) * current_batch.total_papers
+                    current_batch.estimated_remaining = max(0, default_time - elapsed)
             
             progress_data = {
                 "event": "progress",
-                "status": current_job.status,
-                "current_index": current_job.current_index,
-                "total_papers": current_job.total_papers,
-                "current_paper_id": current_job.current_paper_id,
-                "elapsed_time": int(current_job.elapsed_time),
-                "estimated_remaining": int(current_job.estimated_remaining)
+                "status": current_batch.status,
+                "current_index": current_batch.current_index,
+                "total_papers": current_batch.total_papers,
+                "current_paper_id": current_batch.current_paper_id,
+                "elapsed_time": int(current_batch.elapsed_time),
+                "estimated_remaining": int(current_batch.estimated_remaining)
             }
             
             yield f"data: {json.dumps(progress_data, ensure_ascii=False)}\n\n"
             
-            if current_job.status != "running" and current_job.log_queue.empty():
+            if current_batch.status != "running" and current_batch.log_queue.empty():
                 final_data = {
                     "event": "finished",
-                    "status": current_job.status,
-                    "elapsed_time": int(current_job.elapsed_time)
+                    "status": current_batch.status,
+                    "elapsed_time": int(current_batch.elapsed_time)
                 }
                 yield f"data: {json.dumps(final_data, ensure_ascii=False)}\n\n"
                 break
@@ -1165,26 +1277,14 @@ def stream_pipeline():
 
 @app.route("/api/cancel_pipeline", methods=["POST"])
 def cancel_pipeline():
-    global current_job
-    if not current_job or current_job.status != "running":
+    global current_batch
+    if not current_batch or current_batch.status != "running":
         return jsonify({"error": "No running pipeline job found."}), 400
         
-    current_job.cancelled = True
-    current_job.status = "failed"
-    current_job.log_queue.put("\n[CANCELADO] Cancelamento solicitado pelo usuário. Interrompendo pipeline...")
+    current_batch.cancelled = True
+    current_batch.status = "failed"
+    current_batch.log_queue.put("\n[CANCELADO] Cancelamento solicitado pelo usuário. Interrompendo pipeline...")
     
-    # Terminate active process if running
-    if current_job.current_process:
-        try:
-            current_job.log_queue.put("[SISTEMA] Encerrando subprocesso da pipeline...")
-            current_job.current_process.terminate()
-            current_job.current_process.wait(timeout=1.5)
-        except Exception:
-            try:
-                current_job.current_process.kill()
-            except Exception:
-                pass
-                
     return jsonify({"success": True, "message": "Pipeline cancellation requested."})
 
 @app.route("/api/export_unity/<paper_id>", methods=["POST"])

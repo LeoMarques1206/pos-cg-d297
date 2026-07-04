@@ -1,0 +1,221 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1_1.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 1.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_2.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 1.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_3.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 1.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_4.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 1.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_5.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 1.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely depicts a 3D scene showing the setup of a 'FacialCameraRig gameObject' positioned to capture facial images from a character's model head, with the resulting rendered facial images displayed at the bottom.",
+      "relevance": "This figure illustrates the core technical setup for capturing facial data, which is fundamental to the paper's methodology for generating and evaluating virtual human facial expressions.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_1.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 3.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_2.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 3.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_3.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 3.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_4.png",
+      "description": "This figure likely shows a component or an example related to the paper's methodology or results, but without a caption or visual access, its specific content cannot be detailed.",
+      "relevance": "Without specific content information, the precise relevance is unclear, but it is presumed to support a specific aspect of the paper's contribution, possibly as part of a multi-panel Figure 3.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_1.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating one specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_10.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_11.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_12.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_13.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_14.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_15.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_16.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_17.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_18.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_19.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_2.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_20.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_3.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_4.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_5.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_6.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_7.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_8.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_9.png",
+      "description": "This image is part of a gallery showcasing different virtual human characters used in the paper's comparative studies, likely illustrating another specific model or variation.",
+      "relevance": "It provides visual examples of the diverse virtual human models that were evaluated, demonstrating the scope and variety of subjects in the paper's experimental setup.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure likely displays a virtual Genesis 9 male character exhibiting an 'angry' facial expression at 100% intensity, with a note highlighting that this specific instance was paradoxically recognized as 'disgust' by the Deepface emotion recognition system.",
+      "relevance": "This figure is significant as it provides a concrete example of a virtual human's emotional expression and exposes a specific challenge or discrepancy in the performance of an emotion recognition system, which is a key part of the paper's evaluation and findings.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

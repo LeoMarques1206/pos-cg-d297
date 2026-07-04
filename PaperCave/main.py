@@ -254,7 +254,11 @@ def cmd_gui(args) -> None:
     port = args.port
     _print_header(f"gui  >  servidor na porta {port}")
     
-    app_path = Path(__file__).parent / "diagnostics" / "app.py"
+    app_path = Path(__file__).parent / "gui" / "app.py"
+    if not app_path.exists():
+        console.print(f"[red]Could not find GUI backend at {app_path}[/red]")
+        sys.exit(1)
+        
     cmd = [sys.executable, str(app_path), "--port", str(port)]
     
     print("  [GUI] Abrindo painel do dashboard no navegador...")
