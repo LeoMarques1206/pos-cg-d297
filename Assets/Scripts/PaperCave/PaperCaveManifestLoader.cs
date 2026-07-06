@@ -353,6 +353,7 @@ private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int i
             var figureRaw = FindRawImage(card.transform, "Canvas/Expanded/Figure_Box/Figure");
             ImageCarousel3D carousel = null;
 
+
             if (spec.kind == Kind.Image)
             {
                 var texs = LoadFigureTextures(spec);
@@ -361,6 +362,10 @@ private void BuildCard(CardSpec spec, Vector3 pos, float rotY, float rotZ, int i
                 if (first != null && figureRaw != null)
                 {
                     figureRaw.texture = first;
+                    if (NormalizeCategory(spec.category) == NormalizeCategory("Graphical_Representation"))
+                    {
+                        StandaloneCategoryImage.Instance?.SetTexture(first);
+                    }
                     figureRaw.color = Color.white;
                     figureRaw.enabled = true;
                     var arf = figureRaw.GetComponent<AspectRatioFitter>();
@@ -866,6 +871,45 @@ private RawImage InjectCollapsedImage(Transform card, Texture tex)
         {
             if (string.IsNullOrEmpty(s)) return "Card";
             return Regex.Replace(s, @"[^A-Za-z0-9]+", "_").Trim('_');
+        }
+
+        /// <summary>
+        /// Retorna a primeira textura encontrada para a unidade cuja categoria
+        /// bate com o parâmetro (case-insensitive, ignora "_" vs espaço).
+        /// Útil para exibir uma figura isolada, fora do fluxo normal de cards.
+        /// </summary>
+        public Texture2D FindTextureByCategory(string categoryName)
+        {
+            string json = LoadManifestJson();
+            if (string.IsNullOrWhiteSpace(json)) return null;
+
+            JObject root;
+            try { root = JObject.Parse(json); }
+            catch { return null; }
+
+            List<CardSpec> specs = root["units"] != null ? ParseV2(root)
+                                : root["gameObjects"] != null ? ParseLegacy(root)
+                                : null;
+            if (specs == null) return null;
+
+            string wanted = NormalizeCategory(categoryName);
+
+            foreach (var s in specs)
+            {
+                if (s.kind != Kind.Image) continue;
+                if (NormalizeCategory(s.category) != wanted) continue;
+
+                var texs = LoadFigureTextures(s);
+                if (texs.Count > 0) return texs[0];
+            }
+
+            Debug.LogWarning($"[PaperCaveManifestLoader] Nenhuma imagem encontrada para a categoria '{categoryName}'.");
+            return null;
+        }
+
+        private static string NormalizeCategory(string s)
+        {
+            return (s ?? "").Trim().Replace("_", " ").ToLowerInvariant();
         }
     }
 }
