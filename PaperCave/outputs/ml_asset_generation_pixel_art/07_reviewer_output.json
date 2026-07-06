@@ -1,30 +1,26 @@
 {
-  "paperTitle": "A Deep Learning Assisted Pipeline for Pixel Art Sprite Generation",
-  "centralContribution": "This paper presents a deep-learning-assisted technique for generating pixel art sprites from line art sketches, aiming to reduce asset-making costs and time in game development. It proposes a novel variant of the Pix2Pix architecture to automatically convert line art into gray (shaded) and color sprites, demonstrating its effectiveness within the production pipeline of a 2D pixel-art fighting game, Trajes Fatais: Suits of Fate.",
+  "paperTitle": "Deep Learning for Pixel Art Sprite Generation: A Modified Pix2Pix Approach for Line Art to Grayscale and Color Translation",
+  "centralContribution": "This paper proposes and evaluates a deep-learning-based asset generation technique for pixel art sprites, specifically translating line art sketches into grayscale and color sprites. The primary contribution is a modified Pix2Pix architecture, designed to assist game artists by automating the time-consuming shading and coloring steps for 2D fighting game characters, demonstrating its effectiveness through qualitative, quantitative, and character designer evaluations within the pipeline of \"Trajes Fatais: Suits of Fate.\"",
   "unitCount": 5,
   "units": [
     {
-      "id": "unit_01",
+      "id": "contribution-card",
       "type": "card",
       "priority": "primary",
-      "title": "DL Pixel Art Sprites",
+      "title": "Core Contribution",
       "category": "contribution",
-      "summary": "Novel deep-learning pipeline for auto-generating pixel art sprites from line ...",
+      "summary": null,
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "This paper presents a deep-learning-assisted technique for generating pixel art sprites from line art sketches, aiming to reduce asset-making costs and time in game development. It proposes a novel variant of the Pix2Pix architecture to automatically convert line art into gray (shaded) and color sprites, demonstrating its effectiveness within the production pipeline of a 2D pixel-art fighting game, Trajes Fatais: Suits of Fate.",
+        "description": "The paper introduces a deep-learning technique using a modified Pix2Pix architecture to automate the generation of grayscale and color pixel art sprites from line art sketches, aiming to reduce asset creation time for game developers by streamlining the shading and coloring processes.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Central Contribution Statement",
-      "whyThisUnit": "This unit presents the core innovation and main purpose of the paper: automating pixel art sprite creation using deep learning.",
+      "conceptualOrigin": "Core Contribution of Pixel Art Sprite Generation",
+      "whyThisUnit": "This unit highlights the main research objective and achievement, serving as the central piece of the exhibit.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -33,27 +29,23 @@
       }
     },
     {
-      "id": "unit_02",
+      "id": "abstract-card",
       "type": "card",
       "priority": "secondary",
       "title": "Paper Abstract",
       "category": "abstract",
-      "summary": "Automated pixel art sprite generation via deep learning for game development.",
+      "summary": null,
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "The paper introduces a deep-learning pipeline for generating pixel art sprites from line art, reducing game asset creation costs. It utilizes a modified Pix2Pix architecture to produce gray and color sprites, validated in a 2D fighting game production.",
+        "description": "Game development, particularly for pixel art, faces high costs due to extensive manual asset creation. This paper addresses this by proposing a deep-learning solution for generating semi-final pixel art sprites from line art sketches, framing it as two image translation problems (line art to gray, and gray to color) using a modified Pix2Pix architecture to automate shading and coloring, thereby decreasing character development time.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Paper Abstract",
-      "whyThisUnit": "Provides a quick overview of the paper's aim, method, and context, serving as an initial entry point for understanding.",
+      "conceptualOrigin": "Paper Abstract and Problem Context",
+      "whyThisUnit": "This unit provides a concise overview of the paper's context, problem statement, and the proposed approach.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -62,27 +54,23 @@
       }
     },
     {
-      "id": "unit_03",
+      "id": "graphical-representation-card",
       "type": "card",
       "priority": "secondary",
       "title": "U-Net Architecture",
       "category": "graphical_representation",
-      "summary": "Overview of the U-Net architecture, showing encoder and decoder networks for ...",
+      "summary": "Overview of the modified U-Net architecture for sprite generation.",
       "contentType": "figure",
       "content": {
         "assetReference": "FIG5",
         "caption": "Figure 5: Overview of the U-Net architecture. The orange colored encoder network (on the left) and the green colored decoder network (on the right) are two components linked through standard and skip connections.",
-        "description": "This figure illustrates the U-Net architecture, a modified Pix2Pix variant, that forms the core of the deep learning pipeline for converting line art to pixel art sprites. It details the encoder-decoder structure and connections.",
+        "description": "Overview of the modified U-Net architecture. Features an encoder and two distinct decoder-discriminator pairs for grayscale and RGB color-space problems. This dual-objective design allows the shared encoder to learn rich features from distinct training signals.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Figure 5",
-      "whyThisUnit": "FIG5 is the most representative diagram of the system's underlying technical method, essential for understanding how the sprites are generated.",
+      "conceptualOrigin": "U-Net based Dual-Decoder Pix2Pix Architecture (FIG5)",
+      "whyThisUnit": "This unit visually presents the core architectural innovation of the proposed deep learning model.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -91,7 +79,7 @@
       }
     },
     {
-      "id": "unit_04",
+      "id": "image-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
@@ -99,69 +87,343 @@
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": null,
-      "whyThisUnit": "This stack groups various visual examples from the paper, showcasing the generation process, successful outputs, and key limitations.",
+      "conceptualOrigin": "Various qualitative results and model limitations figures.",
+      "whyThisUnit": "This stack groups all image-based figures, showing both successful sprite generations and visual limitations of the model.",
       "stackLabel": "Sprite Examples & Issues",
       "items": [
         {
-          "index": 1,
-          "title": "Sprite Pipeline Steps",
+          "index": 0,
+          "title": "Early Sprite Sketches",
           "contentType": "figure",
           "content": {
-            "assetReference": "FIG2",
-            "caption": "Figure 2: From left to right, the rough sketch, line sprite, gray sprite, color sprite and final sprite, composed of grayscale lookup indices.",
-            "description": "Illustrates the transformation steps from a rough sketch to the final pixel art sprite, demonstrating the system's full pipeline.",
+            "assetReference": "FIG1",
+            "caption": "Figure 1: Two sprites in their early sketch stages.",
+            "description": "Two sprites in their early sketch stages.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "Unnamed Figure 2.1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_1",
+            "caption": "(no caption extracted)",
+            "description": "An uncaptioned visual from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         },
         {
           "index": 2,
+          "title": "Unnamed Figure 2.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_2",
+            "caption": "(no caption extracted)",
+            "description": "An uncaptioned visual from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Unnamed Figure 2.3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_3",
+            "caption": "(no caption extracted)",
+            "description": "An uncaptioned visual from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Unnamed Figure 2.4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_4",
+            "caption": "(no caption extracted)",
+            "description": "An uncaptioned visual from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Unnamed Figure 2.5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_5",
+            "caption": "(no caption extracted)",
+            "description": "An uncaptioned visual from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Character Skins",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Figure 3: Several skins of the same character using the index sprite.",
+            "description": "Several skins of the same character using the index sprite.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Gray & Color Variants",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Figure 4: Several characters in their gray and color variants. The two characters on top are harder to shade and colorize due to their complex clothing and muscles. On the other hand, the two on bottom are more easier cases, since they have many smooth surfaces and, particularly, the character located in the leftmost, which has large areas with same colors.",
+            "description": "Various characters in gray and color variants, showing complexity for shading and colorization.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Sarah Results (1/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_1",
+            "caption": "Figure 6: Results for six different sprites taken from Sarah animations. From top to bottom and left to right, each sprite is shown in its respective ground truth gray, generated gray, ground truth color and generated color forms.",
+            "description": "Results for Sarah animations, comparing ground truth and generated gray/color sprites. Illustrates performance on challenging dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Sarah Results (2/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_2",
+            "caption": "Figure 6: Results for six different sprites taken from Sarah animations. From top to bottom and left to right, each sprite is shown in its respective ground truth gray, generated gray, ground truth color and generated color forms.",
+            "description": "Results for Sarah animations, comparing ground truth and generated gray/color sprites. Illustrates performance on challenging dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Sarah Results (3/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_3",
+            "caption": "Figure 6: Results for six different sprites taken from Sarah animations. From top to bottom and left to right, each sprite is shown in its respective ground truth gray, generated gray, ground truth color and generated color forms.",
+            "description": "Results for Sarah animations, comparing ground truth and generated gray/color sprites. Illustrates performance on challenging dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Sarah Results (4/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_4",
+            "caption": "Figure 6: Results for six different sprites taken from Sarah animations. From top to bottom and left to right, each sprite is shown in its respective ground truth gray, generated gray, ground truth color and generated color forms.",
+            "description": "Results for Sarah animations, comparing ground truth and generated gray/color sprites. Illustrates performance on challenging dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Sarah Results (5/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_5",
+            "caption": "Figure 6: Results for six different sprites taken from Sarah animations. From top to bottom and left to right, each sprite is shown in its respective ground truth gray, generated gray, ground truth color and generated color forms.",
+            "description": "Results for Sarah animations, comparing ground truth and generated gray/color sprites. Illustrates performance on challenging dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Sarah Results (6/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_6",
+            "caption": "(no caption extracted)",
+            "description": "Further results from Sarah animations, comparing ground truth and generated sprites.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Sarah Results (7/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_7",
+            "caption": "(no caption extracted)",
+            "description": "Further results from Sarah animations, comparing ground truth and generated sprites.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "Sarah Results (8/8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_8",
+            "caption": "(no caption extracted)",
+            "description": "Further results from Sarah animations, comparing ground truth and generated sprites.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
           "title": "Generated Sprite Samples",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG7",
             "caption": "Figure 7: A sample of the generated sprites to be handed to the design team. From top to bottom row, similar poses to the ones on the training set, absent poses on the training set, and radically different poses from all others.",
-            "description": "Shows examples of sprites generated by the system, including variations in poses and how the system handles known vs. unseen poses.",
+            "description": "Sample of generated sprites for design team, showing varied poses from training set and radically different ones.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
-          "index": 3,
+          "index": 17,
+          "title": "Color Problem Study (1/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_1",
+            "caption": "Figure 8: Study on the color problem using the algorithm’s learned colors, instead of the human chosen ones.",
+            "description": "Study on the color problem, comparing algorithm's learned colors vs. human-chosen ones. Highlights color noise issues.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 18,
+          "title": "Color Problem Study (2/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_2",
+            "caption": "Figure 8: Study on the color problem using the algorithm’s learned colors, instead of the human chosen ones.",
+            "description": "Study on the color problem, comparing algorithm's learned colors vs. human-chosen ones. Highlights color noise issues.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 19,
+          "title": "Color Problem Study (3/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_3",
+            "caption": "Figure 8: Study on the color problem using the algorithm’s learned colors, instead of the human chosen ones.",
+            "description": "Study on the color problem, comparing algorithm's learned colors vs. human-chosen ones. Highlights color noise issues.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 20,
+          "title": "Color Problem Study (4/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_4",
+            "caption": "(no caption extracted)",
+            "description": "Further details from the color problem study, showing algorithm's learned colors vs. human-chosen ones.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 21,
+          "title": "Lucy Results",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": "Figure 9: Results for six different sprites taken from Lucy animations. From top to bottom and left to right, each sprite is shown in its respective ground truth gray, generated gray, ground truth color and generated color forms.",
+            "description": "Results for Lucy animations, comparing ground truth and generated gray/color sprites. Demonstrates superior performance on easier dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 22,
           "title": "Inconsistent Shading",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG10",
             "caption": "Figure 10: Example of the inconsistent shading issue for a generated sprite sequence. This problem is evident on the platypus body. Over the course of the animation, this region is often shaded either darkly or brightly.",
-            "description": "Highlights a major limitation of the system: inconsistent shading across animation frames, leading to visual artifacts in sequences.",
+            "description": "Inconsistent shading issue on a platypus, with variable dark/bright shading across animation frames.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
+          }
+        },
+        {
+          "index": 23,
+          "title": "Generalization Issues",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11",
+            "caption": "Figure 11: Example of poses that are too different from the ones present on the training set. For these cases, disconti- nuities on the shading of smooth surfaces and severe color noise and bleeding are common issues.",
+            "description": "Generated sprites in poses too different from training data, showing shading discontinuities and color noise.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 24,
+          "title": "Color Noise Artifacts",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12",
+            "caption": "Figure 12: Example of color noise evidenced after the color rounding post processing. On the gray sprite, subtle noise can be seen in the sprite contour, as well as around transitions from bright to darker areas, in the arms and legs, for example. In the color sprite, the noise is very noticeable in the beak, girl, feet and tail.",
+            "description": "Color noise artifacts after rounding post-processing, visible in both gray and color sprites due to quantization.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         }
       ],
       "styleHint": {
-        "categoryColor": "#00D4FF",
-        "colorName": "cyan blue"
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
       }
     },
     {
-      "id": "unit_05",
+      "id": "table-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
@@ -169,42 +431,21 @@
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": null,
-      "whyThisUnit": "This stack presents quantitative details about the problem and evaluation metrics, even if specific table data couldn't be extracted directly.",
-      "stackLabel": "Quantitative Insights",
+      "conceptualOrigin": "Quantitative Evaluation Metrics (Table I)",
+      "whyThisUnit": "This stack presents the objective, numerical results validating the model's performance and highlighting its effectiveness.",
+      "stackLabel": "Quantitative Evaluation",
       "items": [
         {
-          "index": 1,
-          "title": "Asset Creation Bottleneck",
-          "contentType": "text_panel",
+          "index": 0,
+          "title": "Performance Metrics",
+          "contentType": "table",
           "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "Creating pixel art sprites manually is time-consuming, with shading alone taking 30-40 minutes per sprite. This bottleneck significantly increases game development costs and time, justifying the need for automated solutions.",
-            "chartType": null,
+            "assetReference": "TAB1",
+            "caption": "Table I: AVAILABLE ASSETS IN THE UNITY PROJECT",
+            "description": "Quantitative analysis of model performance on 'Sarah' and 'Lucy' datasets. Uses RMSE, MAE, and SSIM for grayscale and color sprite generation, including comparison with a learned color palette.",
+            "chartType": "table",
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        },
-        {
-          "index": 2,
-          "title": "Gray vs. Color Metrics",
-          "contentType": "text_panel",
-          "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "Quantitative analysis using RMSE, MAE, and SSIM metrics showed that generated gray sprites performed significantly better and were visually more similar to ground truth than color ones. Color* results, while worse in mean error, showed reduced error standard deviation for color deviation.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": {}
           }
         }
       ],
@@ -216,8 +457,8 @@
   ],
   "objectScores": [
     {
-      "suggestedName": "DL Pixel Art Sprites",
-      "score": 0.8,
+      "suggestedName": "Core Contribution",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
@@ -229,7 +470,7 @@
     },
     {
       "suggestedName": "U-Net Architecture",
-      "score": 0.8,
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
@@ -240,8 +481,8 @@
       "feedback": ""
     },
     {
-      "suggestedName": "Quantitative Insights",
-      "score": 0.4,
+      "suggestedName": "Quantitative Evaluation",
+      "score": 0.2,
       "confidence": "low",
       "feedback": ""
     }

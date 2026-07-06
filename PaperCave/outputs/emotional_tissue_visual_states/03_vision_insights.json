@@ -2,39 +2,66 @@
   "insights": [
     {
       "filename": "FIG1.png",
-      "description": "This figure likely shows a visual representation of the 'Emotional Tissue widget' and how it appears when configured.",
-      "relevance": "It demonstrates the user interface or visual aspect of the core component of the system, illustrating how users or developers would interact with or perceive the widget's configured state, which is central to the paper's contribution.",
-      "mode": "text_inferred"
+      "description": "This figure likely shows the visual representation of the Emotional Tissue widget, demonstrating its composition when configured to display four, six, and eight distinct emotions.",
+      "relevance": "This image is relevant as it illustrates the user-facing visual component of the Emotional Tissue system, showcasing its configurability and appearance, which is central to the paper's contribution of a customizable emotional display widget.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG2.png",
-      "description": "This figure appears to be a diagram illustrating the fundamental structural design and components of the 'Emotional Tissue' system.",
-      "relevance": "It is crucial for understanding the underlying technical implementation and organization of the 'Emotional Tissue' system, which is the main subject of the paper.",
-      "mode": "text_inferred"
+      "description": "This figure appears to represent a diagram detailing the core architectural components and their relationships within the Emotional Tissue system.",
+      "relevance": "This diagram is crucial for understanding the underlying structure and functionality of the Emotional Tissue, explaining how its various parts integrate to deliver its features, which is a key technical contribution of the paper.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
     },
     {
       "filename": "FIG3.png",
-      "description": "This figure likely provides a code snippet or a sequence diagram demonstrating how to interact with the system's API, specifically showing four different examples of its usage.",
-      "relevance": "It illustrates the practical application and programmability of the 'Emotional Tissue' system through its API, which is vital for developers to integrate and utilize the system as described in the paper.",
-      "mode": "text_inferred"
+      "description": "This figure likely displays a snippet of code demonstrating how to interact with the Emotional Tissue API and simultaneously shows the visual output produced by those API calls.",
+      "relevance": "This figure is highly relevant as it provides a practical example of how developers can integrate and utilize the Emotional Tissue system, directly linking the programmatic interface to its visual results and thereby demonstrating its usability and functionality.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
     },
     {
-      "filename": "FIG4.png",
-      "description": "This figure appears to present simple examples of 'scenes' that demonstrate a specific functionality or aspect of the system.",
-      "relevance": "It shows practical applications or scenarios where the system's capabilities are put into use, helping to clarify the system's intended functionality and use cases, which supports the paper's overall contribution.",
-      "mode": "text_inferred"
+      "filename": "FIG4_1.png",
+      "description": "This figure, as part of a series, likely shows a screenshot from a demonstration scene, illustrating a use case example of the Emotional Tissue system configured with four distinct emotions tuned for a specific character.",
+      "relevance": "These demonstration screenshots are vital as they provide concrete visual examples of the Emotional Tissue in action within a practical scenario, highlighting its application and the effect of emotion tuning on different characters, thereby validating the system's utility and flexibility.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_2.png",
+      "description": "This figure, as part of a series, likely shows a screenshot from a demonstration scene, illustrating a use case example of the Emotional Tissue system configured with four distinct emotions tuned for a specific character.",
+      "relevance": "These demonstration screenshots are vital as they provide concrete visual examples of the Emotional Tissue in action within a practical scenario, highlighting its application and the effect of emotion tuning on different characters, thereby validating the system's utility and flexibility.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_3.png",
+      "description": "This figure, as part of a series, likely shows a screenshot from a demonstration scene, illustrating a use case example of the Emotional Tissue system configured with four distinct emotions tuned for a specific character.",
+      "relevance": "These demonstration screenshots are vital as they provide concrete visual examples of the Emotional Tissue in action within a practical scenario, highlighting its application and the effect of emotion tuning on different characters, thereby validating the system's utility and flexibility.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_4.png",
+      "description": "This figure, as part of a series, likely shows a screenshot from a demonstration scene, illustrating a use case example of the Emotional Tissue system configured with four distinct emotions tuned for a specific character.",
+      "relevance": "These demonstration screenshots are vital as they provide concrete visual examples of the Emotional Tissue in action within a practical scenario, highlighting its application and the effect of emotion tuning on different characters, thereby validating the system's utility and flexibility.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG5.png",
-      "description": "This figure likely depicts a specific component, 'EmotionsSetup,' within a demonstration scene.",
-      "relevance": "It highlights a particular aspect of the system's configuration or a specific module used for setting up emotions, providing a detailed view of how emotion management is handled within the system, central to the paper's 'Emotional Tissue' concept.",
-      "mode": "text_inferred"
+      "description": "This figure appears to be a screenshot of the 'EmotionsSetup' component within a demonstration scene, likely showing its user interface and configurable options.",
+      "relevance": "This image is relevant because it showcases the interface through which users or developers can configure and tune emotions for characters within the Emotional Tissue system, demonstrating its practical implementation and ease of use.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6.png",
-      "description": "This figure likely displays a portion of the code that defines or controls a 'scene' within the system.",
-      "relevance": "It provides a concrete example of the underlying implementation, allowing readers to understand the technical details of how scenes are programmed or structured, which supports the overall explanation of the system's architecture and functionality.",
-      "mode": "text_inferred"
+      "description": "This figure likely presents a diagram illustrating the code architecture of a typical scene utilizing the Emotional Tissue, outlining how different code modules or components are organized and interact.",
+      "relevance": "This diagram is relevant as it provides insight into how the Emotional Tissue system is integrated at the code level within a larger application, demonstrating its extensibility and the structure recommended for its use, which supports the paper's contribution of a robust and integrable framework.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
     }
   ]
 }

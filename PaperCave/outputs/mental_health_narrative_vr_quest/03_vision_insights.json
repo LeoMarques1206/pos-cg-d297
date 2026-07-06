@@ -2,92 +2,92 @@
   "insights": [
     {
       "filename": "FIG1.png",
-      "description": "This figure likely shows multiple screenshots from the Meta Quest 2 perspective, depicting different virtual environments experienced within the game.",
-      "relevance": "It demonstrates the visual variety and immersive virtual worlds created for the game, which is central to the paper's contribution regarding VR game design.",
+      "description": "This figure likely shows multiple screenshots captured from the first-person perspective within the VR game, depicting various virtual environments.",
+      "relevance": "It introduces the visual scope and diversity of the virtual worlds that players can experience, showcasing the game's setting as a core element of its design.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG10.png",
-      "description": "This figure appears to show an in-game scene where blue arrows are present for navigation, depression medicine is highlighted on the toilet floor, and the antagonist character is visible facing the player.",
-      "relevance": "It illustrates specific gameplay mechanics and narrative elements, such as guidance, important interactive items, and character interactions, which are key components of the VR game's design described in the paper.",
+      "description": "This figure appears to show an in-game scene where blue arrows indicate navigation paths, a depression medicine bottle is highlighted on the toilet floor, and an antagonist character is visible, facing the player.",
+      "relevance": "It illustrates key gameplay mechanics related to player guidance, object interaction (finding medicine), and character encounter, which are central to the game's narrative and interactive experience.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG11.png",
-      "description": "This figure likely displays an example of a configurable joint object, which is a specific type of interactive or movable object within the game environment.",
-      "relevance": "It demonstrates a technical aspect of the game's object interaction system, highlighting how configurable joints contribute to the overall interactivity and physics-based gameplay described in the paper.",
+      "description": "This figure likely displays a virtual object that has been implemented using a configurable joint, suggesting its dynamic and interactive properties within the game engine.",
+      "relevance": "It demonstrates a technical aspect of the game's development, specifically how interactive objects are engineered to allow for realistic physics and player manipulation, contributing to immersion.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG12.png",
-      "description": "This figure illustrates an in-game scene where the player, as the protagonist, is writing “SVR 2023” on a virtual canvas using a brush, demonstrating a drawable object interaction.",
-      "relevance": "It showcases a creative and interactive gameplay feature—drawable objects—which contributes to player engagement and personalization within the virtual environment, aligning with the paper's focus on immersive VR experiences.",
+      "description": "This figure likely shows a screenshot of the protagonist character interacting with a 'drawable object,' specifically writing 'SVR 2023' on a virtual canvas using an in-game brush tool.",
+      "relevance": "It highlights an innovative interactive feature of the VR game, demonstrating player agency and creative expression within the virtual environment, which enriches the gameplay experience.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG13.png",
-      "description": "This figure appears to show a wall painting that was generated from a textual prompt using the DALL-E generative AI.",
-      "relevance": "It highlights the integration of advanced AI technologies like DALL-E into the game to create dynamic and procedurally generated environmental elements, which is a novel aspect of the paper's VR game development.",
+      "description": "This figure appears to show an in-game wall painting that was created using the DALL-E generative AI based on a textual prompt.",
+      "relevance": "It showcases the integration of advanced AI generative art into the game's environment, illustrating how dynamic and context-sensitive visual content can be created to enhance narrative or personalization.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG2.png",
-      "description": "This figure likely displays a Meta Quest 2 VR headset along with its hand controllers, visually demonstrating how they are mapped for use within the VR game.",
-      "relevance": "It establishes the hardware foundation for the VR game, illustrating the specific input devices and their configuration, which is crucial for understanding the user interaction and immersion discussed in the paper.",
+      "description": "This figure likely displays a Meta Quest 2 VR headset and its accompanying hand controllers, visually annotated or positioned to show how they are mapped for interaction within the VR game.",
+      "relevance": "It provides context for the hardware used to play the game and demonstrates the input method, which is fundamental to understanding the player's interaction with the virtual world.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG3.png",
-      "description": "This figure likely shows screenshots of a game scene featuring in-game text messages and dialogue boxes, which provide narrative and gameplay information.",
-      "relevance": "It illustrates how textual elements are integrated into the game's interface to convey narrative and gameplay cues, supporting the paper's discussion on storytelling and user guidance within the VR environment.",
+      "description": "This figure appears to show various in-game text messages and dialogue boxes integrated into a game scene, indicating their role in delivering narrative and gameplay information.",
+      "relevance": "It illustrates a key method of storytelling and information delivery within the game, highlighting how narrative elements are woven into the interactive environment to engage the player.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG4.png",
-      "description": "This figure appears to show a series of screenshots demonstrating an accelerated in-game time mechanism, depicting the transition from dawn to dusk at specific time points (5 AM, 12 PM, 6 PM, and 8 PM).",
-      "relevance": "It showcases a core gameplay mechanism that manipulates the in-game environment's lighting and atmosphere over time, contributing to the dynamic and immersive qualities of the VR experience described in the paper.",
+      "description": "This figure likely presents a series of screenshots demonstrating the accelerated in-game time mechanism, showing the progression of a day from dawn to dusk at specified approximate times (5 AM, 12 PM, 6 PM, 8 PM).",
+      "relevance": "It illustrates a dynamic environmental feature of the game that adds realism and affects gameplay, showing how the virtual world evolves over time and potentially influences player actions.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG5.png",
-      "description": "This figure likely illustrates how colliders are applied to all interactable game objects, possibly through a visual overlay or engine debug view showing bounding boxes.",
-      "relevance": "It demonstrates a fundamental technical aspect of game development related to object interaction and physics, which is crucial for defining how players engage with the virtual environment and its elements, as discussed in the paper.",
+      "description": "This figure likely visually represents or highlights the colliders that have been applied to various interactable objects within the game scene.",
+      "relevance": "It demonstrates a fundamental technical aspect of game development, showing how physical interaction and collision detection are enabled for objects, which is crucial for player engagement and realism.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6.png",
-      "description": "This figure appears to show an in-game scene where a neatly made bed on the right symbolizes a positive habit, indicating how the VR game rewards such actions by improving mental health and reducing the antagonist's size.",
-      "relevance": "It highlights a key motivational and behavioral aspect of the game's design, demonstrating how gameplay mechanics are used to promote positive habits and influence the player's mental health state and interaction with the antagonist, which is central to the paper's contribution.",
+      "description": "This figure appears to show an in-game scene where a neatly made bed symbolizes the game's mechanic of rewarding positive habits, which leads to improved mental health and a reduction in the antagonist's size.",
+      "relevance": "It illustrates a core gameplay loop and the therapeutic mechanics of the VR game, demonstrating how player actions directly influence in-game metrics and the antagonist's representation, aligning with the paper's focus on mental well-being.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG7.png",
-      "description": "This figure likely shows a sushi tray containing various consumable items, each designed to boost the protagonist's in-game mental health system.",
-      "relevance": "It demonstrates a specific gameplay mechanic related to item interaction and its impact on the protagonist's in-game mental health, reinforcing the paper's discussion on how the game addresses player well-being through interactive elements.",
+      "description": "This figure likely displays a sushi tray containing multiple consumable items, each designed to provide a boost to the protagonist’s in-game mental health system.",
+      "relevance": "It highlights an interactive element and a key mechanic for managing the protagonist's well-being, directly supporting the paper's theme of using VR for mental health improvement through gameplay.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG8.png",
-      "description": "This figure appears to showcase various interactive objects within the VR game, such as books, Star Wars figures, posters, and personal notes, illustrating how players can hit and inspect them.",
-      "relevance": "It emphasizes the high level of object interactivity within the game environment, which contributes significantly to player immersion and agency, aligning with the paper's contribution to creating engaging VR experiences.",
+      "description": "This figure likely shows a player interacting with various in-game objects like books, Star Wars figures, posters, and personal notes, demonstrating the extensive interactivity available within the virtual environment.",
+      "relevance": "It emphasizes the high level of player agency and immersion offered by the VR game through widespread object interaction, which is a central feature for engaging players in the virtual world.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG9.png",
-      "description": "This figure likely depicts an interaction scene between the protagonist and antagonist through a standing mirror, with the left side showing an external view including an interaction button, and the right side showing the perspective from within the mirror.",
-      "relevance": "It illustrates a unique and complex interaction mechanic involving a mirror, highlighting the game's creative approach to character encounters and narrative presentation, which is a key aspect of the paper's VR game design.",
+      "description": "This figure appears to depict an interaction scene between the protagonist and antagonist mediated by a standing mirror, with one view showing the external scene and an interaction button, and another view representing the perspective from within the mirror.",
+      "relevance": "It illustrates a unique and specific interaction mechanic, possibly involving self-reflection or a symbolic confrontation, which is critical to the narrative and psychological themes explored in the game.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     }

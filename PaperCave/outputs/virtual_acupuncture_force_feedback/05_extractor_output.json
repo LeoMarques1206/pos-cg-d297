@@ -1,0 +1,87 @@
+{
+  "paperTitle": "Virtual Acupuncture Simulator with Force Feedback and Deformable Body Models",
+  "centralContribution": "This work presents a virtual acupuncture simulator that leverages a physics engine and force feedback to simulate deformable human body models, offering an immersive and realistic training experience for acupuncturists. It integrates visual and tactile representations of deformations and the activation of energy flows, based on a real-world use case, addressing previous limitations in acupuncture simulation depth and realism.",
+  "elements": [
+    {
+      "name": "Central Contribution",
+      "category": "contribution",
+      "description": "The paper introduces a virtual acupuncture simulator using a physics engine and force feedback to model deformable human bodies, providing a realistic training experience with visual and tactile feedback on deformations and energy flow activation, based on a real clinical case, addressing limitations in current simulators.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the primary innovation and objective of the research, defining what the paper aims to achieve and its significance.",
+      "groupingHint": "Core Paper Elements",
+      "data": {}
+    },
+    {
+      "name": "Paper Abstract",
+      "category": "abstract",
+      "description": "The medical field increasingly uses VR and haptic devices for training. Acupuncture requires precise needle insertion into acupoints to stimulate energy flows. Existing simulators often lack comprehensive modeling of acupoints, internal systems, and accurate physiological responses, leading to a demand for advanced simulators with realistic tactile and visual feedback for practitioner training.",
+      "relevanceScore": 9,
+      "justification": "This element provides the essential context, outlines the problem statement, and describes the motivation for developing the simulator, which is fundamental to understanding the paper.",
+      "groupingHint": "Core Paper Elements",
+      "data": {}
+    },
+    {
+      "name": "Haptic Feedback System Architecture (FIG3.png)",
+      "category": "graphical_representation",
+      "description": "An illustrative diagram outlining the architectural flow of tactile feedback, integrating the hardware (haptic devices) and software layers (custom C++ plugin, Unreal Engine 4, Open Haptics library) of the simulator. This diagram is crucial for understanding the technical design and implementation of the haptic feedback mechanism.",
+      "relevanceScore": 9,
+      "justification": "This figure is central to understanding the technical implementation of the haptic feedback, which is a core innovative component providing the simulator's tactile realism.",
+      "groupingHint": "System Architecture",
+      "data": {}
+    },
+    {
+      "name": "Deformable Surface Demonstration (FIG8.png)",
+      "category": "image",
+      "description": "Depicts an example of surface deformation on the virtual patient's body after needle insertion, shown in both rendered and unrendered mesh views. This highlights the visual and physical realism of tissue deformation, which is a critical feature of the simulator.",
+      "relevanceScore": 8,
+      "justification": "This image visually confirms the successful implementation of the deformable body model, a key feature contributing significantly to the simulator's realism and central contribution.",
+      "groupingHint": "Deformable Model Visual Results",
+      "data": {}
+    },
+    {
+      "name": "Simulation Configuration Parameters (TAB1.png)",
+      "category": "table",
+      "description": "A table detailing the configuration parameters for the simulation, including particle radius, number of particles, stiffness values (extension, bend, general), particle mass, friction coefficients, simulation frames per second, number of sub-steps, iterations per sub-step, and gravity acceleration.",
+      "relevanceScore": 8,
+      "justification": "This table provides the specific technical parameters used for the deformable mesh and overall simulation, which are critical for replicating and understanding the simulator's behavior and performance.",
+      "groupingHint": "Technical Parameters",
+      "data": {}
+    },
+    {
+      "name": "Virtual Acupuncture Environment (FIG2.png)",
+      "category": "image",
+      "description": "Represents one viewpoint of the system, specifically the initial interface that a user encounters within the virtual acupuncture environment, showcasing the visual design of the platform and providing an overview of the simulation setting.",
+      "relevanceScore": 7,
+      "justification": "This image illustrates the overall user experience and environment, providing a visual understanding of the simulator's practical application and interface.",
+      "groupingHint": "User Interface",
+      "data": {}
+    },
+    {
+      "name": "Haptic Devices (FIG1_1.png and FIG1_2.png)",
+      "category": "image",
+      "description": "These figures show the two distinct haptic devices, the 3D Systems Touch and the Novint Falcon, which are explicitly mentioned as providing tactile feedback in the acupuncture simulator.",
+      "relevanceScore": 7,
+      "justification": "These figures introduce the specific hardware components essential for the haptic feedback, which is a key part of the simulator's immersive and realistic experience.",
+      "groupingHint": "Hardware Components",
+      "data": {}
+    },
+    {
+      "name": "Deformable Body Model Structure (FIG5.png)",
+      "category": "image",
+      "description": "Illustrates the structural representation of the virtual human's deformable model, based on a static mesh. This figure is fundamental to understanding how the virtual patient's body is modeled to allow for realistic deformation during acupuncture.",
+      "relevanceScore": 6,
+      "justification": "This figure details the underlying structure of the deformable model, providing insight into how the physical interactions and deformations are visually and computationally represented.",
+      "groupingHint": "Deformable Model Details",
+      "data": {}
+    },
+    {
+      "name": "Acupoint Guidance Visualization (FIG6_1.png and FIG6_2.png)",
+      "category": "image",
+      "description": "These figures depict a top-down view of the virtual patient, with green spheres indicating active acupoints for needling and red spheres marking acupoints to be avoided in a specific use case, demonstrating the visual guidance provided to the user.",
+      "relevanceScore": 6,
+      "justification": "These figures highlight the pedagogical aspect of the simulator, showing how users are guided to correctly identify and interact with acupoints, which is crucial for training.",
+      "groupingHint": "Training Guidance",
+      "data": {}
+    }
+  ]
+}

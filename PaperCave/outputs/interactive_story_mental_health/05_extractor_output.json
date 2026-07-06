@@ -1,78 +1,78 @@
 {
   "paperTitle": "COEXIST: An Interactive Story Decision-Making Game for Mental Health Awareness",
-  "centralContribution": "This work presents COEXIST, a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders such as depression and social isolation.",
+  "centralContribution": "This work presents COEXIST, a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention against depression and social isolation. The game utilizes a metaphorical narrative, based on real experiences of undergraduate students during the COVID-19 pandemic, to immerse players in the perspective of someone struggling with depression and demonstrate the impact of daily choices.",
   "elements": [
     {
-      "name": "COEXIST Game",
+      "name": "COEXIST Game for Mental Health Awareness",
       "category": "contribution",
-      "description": "A short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention for mental disorders.",
+      "description": "This work presents COEXIST, a short, interactive story decision-making game designed to increase mental health awareness, specifically focusing on self-care as a form of prevention against depression and social isolation. The game utilizes a metaphorical narrative, based on real experiences of undergraduate students during the COVID-19 pandemic, to immerse players in the perspective of someone struggling with depression and demonstrate the impact of daily choices.",
       "relevanceScore": 10,
-      "justification": "This is the central contribution and the core artifact presented by the paper, encompassing the entire system and its purpose.",
-      "groupingHint": ""
+      "justification": "This is the central innovation and primary output of the research, defining the entire scope of the paper.",
+      "groupingHint": "Overall Paper Information",
+      "data": {}
     },
     {
-      "name": "Mr Shadow (Depression Metaphor)",
-      "category": "image",
-      "description": "A black humanoid clone of the protagonist (Fig. 1) that serves as a metaphor for depression, dynamically shrinking or growing based on the protagonist's choices.",
-      "relevanceScore": 9,
-      "justification": "It is the primary visual and mechanical antagonist, directly illustrating the severity of depression within the game's narrative, and is explicitly linked to Fig. 1.",
-      "groupingHint": "Protagonist Character"
+      "name": "Paper Abstract",
+      "category": "abstract",
+      "description": "Mental health is a critical public health issue, with 280 million people suffering from depression, impacted by complex lifestyle choices. Digital games offer potential for mental health awareness, empathy, and stigma reduction, but are underutilized for conditions like depression and social isolation, especially among students post-pandemic. This paper addresses this need by presenting COEXIST, an interactive story decision-making game, to break taboos and encourage self-care through an engaging medium.",
+      "relevanceScore": 10,
+      "justification": "Provides a concise overview of the paper's context, problem, and general approach, essential for understanding its relevance.",
+      "groupingHint": "Overall Paper Information",
+      "data": {}
     },
     {
-      "name": "Freytag's Pyramid Narrative Structure",
+      "name": "Freytag's Pyramid Narrative Structure of COEXIST",
       "category": "graphical_representation",
-      "description": "The five-stage narrative framework (Exposition, Rising Action, Climax, Falling Action, Resolution) that structures the game's entire story progression (Fig. 2).",
-      "relevanceScore": 8,
-      "justification": "This structure is fundamental to the game's narrative design and emotional arc, defining how the story unfolds, and is explicitly shown in Fig. 2.",
-      "groupingHint": ""
+      "description": "This diagram represents the narrative arc of the COEXIST game using Freytag's Pyramid model, illustrating key story stages: Exposition (introducing setting, protagonist, Mr Shadow, and the central conflict), Rising Action (exploring conflict and choices), Climax (protagonist falls without energy, Mr Shadow impassive), Falling Action (aftermath, continuous despair), and Resolution (two possible endings).",
+      "relevanceScore": 9,
+      "justification": "This figure details the core conceptual framework of the game's storytelling, which is fundamental to how COEXIST aims to convey its message about mental states and player agency.",
+      "groupingHint": "Game Design and Narrative",
+      "data": {}
     },
     {
-      "name": "Scoring System (Blue/Red Butterflies)",
-      "category": "contribution",
-      "description": "An internal game mechanic that visibly tracks the protagonist's mental health progress using blue (positive) and red (depressive) butterflies, directly influencing Mr Shadow's size.",
-      "relevanceScore": 8,
-      "justification": "It provides clear, real-time feedback to the player on the impact of their choices and is integral to the game's core loop, linking directly to Mr Shadow's transformation.",
-      "groupingHint": "Mr Shadow (Depression Metaphor)"
-    },
-    {
-      "name": "Protagonist Character",
-      "category": "contribution",
-      "description": "A socially isolated 3D humanoid character, colored in ice white, whose struggles with depression and daily decisions form the core of the game's interactive narrative.",
-      "relevanceScore": 7,
-      "justification": "The player experiences the game through this character, making their journey and mental state central to the game's emotional impact and educational purpose.",
-      "groupingHint": "Mr Shadow (Depression Metaphor)"
-    },
-    {
-      "name": "Dynamic Environment & Soundtrack",
-      "category": "contribution",
-      "description": "The game's visual environment (darkening/brightening) and background music (heavier/livelier) adapt in real-time to reflect the protagonist's deteriorating or improving mental state.",
-      "relevanceScore": 7,
-      "justification": "These elements enhance player immersion and provide continuous, non-verbal feedback on the protagonist's mental health, reinforcing the narrative's emotional weight.",
-      "groupingHint": "Scoring System (Blue/Red Butterflies)"
-    },
-    {
-      "name": "Decision-Making Gameplay",
-      "category": "contribution",
-      "description": "The interactive core of COEXIST where players make choices during the protagonist's daily routine, directly influencing their mental state and the narrative's path.",
-      "relevanceScore": 6,
-      "justification": "This mechanism is how the game engages players, allowing them to actively explore the consequences of self-care choices and understand mental health impacts.",
-      "groupingHint": "Scoring System (Blue/Red Butterflies)"
-    },
-    {
-      "name": "Climax Scene (Protagonist Collapse)",
+      "name": "Protagonist and Mr Shadow Character Design",
       "category": "image",
-      "description": "The narrative's peak moment where the protagonist collapses exhausted on the floor, with Mr Shadow standing impassively by (Fig. 5), designed to reinforce depression awareness.",
-      "relevanceScore": 6,
-      "justification": "This critical moment visually emphasizes the severity of depression and its impact, forming a pivotal emotional point in the narrative and is explicitly linked to Fig. 5.",
-      "groupingHint": "Freytag's Pyramid Narrative Structure"
+      "description": "This figure shows the character design for the main protagonist (an ice-white 3D humanoid) and 'Mr Shadow' (a black humanoid clone representing depression) from the COEXIST game. Mr Shadow's size dynamically changes based on player choices.",
+      "relevanceScore": 8,
+      "justification": "Introduces the central visual elements and metaphorical representations (protagonist vs. depression) crucial to the game's theme and interaction, directly supporting the paper's contribution of designing a game for depression awareness.",
+      "groupingHint": "Game Visuals and Metaphor",
+      "data": {}
     },
     {
-      "name": "Resolution End Scenes (Victory/Defeat)",
+      "name": "Two Possible Endings of COEXIST",
       "category": "image",
-      "description": "Two distinct visual outcomes: 'victory of depression' (lifeless garden, enlarged Mr Shadow, Fig. 6a) or 'victory over depression' (lively garden, shrunken Mr Shadow, Fig. 6b).",
+      "description": "These images display visual representations of the two distinct ending sequences from the COEXIST game: 'victory of depression' (a lifeless garden with an enlarged Mr Shadow) and 'victory over depression' (a lively garden with a significantly smaller Mr Shadow), demonstrating the consequences of player choices.",
+      "relevanceScore": 8,
+      "justification": "These figures are critical as they visually demonstrate the game's central mechanic of player choices influencing outcomes related to mental health, thereby reinforcing the game's educational message.",
+      "groupingHint": "Game Visuals and Outcomes",
+      "data": {}
+    },
+    {
+      "name": "COEXIST Game Climax Scene",
+      "category": "image",
+      "description": "This figure presents screenshots from the COEXIST game's climax scene, showing the protagonist lying on the floor in dining, living, and kitchen areas with an impassive Mr Shadow nearby. This visually conveys a critical emotional moment, emphasizing depression awareness.",
+      "relevanceScore": 7,
+      "justification": "This figure visually communicates a pivotal emotional moment in the game's narrative, directly illustrating how the game portrays the struggle with depression through the interaction of the protagonist and Mr Shadow, thereby supporting the paper's contribution to mental health game design.",
+      "groupingHint": "Game Visuals and Gameplay",
+      "data": {}
+    },
+    {
+      "name": "General COEXIST Gameplay Scenes",
+      "category": "image",
+      "description": "These images likely depict various in-game scenes or assets from the COEXIST game, providing visual snapshots of the game's environment or character interactions during general gameplay.",
       "relevanceScore": 6,
-      "justification": "These final visual states summarize the player's journey and reinforce the game's core message about the consequences of choices, directly referenced with Fig. 6a and 6b.",
-      "groupingHint": "Freytag's Pyramid Narrative Structure"
+      "justification": "These images provide general visual context for the game's environment and mechanics, supporting the paper's illustration of the game's design and user experience.",
+      "groupingHint": "Game Visuals and Gameplay",
+      "data": {}
+    },
+    {
+      "name": "COEXIST Splash Screen Animation Progression",
+      "category": "image",
+      "description": "This figure illustrates a sequence of images showing the progression of the COEXIST game's splash screen animation through several keyframes, providing a glimpse of the initial visual presentation and aesthetic.",
+      "relevanceScore": 5,
+      "justification": "This figure illustrates the initial visual presentation and aesthetic of the game, which contributes to the player's first impression and sets the thematic tone, supporting the paper's discussion of the game's user experience design.",
+      "groupingHint": "Game Visuals and User Interface",
+      "data": {}
     }
   ]
 }

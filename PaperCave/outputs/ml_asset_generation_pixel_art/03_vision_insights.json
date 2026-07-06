@@ -2,127 +2,183 @@
   "insights": [
     {
       "filename": "FIG1.png",
-      "description": "This figure likely shows two digital character sprites in their initial, rough sketch phase.",
-      "relevance": "This figure introduces the early stages of character development, providing context for the problem of automating later stages (shading and colorization) which the paper aims to address.",
+      "description": "This figure likely shows two hand-drawn or digitally sketched sprites, illustrating their initial conceptual design phase.",
+      "relevance": "This figure establishes the visual style and type of assets (sprites) that the paper's proposed method aims to process or generate, setting the context for the problem addressed.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG10.png",
-      "description": "This figure likely demonstrates an issue of inconsistent shading in a generated sprite animation, specifically highlighting how a platypus character's body region fluctuates between dark and bright shading.",
-      "relevance": "This figure illustrates a key limitation or failure mode of the sprite generation system, demonstrating a specific problem (inconsistent shading) that the paper's proposed solution aims to minimize or avoid.",
+      "description": "This figure appears to illustrate a problem of inconsistent shading within a generated sprite animation, specifically highlighting how a platypus character's body region shows variable dark and bright shading across frames.",
+      "relevance": "This figure directly demonstrates a key technical challenge or failure mode that the paper's research aims to mitigate or improve upon, specifically in sprite generation and animation consistency.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG11.png",
-      "description": "This figure likely presents examples of generated sprites in poses significantly different from those in the training data, exhibiting common artifacts such as shading discontinuities on smooth surfaces and severe color noise and bleeding.",
-      "relevance": "This figure highlights another limitation of the sprite generation method, demonstrating its performance degradation when encountering out-of-distribution input poses and identifying specific failure patterns.",
+      "description": "This figure likely displays examples of generated sprites in poses significantly different from the training data, exhibiting artifacts such as shading discontinuities on smooth surfaces, and noticeable color noise and bleeding.",
+      "relevance": "This figure highlights a limitation of the proposed model, specifically its performance on out-of-distribution input poses, thus framing an area for future improvement or a challenge that needs to be addressed for robust sprite generation.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG12.png",
-      "description": "This figure likely shows examples of color noise appearing in sprites after a color rounding post-processing step, with subtle noise visible on a gray sprite's contour and transitions, and more noticeable noise on a color sprite's features like the beak, girl, feet, and tail.",
-      "relevance": "This figure demonstrates another specific post-processing issue encountered by the sprite generation pipeline, illustrating how color noise can manifest and affect the final quality of both grayscale and colored sprites.",
+      "description": "This figure shows examples of color noise artifacts present in sprites after a color rounding post-processing step, illustrating both subtle noise in gray sprites and more prominent noise in specific areas of color sprites.",
+      "relevance": "This figure identifies a specific post-processing problem encountered in the sprite generation pipeline, indicating a challenge in achieving clean, consistent sprite output and suggesting a need for refined post-processing techniques.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
-      "filename": "FIG2.png",
-      "description": "This figure likely illustrates the complete pipeline of sprite generation, showing the progression from an initial rough sketch, through a line sprite, gray sprite, and color sprite, to the final sprite composed of grayscale lookup indices.",
-      "relevance": "This figure visually explains the sequential stages of the sprite generation process that the paper's method aims to automate or enhance, providing a foundational understanding of the input and output types at each step.",
+      "filename": "FIG2_1.png",
+      "description": "This figure likely depicts an individual sprite or element, possibly demonstrating a specific state, pose, or component of a character within the context of sprite generation.",
+      "relevance": "Without a specific caption, its relevance is generally tied to showcasing the visual assets or intermediate outputs of the sprite generation process, providing a concrete example for the system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_2.png",
+      "description": "This figure likely depicts an individual sprite or element, possibly demonstrating a specific state, pose, or component of a character within the context of sprite generation.",
+      "relevance": "Without a specific caption, its relevance is generally tied to showcasing the visual assets or intermediate outputs of the sprite generation process, providing a concrete example for the system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_3.png",
+      "description": "This figure likely depicts an individual sprite or element, possibly demonstrating a specific state, pose, or component of a character within the context of sprite generation.",
+      "relevance": "Without a specific caption, its relevance is generally tied to showcasing the visual assets or intermediate outputs of the sprite generation process, providing a concrete example for the system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_4.png",
+      "description": "This figure likely depicts an individual sprite or element, possibly demonstrating a specific state, pose, or component of a character within the context of sprite generation.",
+      "relevance": "Without a specific caption, its relevance is generally tied to showcasing the visual assets or intermediate outputs of the sprite generation process, providing a concrete example for the system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_5.png",
+      "description": "This figure likely depicts an individual sprite or element, possibly demonstrating a specific state, pose, or component of a character within the context of sprite generation.",
+      "relevance": "Without a specific caption, its relevance is generally tied to showcasing the visual assets or intermediate outputs of the sprite generation process, providing a concrete example for the system.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG3.png",
-      "description": "This figure likely displays multiple variations, or \"skins,\" for the same character, all rendered using the index sprite technique.",
-      "relevance": "This figure demonstrates a key advantage or application of the paper's sprite representation (index sprite), showcasing its flexibility in easily generating diverse visual styles for a single character.",
+      "description": "This figure appears to show multiple \"skins\" or variations of a single character, all derived from or based on an \"index sprite,\" demonstrating how different visual styles can be applied.",
+      "relevance": "This figure highlights the system's capability to generate variations of a character, illustrating the flexibility and customization potential of the proposed sprite generation approach, particularly concerning character aesthetics.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG4.png",
-      "description": "This figure likely presents several character sprites in both their grayscale and colored versions, categorizing them based on the complexity of shading and colorization, with complex characters at the top and simpler ones at the bottom.",
-      "relevance": "This figure provides context for the varying difficulty levels in sprite shading and colorization, illustrating the types of inputs and challenges the proposed method aims to handle and highlighting why certain character designs are more challenging for automation.",
+      "description": "This figure presents several characters in both grayscale and colored versions, illustrating varying levels of shading and colorization difficulty based on their design complexity, such as detailed clothing or smooth surfaces.",
+      "relevance": "This figure provides a visual assessment of the complexity of different sprite designs for the shading and colorization task, implicitly demonstrating the challenges and strengths of the proposed method when applied to diverse character types.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG5.png",
-      "description": "This figure likely presents a diagrammatic overview of the U-Net neural network architecture, visually depicting its orange-colored encoder on the left and green-colored decoder on the right, connected by standard and skip connections.",
-      "relevance": "This figure is crucial for understanding the technical foundation of the paper's proposed method, illustrating the specific deep learning architecture used for sprite generation, shading, and colorization.",
+      "description": "This figure likely displays a high-level diagram of the U-Net neural network architecture, featuring an orange encoder network on the left and a green decoder network on the right, connected via standard and skip connections.",
+      "relevance": "This figure is central to understanding the methodological contribution of the paper, as it illustrates the specific deep learning architecture used for sprite generation, explaining the core technical approach.",
       "mode": "text_inferred",
       "visualType": "diagram_or_flowchart"
     },
     {
       "filename": "FIG6_1.png",
-      "description": "This figure part (from the larger Figure 6) likely displays a comparison of one or more \"Sarah\" animation sprites, showing their ground truth grayscale, generated grayscale, ground truth color, and generated color forms.",
-      "relevance": "This figure provides visual results demonstrating the proposed method's capability in generating both grayscale and colored sprites for specific characters, offering empirical evidence of its performance by comparing generated outputs against ground truth.",
+      "description": "Each of these figures, as part of Figure 6, presents a single sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6_2.png",
-      "description": "This figure part (from the larger Figure 6) likely displays a comparison of one or more \"Sarah\" animation sprites, showing their ground truth grayscale, generated grayscale, ground truth color, and generated color forms.",
-      "relevance": "This figure provides visual results demonstrating the proposed method's capability in generating both grayscale and colored sprites for specific characters, offering empirical evidence of its performance by comparing generated outputs against ground truth.",
+      "description": "Each of these figures, as part of Figure 6, presents a single sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6_3.png",
-      "description": "This figure part (from the larger Figure 6) likely displays a comparison of one or more \"Sarah\" animation sprites, showing their ground truth grayscale, generated grayscale, ground truth color, and generated color forms.",
-      "relevance": "This figure provides visual results demonstrating the proposed method's capability in generating both grayscale and colored sprites for specific characters, offering empirical evidence of its performance by comparing generated outputs against ground truth.",
+      "description": "Each of these figures, as part of Figure 6, presents a single sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6_4.png",
-      "description": "This figure part (from the larger Figure 6) likely displays a comparison of one or more \"Sarah\" animation sprites, showing their ground truth grayscale, generated grayscale, ground truth color, and generated color forms.",
-      "relevance": "This figure provides visual results demonstrating the proposed method's capability in generating both grayscale and colored sprites for specific characters, offering empirical evidence of its performance by comparing generated outputs against ground truth.",
+      "description": "Each of these figures, as part of Figure 6, presents a single sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6_5.png",
-      "description": "This figure part (from the larger Figure 6) likely displays a comparison of one or more \"Sarah\" animation sprites, showing their ground truth grayscale, generated grayscale, ground truth color, and generated color forms.",
-      "relevance": "This figure provides visual results demonstrating the proposed method's capability in generating both grayscale and colored sprites for specific characters, offering empirical evidence of its performance by comparing generated outputs against ground truth.",
+      "description": "Each of these figures, as part of Figure 6, presents a single sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6_6.png",
+      "description": "This figure, as part of Figure 6, presents an individual sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6_7.png",
+      "description": "This figure, as part of Figure 6, presents an individual sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6_8.png",
+      "description": "This figure, as part of Figure 6, presents an individual sprite from \"Sarah animations,\" displaying its ground truth grayscale, generated grayscale, ground truth color, and generated color versions for comparison.",
+      "relevance": "Collectively, these figures demonstrate the core performance of the proposed method in generating grayscale and color sprites from animation sequences, providing visual evidence of its effectiveness and quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG7.png",
-      "description": "This figure likely presents a selection of generated sprites, organized into three rows: sprites with poses similar to the training set, sprites with poses absent from the training set, and sprites with radically different poses.",
-      "relevance": "This figure demonstrates the versatility and robustness of the sprite generation method across varying input pose conditions, highlighting its ability to generalize to novel poses while also potentially showing limitations for extremely novel ones, providing practical examples for design teams.",
+      "description": "This figure presents a selection of generated sprites, organized into rows, showcasing examples with poses similar to the training set, poses absent from the training set, and radically different poses.",
+      "relevance": "This figure evaluates the model's generalization capabilities across various pose complexities, illustrating its performance on both familiar and novel inputs, and providing insight into its practical utility for a design team.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG8_1.png",
-      "description": "This figure part (from the larger Figure 8) likely illustrates a study on the color problem in sprite generation, specifically showing results when the algorithm's learned colors are used instead of human-chosen colors.",
-      "relevance": "This figure contributes to understanding the colorization aspect of the sprite generation, evaluating the impact of relying on algorithmically learned colors versus human-selected palettes, which is critical for refining the method's realism and creative control.",
+      "description": "Each of these figures, as part of Figure 8, illustrates a case study on the \"color problem,\" specifically comparing sprite colorization results when using the algorithm's learned colors versus human-chosen colors.",
+      "relevance": "These figures delve into a specific technical challenge of color assignment, demonstrating how the algorithm's learned color palettes perform and offering insights into the impact of automated color choices on the final sprite quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG8_2.png",
-      "description": "This figure part (from the larger Figure 8) likely illustrates a study on the color problem in sprite generation, specifically showing results when the algorithm's learned colors are used instead of human-chosen colors.",
-      "relevance": "This figure contributes to understanding the colorization aspect of the sprite generation, evaluating the impact of relying on algorithmically learned colors versus human-selected palettes, which is critical for refining the method's realism and creative control.",
+      "description": "Each of these figures, as part of Figure 8, illustrates a case study on the \"color problem,\" specifically comparing sprite colorization results when using the algorithm's learned colors versus human-chosen colors.",
+      "relevance": "These figures delve into a specific technical challenge of color assignment, demonstrating how the algorithm's learned color palettes perform and offering insights into the impact of automated color choices on the final sprite quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG8_3.png",
-      "description": "This figure part (from the larger Figure 8) likely illustrates a study on the color problem in sprite generation, specifically showing results when the algorithm's learned colors are used instead of human-chosen colors.",
-      "relevance": "This figure contributes to understanding the colorization aspect of the sprite generation, evaluating the impact of relying on algorithmically learned colors versus human-selected palettes, which is critical for refining the method's realism and creative control.",
+      "description": "Each of these figures, as part of Figure 8, illustrates a case study on the \"color problem,\" specifically comparing sprite colorization results when using the algorithm's learned colors versus human-chosen colors.",
+      "relevance": "These figures delve into a specific technical challenge of color assignment, demonstrating how the algorithm's learned color palettes perform and offering insights into the impact of automated color choices on the final sprite quality.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_4.png",
+      "description": "This figure, as part of Figure 8, illustrates a case study on the \"color problem,\" specifically comparing sprite colorization results when using the algorithm's learned colors versus human-chosen colors.",
+      "relevance": "This figure delves into a specific technical challenge of color assignment, demonstrating how the algorithm's learned color palettes perform and offering insights into the impact of automated color choices on the final sprite quality.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG9.png",
-      "description": "This figure likely presents a comparison of six different \"Lucy\" animation sprites, showing their ground truth grayscale, generated grayscale, ground truth color, and generated color forms.",
-      "relevance": "This figure further validates the proposed method's performance by showcasing its ability to generate both grayscale and colored sprites for a different character (\"Lucy\"), reinforcing the generalizability of the approach and providing additional visual evidence of its quality.",
+      "description": "This figure presents results for six different sprites from \"Lucy animations,\" showing each sprite in its ground truth grayscale, generated grayscale, ground truth color, and generated color forms for comparative analysis.",
+      "relevance": "This figure provides additional evaluation of the proposed method's performance on a different character (\"Lucy\"), reinforcing the demonstration of its capability to accurately generate both grayscale and color sprites from animation sequences.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     }

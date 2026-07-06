@@ -2,57 +2,71 @@
   "insights": [
     {
       "filename": "FIG1.png",
-      "description": "This figure likely shows the initial menu screen of a game, presenting various options for the player to interact with before starting gameplay.",
-      "relevance": "This image is relevant as it introduces the user interface and entry point of the educational game, which is a central component of the paper's contribution to health education through interactive media.",
+      "description": "This figure likely shows the initial menu screen of a game, presenting options such as 'New Game,' 'Load Game,' 'Settings,' or 'Exit'.",
+      "relevance": "This image is relevant as it introduces the user interface and starting point of the game developed or discussed in the paper, which is central to the paper's contribution.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG2.png",
-      "description": "This figure appears to represent the opening scene or cinematic sequence that a player experiences at the beginning of the game.",
-      "relevance": "This image likely sets the thematic and narrative context for the game, contributing to the initial engagement and understanding of the game's purpose, which is crucial for the paper's focus on educational game design.",
+      "description": "This figure appears to represent the opening scene or initial gameplay environment of the game, setting the stage for the player's experience.",
+      "relevance": "This image contributes to demonstrating the visual design and narrative introduction of the game, which is a key component of the paper's work, likely a serious game or educational tool.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG3.png",
-      "description": "This figure likely depicts a visual representation within the game where architectural landmarks are mapped onto a human skeleton to highlight specific bone regions susceptible to cancer.",
-      "relevance": "This image is crucial as it illustrates a key educational mechanism of the game, linking real-world structures to anatomical locations to teach about cancer-prone areas, central to the paper's objective of health education.",
+      "description": "This figure likely depicts a human skeletal model with specific bone regions highlighted or overlaid with 'architectural landmarks' to visually indicate areas susceptible to cancer, as part of the game's educational content.",
+      "relevance": "This image is crucial to the paper's contribution by illustrating how complex medical information (cancer-susceptible bone regions) is translated into an understandable and interactive visual format within the game, directly supporting its educational purpose.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG4_1.png",
+      "description": "This figure, without a caption, likely displays an in-game element, character, or environment, potentially representing a stage or challenge within the game.",
+      "relevance": "As a visual component of the game, it probably contributes to illustrating the game's design, challenges, or user interface, which are central to the paper's discussion of the game.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
-      "filename": "FIG4.png",
-      "description": "This figure appears to show three distinct in-game interaction scenes, presented from an isometric perspective, featuring elements from game 'homes' corresponding to Chile (a), Italy (b), and China (c).",
-      "relevance": "This figure demonstrates the game's diverse and culturally specific environments, showcasing how the paper's design incorporates localized contexts for player interaction, which is fundamental to its educational and engagement strategy.",
+      "filename": "FIG4_2.png",
+      "description": "This figure, lacking a specific caption, appears to show another visual aspect of the game, possibly a different gameplay screen, character, or informational display.",
+      "relevance": "It helps to visually present the various facets or progression of the game, reinforcing the paper's focus on the game's design and content.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_3.png",
+      "description": "This figure, without a caption, is presumed to be a screenshot or visual asset from the game, perhaps showcasing a specific interaction, scenario, or part of the game world.",
+      "relevance": "It further exemplifies the visual implementation and interactive elements of the game, supporting the paper's overall description of the game's features and experience.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG5.png",
-      "description": "This figure likely displays an in-game screenshot of a 'Chondrosarcoma boss' character encountered within the Chile-themed section of the game, with its affected region highlighted in brown.",
-      "relevance": "This image highlights a specific game challenge and its visual representation of Chondrosarcoma within a cultural context, directly demonstrating the paper's method of integrating disease education into game mechanics and level design.",
+      "description": "This figure likely presents an in-game 'boss' character representing Chondrosarcoma, depicted with a brown-colored area indicating the affected region, set in a Chilean context.",
+      "relevance": "This image demonstrates a specific application of the game's mechanic where cancer types are personified as bosses and linked to geographical locations, directly showcasing how the game educates players about specific cancers and their characteristics.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG6.png",
-      "description": "This figure appears to be an in-game screenshot featuring an 'Ewing’s Sarcoma boss' from the Italy-themed game segment, with the region affected by the sarcoma visually emphasized in brown.",
-      "relevance": "This figure illustrates another example of a game boss representing a specific cancer type (Ewing's Sarcoma) within a distinct cultural setting, reinforcing the paper's methodology of contextualized health education through gameplay.",
+      "description": "This figure appears to show an in-game 'boss' character symbolizing Ewing's Sarcoma, with a brown area highlighting the affected region, situated within an Italian setting.",
+      "relevance": "Similar to Fig. 5, this image illustrates another instance of the game's design choice to represent specific cancer types (Ewing's Sarcoma) as boss characters tied to real-world locations, crucial for the paper's contribution on educational game design.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG7.png",
-      "description": "This figure likely shows an in-game screenshot of the 'Osteosarcoma boss' found in the China-themed part of the game, with the affected region clearly marked in brown.",
-      "relevance": "This image further exemplifies the paper's core contribution of creating game bosses representing different cancer types (Osteosarcoma) and integrating them into culturally relevant game environments, enhancing the educational impact.",
+      "description": "This figure likely displays an in-game 'boss' character representing Osteosarcoma, with a brown-colored area indicating the affected region, against a Chinese background.",
+      "relevance": "This image further exemplifies the game's core educational approach of integrating different cancer types (Osteosarcoma) as game antagonists in geographically distinct settings, reinforcing the paper's central theme of engaging health education through gameplay.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG8.png",
-      "description": "This figure appears to be a word cloud visualization, displaying a collection of words where the size of each word likely indicates its frequency or importance within a compiled dataset.",
-      "relevance": "This figure likely presents a summary of textual data, possibly derived from player feedback or content analysis, which contributes to the evaluation or understanding of the game's impact and perceived themes, aligning with the paper's assessment of the game's effectiveness.",
+      "description": "This figure likely displays a word cloud visualization, where the size of each word corresponds to its frequency or importance, representing 'unified word cloud results.'",
+      "relevance": "This image is relevant as it visually summarizes qualitative data, possibly from user feedback or textual analysis related to the game or its educational impact, providing insights into key themes or perceptions discussed in the paper.",
       "mode": "text_inferred",
       "visualType": "chart_or_graph"
     }

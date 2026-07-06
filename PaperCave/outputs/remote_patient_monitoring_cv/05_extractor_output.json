@@ -1,0 +1,96 @@
+{
+  "paperTitle": "SENTINELA: A Remote Cyber-Physical Patient Monitoring System",
+  "centralContribution": "This work introduces SENTINELA, a novel remote cyber-physical patient monitoring system leveraging Computer Vision technologies, specifically Optical Character Recognition (OCR), to provide continuous and contactless monitoring of vital signs from any multiparametric monitor screen in Intensive Care Units (ICUs). The system aims to support healthcare teams in decision-making by detecting critical health problems, generating alerts, and minimizing doctor-patient interaction, thereby enhancing comprehensive care and biosafety.",
+  "elements": [
+    {
+      "name": "Central Contribution",
+      "category": "contribution",
+      "description": "A novel remote cyber-physical patient monitoring system, SENTINELA, that uses Computer Vision (OCR) to continuously and contactlessly monitor vital signs from ICU multiparametric monitor screens. It supports healthcare decision-making, detects critical problems, generates alerts, and minimizes doctor-patient interaction, improving comprehensive care and biosafety.",
+      "relevanceScore": 10,
+      "justification": "This is the core innovation and primary objective of the entire paper.",
+      "groupingHint": "System Core",
+      "data": {}
+    },
+    {
+      "name": "Paper Abstract",
+      "category": "abstract",
+      "description": "The global spread of infectious diseases has strained healthcare systems, requiring minimal physical interaction for critically ill patients in ICUs. Traditional monitoring increases workload and biosafety risks. Existing Computer Vision and OCR techniques struggle with diverse real-world factors like text variations, lighting, noise, and dynamic screen layouts, hindering accurate data extraction. SENTINELA addresses this by offering a robust, low-cost, automated solution for remote vital sign monitoring and critical condition alerts.",
+      "relevanceScore": 9,
+      "justification": "Provides the essential background, problem statement, and context for the SENTINELA system.",
+      "groupingHint": "Introduction",
+      "data": {}
+    },
+    {
+      "name": "SENTINELA System Architecture (Figure 1)",
+      "category": "graphical_representation",
+      "description": "A block diagram illustrating the overall architecture of the SENTINELA system, detailing its EVA device, EVA AWS server (with microservices like backend, OCR, CRUD, using SQS, RDS, AMP, S3, EKS, Fargate), and EDEN mobile alert application, and their interactions.",
+      "relevanceScore": 9,
+      "justification": "Crucial for understanding the foundational design and how the different components of the SENTINELA system are integrated to achieve its objectives.",
+      "groupingHint": "System Overview",
+      "data": {}
+    },
+    {
+      "name": "EVA Device Physical Integration in ICU (Figure 2)",
+      "category": "image",
+      "description": "A photograph of the EVA device physically connected and operating with a hospital's ICU physiological multiparametric monitor, showing its real-world application in a clinical setting.",
+      "relevanceScore": 8,
+      "justification": "Demonstrates the practical integration and physical setup of the EVA device within a clinical environment, illustrating its intended use case and physical compatibility with existing hospital equipment.",
+      "groupingHint": "Hardware Component",
+      "data": {}
+    },
+    {
+      "name": "OCR Methodology: Points Of Interest (Figure 4a)",
+      "category": "graphical_representation",
+      "description": "A visual representation defining Points Of Interest (POIs) and their respective bounding areas for each predefined display layout on a multiparametric monitor, which are crucial for the SENTINELA system's OCR processing.",
+      "relevanceScore": 8,
+      "justification": "Highlights a key, novel aspect of the system's computer vision methodology for accurate data extraction, directly supporting the core functionality of the OCR.",
+      "groupingHint": "OCR Implementation Details",
+      "data": {}
+    },
+    {
+      "name": "Paddle OCR Performance Evaluation (Table II)",
+      "category": "table",
+      "description": "A table presenting the percentage accuracy of the Paddle OCR algorithm for various vital signs (SpO2, Temp, RR, HR, SBP, DBP, BP) and overall performance, comparing original and perspective-corrected image processing.",
+      "relevanceScore": 8,
+      "justification": "Shows the superior performance of the chosen OCR method, directly validating the effectiveness and accuracy of the central contribution in vital sign extraction.",
+      "groupingHint": "Results",
+      "data": {}
+    },
+    {
+      "name": "Tesseract OCR Performance Evaluation (Table I)",
+      "category": "table",
+      "description": "A table detailing the percentage accuracy of the Tesseract OCR algorithm for various vital signs (SpO2, Temp, RR, HR, SBP, DBP, BP) and overall performance, comparing original and perspective-corrected image processing.",
+      "relevanceScore": 7,
+      "justification": "Provides comparative baseline data, demonstrating the limitations of alternative OCR methods and justifying the selection of Paddle OCR for the SENTINELA system.",
+      "groupingHint": "Results",
+      "data": {}
+    },
+    {
+      "name": "EDEN Mobile Application Interface (Figure 5)",
+      "category": "image",
+      "description": "Screenshots showcasing key user interface screens of the EDEN mobile application, which allows medical teams to manage ICUs, beds, and patients, view vital signs graphically, and receive alerts.",
+      "relevanceScore": 7,
+      "justification": "Illustrates the user-facing component of the system, demonstrating how medical personnel interact with the alerts and data, vital for understanding the system's usability and overall impact.",
+      "groupingHint": "User Interface",
+      "data": {}
+    },
+    {
+      "name": "EVA Device 3D Model (Figure 3)",
+      "category": "image",
+      "description": "A 3D digital model of the EVA device's physical structure, illustrating its components (fixed bracket, \"neck\", camera case) and how it couples to a physiological monitor, providing a detailed view of its design.",
+      "relevanceScore": 6,
+      "justification": "Provides a detailed visual understanding of the EVA device's physical design and structural components, which is important for comprehending its manufacturing, assembly, and ergonomic considerations for clinical deployment.",
+      "groupingHint": "Hardware Component",
+      "data": {}
+    },
+    {
+      "name": "Tesseract OCR Recognition Errors (Figure 6)",
+      "category": "image",
+      "description": "Visual examples of recognition errors made by the Tesseract OCR algorithm, specifically showing cases where values like \"128\" were missed and \"29.5\" was misread as \"295.0\", particularly with alarm signage and decimal points.",
+      "relevanceScore": 5,
+      "justification": "Highlights a key challenge and limitation of a standard OCR method, providing qualitative evidence for the need for improved solutions like Paddle OCR, validating design choices.",
+      "groupingHint": "OCR Challenges",
+      "data": {}
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "| 3D Environment | CPU (%) | RAM (MB) | GPU (%) |\n|---|---|---|---|\n| Curupira | 8.8 | 530 | 49.0 |\n| Victoria Regia | 29.8 | 537 | 69.0 |\n| Pink Dolphin | 16.0 | 541 | 96.0 |\n| Iara | 7.9 | 544 | 53.9 |\n| Saci | 26.0 | 547 | 50.8 |\n| Tribal Village | 22.6 | 410 | 61.4 |"
+    }
+  ]
+}

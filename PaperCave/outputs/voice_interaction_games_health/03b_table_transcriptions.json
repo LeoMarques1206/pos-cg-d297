@@ -1,0 +1,20 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "### Scenario 1: Game interacts with the player through voice\n- Q1: NPC dialogues do not necessarily need to be in verbal language for the narrative to be understood.\n- Q2: I do not see a difference between reading or listening to NPC dialogues or those of characters controlled by other players.\n- Q3: Voices in games positively affect how I play.\n- Q4: Voice in games motivates me to continue playing.\n- Q5: I prefer to learn about a game’s story through text rather than dialogue.\n- Q6: I enjoy NPCs guiding my gameplay experience.\n- Q7: I feel comfortable listening to and following NPC orders.\n- Q8: I feel comfortable playing with an NPC and another player.\n\n### Scenario 2: Player interacts with another player through voice\n- Q9: I feel more comfortable using interactive social menus for communication than my own voice.\n- Q10: I feel more comfortable using my character’s voice than my own for in-game communication.\n- Q11: I perceive the use of voice to be important in online matchmaking games.\n\n### Scenario 3: Player interacts with the game through voice\n- Q12: I think I would feel comfortable establishing and sustaining a dialogue with an NPC by voice.\n- Q13: I think it would be interesting to influence a cutscene with my voice.\n- Q14: I think asking contextual information questions by voice would be interesting.\n- Q15: I think requesting NPCs to perform tasks in the game would be uninteresting."
+    },
+    {
+      "filename": "TAB2.png",
+      "markdown_content": "| LS | Q1 | | Q2 | | Q3 | | Q4 | | Q5 | | Q6 | | Q7 | | Q8 | |\n|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|\n| | H | AI | H | AI | H | AI | H | AI | H | AI | H | AI | H | AI | H | AI |\n| 1 | 3.90 | 0.00 | 22.37 | 10.00 | 3.90 | 0.00 | 5.19 | 0.00 | 14.29 | 0.00 | 2.60 | 0.00 | 2.60 | 0.00 | 0.00 | 0.00 |\n| 2 | 9.09 | 0.00 | 39.7 | 70.00 | 3.90 | 0.00 | 5.19 | 0.00 | 41.56 | 40.00 | 11.69 | 0.00 | 10.39 | 50.00 | 3.90 | 0.00 |\n| 3 | 9.09 | 0.00 | 14.47 | 20.00 | 11.69 | 0.00 | 31.17 | 10.00 | 15.58 | 50.00 | 18.18 | 0.00 | 35.06 | 20.00 | 9.09 | 30.00 |\n| 4 | 37.66 | 90.0 | 22.37 | 0.00 | 44.16 | 100.00 | 31.17 | 80.00 | 24.68 | 10.00 | 53.25 | 90.00 | 41.56 | 20.00 | 49.35 | 70.00 |\n| 5 | 40.26 | 10.0 | 1.32 | 0.00 | 36.36 | 0.00 | 27.27 | 10.00 | 3.90 | 0.00 | 14.29 | 10.00 | 10.39 | 10.00 | 37.66 | 0.00 |"
+    },
+    {
+      "filename": "TAB3.png",
+      "markdown_content": "| LS | Q9 | | Q10 | | Q11 | |\n|----|----|----|----|----|----|----|\n| | H | AI | H | AI | H | AI |\n| 1 | 10.39 | 10.00 | 14.29 | 0.00 | 0.00 | 0.00 |\n| 2 | 22.08 | 20.00 | 14.29 | 30.00 | 5.19 | 0.00 |\n| 3 | 18.18 | 50.00 | 32.47 | 60.00 | 25.97 | 10.00 |\n| 4 | 24.68 | 20.00 | 22.08 | 0.00 | 0.00 | 50.00 |\n| 5 | 24.68 | 0.00 | 16.88 | 10.00 | 68.83 | 40.00 |"
+    },
+    {
+      "filename": "TAB4.png",
+      "markdown_content": "| LS | Q12 | | Q13 | | Q14 | | Q15 | |\n|----|----|----|----|----|----|----|----|----|\n| | H | AI | H | AI | H | AI | H | AI |\n| 1 | 3.90 | 0.00 | 2.60 | 0.00 | 2.60 | 0.00 | 19.48 | 20.00 |\n| 2 | 9.09 | 0.00 | 9.09 | 0.00 | 10.39 | 0.00 | 28.57 | 60.00 |\n| 3 | 12.99 | 20.00 | 5.19 | 10.00 | 10.39 | 10.00 | 20.78 | 10.00 |\n| 4 | 38.96 | 80.00 | 29.87 | 50.00 | 25.97 | 50.00 | 19.48 | 10.00 |\n| 5 | 35.06 | 0.00 | 53.25 | 40.00 | 50.65 | 40.00 | 11.69 | 0.00 |"
+    }
+  ]
+}

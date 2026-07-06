@@ -1,0 +1,251 @@
+{
+  "paperTitle": "TsetFall: A Comprehensive Dataset for Human Fall Detection with AI-Assisted Annotation",
+  "centralContribution": "This work introduces TsetFall, a comprehensive, fine-grained, and publicly available dataset meticulously generated for human fall detection research, addressing existing dataset limitations in size, diversity, representativeness, and real-world complexity by including precise object location annotations and diverse scenarios. The dataset's annotation process was notably expedited and enhanced by a novel AI-assisted technique devised by the authors, enabling detailed object-level annotations for training and evaluating advanced computer vision algorithms.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution_card",
+      "type": "card",
+      "priority": "primary",
+      "title": "Central Contribution",
+      "category": "contribution",
+      "summary": "TsetFall: a comprehensive dataset for human fall detection with AI-assisted a...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work introduces TsetFall, a comprehensive, fine-grained, and publicly available dataset meticulously generated for human fall detection research, addressing existing dataset limitations in size, diversity, representativeness, and real-world complexity by including precise object location annotations and diverse scenarios. The dataset's annotation process was notably expedited and enhanced by a novel AI-assisted technique devised by the authors, enabling detailed object-level annotations for training and evaluating advanced computer vision algorithms.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Central Contribution of TsetFall Dataset",
+      "whyThisUnit": "This unit directly presents the core innovation and purpose of the paper, serving as the central piece of information for the exhibit.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract_card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "Summary of TsetFall dataset, addressing fall detection challenges with new data.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Human fall detection faces challenges due to limitations in current datasets, which lack size, diversity, real-world complexity, and fine-grained annotations. This scarcity impacts system performance, especially given the global aging population and high incidence of fall-related deaths. TsetFall is introduced to overcome these issues by providing a comprehensive, multi-camera, high-resolution dataset with detailed object-level annotations, including an innovative AI-assisted annotation method.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Abstract of TsetFall Dataset Paper",
+      "whyThisUnit": "This unit provides an essential summary, offering context, problem statement, and an overview of the paper's solution, TsetFall.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "graphical_representation_card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Diverse Scene Example",
+      "category": "graphical_representation",
+      "summary": "Visualizing TsetFall's multi-camera perspectives and complex scenes.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG1",
+        "caption": "Fig. 1: A single scene example (walking with a cane) captured from four distinct camera perspectives, with assorted distrac- tors and potentially colliding objects scattered everywhere.",
+        "description": "This figure shows four distinct camera perspectives of a single indoor scene, featuring a person performing an activity with various distracting objects and variable lighting. It demonstrates the realistic and challenging scenarios captured within the TsetFall dataset.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Figure 1: Diverse Camera Perspectives and Scene Complexity",
+      "whyThisUnit": "This unit features the most important visual element, directly showcasing the diverse and complex scenarios captured by the TsetFall dataset.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#8B5CF6",
+        "colorName": "luminous purple"
+      }
+    },
+    {
+      "id": "image_stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Group of supplemental images.",
+      "whyThisUnit": "This stack groups all other image figures, providing additional visual context for the dataset's setup and annotation process.",
+      "stackLabel": "Other Images",
+      "items": [
+        {
+          "index": 1,
+          "title": "Room Setup Diagram",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Fig. 2: Illustrative diagram of the room setup in which the TsetFall dataset was recorded.",
+            "description": "A diagram illustrating the physical arrangement of the room used for data acquisition, detailing the placement of four cameras and other recording equipment to capture the TsetFall dataset.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Figure 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Fig. 3: (no caption extracted)",
+            "description": "An additional visual element from the paper, illustrating a relevant aspect of the research.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Annotation Bounding Box",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Fig. 4: (a) Overlap of the tracking bounding box (in green) with the object detection algorithm results, and (b) chosen detection (in black) to compose the annotation by the best intersection over union criterion.",
+            "description": "(a) Overlap of the tracking bounding box (in green) with the object detection algorithm results, and (b) chosen detection (in black) to compose the annotation by the best intersection over union criterion.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#8B5CF6",
+        "colorName": "luminous purple"
+      }
+    },
+    {
+      "id": "table_stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Group of comprehensive tables.",
+      "whyThisUnit": "This stack collects all key tables, presenting detailed numerical and comparative data that supports the paper's claims and contribution.",
+      "stackLabel": "Key Tables",
+      "items": [
+        {
+          "index": 1,
+          "title": "Class Distributions",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB1",
+            "caption": null,
+            "description": "A table detailing the frame counts for each video sequence across four cameras, categorized by 'Confounding' (C), 'Fallen' (FN), 'Falling' (FG), and 'Not Fallen' (NF) classes, providing a comprehensive view of the dataset's fine-grained annotations per camera and overall frame count.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 2,
+          "title": "YOLOv8 Performance Camera 4",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB4",
+            "caption": null,
+            "description": "Performance metrics (mAP IOU [0.5:0.95], mAP IOU 0.5, mAP IOU 0.75, AR [20] IOU [0.5:0.95] maxDets 10) for different YOLOv8 models (YOLOv8l, YOLOv8m, YOLOv8s, YOLOv8n) when evaluated on the complete AI-assisted annotated subset of the TsetFall dataset (Camera 4).",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 3,
+          "title": "Fall/NoFall Detection Metrics",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB5",
+            "caption": null,
+            "description": "Evaluation metrics (Sensitivity, Specificity, Geometric Mean) for the simplified 'Fall' and 'NoFall' classification task, performed by different YOLOv8 models (YOLOv8l, YOLOv8m, YOLOv8s, YOLOv8n) on the AI-assisted annotated TsetFall dataset.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 4,
+          "title": "TsetFall vs. Existing Datasets",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB6",
+            "caption": null,
+            "description": "A comparative table highlighting the superior features and advantages of the TsetFall dataset against other RGB fall detection datasets (Multicam Fall, UR Fall Detection, UMA Fall) across various criteria like dataset size, environment, camera viewpoints, resolution, data acquisition technology, number of falls/ADLs, fall/ADL types, and annotation details.",
+            "chartType": "comparison_table",
+            "title": null,
+            "data": {}
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#8B5CF6",
+        "colorName": "luminous purple"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Central Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Diverse Scene Example",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Other Images",
+      "score": 0.7,
+      "confidence": "medium",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Key Tables",
+      "score": 0.0,
+      "confidence": "low",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "paperTitle": "Viral.izo 2.0: An Enhanced Casual Educational Game for Resource Management Against Viral Threats",
+  "centralContribution": "This work presents Viral.izo 2.0, an enhanced casual educational game designed to foster resource management skills against emerging viral attacks, extending a previous version by incorporating three new game levels of progressive difficulty, three distinct virus variants with unique behaviors, two novel minigames, and a local ranking system, alongside a comprehensive User Experience (UX) assessment.",
+  "elements": [
+    {
+      "name": "Viral.izo 2.0 Enhancements",
+      "category": "contribution",
+      "description": "Viral.izo 2.0 is an enhanced casual educational game designed to foster resource management skills against viral attacks. It extends a previous version by incorporating three new game levels of progressive difficulty, three distinct virus variants with unique behaviors, two novel minigames, and a local ranking system, all supported by a comprehensive User Experience (UX) assessment.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the central contribution of the paper, detailing the core innovations and improvements of Viral.izo 2.0.",
+      "groupingHint": "Paper Overview",
+      "data": {}
+    },
+    {
+      "name": "Paper Abstract",
+      "category": "abstract",
+      "description": "The COVID-19 pandemic highlighted the critical need for effective health awareness and promotion, especially among children and young people. Digital games emerged as a significant tool for mental well-being and health promotion. While existing educational games address health, Viral.izo 2.0 aims to offer a more engaging and comprehensive experience by focusing on strategic resource management against evolving viral threats through an updated game design and rigorous user evaluation.",
+      "relevanceScore": 10,
+      "justification": "This provides a concise summary of the paper's context, problem, and general approach, fulfilling the requirement for an abstract element.",
+      "groupingHint": "Paper Overview",
+      "data": {}
+    },
+    {
+      "name": "FIG6.png - Game Structure Flow Diagram",
+      "category": "graphical_representation",
+      "description": "A flow diagram illustrating the overall structure and progression of Viral.izo version 2.0, likely showing game states, levels, and transitions, providing a high-level overview of the game's architecture and player journey.",
+      "relevanceScore": 9,
+      "justification": "This figure represents the 'system pipeline or architecture' of the game, making it the single most important graphical representation for understanding the game's design and new features.",
+      "groupingHint": "Game Architecture",
+      "data": {}
+    },
+    {
+      "name": "FIG14.png - Overall CEGE Questionnaire Results",
+      "category": "graph",
+      "description": "This figure displays the aggregated average results and standard deviations for all questions from the Core Elements of Gaming Experience (CEGE) questionnaire, which were answered using a 7-point Likert scale, summarizing the user experience assessment.",
+      "relevanceScore": 9,
+      "justification": "This graph provides a consolidated statistical summary of the user experience (UX) assessment, which is a critical part of the paper's evaluation of the enhanced game.",
+      "groupingHint": "UX Assessment",
+      "data": {}
+    },
+    {
+      "name": "FIG3.png - Virus Variants and Enemies",
+      "category": "image",
+      "description": "This figure illustrates the primary antagonists in the Viral.izo game, showcasing the original virus, its three newly added variants (Variant 1, Variant 2, and Variant 3), and a bacteria enemy, each with distinct visual characteristics and behaviors.",
+      "relevanceScore": 8,
+      "justification": "This image is central to the paper's contribution by visually detailing the new virus variants and bacteria, which are key gameplay elements designed to enhance the challenge and educational aspects of Viral.izo 2.0.",
+      "groupingHint": "Game Mechanics & Design",
+      "data": {}
+    },
+    {
+      "name": "FIG10.png - Minigame 2: Endless Runner",
+      "category": "image",
+      "description": "This figure displays a sequence of keyframes from 'Minigame 2,' showing the player's character (a vaccine dose) navigating through an environment and avoiding virus enemies, with score bonuses related to invincibility duration.",
+      "relevanceScore": 8,
+      "justification": "This image illustrates one of the two novel minigames, a key new feature in Viral.izo 2.0 designed to engage players and offer health boosters, directly supporting the paper's contribution of an extended and improved educational game.",
+      "groupingHint": "New Features",
+      "data": {}
+    },
+    {
+      "name": "FIG9_1.png - Minigame 1: Pandemic Events Card Game",
+      "category": "image",
+      "description": "This figure displays example screens from 'Minigame 1,' a card-based educational game where players chronologically order 8 of 16 historical COVID-19 pandemic events to earn bonus points.",
+      "relevanceScore": 7,
+      "justification": "This image provides a visual example of one of the new minigames introduced in Viral.izo 2.0, serving as a health booster and enhancing player engagement, directly supporting the paper's contribution.",
+      "groupingHint": "New Features",
+      "data": {}
+    },
+    {
+      "name": "FIG7.png - Scientist Triggering Minigames",
+      "category": "image",
+      "description": "This image depicts a game screen where a pop-up message from a scientist appears on the map, offering the player a size bonus and the option to initiate Minigames 1 or 2.",
+      "relevanceScore": 7,
+      "justification": "This figure illustrates a key new gameplay mechanic in Viral.izo 2.0 – the introduction of minigames as health boosters, which are central to the paper's contribution of extended gameplay and engagement features.",
+      "groupingHint": "Game Mechanics & Design",
+      "data": {}
+    }
+  ]
+}

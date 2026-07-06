@@ -1,0 +1,435 @@
+{
+  "paperTitle": "SENTINELA: A Remote Cyber-Physical Patient Monitoring System",
+  "centralContribution": "This work introduces SENTINELA, a novel remote cyber-physical patient monitoring system leveraging Computer Vision technologies, specifically Optical Character Recognition (OCR), to provide continuous and contactless monitoring of vital signs from any multiparametric monitor screen in Intensive Care Units (ICUs). The system aims to support healthcare teams in decision-making by detecting critical health problems, generating alerts, and minimizing doctor-patient interaction, thereby enhancing comprehensive care and biosafety.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "SENTINELA's Core Contribution",
+      "category": "contribution",
+      "summary": "A novel cyber-physical system for remote ICU patient monitoring using Compute...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work introduces SENTINELA, a novel remote cyber-physical patient monitoring system leveraging Computer Vision technologies, specifically Optical Character Recognition (OCR), to provide continuous and contactless monitoring of vital signs from any multiparametric monitor screen in Intensive Care Units (ICUs). The system aims to support healthcare teams in decision-making by detecting critical health problems, generating alerts, and minimizing doctor-patient interaction, thereby enhancing comprehensive care and biosafety.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Central Contribution",
+      "whyThisUnit": "This card presents the main innovation of the paper, detailing the purpose and key technologies of the SENTINELA system.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "Overview of SENTINELA, its problem context, and robust solution for vital sig...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The global spread of infectious diseases has strained healthcare systems, requiring minimal physical interaction for critically ill patients in ICUs. Traditional monitoring increases workload and biosafety risks. Existing Computer Vision and OCR techniques struggle with diverse real-world factors like text variations, lighting, noise, and dynamic screen layouts, hindering accurate data extraction. SENTINELA addresses this by offering a robust, low-cost, automated solution for remote vital sign monitoring and critical condition alerts.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Paper Abstract",
+      "whyThisUnit": "Summarizes the paper's context, problem statement, and the proposed solution, SENTINELA.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "SENTINELA System Architecture",
+      "category": "graphical_representation",
+      "summary": "Overall block diagram of SENTINELA system, components, and interactions.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG1",
+        "caption": "Fig. 1: SENTINELA architecture.",
+        "description": "A block diagram illustrating the overall architecture of the SENTINELA system, detailing its EVA device, EVA AWS server (with microservices like backend, OCR, CRUD, using SQS, RDS, AMP, S3, EKS, Fargate), and EDEN mobile alert application, and their interactions.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "SENTINELA System Architecture (Figure 1)",
+      "whyThisUnit": "This card presents the most important visual element, showing the complete system architecture at a glance.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Various images related to system components, deployment, and OCR challenges.",
+      "whyThisUnit": "Groups all relevant photographic and diagrammatic figures (excluding the main architectural diagram) to illustrate physical components, application interfaces, and OCR error examples.",
+      "stackLabel": "Visual Components & Errors",
+      "items": [
+        {
+          "index": 0,
+          "title": "EVA Device in Operation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Fig. 2: An EVA device in operation, coupled to a hospital’s ICU physiological multiparametric monitor.",
+            "description": "A photograph of the EVA device physically connected and operating with a hospital's ICU physiological multiparametric monitor, showing its real-world application in a clinical setting.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "EVA Device 3D Model",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Fig. 3: The 3D digital model of the EVA’s physical structure coupled to the physiological multiparametric monitor: (1) fixed bracket, (2) “neck”, (3) camera case, and (4) power supply.",
+            "description": "A 3D digital model of the EVA device's physical structure, illustrating its components (fixed bracket, \"neck\", camera case) and how it couples to a physiological monitor, providing a detailed view of its design.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "OCR POIs Part 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_1",
+            "caption": "(no caption extracted)",
+            "description": "Visual representation of Points Of Interest (POIs) and bounding areas for OCR processing.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "OCR POIs Part 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_2",
+            "caption": "(no caption extracted)",
+            "description": "Visual representation of Points Of Interest (POIs) and bounding areas for OCR processing.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "OCR POIs Part 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_3",
+            "caption": "(no caption extracted)",
+            "description": "Visual representation of Points Of Interest (POIs) and bounding areas for OCR processing.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "OCR POIs Part 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_4",
+            "caption": "(no caption extracted)",
+            "description": "Visual representation of Points Of Interest (POIs) and bounding areas for OCR processing.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "EDEN Mobile App Interface",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5: Some of the main screens of the EDEN mobile application.",
+            "description": "Screenshots showcasing key user interface screens of the EDEN mobile application, which allows medical teams to manage ICUs, beds, and patients, view vital signs graphically, and receive alerts.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Tesseract OCR Errors",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Fig. 6: Recognition errors using the Tesseract OCR algorithm. Instead of 128, it returned an empty value, and instead of 29.5, it returned 295.0",
+            "description": "Visual examples of recognition errors made by the Tesseract OCR algorithm, specifically showing cases where values like \"128\" were missed and \"29.5\" was misread as \"295.0\", particularly with alarm signage and decimal points.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Paddle OCR Errors",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Fig. 7: Recognition errors using the Paddle OCR algorithm in the mean arterial pressure highlighted in a small bounding box colored in red.",
+            "description": "Visual examples of recognition errors using the Paddle OCR algorithm in the mean arterial pressure highlighted in a small bounding box colored in red.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "table-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Performance evaluations of Tesseract and Paddle OCR algorithms.",
+      "whyThisUnit": "Compiles all tabular data, specifically detailing the accuracy and performance of different OCR algorithms used in the system.",
+      "stackLabel": "OCR Performance Evaluation",
+      "items": [
+        {
+          "index": 0,
+          "title": "Tesseract OCR Performance",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "A table detailing the percentage accuracy of the Tesseract OCR algorithm for various vital signs (SpO2, Temp, RR, HR, SBP, DBP, BP) and overall performance, comparing original and perspective-corrected image processing.",
+            "chartType": "table",
+            "title": "Table I: Tesseract OCR results for each vital sign.",
+            "data": {
+              "columns": [
+                "Measure",
+                "Original Ove...",
+                "Original Ima...",
+                "Corrected Ov...",
+                "Corrected Im..."
+              ],
+              "rows": [
+                [
+                  "SpO2",
+                  "98.66",
+                  "98.45",
+                  "88.53",
+                  "82.56"
+                ],
+                [
+                  "Temp",
+                  "90.25",
+                  "90.94",
+                  "64.24",
+                  "64.74"
+                ],
+                [
+                  "RR",
+                  "55.07",
+                  "54.29",
+                  "88.91",
+                  "90.82"
+                ],
+                [
+                  "HR",
+                  "19.50",
+                  "18.86",
+                  "44.55",
+                  "44.60"
+                ],
+                [
+                  "SBP",
+                  "88.34",
+                  "88.31",
+                  "89.48",
+                  "89.46"
+                ],
+                [
+                  "DBP",
+                  "70.36",
+                  "70.31",
+                  "53.73",
+                  "53.64"
+                ],
+                [
+                  "BP",
+                  "97.13",
+                  "97.13",
+                  "91.20",
+                  "91.20"
+                ],
+                [
+                  "Total",
+                  "74.19",
+                  "72.45",
+                  "74.38",
+                  "73.20"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Paddle OCR Performance",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "A table presenting the percentage accuracy of the Paddle OCR algorithm for various vital signs (SpO2, Temp, RR, HR, SBP, DBP, BP) and overall performance, comparing original and perspective-corrected image processing.",
+            "chartType": "table",
+            "title": "Table II: Paddle OCR results for each vital sign.",
+            "data": {
+              "columns": [
+                "Measure",
+                "Original Ove...",
+                "Original Ima...",
+                "Corrected Ov...",
+                "Corrected Im..."
+              ],
+              "rows": [
+                [
+                  "SpO2",
+                  "100.00",
+                  "100.00",
+                  "99.81",
+                  "100.00"
+                ],
+                [
+                  "Temp",
+                  "99.24",
+                  "100.00",
+                  "99.24",
+                  "100.00"
+                ],
+                [
+                  "RR",
+                  "98.66",
+                  "100.00",
+                  "98.85",
+                  "100.00"
+                ],
+                [
+                  "HR",
+                  "99.62",
+                  "99.80",
+                  "99.62",
+                  "99.80"
+                ],
+                [
+                  "SBP",
+                  "100.00",
+                  "100.00",
+                  "100.00",
+                  "100.00"
+                ],
+                [
+                  "DBP",
+                  "100.00",
+                  "100.00",
+                  "100.00",
+                  "100.00"
+                ],
+                [
+                  "BP",
+                  "99.04",
+                  "99.03",
+                  "98.85",
+                  "98.84"
+                ],
+                [
+                  "Total",
+                  "99.51",
+                  "99.82",
+                  "None",
+                  "None"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "SENTINELA's Core Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "SENTINELA System Architecture",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Visual Components & Errors",
+      "score": 0.9,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "OCR Performance Evaluation",
+      "score": 0.9,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

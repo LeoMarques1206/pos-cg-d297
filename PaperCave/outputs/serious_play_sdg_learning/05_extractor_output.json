@@ -1,0 +1,87 @@
+{
+  "paperTitle": "SIB Game: A Games for Change Platform for Sustainable Development Goals",
+  "centralContribution": "This paper introduces SIB Game, an innovative Games for Change (G4C) platform designed to engage players in tackling socio-environmental and health challenges aligned with the 17 Sustainable Development Goals (SDGs). It provides a structured summary of its development and early validation, emphasizing its role in fostering critical thinking, collaboration, and behavior change towards sustainability through interactive, challenge-based learning and gamified mechanics.",
+  "elements": [
+    {
+      "name": "SIB Game Platform for SDG Engagement",
+      "category": "contribution",
+      "description": "Introduction of SIB Game, an innovative Games for Change (G4C) platform designed to engage players in tackling socio-environmental and health challenges aligned with the 17 Sustainable Development Goals (SDGs), fostering critical thinking, collaboration, and behavior change towards sustainability through interactive, challenge-based learning and gamified mechanics.",
+      "relevanceScore": 10,
+      "justification": "This is the central innovation and the primary reason for the paper's existence, directly summarizing the core achievement.",
+      "groupingHint": "Core Research Output",
+      "data": {}
+    },
+    {
+      "name": "SIB Game: Addressing SDG Implementation Gap",
+      "category": "abstract",
+      "description": "The paper addresses the challenge of translating theoretical sustainability knowledge into actionable change, particularly regarding the 17 Sustainable Development Goals (SDGs), due to low engagement in traditional training and lack of scalable practical tools. It introduces SIB Game, a Games for Change (G4C) platform, as a solution to provide structured, SDG-aligned content and practical engagement for both educational and corporate needs, leveraging gamified mechanics to foster critical thinking and collaborative problem-solving.",
+      "relevanceScore": 9,
+      "justification": "Provides the essential context, problem statement, and a concise overview of the proposed solution (SIB Game), serving as a comprehensive summary of the paper's core.",
+      "groupingHint": "Paper Summary",
+      "data": {}
+    },
+    {
+      "name": "SIB Game Gameplay - Move Phase",
+      "category": "graphical_representation",
+      "description": "A screenshot of the game's interface during a player's move phase, likely showing the game board and available actions, central to understanding the core gameplay loop.",
+      "relevanceScore": 9,
+      "justification": "This figure is crucial for understanding how the game visually operates during active gameplay, representing the main interaction and game board. It's the most important visual of the system in action.",
+      "groupingHint": "Core Gameplay Mechanics",
+      "data": {}
+    },
+    {
+      "name": "Original SIB Physical Board Game",
+      "category": "image",
+      "description": "A photograph of the original physical board game version of SIB Game, showcasing its layout and components, providing historical context for the digital adaptation.",
+      "relevanceScore": 8,
+      "justification": "Essential for understanding the evolution of the SIB Game from its physical roots to the digital platform, highlighting the inspiration and foundational design.",
+      "groupingHint": "Historical Context and Design Origin",
+      "data": {}
+    },
+    {
+      "name": "SIB Game Main Home Screen",
+      "category": "image",
+      "description": "A screenshot of the main home screen or menu of the SIB Game, representing the initial user interface and entry point for players into the online platform.",
+      "relevanceScore": 7,
+      "justification": "This image shows the user's first interaction with the game, illustrating the initial experience and overall presentation of the platform.",
+      "groupingHint": "User Interface and Initial Experience",
+      "data": {}
+    },
+    {
+      "name": "SIB Game Room Creation and Character Selection",
+      "category": "image",
+      "description": "A screenshot of the user interface allowing players to both create a game room and select a character simultaneously, illustrating key setup processes for multiplayer sessions and player personalization.",
+      "relevanceScore": 7,
+      "justification": "This figure combines two crucial setup steps for players, demonstrating how they configure their game environment and choose their in-game persona, particularly relevant for the multiplayer aspect.",
+      "groupingHint": "Game Setup and Player Personalization",
+      "data": {}
+    },
+    {
+      "name": "SIB Game Online Room Creation Interface",
+      "category": "image",
+      "description": "A screenshot of the user interface for creating online game rooms within the SIB Game application, demonstrating a core functionality for multiplayer interaction.",
+      "relevanceScore": 6,
+      "justification": "Highlights a fundamental feature for multiplayer engagement, showing how players initiate new game sessions and interact within the platform.",
+      "groupingHint": "Multiplayer Setup",
+      "data": {}
+    },
+    {
+      "name": "SIB Game Character Selection",
+      "category": "image",
+      "description": "A dedicated user interface screen for players to choose their character within the SIB Game, highlighting a crucial step in personalizing the player's experience.",
+      "relevanceScore": 6,
+      "justification": "This element details the character selection mechanism, which is important for player agency and role-playing within the game's SDG-aligned professions.",
+      "groupingHint": "Game Setup and Player Personalization",
+      "data": {}
+    },
+    {
+      "name": "SIB Game Pass Action and Global Events",
+      "category": "image",
+      "description": "Screenshots of multiple in-game screens, including a 'Pass action' option and 'News Around the World' screens with 'Luck' or 'Setback' choices, illustrating various event-driven and passive gameplay mechanics.",
+      "relevanceScore": 5,
+      "justification": "This figure showcases dynamic and unpredictable elements of the game, such as global events (Luck/Setback) and the basic 'Pass' action, adding depth to the gameplay mechanics.",
+      "groupingHint": "Dynamic Gameplay Elements",
+      "data": {}
+    }
+  ]
+}

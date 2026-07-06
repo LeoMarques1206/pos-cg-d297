@@ -1,0 +1,87 @@
+{
+  "paperTitle": "Caturama VR: An English-Localized Virtual Reality Serious Game for Brazilian Folklore",
+  "centralContribution": "This paper presents \"Caturama VR,\" an English-localized Virtual Reality (VR) serious game developed for the Meta Quest 2, designed to immerse players in Brazilian folklore and legends, featuring an indigenous protagonist Caturama, an optimized VR interface, dynamic inventory management, and visually captivating special effects. The work details the game's advanced 3D graphics, narrative interaction, and comprehensive pre-user VR testing by the development team, which significantly enhanced interaction quality, gameplay balance, immersion, presence, and overall performance.",
+  "elements": [
+    {
+      "name": "Caturama VR: A Virtual Reality Serious Game for Brazilian Folklore",
+      "category": "contribution",
+      "description": "This paper presents \"Caturama VR,\" an English-localized Virtual Reality (VR) serious game developed for the Meta Quest 2, designed to immerse players in Brazilian folklore and legends, featuring an indigenous protagonist Caturama, an optimized VR interface, dynamic inventory management, and visually captivating special effects. The work details the game's advanced 3D graphics, narrative interaction, and comprehensive pre-user VR testing by the development team, which significantly enhanced interaction quality, gameplay balance, immersion, presence, and overall performance.",
+      "relevanceScore": 10,
+      "justification": "This is the explicit central contribution defined by the paper summary.",
+      "groupingHint": "Overall Game Concept",
+      "data": {}
+    },
+    {
+      "name": "Abstract Summary",
+      "category": "abstract",
+      "description": "Despite VR's potential for immersive cultural heritage experiences, its application in exploring cultural heritage remains largely untapped. VR game development faces challenges such as hardware limitations, high costs, user comfort issues (motion sickness, eye strain), content creation complexity, intuitive UI design, and technical hurdles like latency. Existing digital games incorporating Brazilian folklore often lack deep VR integration or focus on simpler mechanics. This paper addresses these gaps by creating \"Caturama VR,\" a VR experience that deeply embeds Brazilian folklore into interactive gameplay and decision-making processes, aiming to promote cultural heritage in an immersive manner.",
+      "relevanceScore": 9,
+      "justification": "Provides the foundational context, problem, and purpose of the paper as a summary of the abstract content.",
+      "groupingHint": "Introduction",
+      "data": {}
+    },
+    {
+      "name": "Caturama’s VR Journey Map (FIG6)",
+      "category": "graphical_representation",
+      "description": "This image likely presents a diagram or map outlining Caturama’s VR journey, charting paths through folklore legends in a virtual world to acquire precious gems.",
+      "relevanceScore": 9,
+      "justification": "This figure is crucial for understanding the game's overarching structure, narrative flow, and player progression, making it a key visual representation of the game's core design.",
+      "groupingHint": "Game Structure and Narrative",
+      "data": {}
+    },
+    {
+      "name": "Computational Resource Consumption per 3D Environment (TAB1)",
+      "category": "table",
+      "description": "This table details the average CPU, RAM, and GPU consumption for different 3D environments within the Caturama VR game, providing insights into performance optimization.",
+      "relevanceScore": 8,
+      "justification": "Presents quantitative results critical for evaluating the technical performance and optimization efforts of the VR game on the Meta Quest 2, directly supporting the technical aspects of the contribution.",
+      "groupingHint": "Performance Metrics",
+      "data": {}
+    },
+    {
+      "name": "Mythical Brazilian Folklore Beings (FIG4)",
+      "category": "image",
+      "description": "This image likely presents visual representations of several mythical Brazilian folklore beings, including Iara, Curupira, Pink Dolphin (in human and aquatic forms), Saci, and Victoria Regia (in human and aquatic forms).",
+      "relevanceScore": 8,
+      "justification": "Directly illustrates the core cultural heritage content that the game aims to promote, showing the specific characters central to the narrative and minigames.",
+      "groupingHint": "Cultural Content",
+      "data": {}
+    },
+    {
+      "name": "Meta Quest 2 Controller Mapping (FIG12_2)",
+      "category": "image",
+      "description": "This image likely illustrates the mapping of event control mechanics for the VR game, detailing how player inputs on the controllers correspond to in-game actions.",
+      "relevanceScore": 7,
+      "justification": "Explains the fundamental interaction design of the VR game, crucial for understanding how players engage with the virtual environment and its optimized VR interface.",
+      "groupingHint": "Interaction Design",
+      "data": {}
+    },
+    {
+      "name": "Caturama VR Opening Scene (FIG1)",
+      "category": "image",
+      "description": "This image likely shows the opening scene of the Caturama VR game, as experienced through a Meta Quest 2 device, depicting the initial virtual environment presented to the player.",
+      "relevanceScore": 7,
+      "justification": "Provides an initial visual impression of the immersive VR environment, demonstrating the aesthetic and user experience that forms the basis of the game, supporting the immersion aspect of the contribution.",
+      "groupingHint": "Game Introduction",
+      "data": {}
+    },
+    {
+      "name": "In-Game Encounter with Iara (FIG7)",
+      "category": "image",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore character, Iara, likely related to her rhythm and memory-based minigame.",
+      "relevanceScore": 6,
+      "justification": "Illustrates a specific interaction with one of the primary mythical characters, detailing how the folklore elements are integrated into interactive gameplay and narrative.",
+      "groupingHint": "Minigame Encounters",
+      "data": {}
+    },
+    {
+      "name": "In-Game Encounter with Saci (FIG10)",
+      "category": "image",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore character, Saci, likely related to his platform minigame.",
+      "relevanceScore": 6,
+      "justification": "Demonstrates another unique mythical character interaction, reinforcing the game's focus on diverse engagements with folklore and its narrative interaction.",
+      "groupingHint": "Minigame Encounters",
+      "data": {}
+    }
+  ]
+}

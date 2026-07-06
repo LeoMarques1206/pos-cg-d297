@@ -1,0 +1,67 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure likely shows a screenshot of the main home screen or menu of the SIB Game.",
+      "relevance": "This image is relevant as it introduces the user interface and entry point of the online SIB Game, demonstrating the initial experience for players.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure appears to be a photograph of the physical board version of the SIB Game, showcasing its layout and components.",
+      "relevance": "This image is relevant as it provides context for the digital adaptation, illustrating the original game design that inspired the online version discussed in the paper.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure likely displays a screenshot of the user interface for creating online game rooms within the SIB Game application.",
+      "relevance": "This image is relevant as it demonstrates a core functionality for multiplayer interaction in the online SIB Game, showing how players can initiate new game sessions.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure appears to be a screenshot of the user interface that allows players to both create a game room and select a character simultaneously.",
+      "relevance": "This image is relevant as it illustrates key setup processes for players, detailing how they configure their game environment and choose their in-game persona in the online SIB Game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure likely shows a dedicated user interface screen for players to choose their character within the SIB Game.",
+      "relevance": "This image is relevant as it highlights a crucial step in personalizing the player's experience, demonstrating the character selection mechanism in the online SIB Game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure appears to be a screenshot of the game's interface during a player's move phase, likely showing the game board and available actions.",
+      "relevance": "This image is relevant as it illustrates a fundamental aspect of gameplay, demonstrating how player turns and movement are represented in the online SIB Game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This figure likely displays a screenshot of the user interface presenting a 'Solve' option to the player during gameplay.",
+      "relevance": "This image is relevant as it showcases a specific game mechanic or action available to players, demonstrating problem-solving aspects within the online SIB Game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8.png",
+      "description": "This figure appears to be a screenshot of the user interface that provides a 'Negotiate' option for players during the game.",
+      "relevance": "This image is relevant as it highlights an interactive and strategic gameplay element, demonstrating how players can engage in negotiation within the online SIB Game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9.png",
+      "description": "This figure likely shows screenshots of multiple in-game screens, including a 'Pass action' option and 'News Around the World' screens with 'Luck' or 'Setback' choices.",
+      "relevance": "This image is relevant as it illustrates various event-driven and passive gameplay mechanics, showcasing the dynamism and unpredictability introduced by 'News' events and basic turn actions in the online SIB Game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

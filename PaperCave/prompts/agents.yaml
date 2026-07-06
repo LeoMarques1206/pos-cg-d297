@@ -104,8 +104,7 @@ extractor:
     CRITICAL INSTRUCTIONS:
     - For the "abstract" element: You MUST extract a summary of the paper's actual abstract, context, and problem. DO NOT output a generic description of what an abstract is.
     - For the "contribution" element: You MUST write a clear summary of the actual central contribution/innovation of the paper.
-    - **Table Extraction**: For the "table" elements, you MUST read the paper text to extract the headers and rows, and format them into the `data` field as: `{"columns": ["Col1", "Col2"], "rows": [["val1", "val2"], ["val3", "val4"]]}`.
-    - **Germinated Image Linking**: If a table's rows correspond to sub-images (germinated images) of a figure (e.g., Table 1 describes expressions in FIG_2_1, FIG_2_2), you MUST add a `row_links` array to the `data` dict. This array must have the exact same length as `rows`. Each element is the exact filename of the sub-image (e.g., `FIG_2_1.png`) linked to that row, or `null` if none. Use the Vision Analyst insights to help correlate rows with sub-images.
+    - **Table Extraction**: For the "table" elements, you MUST read the paper text to extract the headers and rows, and format them into the `data` field as: `{"columns": ["Col1", "Col2"], "rows": [["val1", "val2"], ["val3", "val4"]]}`. Ensure that tables correctly transcribe all their textual columns and rows.
     - Identify which figures from the paper correspond to graphical_representation, image, graph, or table.
     - For each element, identify: name, category, description, relevanceScore (1-10), justification, groupingHint, and table data (for tables).
 

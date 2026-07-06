@@ -1,0 +1,431 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This image is a screenshot of the \"Viral.izo 2.0\" game start screen, featuring the game title, options like \"Play,\" \"Credits,\" and \"Exit,\" and a central virus-like character.",
+      "relevance": "This figure introduces the main subject of the paper, Viral.izo 2.0, by showing its initial interface, highlighting the game's identity and basic functionality.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG10.png",
+      "description": "This figure displays a sequence of keyframes from \"Minigame2,\" showing the player's character (a vaccine dose) navigating through an environment and avoiding virus enemies, with score bonuses related to invincibility duration.",
+      "relevance": "This image illustrates a new feature of Viral.izo 2.0, Minigame 2, which is designed to engage players and offer health boosters, directly supporting the paper's contribution of an extended and improved educational game.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG11_1.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_10.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_11.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_12.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_13.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_14.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_15.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_16.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_17.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_18.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_2.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_3.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_4.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_5.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_6.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_7.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_8.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG11_9.png",
+      "description": "This figure likely presents raw data or a summarized visualization (e.g., a bar chart showing distributions) of responses to positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures contribute to the paper's user experience (UX) assessment of Viral.izo 2.0, providing empirical data on user perception of the game's design and effectiveness.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_1.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_2.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_3.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_4.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_5.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_6.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_7.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG12_8.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to a second set of positively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures continue to illustrate the user experience (UX) assessment of Viral.izo 2.0, providing further empirical data from the questionnaire to support the paper's evaluation of the game's improvements.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_1.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_10.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_11.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_12.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_2.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_3.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_4.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_5.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_6.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_7.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_8.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG13_9.png",
+      "description": "This figure likely presents raw data or a summarized visualization of responses to negatively worded questions from the CEGE questionnaire, using a 7-point Likert scale.",
+      "relevance": "These figures provide insight into potential negative aspects or areas for improvement identified during the user experience (UX) assessment of Viral.izo 2.0, which is crucial for a comprehensive evaluation.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG14.png",
+      "description": "This figure displays the aggregated average results and standard deviations for all questions from the CEGE questionnaire, which were answered using a 7-point Likert scale.",
+      "relevance": "This figure provides a consolidated statistical summary of the user experience (UX) assessment, allowing for an overall understanding of user satisfaction and specific areas of strength or weakness in Viral.izo 2.0.",
+      "mode": "visual",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This image shows the opening scene of the Viral.izo game, likely presenting the initial narrative or setting before gameplay begins.",
+      "relevance": "This figure helps establish the game's theme and visual style at its outset, contributing to the understanding of the educational game's overall presentation.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure illustrates the primary antagonists in the Viral.izo game, showcasing the original virus, its three newly added variants, and a bacteria enemy, each with distinct visual characteristics.",
+      "relevance": "This figure is central to the paper's contribution by visually detailing the new virus variants and bacteria, which are key gameplay elements designed to enhance the challenge and educational aspects of Viral.izo 2.0.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_1.png",
+      "description": "This figure showcases various visual effects, likely generated using the Unity particle system, associated with the virus and its three variants in the game.",
+      "relevance": "This figure demonstrates the enhanced visual fidelity and gameplay feedback implemented in Viral.izo 2.0, supporting the paper's claim of improved player engagement through new visual effects.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_2.png",
+      "description": "This figure showcases various visual effects, likely generated using the Unity particle system, associated with the virus and its three variants in the game.",
+      "relevance": "This figure demonstrates the enhanced visual fidelity and gameplay feedback implemented in Viral.izo 2.0, supporting the paper's claim of improved player engagement through new visual effects.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_3.png",
+      "description": "This figure showcases various visual effects, likely generated using the Unity particle system, associated with the virus and its three variants in the game.",
+      "relevance": "This figure demonstrates the enhanced visual fidelity and gameplay feedback implemented in Viral.izo 2.0, supporting the paper's claim of improved player engagement through new visual effects.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_4.png",
+      "description": "This figure showcases various visual effects, likely generated using the Unity particle system, associated with the virus and its three variants in the game.",
+      "relevance": "This figure demonstrates the enhanced visual fidelity and gameplay feedback implemented in Viral.izo 2.0, supporting the paper's claim of improved player engagement through new visual effects.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_1.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_2.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_3.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_4.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_5.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_6.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_7.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_8.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_9.png",
+      "description": "This figure displays various icons representing collectible items within the game, such as health boosters or other resources.",
+      "relevance": "These figures illustrate the in-game collectibles that players interact with, directly supporting the paper's discussion of game mechanics designed to help players manage health resources and progress.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure presents a flow diagram illustrating the overall structure and progression of Viral.izo version 2.0, likely showing game states, levels, and transitions.",
+      "relevance": "This diagram provides a high-level overview of the game's architecture and player journey, helping to understand the design and new features implemented in Viral.izo 2.0.",
+      "mode": "visual",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This image depicts a game screen where a pop-up message from a scientist appears on the map, offering the player a size bonus and the option to initiate Minigames 1 or 2.",
+      "relevance": "This figure illustrates a key new gameplay mechanic in Viral.izo 2.0 – the introduction of minigames as health boosters, which are central to the paper's contribution of extended gameplay and engagement features.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8.png",
+      "description": "This figure shows two game screens: a \"Game Over\" screen indicating failure and a \"Victory\" screen displaying player rankings and scores after successfully completing the game.",
+      "relevance": "This figure demonstrates the outcome displays for game completion or failure, showing how player performance and engagement are recognized, which is part of the overall improved game experience discussed in the paper.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9_1.png",
+      "description": "This figure displays example screens from \"Minigame 1,\" showing the gameplay interface and elements specific to this minigame.",
+      "relevance": "This figure provides a visual example of one of the new minigames introduced in Viral.izo 2.0, which serves as a health booster and enhances player engagement, directly supporting the paper's contribution.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9_2.png",
+      "description": "This figure displays example screens from \"Minigame 1,\" showing the gameplay interface and elements specific to this minigame.",
+      "relevance": "This figure provides a visual example of one of the new minigames introduced in Viral.izo 2.0, which serves as a health booster and enhances player engagement, directly supporting the paper's contribution.",
+      "mode": "visual",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

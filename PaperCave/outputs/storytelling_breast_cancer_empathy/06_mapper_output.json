@@ -1,0 +1,355 @@
+{
+  "paperTitle": "Cancer Sucks – Together for a Cause: A 3D Storytelling Game for Empathy and Emotional Connection with Breast Cancer Journeys",
+  "centralContribution": "This work introduces \"Cancer Sucks – Together for a Cause,\" a 3D storytelling prototype game designed to cultivate empathy and emotional connection with breast cancer journeys based on true real-world stories. The game leverages interactive narratives and realistic 3D character animations to allow players to experience the emotional and decision-making complexities faced by breast cancer patients, aiming to bridge the gap in understanding these specific lived experiences.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "Central Contribution",
+      "category": "contribution",
+      "summary": null,
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This paper introduces 'Cancer Sucks – Together for a Cause,' a 3D storytelling game prototype focused on fostering empathy and emotional connection with breast cancer patients' real-world experiences through interactive narratives and realistic 3D character animations, aiming to enhance understanding of their complex journey and decisions.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Central Contribution of \"Cancer Sucks\"",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Abstract Summary",
+      "category": "abstract",
+      "summary": "Game prototype for empathy with breast cancer journeys, addressing understand...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Breast cancer is a significant global health issue, yet public and caregiver understanding often falls short of patients' complex realities. While empathy games and storytelling are effective, existing cancer games mainly focus on treatment outcomes or supporter perspectives, lacking direct patient viewpoint immersion into the pain, drama, and critical decisions of breast cancer journeys. This paper addresses this gap by presenting 'Cancer Sucks – Together for a Cause,' a 3D storytelling prototype designed to cultivate empathy.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Abstract Summary",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Game Narrative Flowchart",
+      "category": "graphical_representation",
+      "summary": "Flowchart of the game's interactive narrative for biopsy choices.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG2",
+        "caption": "Fig. 2. Narrative’s ﬂowchart from our prototype game.",
+        "description": "This flowchart details the interactive narrative progression within the 'Cancer Sucks' prototype, illustrating players' dilemmas in choosing an optimal breast biopsy procedure based on diagnostic criteria, family history, and age.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Figure 2: Game Narrative Flowchart for Biopsy Choice",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Figure 1: 3D Medical Clinic Environment, Figure 3: Patient Character Facial Expressions",
+      "whyThisUnit": "",
+      "stackLabel": "Game Visuals",
+      "items": [
+        {
+          "index": 1,
+          "title": "Clinic Environment (1/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_1",
+            "caption": "In-game 3D medical clinic environment (part 1).",
+            "description": "This figure depicts in-game screenshots of the 3D medical clinic, the primary setting for narrative interactions between patient and oncologist characters in the 'Cancer Sucks' game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Clinic Environment (2/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_2",
+            "caption": "In-game 3D medical clinic environment (part 2).",
+            "description": "This figure depicts in-game screenshots of the 3D medical clinic, the primary setting for narrative interactions between patient and oncologist characters in the 'Cancer Sucks' game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Clinic Environment (3/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_3",
+            "caption": "In-game 3D medical clinic environment (part 3).",
+            "description": "This figure depicts in-game screenshots of the 3D medical clinic, the primary setting for narrative interactions between patient and oncologist characters in the 'Cancer Sucks' game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Clinic Environment (4/4)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_4",
+            "caption": "In-game 3D medical clinic environment (part 4).",
+            "description": "This figure depicts in-game screenshots of the 3D medical clinic, the primary setting for narrative interactions between patient and oncologist characters in the 'Cancer Sucks' game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Patient Expressions (1/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_1",
+            "caption": "Patient character facial expression (part 1).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Patient Expressions (2/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_2",
+            "caption": "Patient character facial expression (part 2).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Patient Expressions (3/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_3",
+            "caption": "Patient character facial expression (part 3).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Patient Expressions (4/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_4",
+            "caption": "Patient character facial expression (part 4).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Patient Expressions (5/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_5",
+            "caption": "Patient character facial expression (part 5).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Patient Expressions (6/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_6",
+            "caption": "Patient character facial expression (part 6).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Patient Expressions (7/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_7",
+            "caption": "Patient character facial expression (part 7).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Patient Expressions (8/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_8",
+            "caption": "Patient character facial expression (part 8).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Patient Expressions (9/9)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_9",
+            "caption": "Patient character facial expression (part 9).",
+            "description": "Showcases detailed facial expressions of the patient character within the game (happiness, fear, sadness, etc.), synchronized with the narrative to convey emotional depth.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "graph-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "graph",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Figure 4: Participant Responses to Game Aspects (Q9-Q17), Figure 5: Perceived and Felt Emotions",
+      "whyThisUnit": "",
+      "stackLabel": "User Study Graphs",
+      "items": [
+        {
+          "index": 1,
+          "title": "Participant Responses (Q9-Q17)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Fig. 4. Comparison of participants’ responses (see Table II, Q9 to Q17), rated with the 5-point Likert scale: 1. Strongly disagree, 2. Disagree, 3. Neutral, 4. Agree, and 5. Strongly agree.",
+            "description": "This diverging stacked bar chart compares participant responses (Q9-Q17) on a 5-point Likert scale, covering narrative, audio, animation, visual aesthetic, story, gameplay, immersion, and overall experience.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Perceived & Felt Emotions",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5. In (a) and (b), respectively: The emotions more frequently perceived in the patient character, and the emotions more frequently felt by playtesters.",
+            "description": "Presents two graphs: (a) emotions perceived in the patient character by playtesters, and (b) emotions felt by playtesters during the game, showing quantitative emotional impact.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Central Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Abstract Summary",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Narrative Flowchart",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Visuals",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "User Study Graphs",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

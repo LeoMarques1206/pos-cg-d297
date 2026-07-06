@@ -1,0 +1,291 @@
+{
+  "paperTitle": "CancerST: A Tamagotchi-Style Serious Game for Thyroid Cancer Awareness and Management",
+  "centralContribution": "This work introduces CancerST, a Tamagotchi-style serious game designed to enhance thyroid cancer awareness and management through gamified learning. It innovates by personifying the thyroid gland into an interactive virtual pet, offering a novel channel for disseminating information about thyroid health and promoting a ludic understanding of management strategies. The game was playtested with three thyroid health specialists, generating qualitative feedback affirming its potential as a useful educational tool.",
+  "unitCount": 4,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "CancerST: Game Innovation",
+      "category": "contribution",
+      "summary": "Introduces CancerST, a Tamagotchi-style serious game for thyroid cancer aware...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "CancerST is presented as a Tamagotchi-style serious game aimed at improving thyroid cancer awareness and management. Its innovation lies in personifying the thyroid gland as a virtual pet to deliver educational content and promote an engaging understanding of health strategies. Initial qualitative feedback from thyroid specialists supports its educational utility.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "CancerST Introduction and Innovation",
+      "whyThisUnit": "This unit highlights the core innovation and purpose of the developed game, emphasizing its unique approach to health education.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Abstract: Thyroid Cancer So...",
+      "category": "abstract",
+      "summary": "Addresses thyroid cancer awareness through CancerST, a Tamagotchi-style game.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Thyroid cancer is globally prevalent, with significant new cases and fatalities projected annually, particularly affecting women. Despite effective treatments, there's a recognized research gap in serious games for thyroid cancer awareness and management. This paper addresses this gap by proposing CancerST, a virtual pet game inspired by Tamagotchi-style mechanics, to leverage engaging gameplay for healthcare education related to thyroid health.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Abstract Summary: Problem of Thyroid Cancer and Gamified Solution",
+      "whyThisUnit": "This unit provides a concise summary of the paper's context, the problem it addresses, and its innovative gamified approach.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "CancerST Home Screen",
+      "category": "graphical_representation",
+      "summary": "Core interactive environment and main character of CancerST.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG2",
+        "caption": "Fig. 2. Game home of CancerST, with a thyroid character with cancer.",
+        "description": "Figure 2 depicts the main home screen of the CancerST game, showcasing the central virtual thyroid character, likely in a cancerous state, along with the 2D point-and-click interface featuring buttons on the left and right sides, and a health bar and game timer in the HUD.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "CancerST Home Screen and User Interface",
+      "whyThisUnit": "This unit presents the most important visual element, showing the game's core interface and main interactive character.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Collection of various game screenshots and diagrams.",
+      "whyThisUnit": "Groups all supporting visual elements, showcasing game aesthetics, customization, interactions, and disease representations.",
+      "stackLabel": "CancerST Visuals",
+      "items": [
+        {
+          "index": 0,
+          "title": "CancerST Opening Scene",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Fig. 1. Opening scene of CancerST.",
+            "description": "Figure 1 presents the title screen or opening scene of the CancerST game, introducing its visual style, theme, and branding to users.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "Thyroid Char Customization",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Fig. 3. Customizable items we created for thyroid characters.",
+            "description": "Figure 3 shows various customizable adornments (hats, beads, ties, glasses) for the virtual thyroid characters, enhancing player engagement.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Randomized Characters",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Fig. 4. Some thyroid characters randomly customized by the game system.",
+            "description": "Figure 4 displays several randomly customized virtual thyroid characters, demonstrating diverse appearances possible through the game's system.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Basic Care Interactions",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5. Animations showing the actions for interacting with the virtual thyroid character.",
+            "description": "Figure 5 depicts animations for Sleeping, Exercise, and Care, showing particle systems and visual cues for character interaction.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Feeding Interactions",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Fig. 6. Animations depicting the consumption of various types of food to energize the thyroid character.",
+            "description": "Figure 6 illustrates animations for feeding the character with various healthy food options, demonstrating pet's basic needs management.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Medical Treatment Options",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Fig. 7. Treatments for (or associated with) thyroid diseases in CancerST.",
+            "description": "Figure 7 displays various medical treatments for thyroid diseases, like Radioactive Iodine Therapy and Radiotherapy, within CancerST.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Thyroid Health States Part 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_1",
+            "caption": "Fig. 8. Some of the thyroid-associated diseases in CancerST.",
+            "description": "Figure 8 illustrates the game's state machine updating the thyroid character's condition and disease representations like hypothyroidism.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Thyroid Health States Part 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_2",
+            "caption": "Fig. 8. Some of the thyroid-associated diseases in CancerST.",
+            "description": "Figure 8 illustrates the game's state machine updating the thyroid character's condition and disease representations like hyperthyroidism.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Game Over Scenarios",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": "Fig. 9. Game over scene: The thyroid character either passes away due to natural causes or falls victim to health complications or neglect.",
+            "description": "Figure 9 depicts the 'game over' screen in CancerST, illustrating consequences of character neglect or health complications.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Specialist Feedback 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10_1",
+            "caption": "Fig. 10. Each thyroid specialist’s key positive comment (medical icons freely available at [26]).",
+            "description": "Figure 10 highlights key positive comments from thyroid specialists, validating the game's effectiveness and accuracy from a medical perspective.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Specialist Feedback 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10_2",
+            "caption": "Fig. 10. Each thyroid specialist’s key positive comment (medical icons freely available at [26]).",
+            "description": "Figure 10 highlights key positive comments from thyroid specialists, validating the game's effectiveness and accuracy from a medical perspective.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Specialist Feedback 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10_3",
+            "caption": "Fig. 10. Each thyroid specialist’s key positive comment (medical icons freely available at [26]).",
+            "description": "Figure 10 highlights key positive comments from thyroid specialists, validating the game's effectiveness and accuracy from a medical perspective.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "CancerST: Game Innovation",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Abstract: Thyroid Cancer So...",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "CancerST Home Screen",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "CancerST Visuals",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

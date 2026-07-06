@@ -1,0 +1,12 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "| Measure | Original Perspective Overall images (%) | Original Perspective Images with nonblanks (%) | Corrected Perspective Overall images (%) | Corrected Perspective Images with nonblanks (%) |\n|---|---|---|---|---|\n| SpO2 | 98.66 | 98.45 | 88.53 | 82.56 |\n| Temp | 90.25 | 90.94 | 64.24 | 64.74 |\n| RR | 55.07 | 54.29 | 88.91 | 90.82 |\n| HR | 19.50 | 18.86 | 44.55 | 44.60 |\n| SBP | 88.34 | 88.31 | 89.48 | 89.46 |\n| DBP | 70.36 | 70.31 | 53.73 | 53.64 |\n| BP | 97.13 | 97.13 | 91.20 | 91.20 |\n| Total | 74.19 | 72.45 | 74.38 | 73.20 |"
+    },
+    {
+      "filename": "TAB2.png",
+      "markdown_content": "| Measure | Original Perspective Overall images (%) | Original Perspective Images with nonblanks (%) | Corrected Perspective Overall images (%) | Corrected Perspective Images with nonblanks (%) |\n|---|---|---|---|---|\n| SpO2 | 100.00 | 100.00 | 99.81 | 100.00 |\n| Temp | 99.24 | 100.00 | 99.24 | 100.00 |\n| RR | 98.66 | 100.00 | 98.85 | 100.00 |\n| HR | 99.62 | 99.80 | 99.62 | 99.80 |\n| SBP | 100.00 | 100.00 | 100.00 | 100.00 |\n| DBP | 100.00 | 100.00 | 100.00 | 100.00 |\n| BP | 99.04 | 99.03 | 98.85 | 98.84 |\n| Total | 99.51 | 99.82 | 99.48 | 99.79 |"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "| Lighting process         | SSR (ms) | Ray tracing (ms) | Hybrid (ms) |\n| :----------------------- | :------- | :--------------- | :---------- |\n| G-buffer                 | 0.9      | 0.9              | 0.9         |\n| Shadow                   | 4.5      | 4.5              | 4.5         |\n| SSR                      | 0.3      | 0.0              | 0.3         |\n| Ray tracing              | 0.0      | 15.1             | 10.8        |\n| Light (one point light)  | 0.2      | 0.2              | 0.2         |\n| Final result             | 6.1      | 21.2             | 16.9        |"
+    },
+    {
+      "filename": "TAB2.png",
+      "markdown_content": "| Frame time (s)            | SSR      |          | Hybrid   |          | Ray tracing |          |\n| :------------------------ | :------- | :------- | :------- | :------- | :---------- | :------- |\n|                           | RL 4     | RL 16    | RL 4     | RL 16    | RL 4        | RL 16    |\n| Ground plane              | 0.01014  | 0.01079  | 0.01262  | 0.01470  | 0.01617     | 0.01885  |\n| Ground plane with normal map | 0.01037  | 0.01153  | 0.01645  | 0.02245  | 0.01823     | 0.02462  |\n| Sphere                    | 0.01008  | 0.01013  | 0.01178  | 0.01277  | 0.01273     | 0.01361  |\n| Sphere with normal map    | 0.01002  | 0.01041  | 0.01302  | 0.01352  | 0.01362     | 0.01436  |\n| Stanford Bunny            | 0.01038  | 0.01079  | 0.01390  | 0.01595  | 0.01514     | 0.01695  |"
+    },
+    {
+      "filename": "TAB3.png",
+      "markdown_content": "|                         | RL 4    | RL 16   |\n| :---------------------- | :------ | :------ |\n| Ground plane            | 0.98844 | 0.97809 |\n| Ground plane with normal map | 0.97736 | 0.95757 |\n| Sphere                  | 0.98385 | 0.97690 |\n| Sphere with normal map  | 0.98298 | 0.97834 |\n| Stanford Bunny          | 0.97969 | 0.97765 |"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "paperTitle": "Duda: The Little Tooth's Guardian - A Digital Game for Changing Deleterious Oral Habits",
+  "centralContribution": "This work presents a novel methodology to promote the change of deleterious oral habits in children aged four to seven through an educational and transformational digital game titled \"Duda: The Little Tooth's Guardian.\" The methodology integrates a seven-day interactive narrative based on the Hero's Journey, four distinct minigames, a points-based reward system, positive reinforcement strategies, and encourages collaborative participation from the child's family and dental professional.",
+  "elements": [
+    {
+      "name": "Game's Central Contribution",
+      "category": "contribution",
+      "description": "The paper's central contribution is the development and proposal of a novel methodology embedded in a digital game, 'Duda: The Little Tooth's Guardian,' designed to help children aged 4-7 overcome deleterious oral habits. This methodology uniquely combines a seven-day Hero's Journey narrative, diverse minigames, a points-based reward system, positive reinforcement, and engagement with family and dental professionals.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the core innovation and purpose of the entire paper, defining what the research aims to achieve and its primary output.",
+      "groupingHint": "Core Concepts",
+      "data": {}
+    },
+    {
+      "name": "Paper Abstract Summary",
+      "category": "abstract",
+      "description": "Deleterious oral habits persisting in children over three years old lead to significant physical and psychological issues. Existing interventions often lack engagement and continuous methods for the 4-7 age group to consciously abandon these habits. This paper introduces 'Duda: The Little Tooth's Guardian,' a digital game-based methodology designed as an engaging, playful, and continuous intervention to promote changes in these habits through an interactive narrative, minigames, and a reward system, involving family and dental professionals.",
+      "relevanceScore": 9,
+      "justification": "This element provides a concise overview of the problem, context, and the paper's general approach, encapsulating the essence of the study.",
+      "groupingHint": "Core Concepts",
+      "data": {}
+    },
+    {
+      "name": "FIG1: Hero's Journey Narrative Structure",
+      "category": "graphical_representation",
+      "description": "This figure shows a diagrammatic representation of the 'Hero's Journey' narrative structure, which serves as the foundational framework for the game's progression. It illustrates how different stages of the mythological journey correspond to the educational phases within 'Duda: The Little Tooth's Guardian', guiding the child through the process of habit change.",
+      "relevanceScore": 9,
+      "justification": "This figure represents the core conceptual and narrative design underlying the entire game, explaining its structured educational approach, which is central to the methodology.",
+      "groupingHint": "Game Design & Structure",
+      "data": {}
+    },
+    {
+      "name": "FIG15: Main Game User Interface (UI)",
+      "category": "image",
+      "description": "This figure displays the main user interface of the 'Duda: The Little Tooth's Guardian' game, featuring the player's final score in the top right corner, navigation buttons for accessing various minigames on the left, and the 'Daily Agenda' on the right. It provides an overview of how players interact with the game and track their progress.",
+      "relevanceScore": 8,
+      "justification": "This image is crucial for understanding the overall presentation and usability of the game, showcasing how players interact with its features and track their journey, directly supporting the educational delivery.",
+      "groupingHint": "User Interface & Interaction",
+      "data": {}
+    },
+    {
+      "name": "FIG6: In-Game Daily Agenda",
+      "category": "image",
+      "description": "This figure displays the in-game 'Daily Agenda,' a key structural element outlining tasks and activities planned for players over the seven-day period. It serves as a consistent engagement tool and a resource for positive reinforcement, requiring child input and allowing adult observations.",
+      "relevanceScore": 8,
+      "justification": "The Daily Agenda is highlighted as an 'essential resource of positive reinforcement' and a key mechanism for organizing and tracking daily learning, making it highly relevant to the game's methodology.",
+      "groupingHint": "Game Mechanics & Features",
+      "data": {}
+    },
+    {
+      "name": "FIG13: In-Game Quiz Screenshot",
+      "category": "image",
+      "description": "This figure shows a screenshot of an in-game quiz, presenting a multiple-choice question to the player regarding oral health concepts. This quiz functions as an assessment tool to evaluate the child's acquired knowledge and reinforce learning.",
+      "relevanceScore": 7,
+      "justification": "The quiz is a direct pedagogical tool within the game, assessing the child's understanding of oral health, which is central to the paper's educational objective.",
+      "groupingHint": "Game Mechanics & Features",
+      "data": {}
+    },
+    {
+      "name": "FIG11: Minigame 3, Part 1: Facing the Enemies",
+      "category": "image",
+      "description": "This figure illustrates a screenshot from 'Minigame 3, Part 1: Facing the Enemies,' an endless running game where Duda rides a motorcycle to identify and destroy dynamic oral health enemies like germs and bacteria, while avoiding fixed obstacles. It demonstrates an active learning component where children confront 'enemies' of oral health.",
+      "relevanceScore": 7,
+      "justification": "This image showcases one of the key interactive minigames designed for active learning, directly contributing to the paper's goal of teaching dental hygiene through engaging gameplay.",
+      "groupingHint": "Game Mechanics & Features",
+      "data": {}
+    },
+    {
+      "name": "FIG9_1: Minigame 2: Crossroads Gameplay",
+      "category": "image",
+      "description": "This figure presents a screenshot from 'Minigame 2: Crossroads,' an interactive game where the player controls a character jumping across safe and unsafe lanes, encountering obstacles and collecting rewards. This minigame illustrates oral health enemies in action and encourages decision-making related to oral health.",
+      "relevanceScore": 7,
+      "justification": "This image demonstrates another distinct minigame that uses interactive choices and challenges to educate players about oral health concepts and consequences, making it highly relevant to the game's educational purpose.",
+      "groupingHint": "Game Mechanics & Features",
+      "data": {}
+    },
+    {
+      "name": "FIG10: Day 3 'Enemies' Disposal Gameplay",
+      "category": "image",
+      "description": "This figure is a screenshot from the game's third phase on Day 3, showing the player identifying and disposing of items representing 'enemies' of oral health (e.g., bottles, pacifiers, germs) into a trash bin within the game environment. This interaction reinforces the importance of removing detrimental factors.",
+      "relevanceScore": 6,
+      "justification": "This image illustrates a specific, habit-focused interactive segment where children learn to identify and metaphorically discard items associated with deleterious oral habits, directly supporting the paper's goal.",
+      "groupingHint": "Gameplay Progression",
+      "data": {}
+    },
+    {
+      "name": "FIG5_1: Dentist's Office Scene",
+      "category": "image",
+      "description": "This figure likely shows a visual representation or screenshot of a scene set in a dentist's office within the game. This scene, part of Day 1's activities, uses animations, illustrations, and texts to explain 'oral health friends' and 'enemies,' familiarizing children with the dental environment and its importance.",
+      "relevanceScore": 6,
+      "justification": "This image highlights a contextual scene that introduces essential oral health concepts and familiarizes children with the professional dental environment, crucial for the game's educational foundation.",
+      "groupingHint": "Gameplay Progression",
+      "data": {}
+    }
+  ]
+}

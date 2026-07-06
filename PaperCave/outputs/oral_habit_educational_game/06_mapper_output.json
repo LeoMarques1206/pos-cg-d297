@@ -1,0 +1,395 @@
+{
+  "paperTitle": "Duda: The Little Tooth's Guardian - A Digital Game for Changing Deleterious Oral Habits",
+  "centralContribution": "This work presents a novel methodology to promote the change of deleterious oral habits in children aged four to seven through an educational and transformational digital game titled \"Duda: The Little Tooth's Guardian.\" The methodology integrates a seven-day interactive narrative based on the Hero's Journey, four distinct minigames, a points-based reward system, positive reinforcement strategies, and encourages collaborative participation from the child's family and dental professional.",
+  "unitCount": 4,
+  "units": [
+    {
+      "id": "contribution-game-methodology",
+      "type": "card",
+      "priority": "primary",
+      "title": "Game's Central Contribution",
+      "category": "contribution",
+      "summary": "Novel methodology via 'Duda' game to change oral habits in children 4-7.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The paper's central contribution is the development and proposal of a novel methodology embedded in a digital game, 'Duda: The Little Tooth's Guardian,' designed to help children aged 4-7 overcome deleterious oral habits. This methodology uniquely combines a seven-day Hero's Journey narrative, diverse minigames, a points-based reward system, positive reinforcement, and engagement with family and dental professionals.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-summary",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract Summary",
+      "category": "abstract",
+      "summary": "Digital game 'Duda' addresses deleterious oral habits in children 4-7 via int...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Deleterious oral habits persisting in children over three years old lead to significant physical and psychological issues. Existing interventions often lack engagement and continuous methods for the 4-7 age group to consciously abandon these habits. This paper introduces 'Duda: The Little Tooth's Guardian,' a digital game-based methodology designed as an engaging, playful, and continuous intervention to promote changes in these habits through an interactive narrative, minigames, and a reward system, involving family and dental professionals.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-heros-journey",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Hero's Journey Narrative",
+      "category": "graphical_representation",
+      "summary": "Hero's Journey narrative structures game progression, guiding habit change.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG1",
+        "caption": "Figure 1 – A synthetic representation of the Hero’s Journey in the game.",
+        "description": "This figure diagrams the 'Hero's Journey' narrative, the game's foundational framework. It illustrates how journey stages correspond to educational phases in 'Duda: The Little Tooth's Guardian', guiding habit change.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-game-screens",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "Game Screenshots",
+      "items": [
+        {
+          "index": 1,
+          "title": "Game overview",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Figure 2 - Game overview.",
+            "description": "Figure 2 - Game overview.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "DAY 1: Mentor & challenge",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Figure 3 - DAY 1, Game phase 1: Finding the child’s mentor character and accepting the game challenge.",
+            "description": "Figure 3 - DAY 1, Game phase 1: Finding the child’s mentor character and accepting the game challenge.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Treasure hunting",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Figure 4 - Treasure hunting.",
+            "description": "Figure 4 - Treasure hunting.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Dentist's office moments",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_1",
+            "caption": "Figure 5 - Dentist's office moments.",
+            "description": "This figure depicts a dentist's office scene in the game, part of Day 1's activities. It uses animations and text to explain 'oral health friends' and 'enemies', familiarizing children with dental care.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Dentist's office moments",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_2",
+            "caption": "Figure 5 - Dentist's office moments.",
+            "description": "Figure 5 - Dentist's office moments.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Daily Agenda",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Figure 6 - Daily agenda to be used for seven consecutive days.",
+            "description": "This figure displays the in-game 'Daily Agenda,' a key structural element outlining seven-day tasks. It's an engagement tool and resource for positive reinforcement, requiring child input and allowing adult observations.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Minigame 1: Memory",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_1",
+            "caption": "Figure 7 - Minigame 1: Memory.",
+            "description": "Figure 7 - Minigame 1: Memory.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Minigame 1: Memory",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_2",
+            "caption": "Figure 7 - Minigame 1: Memory.",
+            "description": "Figure 7 - Minigame 1: Memory.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "DAY 2: Oral health friends",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_1",
+            "caption": "Figure 8 – DAY 2, Game Phase 2: Finding oral health friends and keeping them at a safe place at player’s home.",
+            "description": "Figure 8 – DAY 2, Game Phase 2: Finding oral health friends and keeping them at a safe place at player’s home.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "DAY 2: Oral health friends",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_2",
+            "caption": "Figure 8 – DAY 2, Game Phase 2: Finding oral health friends and keeping them at a safe place at player’s home.",
+            "description": "Figure 8 – DAY 2, Game Phase 2: Finding oral health friends and keeping them at a safe place at player’s home.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Minigame 2: Crossroads",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9_1",
+            "caption": "Figure 9 – Minigame 2: Crossroads.",
+            "description": "This figure shows 'Minigame 2: Crossroads,' an interactive game where the player jumps across lanes, avoiding obstacles and collecting rewards. It illustrates oral health enemies and encourages decision-making.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Minigame 2: Crossroads",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9_2",
+            "caption": "Figure 9 – Minigame 2: Crossroads.",
+            "description": "Figure 9 – Minigame 2: Crossroads.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Minigame 2: Crossroads",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9_3",
+            "caption": "Figure 9 – Minigame 2: Crossroads.",
+            "description": "Figure 9 – Minigame 2: Crossroads.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Minigame 2: Crossroads",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9_4",
+            "caption": "Figure 9 – Minigame 2: Crossroads.",
+            "description": "Figure 9 – Minigame 2: Crossroads.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "DAY 3: Discarding enemies",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10",
+            "caption": "Figure 10 – DAY 3, Game phase 3: Finding the enemies of the oral health and discarding them in the trash bin.",
+            "description": "This figure shows a Day 3 game phase screenshot: players identify and dispose of 'enemies' of oral health (e.g., bottles, pacifiers) into a trash bin. This interaction reinforces removing detrimental factors.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
+          "title": "Minigame 3: Facing enemies (1)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11",
+            "caption": "Figure 11 – Minigame 3: Facing the Enemies (part 1).",
+            "description": "This figure illustrates 'Minigame 3, Part 1: Facing the Enemies,' an endless runner where Duda destroys oral health enemies, avoiding obstacles. It's an active learning component for children confronting 'enemies'.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 17,
+          "title": "Quiz answer",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12",
+            "caption": "Figure 12 – Quiz answer.",
+            "description": "Figure 12 – Quiz answer.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 18,
+          "title": "In-game Quiz",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13",
+            "caption": "Figure 13 – Quiz.",
+            "description": "This figure shows an in-game quiz screenshot, presenting a multiple-choice question on oral health. The quiz assesses acquired knowledge and reinforces learning of key concepts.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 19,
+          "title": "Minigame 4: Facing enemies (2)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG14",
+            "caption": "Figure 14 – Minigame 4: Facing the Enemies (part 2).",
+            "description": "Figure 14 – Minigame 4: Facing the Enemies (part 2).",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 20,
+          "title": "Main Game UI",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG15",
+            "caption": "Figure 15 – Game Interface with the final player score (on the top right) and buttons to access all Minigames (on the left) and the Daily Agenda (on the right).",
+            "description": "This figure displays the main user interface of 'Duda: The Little Tooth's Guardian' game, showing the player's final score, minigame navigation, and Daily Agenda. It provides an overview of player interaction and progress.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Game's Central Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract Summary",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Hero's Journey Narrative",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Screenshots",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

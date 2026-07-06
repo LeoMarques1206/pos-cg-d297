@@ -1,0 +1,96 @@
+{
+  "paperTitle": "A Data-Oriented Serious Game for Breast Cancer Biopsy Procedures Education",
+  "centralContribution": "This work presents a data-oriented serious game designed for the education of healthcare professionals, enabling interactive simulation of breast cancer biopsy procedures and decision-making based on real clinical cases and the BI-RADS radiological system. The game supports an unrestricted number of clinical cases through its data-driven architecture and includes an extensible glossary for learning and consultation.",
+  "elements": [
+    {
+      "name": "Central Contribution Summary",
+      "category": "contribution",
+      "description": "The paper introduces a novel data-oriented serious game for healthcare professionals, simulating breast cancer biopsy procedures and related decision-making. It leverages real clinical cases and the BI-RADS system, supporting an unlimited number of cases through its architecture and including an extensible glossary.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the core innovation and purpose of the paper, representing the highest level of relevance.",
+      "groupingHint": "Core paper identity",
+      "data": {}
+    },
+    {
+      "name": "Abstract Summary",
+      "category": "abstract",
+      "description": "Breast cancer is a leading cause of death among women, with early detection significantly increasing survival rates. The diagnostic process involves imaging and biopsies (PAAF, BFA, Surgical Biopsy), guided by the BI-RADS classification. Current digital educational games for oncology, particularly for healthcare professionals focusing on biopsy decision-making with features like attempts, repetitions, and glossary lookups, are scarce and limited in scope. This paper addresses this gap by developing a serious game.",
+      "relevanceScore": 10,
+      "justification": "This element provides the essential context, problem statement, and a high-level overview of the paper's solution, making it fundamental to understanding the work.",
+      "groupingHint": "Core paper identity",
+      "data": {}
+    },
+    {
+      "name": "Data Exchange Architecture Diagram (Fig. 3)",
+      "category": "graphical_representation",
+      "description": "A diagram illustrating the data exchange process between the Clinical Case Editor and the game, showcasing how JSON files are used to separate game logic from data for creating unlimited, personalized patient clinical cases.",
+      "relevanceScore": 9,
+      "justification": "This diagram is critical as it visually explains the core 'data-oriented' aspect of the game, which is central to its extensibility and the paper's main contribution of supporting an unrestricted number of clinical cases.",
+      "groupingHint": "System Architecture",
+      "data": {}
+    },
+    {
+      "name": "Main Biopsy Procedure Selection Screen (Fig. 4)",
+      "category": "image",
+      "description": "This figure displays the main screen of the game, presenting the three distinct types of biopsy procedures: PAAF (Punc¸˜ao Aspirativa por Agulha Fina), BFA (Bi´opsia de Fragmento com Agulha), and Surgical Biopsy, from which the player must choose.",
+      "relevanceScore": 9,
+      "justification": "This image directly showcases the central interactive decision point of the game, where users select the biopsy procedure, which is a core component of the educational simulation.",
+      "groupingHint": "Game Interface",
+      "data": {}
+    },
+    {
+      "name": "Game User Interface with Systems Visualization (Fig. 2.a, Fig. 2.b)",
+      "category": "image",
+      "description": "Screenshots of the game's interface, displaying a patient body with options to activate/deactivate simultaneous or individual visualizations of human body systems (circulatory, skeletal, lymphatic) via a sliding sidebar.",
+      "relevanceScore": 8,
+      "justification": "These images provide a visual understanding of the overall game environment and user interaction design, crucial for conveying how the educational content is presented to healthcare professionals.",
+      "groupingHint": "Game Interface",
+      "data": {}
+    },
+    {
+      "name": "PAAF Biopsy Procedure Simulation (Figs. 6.a-d)",
+      "category": "image",
+      "description": "A sequence of screenshots demonstrating the simulation of a Fine-Needle Aspiration (PAAF) biopsy, including steps like local anesthesia, ultrasound-guided aspiration, material storage, and the resulting histopathological report for Patient Blanchett.",
+      "relevanceScore": 8,
+      "justification": "This set of images illustrates one of the three key biopsy procedures simulated by the game, directly demonstrating the interactive educational experience for a specific clinical case.",
+      "groupingHint": "Clinical Case Demonstrations",
+      "data": {}
+    },
+    {
+      "name": "BFA Biopsy Procedure Simulation (Figs. 7.a-d)",
+      "category": "image",
+      "description": "A sequence of screenshots demonstrating the simulation of a Core Needle Biopsy (BFA), including steps like local anesthesia, ultrasound-guided thick-needle biopsy, material storage, and ice pack application for Patient Deneuve.",
+      "relevanceScore": 8,
+      "justification": "This set of images illustrates another of the three key biopsy procedures simulated by the game, further showcasing the interactive educational experience for a specific clinical case.",
+      "groupingHint": "Clinical Case Demonstrations",
+      "data": {}
+    },
+    {
+      "name": "BI-RADS Classification System (Fig. 1)",
+      "category": "image",
+      "description": "This figure illustrates the BI-RADS classification system, a standardized method for reporting mammography findings, which is fundamental for understanding breast cancer diagnosis and is integrated into the game's decision-making process.",
+      "relevanceScore": 7,
+      "justification": "The BI-RADS system is a core medical concept that the game integrates for realistic decision-making, making its visualization important for understanding the game's educational foundation.",
+      "groupingHint": "Medical Concepts",
+      "data": {}
+    },
+    {
+      "name": "Extensible Glossary Screens (Fig. 5)",
+      "category": "image",
+      "description": "Screenshots showing the in-game extensible Glossary feature, which allows users to search for keywords related to breast cancer biopsy procedures and learn about relevant terms.",
+      "relevanceScore": 7,
+      "justification": "The glossary is a key educational support tool within the game, enhancing user literacy, and directly contributes to the game's objective of educating healthcare professionals.",
+      "groupingHint": "Educational Features",
+      "data": {}
+    },
+    {
+      "name": "Medical Conduct Decision Screen (Fig. 9)",
+      "category": "image",
+      "description": "A screenshot of the screen where players choose one of four medical conduct options (e.g., 6-month follow-up, re-biopsy, plastic surgeon referral, or cancer treatment referral) after receiving pathology reports.",
+      "relevanceScore": 7,
+      "justification": "This image demonstrates the critical post-biopsy decision-making phase simulated by the game, highlighting how the game educates users on the complete diagnostic and treatment pathway.",
+      "groupingHint": "Decision-Making",
+      "data": {}
+    }
+  ]
+}

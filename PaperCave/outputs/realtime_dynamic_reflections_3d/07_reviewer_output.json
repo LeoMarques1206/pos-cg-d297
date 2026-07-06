@@ -1,0 +1,580 @@
+{
+  "paperTitle": "Real-time Hybrid Rendering for Dynamic Reflections",
+  "centralContribution": "This paper presents a novel real-time hybrid algorithm for rendering dynamic reflections of rigid objects in 3D scenes by combining rasterization, specifically the Screen Space Reflection (SSR) technique, with pure GPU-ray tracing via a deferred rendering pipeline. The core idea involves performing SSR per pixel and using GPU-ray tracing for pixels where SSR fails, thereby significantly improving performance with minimal perceptual quality loss compared to a full ray tracing solution, and demonstrating good scalability for dynamic scenes.",
+  "unitCount": 6,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "Hybrid Rendering Algorithm",
+      "category": "contribution",
+      "summary": "Presents a novel real-time hybrid algorithm for dynamic reflections using SSR...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This paper presents a novel real-time hybrid algorithm for rendering dynamic reflections of rigid objects in 3D scenes by combining rasterization, specifically the Screen Space Reflection (SSR) technique, with pure GPU-ray tracing via a deferred rendering pipeline. The core idea involves performing SSR per pixel and using GPU-ray tracing for pixels where SSR fails, thereby significantly improving performance with minimal perceptual quality loss compared to a full ray tracing solution, and demonstrating good scalability for dynamic scenes.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Novel Real-time Hybrid Rendering Algorithm",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract: Problem & A...",
+      "category": "abstract",
+      "summary": "Summarizes challenges in real-time reflections and introduces a hybrid SSR/ra...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Achieving realistic real-time dynamic reflections in 3D scenes with moving objects is crucial for accurate perception but challenging due to the computational cost of methods like ray tracing. Existing real-time solutions like Screen Space Reflections (SSR) have limitations (e.g., failure for occluded objects or those outside screen space), while cube maps lack physical accuracy. Prior hybrid approaches often only supported static objects or were too demanding for dynamic environments. This paper proposes a novel real-time hybrid algorithm that integrates SSR with pure GPU-ray tracing within a deferred rendering pipeline to overcome these limitations, targeting efficient and high-quality dynamic reflections.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Paper Abstract: Problem and Approach Summary",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Hybrid Rendering Pipeline",
+      "category": "graphical_representation",
+      "summary": "Conceptual pipeline for the hybrid SSR and ray tracing algorithm.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG1_1",
+        "caption": null,
+        "description": "A conceptual diagram outlining the deferred rendering pipeline for the proposed hybrid algorithm, which integrates G-buffer generation, Screen Space Reflection (SSR) calculation and masking, GPU-ray tracing for masked pixels, and final image composition with post-processing.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Hybrid Rendering Pipeline (Conceptual)",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "Visual Results & Details",
+      "items": [
+        {
+          "index": 0,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_2",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_3",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Artifact Reduction (FIG2)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": null,
+            "description": "Compares hybrid image artifacts before and after Gaussian blur, demonstrating visual quality improvement.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_1",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_2",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_3",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_1",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_2",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_3",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_4",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_5",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_1",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_2",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Supporting Visual",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_3",
+            "caption": null,
+            "description": "General visual illustration from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Reflector Visuals & Ray Dist.",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": null,
+            "description": "Visual quality and ray distribution comparison for different reflector types with varying reflection ray lengths (RL).",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "graph-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "graph",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "Performance & Quality Graphs",
+      "items": [
+        {
+          "index": 0,
+          "title": "Performance Comparison (FIG6)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": null,
+            "description": "Compares frame rendering time of SSR, hybrid, and ray tracing over a dynamic walkthrough animation (Test Scenario 2).",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "SSIM Metric (FIG7)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": null,
+            "description": "Illustrates Structural Similarity Index Measure (SSIM) values for SSR and hybrid algorithms compared to ray tracing in dynamic scenes.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    },
+    {
+      "id": "table-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "Quantitative Data Tables",
+      "items": [
+        {
+          "index": 0,
+          "title": "Lighting Process Performance",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Compares rendering times (ms) for G-buffer, Shadow, SSR, Ray tracing, Light, and Final result for SSR, Ray tracing, and Hybrid algorithms in a static scene (Test Scenario 1).",
+            "chartType": "table",
+            "title": "Table 1: Lighting Process Performance (Static View)",
+            "data": {
+              "columns": [
+                "Lighting pro...",
+                "SSR (ms)",
+                "Ray tracing ...",
+                "Hybrid (ms)"
+              ],
+              "rows": [
+                [
+                  "G-buffer",
+                  "0.9",
+                  "0.9",
+                  "0.9"
+                ],
+                [
+                  "Shadow",
+                  "4.5",
+                  "4.5",
+                  "4.5"
+                ],
+                [
+                  "SSR",
+                  "0.3",
+                  "0.0",
+                  "0.3"
+                ],
+                [
+                  "Ray tracing",
+                  "0.0",
+                  "15.1",
+                  "10.8"
+                ],
+                [
+                  "Light (one point ...",
+                  "0.2",
+                  "0.2",
+                  "0.2"
+                ],
+                [
+                  "Final result",
+                  "6.1",
+                  "21.2",
+                  "16.9"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Frame Time for Reflectors",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Compares average frame time (s) for SSR, Hybrid, and Ray tracing with various reflector types and reflection ray lengths (RL 4 and RL 16 U) in Test Scenario 3.",
+            "chartType": "table",
+            "title": "Table 2: Frame Time for Various Reflectors",
+            "data": {
+              "columns": [
+                "Reflector Type",
+                "SSR RL 4 (s)",
+                "SSR RL 16 (s)",
+                "Hybrid RL 4 (s)",
+                "Hybrid RL 16...",
+                "Ray tracing ...",
+                "Ray tracing ..."
+              ],
+              "rows": [
+                [
+                  "Ground plane",
+                  "0.01014",
+                  "0.01079",
+                  "0.01262",
+                  "0.01470",
+                  "0.01617",
+                  "0.01885"
+                ],
+                [
+                  "Ground plane with...",
+                  "0.01037",
+                  "0.01153",
+                  "0.01645",
+                  "0.02245",
+                  "0.01823",
+                  "0.02462"
+                ],
+                [
+                  "Sphere",
+                  "0.01008",
+                  "0.01013",
+                  "0.01178",
+                  "0.01277",
+                  "0.01273",
+                  "0.01361"
+                ],
+                [
+                  "Sphere with norma...",
+                  "0.01002",
+                  "0.01041",
+                  "0.01302",
+                  "0.01352",
+                  "0.01362",
+                  "0.01436"
+                ],
+                [
+                  "Stanford Bunny",
+                  "0.01038",
+                  "0.01079",
+                  "0.01390",
+                  "0.01595",
+                  "0.01514",
+                  "0.01695"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "index": 2,
+          "title": "SSIM for Various Reflectors",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Presents Structural Similarity Index Measure (SSIM) values for the hybrid algorithm compared to pure ray tracing, across different reflector types and reflection ray lengths.",
+            "chartType": "table",
+            "title": "Table 3: SSIM for Various Reflectors",
+            "data": {
+              "columns": [
+                "Reflector Type",
+                "RL 4 SSIM",
+                "RL 16 SSIM"
+              ],
+              "rows": [
+                [
+                  "Ground plane",
+                  "0.98844",
+                  "0.97809"
+                ],
+                [
+                  "Ground plane with...",
+                  "0.97736",
+                  "0.95757"
+                ],
+                [
+                  "Sphere",
+                  "0.98385",
+                  "0.97690"
+                ],
+                [
+                  "Sphere with norma...",
+                  "0.98298",
+                  "0.97834"
+                ],
+                [
+                  "Stanford Bunny",
+                  "0.97969",
+                  "0.97765"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Hybrid Rendering Algorithm",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract: Problem & A...",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Hybrid Rendering Pipeline",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Visual Results & Details",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Performance & Quality Graphs",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Quantitative Data Tables",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

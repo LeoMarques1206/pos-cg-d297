@@ -2,57 +2,57 @@
   "insights": [
     {
       "filename": "FIG2_1.png",
-      "description": "This figure likely shows a component or partial view of QLattes' system architecture.",
-      "relevance": "This figure is crucial for understanding the underlying design and structure of the QLattes system, explaining how its various parts interact to deliver its functionality.",
+      "description": "Likely shows a diagram illustrating the high-level components and their interactions within the QLattes system's architecture.",
+      "relevance": "This figure is central to understanding the proposed system by providing a visual overview of its design and how its different parts function together.",
       "mode": "text_inferred",
       "visualType": "diagram_or_flowchart"
     },
     {
       "filename": "FIG2_2.png",
-      "description": "This figure likely shows another component or an expanded view of QLattes' system architecture, complementing FIG2_1.",
-      "relevance": "As part of the architecture description, this figure helps elucidate the complete structural design of QLattes, which is fundamental to grasping its operational principles.",
+      "description": "Likely shows a diagram illustrating the high-level components and their interactions within the QLattes system's architecture, possibly offering a more detailed view or a different aspect of the overall architecture.",
+      "relevance": "This figure is central to understanding the proposed system by providing a visual overview of its design and how its different parts function together, complementing other architectural views.",
       "mode": "text_inferred",
       "visualType": "diagram_or_flowchart"
     },
     {
       "filename": "FIG3.png",
-      "description": "This figure appears to be a line graph or bar chart illustrating the weekly active users of QLattes over time, from its launch until June 2025.",
-      "relevance": "This figure demonstrates the growth and adoption trajectory of QLattes, providing empirical evidence of its user engagement and successful deployment over its operational period.",
+      "description": "Appears to be a line graph or bar chart depicting the weekly active user count of QLattes, tracking its growth from launch until June 2025.",
+      "relevance": "This figure demonstrates the adoption and growth of the QLattes system, providing empirical evidence of its impact and user engagement over time, which supports the paper's claims about its success.",
       "mode": "text_inferred",
       "visualType": "chart_or_graph"
     },
     {
       "filename": "FIG4.png",
-      "description": "This figure likely depicts a world map, showing the geographic distribution of QLattes' total active users globally as of June 2025, with countries highlighted by color intensity to represent user density.",
-      "relevance": "This figure illustrates the international reach and geographic penetration of QLattes, highlighting its global impact and areas of significant user adoption.",
+      "description": "Likely a world map showing the geographical spread of QLattes users, with countries highlighted in blue and varying shades indicating user density as of June 2025.",
+      "relevance": "This figure illustrates the global reach and adoption of QLattes, highlighting its widespread use and potentially diverse user base, which supports the paper's claims of broad impact.",
       "mode": "text_inferred",
-      "visualType": "diagram_or_flowchart"
+      "visualType": "chart_or_graph"
     },
     {
       "filename": "FIG5.png",
-      "description": "This figure likely presents a map or chart detailing the distribution of active QLattes users across the five distinct regions of Brazil as of June 2025.",
-      "relevance": "This figure provides a detailed regional breakdown of QLattes' user base within Brazil, offering insights into its domestic market penetration and areas of strength.",
+      "description": "Appears to be a map of Brazil or a bar chart showing the breakdown of QLattes' active users across its five major regions, likely using color intensity or bar height to represent user numbers as of June 2025.",
+      "relevance": "This figure provides a more granular view of QLattes' user distribution within Brazil, detailing regional adoption and potentially informing insights into localized impact or areas for improvement.",
       "mode": "text_inferred",
       "visualType": "chart_or_graph"
     },
     {
       "filename": "FIG6.png",
-      "description": "This figure likely shows a chart or graph representing the distribution of active QLattes users across the top 50 cities in Brazil as of June 2025.",
-      "relevance": "This figure further refines the understanding of QLattes' user distribution within Brazil, identifying specific urban centers with high user concentrations and demonstrating its localized impact.",
+      "description": "Likely a bar chart or a list-based visualization showing the number of active QLattes users for the top 50 cities in Brazil as of June 2025.",
+      "relevance": "This figure offers the most detailed geographical breakdown of QLattes users within Brazil, pinpointing specific urban centers with high adoption, which is crucial for understanding hyper-local impact and potential for further growth.",
       "mode": "text_inferred",
       "visualType": "chart_or_graph"
     },
     {
       "filename": "FIG7.png",
-      "description": "This figure appears to be a bar chart or similar visualization summarizing the average Likert-scale ratings for QLattes' efficiency, usability, integration, and user satisfaction.",
-      "relevance": "This figure quantitatively evaluates the perceived quality and user experience of QLattes, supporting claims about its effectiveness, ease of use, and overall user contentment.",
+      "description": "Appears to be a bar chart or radar chart summarizing user feedback on QLattes, showing average Likert-scale ratings (1-5) for efficiency, usability, integration, and satisfaction.",
+      "relevance": "This figure presents quantitative user evaluation of QLattes' key attributes, directly supporting the paper's claims about the system's quality and user experience.",
       "mode": "text_inferred",
       "visualType": "chart_or_graph"
     },
     {
       "filename": "FIG8.png",
-      "description": "This figure appears to be an example screenshot or mock-up of a Lattes CV page, annotated by the QLattesCC prototype, highlighting specific enhancements like Qualis ranks and conference identification methods.",
-      "relevance": "This figure visually demonstrates the core functionality and user-facing benefits of the QLattesCC prototype, illustrating how it enhances Lattes CVs for computer science researchers and validating its practical application.",
+      "description": "Likely a screenshot or depiction of a Lattes CV page, visibly annotated by the QLattesCC prototype, highlighting specific sections with callouts explaining four key enhancements related to Qualis ranks and identification methods.",
+      "relevance": "This figure visually demonstrates the functionality and value proposition of the QLattesCC prototype, showcasing how it enhances academic CVs with crucial classification and citation metrics, which is a core contribution of the paper.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     }

@@ -1,1 +1,46 @@
-{"simulated": true}
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure likely shows two scenes from a game or interactive story: one depicting the story's introduction and another illustrating the character Violet entering a magical portal.",
+      "relevance": "This image is relevant to introducing the narrative and interactive elements of the game or system described in the paper, showcasing initial user experience or game progression.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely depicts visual elements from the Amazon biome, including its characteristic fauna and flora, and also shows a frog medallion that serves as a reward.",
+      "relevance": "This image is relevant to demonstrating the immersive environments and reward mechanisms within the game or application, contributing to its design and user engagement.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure appears to showcase the Caatinga biome, highlighting examples of its distinctive fauna and flora.",
+      "relevance": "This image is relevant for illustrating another distinct environmental setting within the game or system, emphasizing the diversity of biomes presented to the user.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure likely represents the Central Hub area within the game, which serves as the concluding point where players experience either success or failure.",
+      "relevance": "This image is relevant to understanding the game's structure and progression, specifically the final stage or outcome area where the player's journey culminates.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure is a chart displaying the average ratings for a series of questions, specifically questions Q1 through Q9 and Q11 through Q14.",
+      "relevance": "This image is crucial for presenting the quantitative results of user evaluations or surveys, directly supporting the paper's findings on user experience or system performance.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure appears to be a word cloud, visually representing the frequency or prominence of adjectives used by users to describe their experience (corresponding to question Q10).",
+      "relevance": "This image provides qualitative insights into user feedback and experience, complementing the quantitative data by highlighting common perceptions or sentiments regarding the system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "paperTitle": "A Data-Oriented Serious Game for Breast Cancer Biopsy Procedures Education",
+  "centralContribution": "This work presents a data-oriented serious game designed for the education of healthcare professionals, enabling interactive simulation of breast cancer biopsy procedures and decision-making based on real clinical cases and the BI-RADS radiological system. The game supports an unrestricted number of clinical cases through its data-driven architecture and includes an extensible glossary for learning and consultation.",
+  "unitCount": 4,
+  "units": [
+    {
+      "id": "unit-1",
+      "type": "card",
+      "priority": "primary",
+      "title": "Central Contribution",
+      "category": "contribution",
+      "summary": "Novel data-oriented serious game for breast cancer biopsy education.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The paper introduces a novel data-oriented serious game for healthcare professionals, simulating breast cancer biopsy procedures and related decision-making. It leverages real clinical cases and the BI-RADS system, supporting an unlimited number of cases through its architecture and including an extensible glossary.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Central Contribution Summary",
+      "whyThisUnit": "This unit highlights the main innovation and purpose of the paper, serving as the core message for the exhibit.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit-2",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Abstract",
+      "category": "abstract",
+      "summary": "Serious game addresses gap in breast cancer biopsy education for professionals.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Breast cancer is a leading cause of death among women, with early detection significantly increasing survival rates. The diagnostic process involves imaging and biopsies (PAAF, BFA, Surgical Biopsy), guided by the BI-RADS classification. Current digital educational games for oncology, particularly for healthcare professionals focusing on biopsy decision-making with features like attempts, repetitions, and glossary lookups, are scarce and limited in scope. This paper addresses this gap by developing a serious game.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Abstract Summary",
+      "whyThisUnit": "Provides a concise overview of the problem, context, and the paper's approach, serving as an initial entry point to the research.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit-3",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Data Exchange Architecture",
+      "category": "graphical_representation",
+      "summary": "Core architecture showing data exchange for unlimited cases.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG3",
+        "caption": "Fig. 3. Troca de dados entre aplicac¸˜oes.",
+        "description": "A diagram illustrating the data exchange process between the Clinical Case Editor and the game, showcasing how JSON files are used to separate game logic from data for creating unlimited, personalized patient clinical cases.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Data Exchange Architecture Diagram (Fig. 3)",
+      "whyThisUnit": "This figure is central to understanding the 'data-oriented' aspect of the game, a key contribution enabling extensibility and unlimited clinical cases.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit-4",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "Groups all other relevant figures that are images, showcasing various aspects of the game's interface, simulations, and foundational medical concepts.",
+      "stackLabel": "Game Screenshots",
+      "items": [
+        {
+          "index": 1,
+          "title": "BI-RADS Classification",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Fig. 1. Ilustrac¸˜ao da classiﬁcac¸˜ao BI-RADS, constru´ıda a partir do referencial te´orico dispon´ıvel em [9] (Fonte: os pr´oprios autores).",
+            "description": "This figure illustrates the BI-RADS classification system, a standardized method for reporting mammography findings, which is fundamental for understanding breast cancer diagnosis and is integrated into the game's decision-making process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Game Interface Systems",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_1",
+            "caption": "(no caption extracted)",
+            "description": "Screenshots of the game's interface, displaying a patient body with options to activate/deactivate simultaneous or individual visualizations of human body systems (circulatory, skeletal, lymphatic) via a sliding sidebar.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Game Interface Systems",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2_2",
+            "caption": "(no caption extracted)",
+            "description": "Screenshots of the game's interface, displaying a patient body with options to activate/deactivate simultaneous or individual visualizations of human body systems (circulatory, skeletal, lymphatic) via a sliding sidebar.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Main Biopsy Selection",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Fig. 4. Tela principal com 3 tipos de bi´opsias: PAAF, BFA e Bi´opsia Cir´urgica.",
+            "description": "This figure displays the main screen of the game, presenting the three distinct types of biopsy procedures: PAAF (Punc¸˜ao Aspirativa por Agulha Fina), BFA (Bi´opsia de Fragmento com Agulha), and Surgical Biopsy, from which the player must choose.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Extensible Glossary",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5. Telas de busca de informac¸˜ao no gloss´ario do jogo, para letramento sobre conte´udo relacionado ao procedimento de bi´opsia de cˆancer de mama.",
+            "description": "Screenshots showing the in-game extensible Glossary feature, which allows users to search for keywords related to breast cancer biopsy procedures and learn about relevant terms.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "PAAF Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_1",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Fine-Needle Aspiration (PAAF) biopsy, including steps like local anesthesia, ultrasound-guided aspiration, material storage, and the resulting histopathological report for Patient Blanchett.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "PAAF Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_2",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Fine-Needle Aspiration (PAAF) biopsy, including steps like local anesthesia, ultrasound-guided aspiration, material storage, and the resulting histopathological report for Patient Blanchett.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "PAAF Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_3",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Fine-Needle Aspiration (PAAF) biopsy, including steps like local anesthesia, ultrasound-guided aspiration, material storage, and the resulting histopathological report for Patient Blanchett.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "PAAF Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_4",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Fine-Needle Aspiration (PAAF) biopsy, including steps like local anesthesia, ultrasound-guided aspiration, material storage, and the resulting histopathological report for Patient Blanchett.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "BFA Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_1",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Core Needle Biopsy (BFA), including steps like local anesthesia, ultrasound-guided thick-needle biopsy, material storage, and ice pack application for Patient Deneuve.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "BFA Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_2",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Core Needle Biopsy (BFA), including steps like local anesthesia, ultrasound-guided thick-needle biopsy, material storage, and ice pack application for Patient Deneuve.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "BFA Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_3",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Core Needle Biopsy (BFA), including steps like local anesthesia, ultrasound-guided thick-needle biopsy, material storage, and ice pack application for Patient Deneuve.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "BFA Biopsy Simulation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_4",
+            "caption": "(no caption extracted)",
+            "description": "A sequence of screenshots demonstrating the simulation of a Core Needle Biopsy (BFA), including steps like local anesthesia, ultrasound-guided thick-needle biopsy, material storage, and ice pack application for Patient Deneuve.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Game Screenshot (FIG8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_1",
+            "caption": "(no caption extracted)",
+            "description": "Screenshot of the serious game interface.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "Game Screenshot (FIG8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_2",
+            "caption": "(no caption extracted)",
+            "description": "Screenshot of the serious game interface.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
+          "title": "Game Screenshot (FIG8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_3",
+            "caption": "(no caption extracted)",
+            "description": "Screenshot of the serious game interface.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 17,
+          "title": "Game Screenshot (FIG8)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_4",
+            "caption": "(no caption extracted)",
+            "description": "Screenshot of the serious game interface.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 18,
+          "title": "Medical Conduct Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": "Fig. 9. Tela de conduta m´edica, baseada no relat´orio de patologia da bi´opsia mam´aria.",
+            "description": "A screenshot of the screen where players choose one of four medical conduct options (e.g., 6-month follow-up, re-biopsy, plastic surgeon referral, or cancer treatment referral) after receiving pathology reports.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Central Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Data Exchange Architecture",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Screenshots",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

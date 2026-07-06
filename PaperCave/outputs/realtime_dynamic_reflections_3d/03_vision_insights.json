@@ -1,0 +1,130 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1_1.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_2.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_3.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely shows two side-by-side images: the left image displays a hybrid rendering of a scene with visual artifacts highlighted, and the right image presents the same scene where these artifacts have been reduced through the application of Gaussian blur.",
+      "relevance": "This figure visually demonstrates a key challenge (artifacts from merging SSR and ray tracing) addressed by the paper and illustrates the effectiveness of a proposed mitigation technique (Gaussian blur) central to the hybrid rendering approach.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_1.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_2.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_3.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_1.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_2.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_3.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_4.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_5.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_1.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_2.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_3.png",
+      "description": "The content of this figure cannot be accurately described as no caption or contextual information was provided.",
+      "relevance": "Without a caption or contextual information, the relevance of this figure to the paper's contribution cannot be determined.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure likely presents a graph comparing the performance (e.g., frame rate or rendering time) of Screen Space Reflections (SSR), the hybrid rendering method, and pure ray tracing (RT) for a specific Test Scenario 2 at 1280 × 720 resolution.",
+      "relevance": "This figure directly evaluates the performance benefits of the proposed hybrid rendering technique against standard methods, providing evidence for its efficiency which is a key aspect of the paper's contribution.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This figure appears to be a graph illustrating the Structural Similarity Index Measure (SSIM) values across frames of a walkthrough animation in Test Scenario 2, comparing results from SSR and the hybrid algorithm relative to ray tracing. Specific frames are highlighted to draw attention to particular points in the animation.",
+      "relevance": "The figure quantitatively assesses the image quality of the hybrid method using the SSIM metric, comparing it to SSR and a ray tracing reference, thereby supporting the paper's claims about the visual fidelity achieved by the proposed approach.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG8.png",
+      "description": "This figure likely displays visual comparisons of image quality for Test Scenario 3, featuring different reflector types with 'RL' values of 4 and 16 units. It also appears to show ray distributions, color-coded to indicate the usage of object and screen space methods, along with reflection differences.",
+      "relevance": "This figure provides visual evidence of the hybrid rendering system's ability to handle various reflector types and reflection complexities, showcasing its effectiveness in maintaining image quality across different rendering conditions, which is crucial to the paper's contribution.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

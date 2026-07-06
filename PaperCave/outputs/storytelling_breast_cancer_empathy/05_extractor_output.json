@@ -1,0 +1,78 @@
+{
+  "paperTitle": "Cancer Sucks – Together for a Cause: A 3D Storytelling Game for Empathy and Emotional Connection with Breast Cancer Journeys",
+  "centralContribution": "This work introduces \"Cancer Sucks – Together for a Cause,\" a 3D storytelling prototype game designed to cultivate empathy and emotional connection with breast cancer journeys based on true real-world stories. The game leverages interactive narratives and realistic 3D character animations to allow players to experience the emotional and decision-making complexities faced by breast cancer patients, aiming to bridge the gap in understanding these specific lived experiences.",
+  "elements": [
+    {
+      "name": "Central Contribution of \"Cancer Sucks\"",
+      "category": "contribution",
+      "description": "This paper introduces 'Cancer Sucks – Together for a Cause,' a 3D storytelling game prototype focused on fostering empathy and emotional connection with breast cancer patients' real-world experiences through interactive narratives and realistic 3D character animations, aiming to enhance understanding of their complex journey and decisions.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the primary innovation and purpose of the paper, representing the core achievement and advancement in the field.",
+      "groupingHint": "Core Concepts",
+      "data": {}
+    },
+    {
+      "name": "Abstract Summary",
+      "category": "abstract",
+      "description": "Breast cancer is a significant global health issue, yet public and caregiver understanding often falls short of patients' complex realities. While empathy games and storytelling are effective, existing cancer games mainly focus on treatment outcomes or supporter perspectives, lacking direct patient viewpoint immersion into the pain, drama, and critical decisions of breast cancer journeys. This paper addresses this gap by presenting 'Cancer Sucks – Together for a Cause,' a 3D storytelling prototype designed to cultivate empathy.",
+      "relevanceScore": 9,
+      "justification": "This summarizes the context, problem, and general approach, providing a foundational understanding of the paper's motivation and scope.",
+      "groupingHint": "Core Concepts",
+      "data": {}
+    },
+    {
+      "name": "Figure 2: Game Narrative Flowchart for Biopsy Choice",
+      "category": "graphical_representation",
+      "description": "This flowchart details the interactive narrative progression within the 'Cancer Sucks' prototype, specifically illustrating the dilemma players face when choosing an optimal breast biopsy procedure (FNA, CNB, or Surgical Biopsy) based on diagnostic criteria, family history, and age.",
+      "relevanceScore": 8,
+      "justification": "This figure is a central graphical representation as it directly illustrates the core interactive narrative mechanism and decision-making process, which is fundamental to the game's empathy-building objective.",
+      "groupingHint": "Game System",
+      "data": {}
+    },
+    {
+      "name": "Figure 1: 3D Medical Clinic Environment",
+      "category": "image",
+      "description": "This figure likely depicts in-game screenshots of the 3D medical clinic environment, specifically the oncologist’s office, which serves as the primary setting for the narrative interactions between the patient and oncologist characters in the 'Cancer Sucks' game.",
+      "relevanceScore": 7,
+      "justification": "Provides a crucial visual understanding of the game's setting and aesthetic, which contributes to the immersive experience and sets the stage for the narrative.",
+      "groupingHint": "Game System",
+      "data": {}
+    },
+    {
+      "name": "Figure 3: Patient Character Facial Expressions",
+      "category": "image",
+      "description": "This figure showcases various detailed facial expressions of the patient character within the game, modeling emotions such as happiness, attentiveness, fear, sadness, desperation, distress, insecurity, less stress, and resignation, which are synchronized with the narrative to convey emotional depth.",
+      "relevanceScore": 7,
+      "justification": "Directly illustrates the key visual mechanism for conveying emotions, which is essential for the game's goal of cultivating empathy and making the patient's experience realistic.",
+      "groupingHint": "Game System",
+      "data": {}
+    },
+    {
+      "name": "Table I: Playtesting Questionnaire",
+      "category": "table",
+      "description": "This table lists the 18 questions used in the Google Form questionnaire administered to 18 participants during the remote playtesting sessions of the 'Cancer Sucks' prototype. It includes closed, open, and 5-point Likert scale questions designed to assess comprehension, emotional response, immersion, and overall experience.",
+      "relevanceScore": 6,
+      "justification": "This table is critical as it outlines the methodology for evaluating the game's effectiveness, directly showing the metrics and questions used to gather user feedback and measure empathy.",
+      "groupingHint": "User Study Results",
+      "data": {}
+    },
+    {
+      "name": "Figure 5: Perceived and Felt Emotions",
+      "category": "graph",
+      "description": "This figure presents two graphs: (a) illustrating the emotions most frequently perceived in the patient character by playtesters, and (b) depicting the emotions most frequently felt by playtesters themselves during the game. It quantitatively shows the game's emotional impact.",
+      "relevanceScore": 8,
+      "justification": "This figure presents crucial results directly related to the paper's central goal of fostering empathy and emotional connection, providing quantitative evidence of the game's impact on players' emotional responses.",
+      "groupingHint": "User Study Results",
+      "data": {}
+    },
+    {
+      "name": "Figure 4: Participant Responses to Game Aspects (Q9-Q17)",
+      "category": "graph",
+      "description": "This figure is a diverging stacked bar chart comparing participant responses to survey questions Q9 through Q17 on a 5-point Likert scale, covering aspects like narrative text readability, appropriateness of sound/music, believability of animations, visual aesthetic, story enjoyment, gameplay enjoyment, immersion, and overall experience.",
+      "relevanceScore": 7,
+      "justification": "This graph provides quantitative data on user perceptions and satisfaction with various aspects of the game, directly supporting the evaluation of the prototype's design and user experience.",
+      "groupingHint": "User Study Results",
+      "data": {}
+    }
+  ]
+}

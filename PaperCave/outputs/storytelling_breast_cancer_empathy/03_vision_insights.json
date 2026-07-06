@@ -1,0 +1,116 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1_1.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game developed in the paper.",
+      "relevance": "It probably illustrates an aspect of the game's interface or environment, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_2.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game developed in the paper.",
+      "relevance": "It probably illustrates an aspect of the game's interface or environment, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_3.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game developed in the paper.",
+      "relevance": "It probably illustrates an aspect of the game's interface or environment, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG1_4.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game developed in the paper.",
+      "relevance": "It probably illustrates an aspect of the game's interface or environment, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "Appears to represent a flowchart detailing the narrative progression or logic within the prototype game.",
+      "relevance": "This figure is crucial as it describes the core narrative structure of the game, which is central to the paper's contribution regarding game design and player experience.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG3_1.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_2.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_3.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_4.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_5.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_6.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_7.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_8.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_9.png",
+      "description": "Likely shows an in-game screenshot or a visual component of the prototype game, possibly related to the narrative or character interaction.",
+      "relevance": "It probably illustrates an aspect of the game developed or studied in the paper, contributing to the understanding of the experimental setup or the proposed system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "Appears to be a chart or graph comparing participant responses to survey questions Q9 through Q17, utilizing a 5-point Likert scale.",
+      "relevance": "This figure directly presents the quantitative results from the user study, demonstrating player perceptions and attitudes, which is a key part of evaluating the paper's proposed game or system.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "Likely shows two distinct graphs, (a) illustrating the emotions most frequently perceived in the patient character, and (b) depicting the emotions most frequently felt by playtesters.",
+      "relevance": "This figure presents critical data on emotional responses, both perceived and felt, which directly addresses the paper's focus on the emotional impact and effectiveness of the game or interactive experience.",
+      "mode": "text_inferred",
+      "visualType": "chart_or_graph"
+    }
+  ]
+}

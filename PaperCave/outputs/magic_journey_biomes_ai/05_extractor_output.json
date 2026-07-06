@@ -1,1 +1,78 @@
-{"simulated": true}
+{
+  "paperTitle": "Claws of Fate: A 2D Adventure Game with BiomesAI for Environmental Education",
+  "centralContribution": "This work presents Claws of Fate, a 2D adventure game developed in Unity that integrates a customized Artificial Intelligence (AI) system, BiomesAI, to provide real-time, context-sensitive educational guidance on Brazilian biomes (Amazon Rainforest, Caatinga), animal welfare, and environmental conservation. The game aims to foster empathy and responsible pet care in early adolescents through an engaging narrative and personalized AI feedback, showcasing a testbed for generative AI in educational games.",
+  "elements": [
+    {
+      "name": "Central Contribution of Claws of Fate",
+      "category": "contribution",
+      "description": "The paper's central contribution is the development of *Claws of Fate*, a 2D adventure game built in Unity. This game incorporates a custom AI system called BiomesAI, designed to deliver real-time, context-sensitive educational information about Brazilian biomes, animal welfare, and environmental conservation. It aims to cultivate empathy and responsible pet care in early adolescents through an engaging narrative and personalized AI-driven feedback, positioning itself as a testbed for generative AI in educational gaming.",
+      "relevanceScore": 10,
+      "justification": "This element directly outlines the core innovation and purpose of the entire paper, summarizing its primary achievement and goal.",
+      "groupingHint": "Core Paper Information",
+      "data": {}
+    },
+    {
+      "name": "Abstract of Claws of Fate Paper",
+      "category": "abstract",
+      "description": "Traditional educational methods often fail to sufficiently engage young audiences in environmental conservation and biodiversity awareness. There is a clear need for immersive, narrative-driven approaches that connect personal experiences, like pet care, to broader ecological responsibilities. While digital games and AI-driven learning are expanding, a gap exists in combining narrative-action gameplay with an adaptive AI companion that provides real-time, contextual knowledge specific to ecological interactions within a game set in diverse national biomes.",
+      "relevanceScore": 9,
+      "justification": "This element provides the foundational context, problem statement, and a concise overview of the paper's motivation and the gap it addresses.",
+      "groupingHint": "Core Paper Information",
+      "data": {}
+    },
+    {
+      "name": "BiomesAI System Architecture",
+      "category": "graphical_representation",
+      "description": "The BiomesAI system, integrated into Unity, consists of four main components: an AI Manager coordinating game-AI service communication, a Content Generator sending prompts to ChatGPT, a Local Cache for storing responses to reduce latency, and a Resource Handler managing content across sessions. Supporting modules like OpenAIResponse and BiomesData, along with the Nuvia backend library, facilitate its operation. It delivers context-sensitive educational content using pre-generated text and Azure’s Speech Studio audio.",
+      "relevanceScore": 9,
+      "justification": "This describes the core technical innovation of the paper, detailing the structural components and functionality of the customized AI system, which is crucial for understanding the game's educational mechanism. This implicitly represents the most important architectural diagram of the system.",
+      "groupingHint": "System Design",
+      "data": {}
+    },
+    {
+      "name": "AI Model Performance Comparison",
+      "category": "table",
+      "description": "A comparison of the performance metrics (response time and token speed) for different GPT models (GPT-3.5 Turbo, GPT-4, and GPT-4o) tested for integration into the BiomesAI system, highlighting GPT-4o as the fastest and most responsive option.",
+      "relevanceScore": 8,
+      "justification": "This table provides quantitative data on the performance of the AI models, which directly informed the technical decisions for the BiomesAI system, impacting its efficiency and user experience.",
+      "groupingHint": "Technical Results",
+      "data": {}
+    },
+    {
+      "name": "Figure 5: User Experience Quantitative Ratings",
+      "category": "graph",
+      "description": "A chart displaying the average ratings for 13 quantitative questions (Q1-Q9, Q11-Q14) from the user experience evaluation. It illustrates participants' perceptions of various aspects of the game, such as visual design and the usefulness of the in-game AI guide.",
+      "relevanceScore": 7,
+      "justification": "This graph is crucial as it presents the primary quantitative results of the user evaluation, offering direct insights into player perceptions and identifying areas of success and improvement for the game and AI system.",
+      "groupingHint": "User Evaluation Results",
+      "data": {}
+    },
+    {
+      "name": "Figure 6: Adjective Selection Word Cloud",
+      "category": "graph",
+      "description": "A word cloud visually representing the frequency of adjectives chosen by users (corresponding to question Q10) to describe their experience playing *Claws of Fate*. It highlights common sentiments such as 'Challenging', 'Frustrating', 'Fun', and 'Educational'.",
+      "relevanceScore": 7,
+      "justification": "This graph provides valuable qualitative insights into user feedback, complementing the quantitative data by revealing the most prominent emotional and descriptive responses to the game.",
+      "groupingHint": "User Evaluation Results",
+      "data": {}
+    },
+    {
+      "name": "Game Environments and Hub",
+      "category": "image",
+      "description": "Visual representations of the game's diverse Brazilian biomes, including the Amazon Rainforest (Figure 2) and Caatinga (Figure 3), along with the Central Hub (Figure 4) which serves as a critical point of game progression and conclusion. These images demonstrate the immersive settings and structural elements of the game world.",
+      "relevanceScore": 6,
+      "justification": "These images showcase the primary visual settings of the game, which are integral to both the narrative and the educational content delivery, making them highly relevant to the overall game experience.",
+      "groupingHint": "Game World Visuals",
+      "data": {}
+    },
+    {
+      "name": "Figure 1: Game Introduction and Portal Scene",
+      "category": "image",
+      "description": "This figure likely depicts key introductory scenes from *Claws of Fate*, showing the initial story setup and the character Violet entering a magical portal, which acts as the narrative's inciting incident and first interactive element.",
+      "relevanceScore": 5,
+      "justification": "This image sets the narrative stage for the game, introducing the initial plot point and visual style, which is foundational to the player's engagement.",
+      "groupingHint": "Game Introduction",
+      "data": {}
+    }
+  ]
+}

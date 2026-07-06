@@ -1,0 +1,74 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure likely shows a block diagram or flowchart illustrating the overall architecture of the SENTINELA system, detailing its various components and their interactions.",
+      "relevance": "This figure is crucial as it presents the foundational design of the SENTINELA system, helping to understand how its different parts (e.g., data acquisition, processing, user interface) are integrated to achieve its objectives.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely displays a photograph of the EVA device physically connected and operating with a hospital's ICU physiological multiparametric monitor, showing its real-world application.",
+      "relevance": "The image demonstrates the practical integration and physical setup of the EVA device within a clinical environment, illustrating its intended use case and physical compatibility with existing hospital equipment.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure likely presents a 3D digital model of the EVA device's physical structure, illustrating its components such as a fixed bracket, \"neck\", camera case, and power supply, as it would be coupled to a physiological monitor.",
+      "relevance": "It provides a detailed visual understanding of the EVA device's design and structural components, which is essential for comprehending its manufacturing, assembly, and ergonomic considerations for clinical deployment.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG4_1.png",
+      "description": "Content unknown due to lack of caption and visual access.",
+      "relevance": "Its relevance cannot be determined without a caption or visual information about the content of the figure.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_2.png",
+      "description": "Content unknown due to lack of caption and visual access.",
+      "relevance": "Its relevance cannot be determined without a caption or visual information about the content of the figure.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_3.png",
+      "description": "Content unknown due to lack of caption and visual access.",
+      "relevance": "Its relevance cannot be determined without a caption or visual information about the content of the figure.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4_4.png",
+      "description": "Content unknown due to lack of caption and visual access.",
+      "relevance": "Its relevance cannot be determined without a caption or visual information about the content of the figure.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure likely consists of screenshots showcasing several key user interface screens of the EDEN mobile application, providing a glimpse into its functionality and design.",
+      "relevance": "It illustrates the user-facing component of the system, demonstrating how users interact with the EDEN application and access its features, which is vital for understanding its usability and overall system flow.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure likely provides visual examples of recognition errors made by the Tesseract OCR algorithm, specifically showing cases where values like \"128\" were missed and \"29.5\" was misread as \"295.0\".",
+      "relevance": "It highlights a key challenge or limitation addressed by the paper, demonstrating the inaccuracies of a standard OCR method, thereby justifying the need for or improvement offered by the proposed system in accurate data extraction.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This figure likely presents a visual example of a recognition error by the Paddle OCR algorithm, specifically demonstrating a misread mean arterial pressure value, highlighted within a red bounding box.",
+      "relevance": "Similar to FIG6, this figure further illustrates the limitations and challenges of existing OCR technologies in extracting medical data, justifying the research's focus on improving accuracy for critical physiological parameters.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

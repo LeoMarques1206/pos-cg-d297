@@ -1,30 +1,26 @@
 {
-  "paperTitle": "A Kinect-based conducting system that leverages gestural control for the real-time visualization of musical structures, primarily for educational purposes, and evaluates its user experience with professional conductors, musicians, and general users.",
-  "centralContribution": "The paper presents a Kinect-based conducting system that leverages gestural control for the real-time visualization of musical structures, primarily for educational purposes, and evaluates its user experience with professional conductors, musicians, and general users. This system provides an immersive tool for practicing conducting and understanding complex musical pieces without a live orchestra, offering audiovisual feedback via particle systems and gesture trajectory.",
+  "paperTitle": "A Novel Kinect-based Conducting System for Real-time Audiovisual Musical Visualization",
+  "centralContribution": "This work presents a novel Kinect-based conducting system that utilizes a gestural interface for the real-time audiovisual visualization of complex musical structures, primarily aimed at educational purposes. The system was rigorously evaluated through a user experience (UX) study involving professional conductors, musicians, and users without musical knowledge to validate its viability as a supportive tool for learning conducting and musical theory.",
   "unitCount": 5,
   "units": [
     {
-      "id": "unit_01",
+      "id": "contribution-card",
       "type": "card",
       "priority": "primary",
-      "title": "Kinect Conducting System",
+      "title": "Main Contribution",
       "category": "contribution",
-      "summary": "Kinect-based system for real-time visualization of musical structures for edu...",
-      "contentType": "figure",
+      "summary": "Kinect-based system for real-time audiovisual musical visualization in educat...",
+      "contentType": "text_panel",
       "content": {
-        "assetReference": "FIG1",
-        "caption": "Main components of the Kinect-based conducting system.",
-        "description": "The system leverages a Kinect sensor and Unreal Engine to visualize musical structures in real-time for educational use, offering an immersive tool for conducting practice.",
+        "assetReference": null,
+        "caption": null,
+        "description": "This work presents a novel Kinect-based conducting system that utilizes a gestural interface for the real-time audiovisual visualization of complex musical structures, primarily aimed at educational purposes. The system was rigorously evaluated through a user experience (UX) study involving professional conductors, musicians, and users without musical knowledge to validate its viability as a supportive tool for learning conducting and musical theory.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Section III — System Architecture, Fig. 1",
-      "whyThisUnit": "This unit represents the core innovation and artifact of the paper, detailing the overall system architecture that is the central contribution.",
+      "conceptualOrigin": "Overall Paper Summary",
+      "whyThisUnit": "This is the core innovation and primary objective of the entire paper, as explicitly stated.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -33,98 +29,183 @@
       }
     },
     {
-      "id": "unit_02",
+      "id": "abstract-card",
       "type": "card",
       "priority": "secondary",
-      "title": "Challenges in Conducting",
-      "category": "problem",
-      "summary": "Existing systems lack accurate gesture recognition and engaging visualization...",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "Addresses need for immersive conducting tools using Kinect for education.",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "Existing systems struggle with accurate gesture recognition, satisfactory 3D visualization of musical structures, and adequate support for aspiring conductors without a physical ensemble, motivating this research.",
+        "description": "There is a need for immersive educational tools to teach conducting without a physical orchestra. Existing interactive conducting systems are often costly or require physical contact. While gestural devices like Kinect offer affordable, contact-free interaction, challenges remain in accurate gesture identification and effective 3D musical visualization. This paper addresses these issues by developing an affordable, interactive, and visually rich Kinect-based system for instrumental conducting education.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Section II — Related Work, Problem Statement",
-      "whyThisUnit": "This unit defines the problem space, highlighting the limitations of previous systems that the paper's contribution aims to overcome.",
+      "conceptualOrigin": "Overall Paper Summary",
+      "whyThisUnit": "This element summarizes the problem context, existing solutions, and the motivation for the paper's contribution, providing a comprehensive overview of the research.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
-        "categoryColor": "#FF4444",
-        "colorName": "coral red"
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
       }
     },
     {
-      "id": "unit_03",
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "System Architecture",
+      "category": "graphical_representation",
+      "summary": "Main components of the Kinect-based conducting system.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG1",
+        "caption": "Fig. 1. The main components of the system.",
+        "description": "A diagram illustrating the main components of the Kinect-based conducting system, including the MIDI Processor, Gesture Identifier, Particle System Manager, Kinect device, Unreal Engine, and their interconnections, providing an architectural overview.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "System Design",
+      "whyThisUnit": "This figure is crucial for understanding the fundamental design and interaction of the system's various components, which is central to the paper's methodology.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
-      "category": "method",
+      "category": "image",
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": null,
-      "whyThisUnit": "These items explain how musical characteristics are translated into real-time visual feedback using particle systems, a core method of the system.",
-      "stackLabel": "Visualizing Musical Structures",
+      "conceptualOrigin": "Visual elements from the paper.",
+      "whyThisUnit": "Groups all secondary visual figures illustrating various system features, gestures, and audiovisual mappings.",
+      "stackLabel": "System Visuals & Gestures",
       "items": [
         {
-          "index": 1,
-          "title": "Musical Data Visualization",
-          "contentType": "animation",
+          "index": 0,
+          "title": "Conducting Patterns",
+          "contentType": "figure",
           "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "Visual representation of pitch (particle color), intensity (particle size), and timbre (3D object shapes as emitters).",
+            "assetReference": "FIG2",
+            "caption": "Fig. 2. Four basic conducting pattern diagrams (images generated by the authors).",
+            "description": "Diagrams representing four basic conducting patterns (Binary, Ternary, Quaternary, Compound Binary) generated by the authors, which are used as reference gestures for the system's gesture recognition.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": 3,
-            "frames": [
-              {
-                "index": 1,
-                "label": "Pitch to Color",
-                "description": "Castel’s 1734 color mapping translates musical pitch to particle color for visual feedback.",
-                "assetReference": null
-              },
-              {
-                "index": 2,
-                "label": "Intensity to Size",
-                "description": "Particle size scales dynamically with musical intensity, allowing visual perception of loudness.",
-                "assetReference": null
-              },
-              {
-                "index": 3,
-                "label": "Timbre to Emitters",
-                "description": "3D object shapes (e.g., trombones) act as particle emitters, representing instrumental timbre.",
-                "assetReference": "FIG7"
-              }
-            ],
-            "transitionType": "slide",
-            "looping": false
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "Color Mapping for Pitch",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Fig. 3. On the top and bottom, respectively, Newton’s and Castel’s color maps (remade by the authors, adapted from [30]).",
+            "description": "A visual representation of Newton's and Castel's color maps, adapted by the authors, showcasing how different musical pitches are mapped to distinct colors in the 3D scene.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         },
         {
           "index": 2,
-          "title": "Particle System Manager",
-          "contentType": "text_panel",
+          "title": "Additional Image 1",
+          "contentType": "figure",
           "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "This component synchronizes audio and visual outputs, mapping extracted musical data from MIDI files to their real-time 3D visual representations.",
+            "assetReference": "FIG4",
+            "caption": "No caption extracted for Fig. 4.",
+            "description": "This figure provides an additional visual element from the paper without a specific caption, likely depicting a scene from the system.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Additional Image 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "No caption extracted for Fig. 5.",
+            "description": "This figure provides an additional visual element from the paper without a specific caption, likely depicting a scene from the system.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Score of Ninth Symphony",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Fig. 6. Score of the Ninth Symphony.",
+            "description": "An image displaying a segment of the score for Beethoven's Ninth Symphony, likely used as an example within the system's interface.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Trombone Emitters",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Fig. 7. Animation frame showing the emitters of the two trombones, gener­ ating particles of the same color (although they have different score markings).",
+            "description": "Animation frame showing the emitters of the two trombones, generating particles of the same color, illustrating visual output for specific instruments within the system.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Voice Emitters Off",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": "Fig. 8. Animation frame showing the voice emitters turned off, since in the score there is a rest. The path followed by the conductor’s gesture is also visualized on screen in real-time during system execution.",
+            "description": "Animation frame showing voice emitters turned off due to a score rest, with conductor’s gesture path visualized in real-time, demonstrating dynamic system response.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Highlighted Emitters",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": "Fig. 9. Animation frame with the particle emitters on the left highlighted.",
+            "description": "Animation frame highlighting particle emitters on the left, demonstrating a specific visual focus or interaction within the system's interface.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Particle Size & Gesture",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10",
+            "caption": "Fig. 10. Animation frame showing the increase of particles size, in relation to the amplitude of the executed gesture. The path followed by the conductor’s gesture is also visualized on screen in real-time during system execution.",
+            "description": "An animation frame depicting an increase in particle size, directly related to the amplitude of a conductor's gesture, with the real-time path of the gesture also visualized on screen.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         }
       ],
@@ -134,112 +215,55 @@
       }
     },
     {
-      "id": "unit_04",
-      "type": "card",
-      "priority": "secondary",
-      "title": "Gesture Recognition Algorithm",
-      "category": "method",
-      "summary": "Algorithm processes Kinect hand joint data to identify conducting gestures us...",
-      "contentType": "text_panel",
-      "content": {
-        "assetReference": null,
-        "caption": null,
-        "description": "An algorithm, based on Caramiaux et al., processes Kinect hand joint data by dividing gesture paths into segments and using dot product for similarity to identify conducting gestures.",
-        "chartType": null,
-        "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
-      },
-      "conceptualOrigin": "Section IV — System Implementation, Gesture Recognition",
-      "whyThisUnit": "This unit details the technical foundation for how the system interprets user movements, a critical method for interactive control.",
-      "stackLabel": null,
-      "items": null,
-      "styleHint": {
-        "categoryColor": "#00D4FF",
-        "colorName": "cyan blue"
-      }
-    },
-    {
-      "id": "unit_05",
+      "id": "table-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
-      "category": "metric",
+      "category": "table",
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": null,
-      "whyThisUnit": "These units present the methodology and quantitative results of the system's evaluation, demonstrating its practical performance and user experience.",
-      "stackLabel": "Usability Evaluation",
+      "conceptualOrigin": "User Study Evaluation",
+      "whyThisUnit": "Groups all tables presenting quantitative results and methodology from the User Experience study.",
+      "stackLabel": "User Study Data",
       "items": [
         {
-          "index": 1,
-          "title": "Usability Study Design",
-          "contentType": "text_panel",
-          "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "A study with 18 participants (professional conductors, musicians, ordinary users) performed 11 tasks to evaluate controls, gesture recognition, and dynamic/tempo modification.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        },
-        {
-          "index": 2,
-          "title": "Key Performance Metrics",
+          "index": 0,
+          "title": "User Study Tasks",
           "contentType": "table",
           "content": {
             "assetReference": null,
             "caption": null,
-            "description": "Average time and median attempts for selected tasks (Task 1, Task 10) across user groups, revealing performance differences.",
+            "description": "A list of the 11 specific tasks performed by participants in the User Experience study, outlining the gestural controls and musical interactions evaluated.",
             "chartType": "table",
-            "title": "Task Performance: Selected Metrics",
-            "data": {
-              "columns": [
-                "Metric",
-                "Conductors",
-                "Musicians",
-                "Ordinary Users"
-              ],
-              "rows": [
-                [
-                  "Task 1 Avg Time (s)",
-                  "Low",
-                  "Medium",
-                  "High (75% > Conductors)"
-                ],
-                [
-                  "Task 1 Median Attempts",
-                  "1-2",
-                  "1-2",
-                  "1-2"
-                ],
-                [
-                  "Task 10 Avg Time (s)",
-                  "6.43",
-                  "11.24",
-                  "10.46"
-                ],
-                [
-                  "Task 10 Median Attempts",
-                  "Low",
-                  "Similar to G2",
-                  "Similar to G3"
-                ]
-              ]
-            },
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "title": "User Study Tasks",
+            "data": {}
+          }
+        },
+        {
+          "index": 1,
+          "title": "Avg Time per Task",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Quantitative results from the User Experience study, showing the average time (in seconds) taken by professional conductors (Group 1), musicians (Group 2), and ordinary users (Group 3) to complete each of the 11 defined tasks.",
+            "chartType": "table",
+            "title": "Avg Time per Task",
+            "data": {}
+          }
+        },
+        {
+          "index": 2,
+          "title": "Median Attempts per Task",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Quantitative results showing the median number of attempts required by professional conductors (Group 1), musicians (Group 2), and ordinary users (Group 3) to successfully complete each of the 11 tasks in the User Experience study.",
+            "chartType": "table",
+            "title": "Median Attempts per Task",
+            "data": {}
           }
         }
       ],
@@ -251,33 +275,33 @@
   ],
   "objectScores": [
     {
-      "suggestedName": "Kinect Conducting System",
-      "score": 0.95,
+      "suggestedName": "Main Contribution",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Challenges in Conducting",
-      "score": 0.95,
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Visualizing Musical Structures",
-      "score": 0.95,
+      "suggestedName": "System Architecture",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Gesture Recognition Algorithm",
-      "score": 0.95,
+      "suggestedName": "System Visuals & Gestures",
+      "score": 0.8,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Usability Evaluation",
-      "score": 0.75,
-      "confidence": "medium",
+      "suggestedName": "User Study Data",
+      "score": 0.1,
+      "confidence": "low",
       "feedback": ""
     }
   ],

@@ -1,86 +1,96 @@
 {
-  "paperTitle": "Porting and Enhancing a Mental Health Narrative Game from Desktop to Meta Quest 2 VR",
-  "centralContribution": "This paper details the intricate process of porting and enhancing a mental health narrative game from a desktop platform to the Meta Quest 2 virtual reality (VR) platform, offering valuable insights and a roadmap for future VR game design and development. The core contribution lies in adapting the game to VR's unique capabilities and limitations while innovatively incorporating new features—such as updated object interactions, direct VR interactions, an overhauled user interface, and a virtual body—to improve gameplay, intensify player presence and immersion, and enhance mental health awareness.",
+  "paperTitle": "Porting and Enhancing a Mental Health Narrative Game to Meta Quest 2 VR",
+  "centralContribution": "This paper details the intricate process of porting and significantly enhancing a mental health narrative desktop game to the Meta Quest 2 VR platform, introducing novel features and optimizations to leverage VR's immersive capabilities. The work provides a comprehensive roadmap and valuable insights for future VR game design and development, focusing on performance, comfort, safety, interaction, and immersion to promote mental health awareness effectively.",
   "elements": [
     {
-      "name": "VR Mental Health Game Port & Enhancement",
-      "category": "contribution",
-      "description": "The adaptation and enrichment of an existing mental health narrative game from desktop to Meta Quest 2 VR, introducing new features for immersion and mental health awareness.",
+      "name": "Paper Abstract",
+      "category": "abstract",
+      "description": "Virtual Reality (VR), especially standalone devices like Meta Quest 2, offers immense potential for addressing global health challenges like depression. While games can foster mental health awareness, adapting existing desktop interactive narratives to VR presents significant challenges, including preventing motion sickness, designing intuitive 3D interactions, ensuring realistic embodiment, and overcoming hardware limitations. This paper addresses these complexities by detailing the porting and enhancement of a mental health narrative game to VR.",
       "relevanceScore": 10,
-      "justification": "This is the core, overarching contribution of the paper, detailing the transformation and improvement of a game for a new, immersive platform to address mental health.",
-      "groupingHint": "null"
+      "justification": "This element provides the essential context, problem statement, and a summary of the paper's approach, which is crucial for understanding the entire work.",
+      "groupingHint": "Core Paper Information",
+      "data": {}
     },
     {
-      "name": "VR Redesign for Meta Quest 2",
-      "category": "abstract",
-      "description": "The comprehensive process of adapting the desktop game to the Meta Quest 2 VR platform, focusing on performance, comfort, interaction, UI, and other VR-specific aspects.",
+      "name": "Core Contribution",
+      "category": "contribution",
+      "description": "The paper describes the detailed process of porting and significantly enhancing a mental health narrative desktop game to the Meta Quest 2 VR platform. It highlights the introduction of novel features and optimizations specifically designed to leverage VR's immersive capabilities, providing a comprehensive roadmap and valuable insights for future VR game design and development focused on performance, comfort, safety, interaction, and immersion for effective mental health awareness.",
+      "relevanceScore": 10,
+      "justification": "This element directly states the central innovation and achievement of the paper, defining its primary purpose and impact.",
+      "groupingHint": "Core Paper Information",
+      "data": {}
+    },
+    {
+      "name": "Meta Quest 2 Controller Mappings (FIG2.png)",
+      "category": "graphical_representation",
+      "description": "Figure 2 illustrates the Meta Quest 2 VR headset and its controllers, detailing the button mappings (A/B for emergency pause/exit, C for movement/rotation, D for Oculus system, E for object interaction, F for grasping) used to enable 6 Degrees of Freedom (6DoF) interactions within the VR game.",
       "relevanceScore": 9,
-      "justification": "This represents the fundamental technical approach and methodology used to achieve the paper's central contribution, encapsulating the entire development effort.",
-      "groupingHint": "Performance Optimization"
+      "justification": "This figure is fundamental as it depicts the primary human-computer interaction interface for the VR game, directly supporting the 'Interaction Design' aspect of the method and the core goal of leveraging VR's immersive capabilities.",
+      "groupingHint": "VR Interaction System",
+      "data": {}
     },
     {
-      "name": "Global Depression Challenge",
-      "category": "abstract",
-      "description": "Depression is a significant global health challenge affecting 280 million individuals, underscoring the critical need for mental disorder prevention, treatment, and awareness campaigns.",
-      "relevanceScore": 8,
-      "justification": "This element establishes the profound real-world problem that the paper's contribution aims to address, providing crucial context for its societal relevance.",
-      "groupingHint": "VR Technology Potential for Mental Health"
-    },
-    {
-      "name": "Performance Optimization",
-      "category": "abstract",
-      "description": "Techniques applied to reduce polygon counts, disable invisible objects, lower render buffer resolution, and simplify meshes to maintain high Frames Per Second (FPS) on Meta Quest 2 without sacrificing visual quality.",
-      "relevanceScore": 8,
-      "justification": "Crucial for the technical feasibility and user experience of any VR application, directly impacting comfort and playability by ensuring smooth, high-frame-rate performance.",
-      "groupingHint": "Comfort and Motion Sickness Prevention"
-    },
-    {
-      "name": "Comfort and Motion Sickness Prevention",
-      "category": "abstract",
-      "description": "Strategies like prioritizing high FPS, offering comfortable movement options (teleportation, snap turning), adding a 3D avatar, and carefully programming camera movements to mitigate VR motion sickness.",
-      "relevanceScore": 8,
-      "justification": "Addresses a significant hurdle in VR adoption, directly enhancing player comfort and accessibility, making the immersive experience viable for a broader audience.",
-      "groupingHint": "Performance Optimization"
-    },
-    {
-      "name": "Mental Health Level System and Object Interaction Mechanics",
-      "category": "abstract",
-      "description": "A core gameplay system where player actions (e.g., tidying, healthy eating) dynamically impact the protagonist's mental health level, visually reflected by the antagonist's size, enabled through interactable objects with colliders and animations.",
-      "relevanceScore": 7,
-      "justification": "This system directly ties player agency to the paper's goal of mental health awareness, making the abstract concept of mental well-being tangible and interactive within the game.",
-      "groupingHint": "Colliders for Interactable Objects"
-    },
-    {
-      "name": "Overhauled User Interface (UI)",
-      "category": "abstract",
-      "description": "A new floating dialogue system using a flat model that orbits the user's field of view via linear interpolation, ensuring dialogues remain visible and accessible without breaking VR immersion.",
-      "relevanceScore": 7,
-      "justification": "UI is critical for player interaction and narrative delivery in VR, and this specific design innovatively addresses VR challenges to enhance user experience and engagement.",
-      "groupingHint": "null"
-    },
-    {
-      "name": "Colliders for Interactable Objects",
+      "name": "Mental Health Level System Illustration (Made Bed) (FIG6.png)",
       "category": "image",
-      "description": "Colliders (Figure 5) were applied to interactable objects, enabling player engagement with environmental elements crucial for mental health level progression within the game.",
-      "relevanceScore": 7,
-      "justification": "Figure 5 is explicitly mentioned as illustrating a key technical aspect of object interaction, which is central to the game's mechanics and the mental health theme, demonstrating how abstract mechanics are materialized.",
-      "groupingHint": "Mental Health Level System and Object Interaction Mechanics"
+      "description": "Figure 6 displays an in-game scene of a neatly made bed, symbolizing the game's core mechanic where positive habits (like making the bed) increase the protagonist's mental health level and reduce the antagonist's size. This visually represents the therapeutic gameplay loop directly linked to mental well-being.",
+      "relevanceScore": 8,
+      "justification": "This image directly showcases a fundamental gameplay mechanic tied to the paper's core theme of mental health awareness and improvement through interactive narratives.",
+      "groupingHint": "Gameplay Mechanics",
+      "data": {}
     },
     {
-      "name": "VR Technology Potential for Mental Health",
-      "category": "abstract",
-      "description": "Standalone VR devices like Meta Quest 2, with high-resolution displays and 6 Degrees of Freedom tracking, offer unprecedented potential for creating immersive and engaging interactive experiences for mental health.",
+      "name": "Accelerated In-Game Time Progression (FIG4.png)",
+      "category": "image",
+      "description": "Figure 4 presents a series of screenshots showing the progression of an accelerated in-game day-night cycle, from 5 AM to 8 PM. This system simulates time, adjusting skybox illumination and contributing to the game's immersive environment.",
       "relevanceScore": 7,
-      "justification": "This element conceptualizes the technological opportunity and its specific advantages for the domain, framing why VR is a suitable platform for this mental health intervention.",
-      "groupingHint": "Global Depression Challenge"
+      "justification": "This image highlights a dynamic environmental feature that significantly contributes to realism and immersion, directly supporting the enhanced VR experience and the paper's focus on optimized immersion.",
+      "groupingHint": "User Experience & Immersion",
+      "data": {}
     },
     {
-      "name": "Limitations of Current Implementation",
-      "category": "abstract",
-      "description": "Current limitations include challenges with protagonist's elbow articulation, the use of static hand positions, and the need for more realistic autonomous leg animations.",
+      "name": "Integrated 3D UI and Dialogue System (FIG3.png)",
+      "category": "image",
+      "description": "Figure 3 shows various in-game text messages and dialogue boxes integrated into the 3D game space. This demonstrates the UI overhaul, where UI elements float and follow the player's head movement using linear interpolation for an immersive experience without distraction.",
+      "relevanceScore": 7,
+      "justification": "This image illustrates a significant improvement in user interface design for VR, enhancing immersion and aligning with the paper's focus on optimal user experience in the ported game.",
+      "groupingHint": "User Experience & Immersion",
+      "data": {}
+    },
+    {
+      "name": "DALL-E Generated Wall Painting (FIG13.png)",
+      "category": "image",
+      "description": "Figure 13 displays an in-game wall painting generated using DALL-E generative AI from the prompt 'Blue and red butterflies feeling depressed, but still holding hope (Salvador Dalí style, on a light grey background)'. This showcases the integration of AI-generated art for dynamic environmental content.",
       "relevanceScore": 6,
-      "justification": "This conceptual element summarizes the identified shortcomings and areas for future research and development, providing a realistic view of the system's current state.",
-      "groupingHint": "null"
+      "justification": "This image demonstrates an innovative use of generative AI to create dynamic and narrative-specific environmental art, directly contributing to the 'novel features' mentioned in the central contribution.",
+      "groupingHint": "Advanced Features",
+      "data": {}
+    },
+    {
+      "name": "In-Game Guidance and Object Highlighting (FIG10.png)",
+      "category": "image",
+      "description": "Figure 10 depicts an in-game scene with blue arrows indicating navigation paths and a depression medicine bottle highlighted on the toilet floor, alongside an antagonist character. This illustrates the guidance system designed to direct players to interactive elements and target locations.",
+      "relevanceScore": 6,
+      "justification": "This image shows a key mechanism for player guidance and interaction within the game, vital for narrative progression and achieving game objectives in the VR environment.",
+      "groupingHint": "Gameplay Mechanics",
+      "data": {}
+    },
+    {
+      "name": "Interactive Drawing System (FIG12.png)",
+      "category": "image",
+      "description": "Figure 12 shows the protagonist interacting with a 'drawable object,' specifically writing 'SVR 2023' on a virtual canvas using an in-game brush tool. This highlights an innovative feature for player agency and creative expression within the VR environment.",
+      "relevanceScore": 6,
+      "justification": "This image illustrates a unique and advanced interactive feature that enhances player agency and immersion, aligning with the paper's focus on novel VR interactions.",
+      "groupingHint": "Advanced Features",
+      "data": {}
+    },
+    {
+      "name": "Object Colliders for Interaction (FIG5.png)",
+      "category": "image",
+      "description": "Figure 5 visually represents or highlights the colliders applied to various interactable objects within the game scene. This demonstrates a fundamental technical aspect enabling physical interaction and collision detection in the VR environment, crucial for player engagement.",
+      "relevanceScore": 5,
+      "justification": "This image depicts a foundational technical detail critical for enabling realistic object interactions, which is a key component of the enhanced VR experience described in the paper.",
+      "groupingHint": "Technical Implementation",
+      "data": {}
     }
   ]
 }

@@ -1,0 +1,940 @@
+{
+  "paperTitle": "Viral.izo 2.0: An Enhanced Casual Educational Game for Resource Management Against Viral Threats",
+  "centralContribution": "This work presents Viral.izo 2.0, an enhanced casual educational game designed to foster resource management skills against emerging viral attacks, extending a previous version by incorporating three new game levels of progressive difficulty, three distinct virus variants with unique behaviors, two novel minigames, and a local ranking system, alongside a comprehensive User Experience (UX) assessment.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "unit_contribution",
+      "type": "card",
+      "priority": "primary",
+      "title": "Viral.izo 2.0 Enhancements",
+      "category": "contribution",
+      "summary": "Enhanced educational game with new levels, virus variants, minigames, and UX ...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Viral.izo 2.0 is an enhanced casual educational game designed to foster resource management skills against viral attacks. It extends a previous version by incorporating three new game levels of progressive difficulty, three distinct virus variants with unique behaviors, two novel minigames, and a local ranking system, all supported by a comprehensive User Experience (UX) assessment.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Viral.izo 2.0 Enhancements",
+      "whyThisUnit": "This unit directly states the central contribution of the paper, detailing the core innovations and improvements of Viral.izo 2.0.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit_abstract",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "Viral.izo 2.0 offers engaging resource management against viral threats for h...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The COVID-19 pandemic highlighted the critical need for effective health awareness and promotion, especially among children and young people. Digital games emerged as a significant tool for mental well-being and health promotion. While existing educational games address health, Viral.izo 2.0 aims to offer a more engaging and comprehensive experience by focusing on strategic resource management against evolving viral threats through an updated game design and rigorous user evaluation.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Paper Abstract",
+      "whyThisUnit": "This provides a concise summary of the paper's context, problem, and general approach, fulfilling the requirement for an abstract element.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit_graphical_representation",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Game Flow Diagram",
+      "category": "graphical_representation",
+      "summary": "Overall structure and progression of Viral.izo 2.0.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG6",
+        "caption": "Figure 6. The flow diagram of Viral.izo (version 2.0)",
+        "description": "A flow diagram illustrating the overall structure and progression of Viral.izo version 2.0, likely showing game states, levels, and transitions, providing a high-level overview of the game's architecture and player journey.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "FIG6.png - Game Structure Flow Diagram",
+      "whyThisUnit": "This figure represents the 'system pipeline or architecture' of the game, making it the single most important graphical representation for understanding the game's design and new features.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_image_stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Group of game-related images",
+      "whyThisUnit": "This stack groups all other relevant figures from the paper that are images (screenshots, diagrams, illustrations) in sequential order, excluding the main graphical representation.",
+      "stackLabel": "Game Visuals & Mechanics",
+      "items": [
+        {
+          "index": 1,
+          "title": "Game Start Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Figure 1. Viral.izo 2.0 game start screen",
+            "description": "The start screen of Viral.izo 2.0, showcasing the game's initial interface and visual style.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Opening Scene",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Figure 2. Opening scene of Viral.izo",
+            "description": "The opening scene of Viral.izo, setting the initial context for the player.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Virus Variants and Enemies",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Figure 3. The main enemies in the Viral.izo game: the original virus, its three variants, and the bacteria",
+            "description": "This figure illustrates the primary antagonists in the Viral.izo game, showcasing the original virus, its three newly added variants (Variant 1, Variant 2, and Variant 3), and a bacteria enemy, each with distinct visual characteristics and behaviors.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Visual Effects 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_1",
+            "caption": "Figure 4. Some of the visual effects generated with the Unity particles system for the virus and its three variants",
+            "description": "Illustrates visual effects generated using the Unity particle system for viruses and their variants.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Visual Effects 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_2",
+            "caption": "Figure 4. Some of the visual effects generated with the Unity particles system for the virus and its three variants",
+            "description": "Illustrates visual effects generated using the Unity particle system for viruses and their variants.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Visual Effects 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_3",
+            "caption": "Figure 4. Some of the visual effects generated with the Unity particles system for the virus and its three variants",
+            "description": "Illustrates visual effects generated using the Unity particle system for viruses and their variants.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Visual Effects 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_4",
+            "caption": "Figure 4. Some of the visual effects generated with the Unity particles system for the virus and its three variants",
+            "description": "Illustrates visual effects generated using the Unity particle system for viruses and their variants.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Collectible Items 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_1",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Collectible Items 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_2",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Collectible Items 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_3",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Collectible Items 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_4",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Collectible Items 5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_5",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Collectible Items 6",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_6",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Collectible Items 7",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_7",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "Collectible Items 8",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_8",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
+          "title": "Collectible Items 9",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5_9",
+            "caption": "Figure 5. Collectible in-game items.",
+            "description": "Icons representing various collectible in-game items, sourced from free stock images.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 17,
+          "title": "Scientist Message & Minigames",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Figure 7. A message pops up on the map from the scientist working remotely to help the player",
+            "description": "This image depicts a game screen where a pop-up message from a scientist appears, offering the player a size bonus and the option to initiate Minigames 1 or 2.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 18,
+          "title": "Game Over & Victory Screens",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": "Figure 8. Game over and victory screens",
+            "description": "Screens displayed upon game over or victory, including ranking and player scores.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 19,
+          "title": "Minigame 1 Screens 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9_1",
+            "caption": "Figure 9. Example of screens from Minigame 1",
+            "description": "This figure displays example screens from 'Minigame 1,' a card-based educational game where players chronologically order historical pandemic events.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 20,
+          "title": "Minigame 1 Screens 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9_2",
+            "caption": "Figure 9. Example of screens from Minigame 1",
+            "description": "This figure displays example screens from 'Minigame 1,' a card-based educational game where players chronologically order historical pandemic events.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 21,
+          "title": "Minigame 2 Keyframes",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10",
+            "caption": "Figure 10. Some keyframes in temporal sequence from the timeline of Minigame2",
+            "description": "This figure displays a sequence of keyframes from 'Minigame 2,' showing the player's character navigating and avoiding virus enemies, with score bonuses.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit_graph_stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "graph",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Group of UX assessment charts and graphs",
+      "whyThisUnit": "This stack groups all figures from the paper classified as charts or graphs, primarily related to the user experience assessment results, in sequential order.",
+      "stackLabel": "UX Assessment Results",
+      "items": [
+        {
+          "index": 1,
+          "title": "CEGE Part I Results 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_1",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "CEGE Part I Results 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_2",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "CEGE Part I Results 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_3",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "CEGE Part I Results 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_4",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "CEGE Part I Results 5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_5",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "CEGE Part I Results 6",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_6",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "CEGE Part I Results 7",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_7",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "CEGE Part I Results 8",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_8",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "CEGE Part I Results 9",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_9",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "CEGE Part I Results 10",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_10",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "CEGE Part I Results 11",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_11",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "CEGE Part I Results 12",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_12",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "CEGE Part I Results 13",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_13",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "CEGE Part I Results 14",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_14",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "CEGE Part I Results 15",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_15",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
+          "title": "CEGE Part I Results 16",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_16",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 17,
+          "title": "CEGE Part I Results 17",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_17",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 18,
+          "title": "CEGE Part I Results 18",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11_18",
+            "caption": "Figure 11. Part I of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part I), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 19,
+          "title": "CEGE Part II Results 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_1",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 20,
+          "title": "CEGE Part II Results 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_2",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 21,
+          "title": "CEGE Part II Results 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_3",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 22,
+          "title": "CEGE Part II Results 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_4",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 23,
+          "title": "CEGE Part II Results 5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_5",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 24,
+          "title": "CEGE Part II Results 6",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_6",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 25,
+          "title": "CEGE Part II Results 7",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_7",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 26,
+          "title": "CEGE Part II Results 8",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_8",
+            "caption": "Figure 12. Part II of raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire (Part II), with positively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 27,
+          "title": "CEGE Negative Results 1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_1",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 28,
+          "title": "CEGE Negative Results 2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_2",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 29,
+          "title": "CEGE Negative Results 3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_3",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 30,
+          "title": "CEGE Negative Results 4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_4",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 31,
+          "title": "CEGE Negative Results 5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_5",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 32,
+          "title": "CEGE Negative Results 6",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_6",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 33,
+          "title": "CEGE Negative Results 7",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_7",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 34,
+          "title": "CEGE Negative Results 8",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_8",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 35,
+          "title": "CEGE Negative Results 9",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_9",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 36,
+          "title": "CEGE Negative Results 10",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_10",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 37,
+          "title": "CEGE Negative Results 11",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_11",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 38,
+          "title": "CEGE Negative Results 12",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13_12",
+            "caption": "Figure 13. Raw results from the CEGE questionnaire",
+            "description": "Raw results from the CEGE questionnaire, with negatively worded questions answered using a 7-point Likert scale.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 39,
+          "title": "Overall CEGE Results",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG14",
+            "caption": "Figure 14. Average results and standard deviations calculated from the CEGE questionnaire",
+            "description": "This figure displays the aggregated average results and standard deviations for all questions from the Core Elements of Gaming Experience (CEGE) questionnaire, summarizing the user experience assessment.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Viral.izo 2.0 Enhancements",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Flow Diagram",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Visuals & Mechanics",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "UX Assessment Results",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

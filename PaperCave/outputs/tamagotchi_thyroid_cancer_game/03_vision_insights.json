@@ -1,0 +1,95 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure likely shows the opening scene or title screen of the CancerST game, introducing its visual style and theme.",
+      "relevance": "The image introduces the user to the game's environment and initial interface, which is central to the paper's contribution of developing an educational game for thyroid cancer.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG10_1.png",
+      "description": "This figure, as part of Figure 10, appears to display a key positive comment from a thyroid specialist, possibly accompanied by a relevant medical icon.",
+      "relevance": "This image contributes to the validation of the CancerST game by presenting direct positive feedback from medical professionals, supporting the paper's claims about the game's quality and educational value.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG10_2.png",
+      "description": "This figure, as part of Figure 10, appears to display a key positive comment from a thyroid specialist, possibly accompanied by a relevant medical icon.",
+      "relevance": "This image contributes to the validation of the CancerST game by presenting direct positive feedback from medical professionals, supporting the paper's claims about the game's quality and educational value.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG10_3.png",
+      "description": "This figure, as part of Figure 10, appears to display a key positive comment from a thyroid specialist, possibly accompanied by a relevant medical icon.",
+      "relevance": "This image contributes to the validation of the CancerST game by presenting direct positive feedback from medical professionals, supporting the paper's claims about the game's quality and educational value.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely depicts the home screen of the CancerST game, featuring a virtual thyroid character that visually represents a cancerous state.",
+      "relevance": "The image illustrates the core interactive element of the game, the thyroid character, and the main user interface where players will interact with the game's educational content.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure appears to showcase various customizable items designed for personalizing the virtual thyroid characters within the game.",
+      "relevance": "The image highlights a feature intended to enhance player engagement and personalization, contributing to the game's appeal and ultimately its effectiveness as an educational tool.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure likely displays several virtual thyroid characters, each randomly customized by the game system, exhibiting diverse appearances.",
+      "relevance": "The image demonstrates the variety of character designs possible through the game's customization system, illustrating how the game maintains player interest and provides a unique experience.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure appears to show a series of animations or sequential images illustrating different actions for interacting with the virtual thyroid character.",
+      "relevance": "The image visualizes key gameplay mechanics, demonstrating how players engage with and manage the virtual character, which is fundamental to the game's educational objectives.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure likely depicts animations illustrating the consumption of various food types and their effect on energizing the virtual thyroid character.",
+      "relevance": "The image highlights a specific interactive element related to character care and health management, which serves to educate players about factors influencing thyroid health.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This figure likely displays various treatments or interventions for thyroid diseases as they are represented or available within the CancerST game.",
+      "relevance": "The image demonstrates how the game integrates educational content about medical treatments, directly supporting the paper's aim of providing comprehensive information on thyroid conditions.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_1.png",
+      "description": "This figure, as part of Figure 8, appears to showcase representations of specific diseases associated with the thyroid gland as depicted in CancerST.",
+      "relevance": "This image illustrates how the game integrates detailed educational content about various thyroid-associated diseases, thereby contributing to the player's medical knowledge.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_2.png",
+      "description": "This figure, as part of Figure 8, appears to showcase representations of specific diseases associated with the thyroid gland as depicted in CancerST.",
+      "relevance": "This image illustrates how the game integrates detailed educational content about various thyroid-associated diseases, thereby contributing to the player's medical knowledge.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9.png",
+      "description": "This figure likely presents the 'game over' screen, illustrating the consequences of character neglect or disease progression in CancerST.",
+      "relevance": "The image demonstrates a crucial feedback mechanism in the game, reinforcing the importance of continuous care and engagement with the educational aspects of thyroid health to avoid negative outcomes.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

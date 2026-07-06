@@ -1,30 +1,26 @@
 {
-  "paperTitle": "QLattes: An Open-Source Browser Extension for Lattes CV Publication Analysis and Visualization",
-  "centralContribution": "QLattes is an open-source browser extension for Chrome and Firefox that automatically classifies, annotates, filters, analyzes, and visualizes journal publications listed on Brazil's Lattes CV platform using CAPES’ former Qualis ranking system. This paper presents QLattes' architecture and implementation, alongside a large-scale analysis of its real-world usage data from Google Analytics and an online survey of 1,495 anonymous participants, demonstrating its extensive reach (over 27,000 weekly active users as of October 2025) and impact within the Brazilian academic community, while highlighting its modular design for future adaptability beyond Qualis.",
-  "unitCount": 5,
+  "paperTitle": "QLattes: An Open-Source Browser Extension for Brazilian Academic CV Data Analysis",
+  "centralContribution": "QLattes is an open-source browser extension for Chrome and Firefox designed to automatically classify, annotate, filter, analyze, and visualize journal publication data from Brazil's Lattes CV platform using CAPES' former Qualis ranking system. This paper presents its architecture, implementation, and a comprehensive analysis of its real-world usage through Google Analytics data (over 27,000 weekly active users by October 2025) and an online survey of 1,495 participants, revealing distinct user profiles (e.g., high-frequency 'power users' for administrative tasks) and feature priorities across occupations and regions.",
+  "unitCount": 6,
   "units": [
     {
-      "id": "unit_01",
+      "id": "contribution-card",
       "type": "card",
       "priority": "primary",
-      "title": "QLattes Browser Extension",
+      "title": "QLattes: Open-Source Extension",
       "category": "contribution",
-      "summary": "Open-source extension for Lattes CV publication analysis and visualization.",
+      "summary": "QLattes automates Qualis ranking for Lattes CVs, with architecture and usage ...",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "QLattes is an open-source browser extension for Chrome and Firefox that automatically classifies, annotates, filters, analyzes, and visualizes journal publications listed on Brazil's Lattes CV platform using CAPES’ former Qualis ranking system. This paper presents QLattes' architecture and implementation, alongside a large-scale analysis of its real-world usage data and an online survey, demonstrating its extensive reach and impact within the Brazilian academic community, while highlighting its modular design for future adaptability.",
+        "description": "QLattes is an open-source browser extension that automates the classification, annotation, filtering, analysis, and visualization of journal publication data from Brazil's Lattes CV platform, using the Qualis ranking system. The paper details its architecture, implementation, and analyzes its extensive real-world usage and user feedback, highlighting its impact and user-specific priorities.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "centralContribution",
-      "whyThisUnit": "This unit highlights the core innovation and purpose of QLattes, establishing its central role in the paper.",
+      "conceptualOrigin": "Central Contribution of QLattes",
+      "whyThisUnit": "This element directly states the main contribution of the paper, outlining the system's purpose, scope, and the key findings presented.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -33,56 +29,23 @@
       }
     },
     {
-      "id": "unit_02",
+      "id": "abstract-card",
       "type": "card",
       "priority": "secondary",
-      "title": "QLattes Architecture",
-      "category": "graphical_representation",
-      "summary": "Visual overview of the QLattes Manifest V3 browser extension's core structure.",
-      "contentType": "figure",
-      "content": {
-        "assetReference": "FIG2_1",
-        "caption": "Figure 2. QLattes’ architecture",
-        "description": "The core structure of QLattes, implemented as a Manifest V3 browser extension using standard web technologies, content scripts, and local data sources.",
-        "chartType": null,
-        "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
-      },
-      "conceptualOrigin": "QLattes Architecture (Fig 2)",
-      "whyThisUnit": "Explains the technical foundation and operation of QLattes, crucial for understanding its method.",
-      "stackLabel": null,
-      "items": null,
-      "styleHint": {
-        "categoryColor": "#00D4FF",
-        "colorName": "cyan blue"
-      }
-    },
-    {
-      "id": "unit_03",
-      "type": "card",
-      "priority": "secondary",
-      "title": "Context and Problem",
+      "title": "Abstract: QLattes Overview",
       "category": "abstract",
-      "summary": "Explains the Lattes platform, Qualis system, and manual cross-referencing pro...",
+      "summary": "QLattes solves Lattes/Qualis integration issues, showing high adoption and po...",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "Brazil's Lattes CV platform is the central repository for academic achievements, established by CNPq. CAPES' Qualis system is the official ranking for scientific publications. A significant problem addressed by QLattes is the manual and inefficient process of cross-referencing Lattes CV publications with Qualis classifications, due to the independent development of these two systems.",
+        "description": "The Brazilian academic evaluation system, centered on the Lattes platform and CAPES' Qualis ranking, suffered from a lack of integration, forcing manual and cumbersome cross-referencing of publication venues. This inefficiency was exacerbated by the discontinuation of the Qualis system in May 2025. QLattes, an open-source browser extension, addresses this by automatically classifying and visualizing Qualis data on Lattes CVs. Implemented client-side with standard web technologies, it integrates three Qualis data sources and applies specific classification rules. The paper evaluates its significant adoption (over 27,000 weekly active users) and positive user experience through Google Analytics and a user survey, demonstrating its value in streamlining academic evaluation, despite limitations like reliance on HTML parsing and single-author focus.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Qualis Classification System, Lattes Platform, Manual Cross-referencing Problem",
-      "whyThisUnit": "Provides essential background on the academic context and the specific problem QLattes addresses, setting the stage for the solution.",
+      "conceptualOrigin": "Abstract of QLattes Paper",
+      "whyThisUnit": "This element summarizes the entire paper, covering the problem, context, proposed solution (QLattes), methodology, key results, and limitations, providing a comprehensive overview.",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -91,7 +54,32 @@
       }
     },
     {
-      "id": "unit_04",
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "QLattes Architecture",
+      "category": "graphical_representation",
+      "summary": "High-level diagram of QLattes system components and data flow.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG2_1",
+        "caption": "Figure 2. QLattes’ architecture",
+        "description": "A diagram illustrating the high-level components and their interactions within the QLattes system's architecture, showcasing how the browser extension integrates with Lattes CV pages and processes data.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "QLattes System Architecture (Figure 2_1)",
+      "whyThisUnit": "This figure is central to understanding the proposed system by providing a visual overview of its design and how its different parts function together, which is critical for comprehending the technical contribution.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
@@ -100,41 +88,33 @@
       "contentType": null,
       "content": null,
       "conceptualOrigin": null,
-      "whyThisUnit": "Groups together various visual representations of QLattes' interface and internal architecture for a comprehensive visual understanding.",
-      "stackLabel": "Visuals & Interface",
+      "whyThisUnit": "",
+      "stackLabel": "QLattes Visuals",
       "items": [
         {
-          "index": 1,
-          "title": "Architecture Details",
+          "index": 0,
+          "title": "QLattes Architecture Diagram",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG2_2",
-            "caption": "Figure 2. QLattes’ architecture details",
-            "description": "Further details of the QLattes architecture beyond the main overview, illustrating specific components or data flows.",
+            "caption": "Figure 2. QLattes’ architecture",
+            "description": "Diagram illustrating the high-level components and their interactions within the QLattes system's architecture, showing how the browser extension integrates with Lattes CV pages and processes data.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
-          "index": 2,
-          "title": "Annotated Lattes CV",
+          "index": 1,
+          "title": "Annotated Lattes CV Page",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG8",
-            "caption": "Figure 8. Example of a Lattes CV page annotated by QLattesCC.",
-            "description": "An example of a Lattes CV page showing QLattesCC (a variant) in action, annotating journal articles and conference papers with Qualis ranks and citation metrics.",
+            "caption": "Figure 8. Example of a Lattes CV page annotated by the QLattesCC prototype, a new variant of QLattes tailored for computer science researchers. The tool annotates both journal articles and conference papers with relevant classification and citation metrics. The callouts highlight the key enhancements: 1. Journal Qualis rank based on CAPES classification; 2. Estimated Qualis rank inferred from Scopus and JCR metrics; 3. Conference Qualis rank from the CAPES Qualis Eventoss database; and 4. Conference identification method based on string similarity to known venues.",
+            "description": "A screenshot of a Lattes CV page annotated by the QLattesCC prototype, highlighting key enhancements like Qualis ranks and identification methods, demonstrating the extension's direct user interface impact.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         }
       ],
@@ -144,7 +124,7 @@
       }
     },
     {
-      "id": "unit_05",
+      "id": "graph-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
@@ -153,75 +133,72 @@
       "contentType": null,
       "content": null,
       "conceptualOrigin": null,
-      "whyThisUnit": "Consolidates key performance indicators and user satisfaction data, quantitatively demonstrating QLattes' impact and positive reception within the academic community.",
-      "stackLabel": "Usage & Feedback Metrics",
+      "whyThisUnit": "",
+      "stackLabel": "QLattes Analytics & Feedback",
       "items": [
         {
-          "index": 1,
+          "index": 0,
           "title": "Weekly Active Users",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG3",
-            "caption": "Figure 3. QLattes’ number of weekly active users over time.",
-            "description": "Shows the growth of QLattes' weekly active users from its launch up to June 2025, sourced from Google Analytics.",
+            "caption": "Figure 3. QLattes’ number of weekly active users over time since its launch up to June, 2025. Source: Google Analytics.",
+            "description": "Line graph showing the growth of QLattes' weekly active users from launch to June 2025, indicating rapid adoption.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
-          "index": 2,
+          "index": 1,
           "title": "Global User Distribution",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG4",
-            "caption": "Figure 4. Geographic distribution of QLattes’s total active users around the world.",
-            "description": "Highlights countries with QLattes active users as of June 2025, with darker blue indicating a higher number of users.",
+            "caption": "Figure 4. Geographic distribution of QLattes’s total active users around the world as of June, 2025. Each country with active users are highlighted in blue. The darker the tone of the color, the higher the number of active users. Source: Google Analytics.",
+            "description": "Map highlighting the geographic distribution of QLattes active users worldwide as of June 2025, with darker tones indicating higher user counts.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Brazilian Regional Users",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Figure 5. Distribution of active QLattes users across the five regions of Brazil as of June, 2025. Source: Google Analytics.",
+            "description": "Distribution of active QLattes users across Brazil's five regions as of June 2025, showing user concentration by region.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         },
         {
           "index": 3,
-          "title": "Brazil User Distribution",
+          "title": "Brazilian City Users",
           "contentType": "figure",
           "content": {
-            "assetReference": "FIG5",
-            "caption": "Figure 5. Distribution of active QLattes users across five regions of Brazil.",
-            "description": "Details the distribution of QLattes' active users across the five main regions of Brazil as of June 2025, from Google Analytics.",
+            "assetReference": "FIG6",
+            "caption": "Figure 6. Distribution of active QLattes users across the top 50 cities in Brazil as of June, 2025. Source: Google Analytics.",
+            "description": "Distribution of active QLattes users across Brazil's top 50 cities as of June 2025, highlighting urban user bases.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 4,
-          "title": "User Satisfaction Ratings",
+          "title": "User Experience Ratings",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG7",
-            "caption": "Figure 7. Average Likert-scale ratings for QLattes’s efficiency, usability, integration, and satisfaction.",
-            "description": "Visual summary of average Likert-scale ratings (1–5) for key aspects like efficiency (4.53), usability (4.38), and overall satisfaction (4.39).",
+            "caption": "Figure 7. Visual summary of the average Likert-scale ratings (1–5) for QLattes’s efficiency (4.53), usability (4.38), integration (4.30), and satisfac- tion (4.39).",
+            "description": "Bar chart summarizing user feedback on QLattes' efficiency, usability, integration, and satisfaction ratings via Likert scale.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         }
       ],
@@ -229,11 +206,88 @@
         "categoryColor": "#00FF88",
         "colorName": "neon green"
       }
+    },
+    {
+      "id": "table-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "QLattes Data & Comparisons",
+      "items": [
+        {
+          "index": 0,
+          "title": "Qualis Classification Rules",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "A table outlining the specific rules used by QLattes to classify journal publications into Qualis categories (A1 to B4) based on their Scopus citation percentile ranges.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 1,
+          "title": "Performance Benchmarks",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Table presenting average and standard deviation of time taken for annotation, graphic, and table view rendering of a Lattes CV with over 150 journal publications across 10 test runs.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 2,
+          "title": "User Demographics & Needs",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Table summarizing survey responses on user occupation, organization, region, QLattes usage duration, frequency, purpose, and prioritized feature requests.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 3,
+          "title": "Related Tools Comparison",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Table comparing QLattes with other academic tools, categorizing them by main goal, interaction model, primary user, and features like Qualis integration and multi-CV aggregation.",
+            "chartType": "comparison_table",
+            "title": null,
+            "data": {}
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
     }
   ],
   "objectScores": [
     {
-      "suggestedName": "QLattes Browser Extension",
+      "suggestedName": "QLattes: Open-Source Extension",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Abstract: QLattes Overview",
       "score": 1.0,
       "confidence": "high",
       "feedback": ""
@@ -245,25 +299,25 @@
       "feedback": ""
     },
     {
-      "suggestedName": "Context and Problem",
+      "suggestedName": "QLattes Visuals",
       "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Visuals & Interface",
-      "score": 0.8,
+      "suggestedName": "QLattes Analytics & Feedback",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Usage & Feedback Metrics",
-      "score": 0.8,
-      "confidence": "high",
+      "suggestedName": "QLattes Data & Comparisons",
+      "score": 0.2,
+      "confidence": "low",
       "feedback": ""
     }
   ],
-  "totalAttempts": 3,
+  "totalAttempts": 1,
   "assembledFromMultipleAttempts": false,
   "implementationNotes": {
     "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",

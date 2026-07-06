@@ -1,0 +1,239 @@
+{
+  "paperTitle": "SIB Game: A Games for Change Platform for Sustainable Development Goals",
+  "centralContribution": "This paper introduces SIB Game, an innovative Games for Change (G4C) platform designed to engage players in tackling socio-environmental and health challenges aligned with the 17 Sustainable Development Goals (SDGs). It provides a structured summary of its development and early validation, emphasizing its role in fostering critical thinking, collaboration, and behavior change towards sustainability through interactive, challenge-based learning and gamified mechanics.",
+  "unitCount": 4,
+  "units": [
+    {
+      "id": "unit-contribution-1",
+      "type": "card",
+      "priority": "primary",
+      "title": "SIB Game Platform for SDGs",
+      "category": "contribution",
+      "summary": "Introduces SIB Game, a G4C platform for SDGs tackling socio-environmental iss...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Introduction of SIB Game, an innovative Games for Change (G4C) platform designed to engage players in tackling socio-environmental and health challenges aligned with the 17 Sustainable Development Goals (SDGs), fostering critical thinking, collaboration, and behavior change towards sustainability through interactive, challenge-based learning and gamified mechanics.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "SIB Game Platform for SDG Engagement",
+      "whyThisUnit": "Central innovation of the paper.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "unit-abstract-1",
+      "type": "card",
+      "priority": "secondary",
+      "title": "SIB Game: Addressing SDG Gap",
+      "category": "abstract",
+      "summary": "Addresses SDG implementation gap with SIB Game platform for engagement.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The paper addresses the challenge of translating theoretical sustainability knowledge into actionable change, particularly regarding the 17 Sustainable Development Goals (SDGs), due to low engagement in traditional training and lack of scalable practical tools. It introduces SIB Game, a Games for Change (G4C) platform, as a solution to provide structured, SDG-aligned content and practical engagement for both educational and corporate needs, leveraging gamified mechanics to foster critical thinking and collaborative problem-solving.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "SIB Game: Addressing SDG Implementation Gap",
+      "whyThisUnit": "Summary of the paper's context, problem, and approach.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "unit-graphical-rep-1",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Core Gameplay: Move Phase",
+      "category": "graphical_representation",
+      "summary": "Main visual: SIB Game's interactive move phase interface.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG6",
+        "caption": null,
+        "description": "A screenshot of the game's interface during a player's move phase, likely showing the game board and available actions, central to understanding the core gameplay loop.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "SIB Game Gameplay - Move Phase",
+      "whyThisUnit": "Most important visual of the system in action.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "unit-image-stack-1",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Group of game screenshots and original board game photo.",
+      "whyThisUnit": "Showcases various UI elements and the game's origins.",
+      "stackLabel": "Game Interface & History",
+      "items": [
+        {
+          "index": 1,
+          "title": "Game Home Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": null,
+            "description": "A screenshot of the main home screen or menu of the SIB Game, representing the initial user interface and entry point for players into the online platform.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Original Board Game",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": null,
+            "description": "A photograph of the original physical board game version of SIB Game, showcasing its layout and components, providing historical context for the digital adaptation.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Online Room Creation",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": null,
+            "description": "A screenshot of the user interface for creating online game rooms within the SIB Game application, demonstrating a core functionality for multiplayer interaction.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Room & Character Select",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": null,
+            "description": "UI for creating a room and selecting a character, illustrating key setup processes for multiplayer sessions and player personalization in SIB Game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Character Selection UI",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": null,
+            "description": "A dedicated user interface screen for players to choose their character within the SIB Game, highlighting a crucial step in personalizing the player's experience.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Solve Option Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": null,
+            "description": "Screenshot showing the 'Solve' option within the SIB Game interface, illustrating a key player action during gameplay.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Negotiate Option Screen",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": null,
+            "description": "Screenshot displaying the 'Negotiate' option within SIB Game, highlighting a social interaction mechanic for players.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Pass Action & Global Events",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": null,
+            "description": "Screenshots of in-game elements: 'Pass action' and 'News Around the World' with 'Luck' or 'Setback' choices, illustrating dynamic event-driven gameplay.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "SIB Game Platform for SDGs",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "SIB Game: Addressing SDG Gap",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Core Gameplay: Move Phase",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Interface & History",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

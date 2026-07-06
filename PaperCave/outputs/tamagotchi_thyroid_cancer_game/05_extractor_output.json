@@ -1,0 +1,96 @@
+{
+  "paperTitle": "CancerST: A Tamagotchi-Style Serious Game for Thyroid Cancer Awareness and Management",
+  "centralContribution": "This work introduces CancerST, a Tamagotchi-style serious game designed to enhance thyroid cancer awareness and management through gamified learning. It innovates by personifying the thyroid gland into an interactive virtual pet, offering a novel channel for disseminating information about thyroid health and promoting a ludic understanding of management strategies. The game was playtested with three thyroid health specialists, generating qualitative feedback affirming its potential as a useful educational tool.",
+  "elements": [
+    {
+      "name": "CancerST Introduction and Innovation",
+      "category": "contribution",
+      "description": "CancerST is presented as a Tamagotchi-style serious game aimed at improving thyroid cancer awareness and management. Its innovation lies in personifying the thyroid gland as a virtual pet to deliver educational content and promote an engaging understanding of health strategies. Initial qualitative feedback from thyroid specialists supports its educational utility.",
+      "relevanceScore": 10,
+      "justification": "This is the explicit central contribution of the paper, detailing the core innovation and purpose of the developed game.",
+      "groupingHint": "Core paper contribution",
+      "data": {}
+    },
+    {
+      "name": "Abstract Summary: Problem of Thyroid Cancer and Gamified Solution",
+      "category": "abstract",
+      "description": "Thyroid cancer is globally prevalent, with significant new cases and fatalities projected annually, particularly affecting women. Despite effective treatments, there's a recognized research gap in serious games for thyroid cancer awareness and management. This paper addresses this gap by proposing CancerST, a virtual pet game inspired by Tamagotchi-style mechanics, to leverage engaging gameplay for healthcare education related to thyroid health.",
+      "relevanceScore": 9,
+      "justification": "This element summarizes the context, problem, and the paper's general approach to addressing a significant health issue using a novel educational game.",
+      "groupingHint": "Overall paper summary",
+      "data": {}
+    },
+    {
+      "name": "CancerST Home Screen and User Interface",
+      "category": "graphical_representation",
+      "description": "Figure 2 depicts the main home screen of the CancerST game, showcasing the central virtual thyroid character, likely in a cancerous state, along with the 2D point-and-click interface featuring buttons on the left and right sides, and a health bar and game timer in the HUD.",
+      "relevanceScore": 9,
+      "justification": "This figure is the single most important visual representation as it shows the core interactive environment and the main character, central to the game's function and educational delivery.",
+      "groupingHint": "Core gameplay interface",
+      "data": {}
+    },
+    {
+      "name": "CancerST Opening Scene",
+      "category": "image",
+      "description": "Figure 1 likely presents the title screen or opening scene of the CancerST game, introducing its visual style, theme, and branding, giving users their first impression of the game's environment.",
+      "relevanceScore": 8,
+      "justification": "The opening scene is crucial for setting the game's tone and visual identity, which is key for user engagement in a serious game.",
+      "groupingHint": "Game aesthetics and introduction",
+      "data": {}
+    },
+    {
+      "name": "Thyroid Character Customization and Randomization",
+      "category": "image",
+      "description": "Figures 3 and 4 illustrate the customization features within CancerST. Figure 3 shows various customizable adornments (hats, beads, ties, glasses) for the virtual thyroid characters. Figure 4 displays several randomly customized virtual thyroid characters, demonstrating the diversity of appearances possible through the game's system, which includes randomly assigned health problems, gender, and age.",
+      "relevanceScore": 8,
+      "justification": "These images highlight features designed to enhance player engagement and personalization, making the game more appealing and fostering a stronger connection with the virtual pet, which supports the educational objective.",
+      "groupingHint": "Character personalization",
+      "data": {}
+    },
+    {
+      "name": "Basic Care and Feeding Interactions",
+      "category": "image",
+      "description": "Figures 5 and 6 visualize the fundamental interactive elements for caring for the virtual thyroid character. Figure 5 depicts animations for Sleeping, Exercise, and Care, showing particle systems and visual cues. Figure 6 illustrates animations for feeding the character with various healthy food options, which appear randomly, demonstrating how players manage the pet's basic needs.",
+      "relevanceScore": 7,
+      "justification": "These figures showcase core gameplay mechanics that directly involve players in managing the virtual thyroid's daily health, fundamental to the Tamagotchi-style and the gamified learning process.",
+      "groupingHint": "Daily character interactions",
+      "data": {}
+    },
+    {
+      "name": "Advanced Medical Treatment Options",
+      "category": "image",
+      "description": "Figure 7 displays how various medical treatments for thyroid diseases are represented within the CancerST game. This includes advanced care options like Radioactive Iodine Therapy (mimicked by a particle system) and Radiotherapy (featuring a stabilizing mask animation), which are revealed when specific health conditions are met.",
+      "relevanceScore": 7,
+      "justification": "This image demonstrates the integration of critical medical information and interventions into the gameplay, directly supporting the paper's aim of educating players about thyroid cancer management.",
+      "groupingHint": "Medical management gameplay",
+      "data": {}
+    },
+    {
+      "name": "Thyroid Health State Machine and Disease States",
+      "category": "image",
+      "description": "Figure 8 (including sub-figures 8_1 and 8_2) illustrates the game's state machine that updates the thyroid character's condition every second based on player interactions, and showcases representations of specific diseases associated with the thyroid gland. This includes visual changes reflecting conditions like hypothyroidism, hyperthyroidism, various stages of thyroid cancer, and nodules.",
+      "relevanceScore": 7,
+      "justification": "This figure is crucial for understanding the underlying logic and medical accuracy of the game's simulation, which dictates how the virtual thyroid's health evolves and educates the player about disease progression.",
+      "groupingHint": "Game logic and disease representation",
+      "data": {}
+    },
+    {
+      "name": "Specialist Positive Feedback Highlights",
+      "category": "image",
+      "description": "Figure 10 (represented by Fig 10_1, Fig 10_2, Fig 10_3) highlights key positive comments received from thyroid health specialists during the qualitative user experience evaluation. These comments, such as 'Accurate disease coverage,' 'Engaging visuals,' and 'Valuable learning tool,' validate the game's effectiveness, accuracy, and engaging nature from a professional medical perspective.",
+      "relevanceScore": 6,
+      "justification": "This element provides direct evidence of the game's efficacy and medical accuracy, as attested by domain experts, which is vital for the paper's credibility and the adoption of CancerST as a serious educational tool.",
+      "groupingHint": "User experience validation",
+      "data": {}
+    },
+    {
+      "name": "Game Over Scenarios",
+      "category": "image",
+      "description": "Figure 9 likely depicts the 'game over' screen in CancerST, illustrating the consequences of character neglect, health complications, or natural death from old age. This includes a tombstone displaying a happy or sad thyroid angel before restarting a new case.",
+      "relevanceScore": 5,
+      "justification": "This image illustrates a critical feedback mechanism in the game, reinforcing the importance of continuous care and engagement with the educational aspects of thyroid health to avoid negative outcomes, thus enhancing the learning experience.",
+      "groupingHint": "Gameplay feedback and consequences",
+      "data": {}
+    }
+  ]
+}

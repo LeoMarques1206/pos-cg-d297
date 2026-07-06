@@ -1,0 +1,116 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This image likely shows the opening scene of the Caturama VR game, as experienced through a Meta Quest 2 device, depicting the initial virtual environment presented to the player.",
+      "relevance": "This figure introduces the immersive virtual reality environment developed for the Caturama VR game, demonstrating the aesthetic and initial player experience that forms the basis of the paper's contribution.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG10.png",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore character, Saci.",
+      "relevance": "This figure illustrates one of the specific mythical character interactions designed into the VR game, highlighting a key aspect of the game's narrative and educational content related to Brazilian folklore.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG11.png",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore entity, Victoria Regia.",
+      "relevance": "This figure demonstrates another distinct mythical character encounter within the VR game, further exemplifying the integration of Brazilian folklore into the interactive experience.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG12_1.png",
+      "description": "This image likely displays the Meta Quest 2 VR headset and its controllers, which are the hardware used to experience the VR game.",
+      "relevance": "This figure visually identifies the primary hardware platform for the Caturama VR game, providing context for the immersive experience and the design choices made for its implementation.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG12_2.png",
+      "description": "This image likely illustrates the mapping of event control mechanics for the VR game, detailing how player inputs on the controllers correspond to in-game actions.",
+      "relevance": "This figure is crucial for understanding the interaction design and control scheme of the VR game, explaining how players navigate and engage with the virtual environment and its elements.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG13.png",
+      "description": "This image appears to visualize a dynamic white trailing effect, shown as a thin curve ascending a hill, which serves to guide players to legend locations within the VR game environment.",
+      "relevance": "This figure demonstrates a key navigational aid implemented in the VR game, showcasing a design element intended to improve player guidance and interaction with the game's objectives and narrative elements.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG14.png",
+      "description": "Without a caption, the specific content of this image is unclear, but it is likely related to the Caturama VR game, possibly an in-game scene, character, or asset.",
+      "relevance": "The relevance is currently unclear due to the missing caption, but it is presumed to contribute to illustrating aspects of the Caturama VR game or its development, consistent with the paper's overall theme.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG15.png",
+      "description": "This image appears to display one or more 'game over' scenes or screens from the Caturama VR game.",
+      "relevance": "This figure illustrates the feedback provided to players at the conclusion of a game session or upon failure, showing an important aspect of the game's user experience design.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This image likely displays five distinct gems: the Sapphire of Strength, Emerald of Endurance, Ruby of Resilience, Opal of Harmony, and Citrine of Wisdom.",
+      "relevance": "This figure introduces crucial collectible or objective items within the VR game, representing the goals players must achieve and linking to the game's narrative or progression system.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This image likely showcases character models of Caturama, a tribal Chief, and other tribe members, presented from left to right and top to bottom.",
+      "relevance": "This figure introduces key non-player characters (NPCs) or the protagonist of the VR game, establishing the cast of characters relevant to the game's narrative and cultural context.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This image likely presents visual representations of several mythical Brazilian folklore beings, including Iara, Curupira, Pink Dolphin (in human and aquatic forms), Saci, and Victoria Regia (in human and aquatic forms).",
+      "relevance": "This figure is central to the paper as it illustrates the specific folklore characters integrated into the VR game, highlighting the game's educational focus on Brazilian mythology and its cultural contribution.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This image appears to display various other non-player characters (NPCs) from the VR game, noting that most of them are animated.",
+      "relevance": "This figure expands on the cast of characters within the VR game, demonstrating the diversity of interactive elements and the effort put into making the virtual world lively and engaging through animation.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This image likely presents a diagram or map outlining Caturama’s VR journey, charting paths through folklore legends in a virtual world to acquire precious gems.",
+      "relevance": "This figure visually outlines the game's overarching structure, narrative flow, and objectives, providing a high-level understanding of the player's progression and interaction with the game's core themes.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG7.png",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore character, Iara.",
+      "relevance": "This figure illustrates one of the specific mythical character interactions designed into the VR game, highlighting a key aspect of the game's narrative and educational content related to Brazilian folklore.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8.png",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore character, Curupira.",
+      "relevance": "This figure demonstrates another distinct mythical character encounter within the VR game, further exemplifying the integration of Brazilian folklore into the interactive experience.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9.png",
+      "description": "This image appears to depict an in-game scene showcasing an encounter with the mythical Brazilian folklore character, Pink Dolphin.",
+      "relevance": "This figure illustrates one of the specific mythical character interactions designed into the VR game, highlighting a key aspect of the game's narrative and educational content related to Brazilian folklore.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

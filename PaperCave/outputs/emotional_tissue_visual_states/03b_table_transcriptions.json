@@ -1,0 +1,8 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "| NUMBER OF EMOTIONS/COLOURS     | 4      | 6      | 8      |\n|--------------------------------|--------|--------|--------|\n| Total time of all markers      | 4.13ms | 4.22ms | 4.46ms |\n| ClothController.Update()       | 0.24ms | 0.25ms | 0.26ms |\n| UnityEngine::Cloth.getVertices() | 0.20ms | 0.21ms | 0.22ms |\n| Camera.Render                  | 0.20ms | 0.22ms | 0.21ms |"
+    }
+  ]
+}

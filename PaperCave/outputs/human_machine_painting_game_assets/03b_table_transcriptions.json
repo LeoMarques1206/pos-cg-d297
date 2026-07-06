@@ -1,0 +1,12 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "| Model | Accuracy | Balanced | Top-3 | Top-5 |\n| :-------- | :------- | :------- | :------- | :------- |\n| Shading | | | | |\n| Lucy | 67.37% | 62.24% | 95.55% | 99.76% |\n| Sarah | 65.93% | 62.69% | 94.84% | 99.48% |\n| Saulo | 58.80% | 57.50% | 92.45% | 98.80% |\n| Coloring | | | | |\n| Lucy | 88.11% | 72.07% | 97.69% | 98.68% |\n| Sarah | 83.32% | 64.49% | 94.85% | 97.05% |\n| Saulo | 83.61% | 72.15% | 96.04% | 97.83% |"
+    },
+    {
+      "filename": "TAB2.png",
+      "markdown_content": "| Model | Accuracy | Balanced | Top-3 | Top-5 | # Weights |\n| :------------------- | :------- | :------- | :------- | :------- | :-------- |\n| Unet | 87.35% | 67.54% | 96.98% | 98.39% | 61.7 M |\n| w/ Dense Supervision | 89.12% | 70.30% | 97.51% | 98.64% | 63.1 M |\n| w/ Loss Weighing | 89.38% | 70.33% | 97.74% | 98.75% | - |\n| w/ Focal Loss | 88.87% | 69.74% | 97.67% | 98.78% | - |\n| w/ Class Weights | 87.69% | 71.33% | 97.74% | 98.85% | - |\n| w/ Dense Connections | 88.11% | 72.07% | 97.69% | 98.68% | 53.8 M |"
+    }
+  ]
+}

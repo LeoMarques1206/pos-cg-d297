@@ -1,30 +1,26 @@
 {
-  "paperTitle": "CancerSB: A Serious Adventure Game for Bone Cancer Education and Awareness with ChatGPT 4o-driven Preliminary Validation",
-  "centralContribution": "This study introduces CancerSB, a serious adventure game designed to raise awareness and provide education about bone cancer through an engaging point-and-click experience. The paper also presents a novel preliminary validation methodology utilizing ChatGPT 4o to generate simulated user feedback from diverse \"mega-personas,\" guiding early design choices before real user testing.",
-  "unitCount": 6,
+  "paperTitle": "CancerSB: A Serious Game for Bone Cancer Awareness and Education",
+  "centralContribution": "The study introduces CancerSB, a serious point-and-click adventure game designed for bone cancer awareness and education through culturally grounded, interactive gameplay, and presents a preliminary validation methodology using ChatGPT 4o to simulate diverse user feedback via the \"mega-personas\" approach for early design evaluation.",
+  "unitCount": 5,
   "units": [
     {
-      "id": "unit_01",
+      "id": "contribution_card",
       "type": "card",
       "priority": "primary",
-      "title": "CancerSB & ChatGPT Valid",
+      "title": "CancerSB: Bone Cancer Game",
       "category": "contribution",
-      "summary": "Serious game CancerSB for bone cancer education with novel ChatGPT 4o validat...",
+      "summary": "Introduces CancerSB, a game for bone cancer awareness, and a ChatGPT 4o valid...",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "This study introduces CancerSB, a serious adventure game designed to raise awareness and provide education about bone cancer. It also presents a novel preliminary validation methodology utilizing ChatGPT 4o to generate simulated user feedback from diverse 'mega-personas,' guiding early design choices before real user testing.",
+        "description": "The study introduces CancerSB, a serious point-and-click adventure game designed for bone cancer awareness and education through culturally grounded, interactive gameplay, and presents a preliminary validation methodology using ChatGPT 4o to simulate diverse user feedback via the 'mega-personas' approach for early design evaluation.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Abstract; Introduction; Section IV - CancerSB Game Design; Section VI - Preliminary Validation Methodology",
-      "whyThisUnit": "This unit highlights the two core innovations: the educational game itself and the groundbreaking validation method.",
+      "conceptualOrigin": "Central Contribution of CancerSB",
+      "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -33,27 +29,48 @@
       }
     },
     {
-      "id": "unit_02",
+      "id": "abstract_card",
       "type": "card",
       "priority": "secondary",
-      "title": "Skeleton Cancer Mapping",
+      "title": "CancerSB Abstract Overview",
+      "category": "abstract",
+      "summary": "Addresses bone cancer education gap with CancerSB game, aiming for early dete...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Bone cancer is a critical health issue, particularly for adolescents and young adults, with diagnostic delays significantly increasing mortality. Current health education tools lack engaging resources like serious games specifically for bone cancer. This paper addresses this gap by presenting CancerSB, a serious adventure game developed to provide culturally grounded, interactive education on bone cancer, aiming to improve awareness and support early detection.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "CancerSB Paper Abstract Summary",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical_representation_card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Skeletal Model & Cancer Reg...",
       "category": "graphical_representation",
-      "summary": "Architectural landmarks mapped onto a human skeleton to illustrate cancer-sus...",
+      "summary": "Mapping bone regions to cancer types in-game.",
       "contentType": "figure",
       "content": {
         "assetReference": "FIG3",
-        "caption": "Architectural landmarks are mapped onto a human skeleton to illustrate cancer-susceptible bone regions in the game.",
-        "description": "FIG3 visually represents how the game connects real-world architectural landmarks from culturally themed regions (Chile, Italy, China) to specific bone regions susceptible to different cancer types. This mapping is central to the game's educational approach, making abstract medical concepts tangible within the game environment.",
+        "caption": "Fig. 3. Architectural landmarks are mapped onto a human skeleton to illustrate cancer-susceptible bone regions in the game.",
+        "description": "A visual representation of a human skeletal model within the game, highlighting specific bone regions susceptible to different bone cancer types and associating them with game's cultural regions.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Section IV - CancerSB Game Design, Fig. 3",
-      "whyThisUnit": "This figure is the most important visual, illustrating the core educational mechanism of the game — linking geography to anatomy and cancer types.",
+      "conceptualOrigin": "Fig. 3: Human Skeletal Model with Affected Bone Regions",
+      "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -62,36 +79,7 @@
       }
     },
     {
-      "id": "unit_03",
-      "type": "card",
-      "priority": "secondary",
-      "title": "Bone Cancer Ed. Gap",
-      "category": "abstract",
-      "summary": "Lack of engaging educational resources for bone cancer motivates serious game...",
-      "contentType": "text_panel",
-      "content": {
-        "assetReference": null,
-        "caption": null,
-        "description": "Despite bone cancer's significant impact, particularly on adolescents and young adults, there is a noted absence of specific, engaging educational materials like serious games and simulators. CancerSB aims to fill this critical gap.",
-        "chartType": null,
-        "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
-      },
-      "conceptualOrigin": "Abstract; Introduction",
-      "whyThisUnit": "This unit establishes the problem that the paper's solution addresses, providing essential context for the game's purpose.",
-      "stackLabel": null,
-      "items": null,
-      "styleHint": {
-        "categoryColor": "#FF4444",
-        "colorName": "coral red"
-      }
-    },
-    {
-      "id": "unit_04",
+      "id": "image_stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
@@ -99,76 +87,112 @@
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": "Section IV - CancerSB Game Design, Fig. 4, 5, 6, 7",
-      "whyThisUnit": "These figures collectively demonstrate the visual design, cultural integration, and educational approach of the game through its diverse regions and symbolic boss battles, which are best understood together.",
-      "stackLabel": "Game Regions & Bosses",
+      "conceptualOrigin": "Multiple image elements",
+      "whyThisUnit": "",
+      "stackLabel": "Game Images & Bosses",
       "items": [
         {
           "index": 1,
-          "title": "Game Homes & Interact.",
+          "title": "Game Menu",
           "contentType": "figure",
           "content": {
-            "assetReference": "FIG4",
-            "caption": "Game homes presenting interaction scenes in an isometric perspective, featuring game elements from (a) Chile, (b) Italy, and (c) China.",
-            "description": "FIG4 showcases the diverse cultural settings of the game's regions: Chile, Italy, and China, which are linked to different cancer types. These isometric scenes provide the context for player interaction and exploration.",
+            "assetReference": "FIG1",
+            "caption": "Fig. 1. Initial game menu.",
+            "description": "The initial game menu interface, showing options and setting the thematic tone for the player's journey into CancerSB's educational world.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 2,
-          "title": "Chondrosarcoma Boss",
+          "title": "Opening Scene",
           "contentType": "figure",
           "content": {
-            "assetReference": "FIG5",
-            "caption": "Chondrosarcoma boss in Chile, affected region in brown.",
-            "description": "This image displays the boss battle for Chondrosarcoma, located in the Chile region. The affected bone region is highlighted, directly associating a specific cancer type with a geographical and anatomical context.",
+            "assetReference": "FIG2",
+            "caption": "Fig. 2. Opening scene of the game.",
+            "description": "The opening scene of the game, introducing the environment and potentially the narrative context before the main educational gameplay begins.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 3,
-          "title": "Ewing’s Sarcoma Boss",
+          "title": "Game Scene 4.1",
           "contentType": "figure",
           "content": {
-            "assetReference": "FIG6",
-            "caption": "Ewing’s Sarcoma boss in Italy, affected region in brown.",
-            "description": "This shows the boss battle representing Ewing’s Sarcoma in the Italy region, with the cancer's affected bone area visually marked. It reinforces the game's educational approach through visual representation of different cancer types.",
+            "assetReference": "FIG4_1",
+            "caption": "Fig. 4.1. Game Scene.",
+            "description": "A snapshot of the game environment, showcasing visual design elements and interactive components within a specific game level or scene.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 4,
+          "title": "Game Scene 4.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_2",
+            "caption": "Fig. 4.2. Game Scene.",
+            "description": "Another screenshot highlighting distinct visual features or a different part of the game's interface and level design.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Game Scene 4.3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4_3",
+            "caption": "Fig. 4.3. Game Scene.",
+            "description": "A third visual from the game, demonstrating varied environments or gameplay mechanics as experienced by the player.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Chondrosarcoma Boss",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5. Chondrosarcoma boss in Chile, affected region in brown.",
+            "description": "An in-game screenshot depicting the 'boss' character representing Chondrosarcoma, visually set within a Chilean-themed environment.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Ewing’s Sarcoma Boss",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": "Fig. 6. Ewing’s Sarcoma boss in Italy, affected region in brown.",
+            "description": "An in-game screenshot illustrating the 'boss' character symbolizing Ewing's Sarcoma, situated within an Italian-themed game setting.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
           "title": "Osteosarcoma Boss",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG7",
-            "caption": "Osteosarcoma boss in China, affected region in brown.",
-            "description": "Depicts the Osteosarcoma boss battle in the China region, with the specific affected bone region highlighted. This completes the set of culturally themed boss battles, each teaching about a distinct bone cancer.",
+            "caption": "Fig. 7. Osteosarcoma boss in China, affected region in brown.",
+            "description": "An in-game screenshot featuring the 'boss' character representing Osteosarcoma, set against a Chinese-themed background.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         }
       ],
@@ -178,79 +202,29 @@
       }
     },
     {
-      "id": "unit_05",
-      "type": "card",
-      "priority": "secondary",
-      "title": "Simulated Feedback Word Cloud",
-      "category": "graph",
-      "summary": "Unified word cloud visualizes key themes from ChatGPT 4o generated user feedb...",
-      "contentType": "figure",
-      "content": {
-        "assetReference": "FIG8",
-        "caption": "The unified word cloud results.",
-        "description": "FIG8 presents a unified word cloud, summarizing the thematic feedback generated by ChatGPT 4o from the 'mega-personas'. Larger words indicate more frequently mentioned positive aspects, such as 'visual design', 'cultural sensitivity', and 'educational value', providing an overview of the preliminary validation's qualitative results.",
-        "chartType": null,
-        "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
-      },
-      "conceptualOrigin": "Section V - Summary of Survey Results Across Personas, Fig. 8",
-      "whyThisUnit": "This unit visually summarizes the qualitative results of the novel validation methodology, providing a quick understanding of the simulated user reception.",
-      "stackLabel": null,
-      "items": null,
-      "styleHint": {
-        "categoryColor": "#00FF88",
-        "colorName": "neon green"
-      }
-    },
-    {
-      "id": "unit_06",
+      "id": "graph_stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
-      "category": "table",
+      "category": "graph",
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": "Section VI - Preliminary Validation Methodology; Section V - Summary of Survey Results Across Personas",
-      "whyThisUnit": "This stack groups the novel validation methodology, the questionnaire used, and a summary of the key quantitative results, providing a complete picture of how the game was evaluated.",
-      "stackLabel": "Validation & Feedback",
+      "conceptualOrigin": "Fig. 8: Unified Word Cloud Analysis",
+      "whyThisUnit": "",
+      "stackLabel": "Evaluation Graphs",
       "items": [
         {
           "index": 1,
-          "title": "Validation Questionnaire",
-          "contentType": "text_panel",
+          "title": "Unified Word Cloud",
+          "contentType": "figure",
           "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "A 7-question questionnaire, based on established instruments (Curve, PSSUQ, GEQ, FSS, AttrakDiff), was used to gather Likert scale ratings and open-ended comments from ChatGPT 4o representing four mega-personas: The Informed Patient, The Curious Student, The Healthcare Professional, and The Casual Gamer. Questions covered visual design, engagement, navigation, simplicity, and gameplay flow.",
+            "assetReference": "FIG8",
+            "caption": "Fig. 8. The unified word cloud results.",
+            "description": "A word cloud visualization summarizing the most frequent and important adjectives used by 'mega-personas' in their feedback (Q7) about CancerSB's aesthetics and experience.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        },
-        {
-          "index": 2,
-          "title": "Positive Simulated Feedback",
-          "contentType": "text_panel",
-          "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "The preliminary validation showed consistently strong reception across all four simulated user personas for CancerSB, particularly for its visual design, cultural sensitivity, and educational value. Median scores for Visual Design (Q1) were 4-5, and Colors, Layout, and Typography (Q2) received a perfect 5, indicating excellent visual accessibility and thematic coherence.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         }
       ],
@@ -262,38 +236,32 @@
   ],
   "objectScores": [
     {
-      "suggestedName": "CancerSB & ChatGPT Valid",
-      "score": 0.9,
+      "suggestedName": "CancerSB: Bone Cancer Game",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Skeleton Cancer Mapping",
-      "score": 0.9,
+      "suggestedName": "CancerSB Abstract Overview",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Bone Cancer Ed. Gap",
-      "score": 0.9,
+      "suggestedName": "Skeletal Model & Cancer Reg...",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Game Regions & Bosses",
-      "score": 0.9,
+      "suggestedName": "Game Images & Bosses",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Simulated Feedback Word Cloud",
-      "score": 0.9,
-      "confidence": "high",
-      "feedback": ""
-    },
-    {
-      "suggestedName": "Validation & Feedback",
-      "score": 0.8,
+      "suggestedName": "Evaluation Graphs",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     }

@@ -2,57 +2,92 @@
   "insights": [
     {
       "filename": "FIG1.png",
-      "description": "This image likely shows the initial screen presented to users when starting the CancerSP game.",
-      "relevance": "This figure introduces the user interface of the serious game developed for prostate cancer education, which is the core contribution of the paper.",
+      "description": "This image likely shows the initial screen presented to users when starting the CancerSP game, including elements like a title, game logo, and possibly \"start\" or \"play\" options.",
+      "relevance": "This figure demonstrates the user interface design of the CancerSP game from the very beginning, highlighting the visual branding and entry point for players, which is central to the paper's contribution of presenting a serious game for cancer education.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
-      "filename": "FIG2.png",
-      "description": "This image appears to represent various classic clinical case scenarios related to prostate cancer, which are integrated into the CancerSP game.",
-      "relevance": "This figure highlights a key educational component of the CancerSP game, demonstrating how it presents realistic medical challenges for players to learn from.",
+      "filename": "FIG2_1.png",
+      "description": "This image appears to be a screenshot of a specific interface or scene within the CancerSP game, likely representing a game element or interaction screen.",
+      "relevance": "As part of a series of uncaptioned figures, this image likely illustrates various aspects of the CancerSP game's user interface or gameplay mechanics, contributing to the paper's presentation of the game's design and functionality.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_2.png",
+      "description": "This image appears to be a screenshot of another interface or scene within the CancerSP game, likely representing a different game element or interaction screen.",
+      "relevance": "This figure likely showcases an additional facet of the CancerSP game's visual design or gameplay, further elaborating on the interactive experience developed for cancer education.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_3.png",
+      "description": "This image appears to be a screenshot of yet another interface or scene within the CancerSP game, likely representing a distinct game element or interaction screen.",
+      "relevance": "By depicting another game screen, this figure helps convey the breadth of the CancerSP game's content and design, which is key to understanding its educational approach.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_4.png",
+      "description": "This image appears to be a screenshot of a specific interface or scene within the CancerSP game, likely representing a game element or interaction screen.",
+      "relevance": "This figure contributes to the overall visual demonstration of the CancerSP game's interface and gameplay, supporting the paper's description of its features and educational potential.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_5.png",
+      "description": "This image appears to be a screenshot of another interface or scene within the CancerSP game, likely representing a different game element or interaction screen.",
+      "relevance": "This figure likely showcases an additional facet of the CancerSP game's visual design or gameplay, further elaborating on the interactive experience developed for cancer education.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2_6.png",
+      "description": "This image appears to be a screenshot of yet another interface or scene within the CancerSP game, likely representing a distinct game element or interaction screen.",
+      "relevance": "By depicting another game screen, this figure helps convey the breadth of the CancerSP game's content and design, which is key to understanding its educational approach.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG3.png",
-      "description": "This image likely depicts the main navigation or dashboard screen of the CancerSP game, where players can choose options or view their progress.",
-      "relevance": "This figure illustrates the central hub of the game's interface, providing insight into the user experience and accessibility of the serious game.",
+      "description": "This image likely displays the main navigation screen of the CancerSP game, from which players can access different game modules or features after the initial start.",
+      "relevance": "This figure illustrates a core part of the game's user experience, showing how players interact with the game's various components and reinforcing the paper's claim of providing an engaging and navigable educational platform.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG4.png",
-      "description": "This image appears to show the various medical tests, imaging techniques, biopsy procedures, and treatment options for prostate cancer that are simulated and available within the CancerSP game.",
-      "relevance": "This figure showcases the comprehensive range of medical interventions included in the game, emphasizing its educational depth and practical applicability for learning about prostate cancer management.",
+      "description": "This image appears to detail the different medical procedures and interventions related to prostate cancer that are simulated or explained within the CancerSP game, likely showing a list or representation of these options.",
+      "relevance": "This figure directly demonstrates the educational content and scope of the CancerSP game, validating the paper's objective of teaching players about prostate cancer diagnosis and treatment pathways through an interactive medium.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG5.png",
-      "description": "This image likely illustrates the overall logical progression and decision-making pathways within the CancerSP game using a flowchart format.",
-      "relevance": "This figure provides an overview of the game's structure and mechanics, which is crucial for understanding how players navigate and interact with the serious game designed for prostate cancer education.",
+      "description": "This image likely presents a high-level diagram illustrating the sequence of events, decision points, and different states a player experiences throughout the CancerSP game's progression.",
+      "relevance": "This flowchart is crucial for understanding the overall game structure and mechanics, which underpins the paper's explanation of how the game guides players through an educational narrative about cancer.",
       "mode": "text_inferred",
       "visualType": "diagram_or_flowchart"
     },
     {
       "filename": "FIG6.png",
-      "description": "This image appears to show a 'game over' screen from CancerSP, specifically indicating a successful outcome where the player managed to save many lives.",
-      "relevance": "This figure demonstrates a positive feedback mechanism and an example of a successful game outcome, reinforcing the educational goal of the serious game.",
+      "description": "This image likely shows a \"game over\" screen from the CancerSP game, specifically one indicating a positive outcome where the player successfully saved a significant number of lives.",
+      "relevance": "This figure highlights the positive reinforcement and feedback mechanism within the game, demonstrating how the paper's serious game design aims to motivate players through successful outcomes and reinforce learning about effective cancer management.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG7.png",
-      "description": "This image likely depicts a somber funeral scene, which is displayed in the game as a consequence of losing a patient's life, followed by a moment of silence.",
-      "relevance": "This figure highlights a pedagogical design choice in the CancerSP game to evoke empathy and emphasize the real-world impact of medical decisions, reinforcing the gravity of the educational content.",
+      "description": "This image appears to depict a funeral scene from the CancerSP game, which is presented to the player as a consequence of losing a patient's life, followed by a silent moment.",
+      "relevance": "This figure is significant as it reveals a key emotional and didactic element of the game design, intended to convey the serious impact of decisions in cancer care and deepen the player's understanding of the stakes, aligning with the paper's focus on immersive and impactful learning.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     },
     {
       "filename": "FIG8.png",
-      "description": "This image appears to show a 'game over' screen from CancerSP, specifically indicating an unsuccessful outcome where the player failed to save many lives.",
-      "relevance": "This figure illustrates a negative feedback mechanism and an example of an unsuccessful game outcome, underscoring the challenges and critical decision-making involved in prostate cancer management within the educational game.",
+      "description": "This image likely displays a \"game over\" screen from the CancerSP game, specifically one indicating a less successful outcome where the player was unable to save many lives.",
+      "relevance": "This figure, contrasting with a positive outcome, demonstrates the game's mechanism for providing feedback on player performance, reinforcing the consequences of decisions and further educating players on the challenges and responsibilities of cancer treatment, which is central to the paper's contribution.",
       "mode": "text_inferred",
       "visualType": "photo_or_screenshot"
     }

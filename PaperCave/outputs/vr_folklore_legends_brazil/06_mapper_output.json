@@ -1,0 +1,413 @@
+{
+  "paperTitle": "Caturama VR: An English-Localized Virtual Reality Serious Game for Brazilian Folklore",
+  "centralContribution": "This paper presents \"Caturama VR,\" an English-localized Virtual Reality (VR) serious game developed for the Meta Quest 2, designed to immerse players in Brazilian folklore and legends, featuring an indigenous protagonist Caturama, an optimized VR interface, dynamic inventory management, and visually captivating special effects. The work details the game's advanced 3D graphics, narrative interaction, and comprehensive pre-user VR testing by the development team, which significantly enhanced interaction quality, gameplay balance, immersion, presence, and overall performance.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "Caturama VR: Serious Game",
+      "category": "contribution",
+      "summary": "Presents Caturama VR, an English-localized serious game for Brazilian folklor...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This paper presents \"Caturama VR,\" an English-localized Virtual Reality (VR) serious game developed for the Meta Quest 2, designed to immerse players in Brazilian folklore and legends, featuring an indigenous protagonist Caturama, an optimized VR interface, dynamic inventory management, and visually captivating special effects. The work details the game's advanced 3D graphics, narrative interaction, and comprehensive pre-user VR testing by the development team, which significantly enhanced interaction quality, gameplay balance, immersion, presence, and overall performance.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Caturama VR: A Virtual Reality Serious Game for Brazilian Folklore",
+      "whyThisUnit": "Central contribution of the paper, detailing the VR game developed and its key features and enhancements.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Caturama VR Abstract",
+      "category": "abstract",
+      "summary": "Addresses VR gaps in cultural heritage with an immersive Brazilian folklore g...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Despite VR's potential for immersive cultural heritage experiences, its application in exploring cultural heritage remains largely untapped. VR game development faces challenges such as hardware limitations, high costs, user comfort issues (motion sickness, eye strain), content creation complexity, intuitive UI design, and technical hurdles like latency. Existing digital games incorporating Brazilian folklore often lack deep VR integration or focus on simpler mechanics. This paper addresses these gaps by creating \"Caturama VR,\" a VR experience that deeply embeds Brazilian folklore into interactive gameplay and decision-making processes, aiming to promote cultural heritage in an immersive manner.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Abstract Summary",
+      "whyThisUnit": "Provides the foundational context, problem, and purpose of the paper as a summary of the abstract content.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "VR Journey Map",
+      "category": "graphical_representation",
+      "summary": "Overview of Caturama's journey through folklore legends.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG6",
+        "caption": "Figure 6. Caturama’s VR Journey: Chart the paths through folklore legends in a virtual world for precious gems.",
+        "description": "This image presents a diagram or map outlining Caturama’s VR journey, charting paths through folklore legends in a virtual world to acquire precious gems.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Caturama’s VR Journey Map (FIG6)",
+      "whyThisUnit": "Crucial for understanding the game's overarching structure, narrative flow, and player progression.",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "Groups all other figures from the paper classified as images, presenting the game's visuals and mythical encounters.",
+      "stackLabel": "Game Visuals & Encounters",
+      "items": [
+        {
+          "index": 1,
+          "title": "VR Game Opening Scene",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Figure 1. Opening scene of the Caturama VR game, experienced through the immersive Meta Quest 2 device.",
+            "description": "This image shows the opening scene of the Caturama VR game, as experienced through a Meta Quest 2 device, depicting the initial virtual environment presented to the player.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "The Precious Gems",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Figure 2. From left to right: the Sapphire of Strength, the Emerald of En- durance, the Ruby of Resilience, the Opal of Harmony, and the Citrine of Wisdom.",
+            "description": "Visual representations of the Sapphire of Strength, Emerald of Endurance, Ruby of Resilience, Opal of Harmony, and Citrine of Wisdom.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Caturama & Tribe Members",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3",
+            "caption": "Figure 3. From left to right and top to bottom, respectively: Caturama, tribal Chief, and other tribe members.",
+            "description": "Depictions of the indigenous protagonist Caturama, the tribal Chief, and other members of the tribe within the VR game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Mythical Beings",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "Figure 4. The mythical beings, from top to bottom and left to right: Iara, Curupira, Pink Dolphin (in both forms, human and aquatic), Saci, and Vic- toria Regia (in both forms, human and aquatic).",
+            "description": "Visual representations of mythical Brazilian folklore beings: Iara, Curupira, Pink Dolphin, Saci, and Victoria Regia in various forms.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Other Game NPCs",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Figure 5. Other NPCs of the VR game, most of them are animated.",
+            "description": "Various other non-player characters (NPCs) featured in the Caturama VR game, many of which are animated.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Iara Encounter",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": "Figure 7. Iara encounter.",
+            "description": "An in-game scene showcasing an encounter with the mythical Brazilian folklore character, Iara, related to her minigame.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Curupira Encounter",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": "Figure 8. Curupira encounter.",
+            "description": "An in-game scene depicting an encounter with the mythical Brazilian folklore character, Curupira.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Pink Dolphin Encounter",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": "Figure 9. Pink Dolphin encounter.",
+            "description": "An in-game scene showing an encounter with the mythical Brazilian folklore character, Pink Dolphin.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Saci Encounter",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10",
+            "caption": "Figure 10. Saci encounter.",
+            "description": "An in-game scene showcasing an encounter with the mythical Brazilian folklore character, Saci, related to his platform minigame.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Victoria Regia Encounter",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11",
+            "caption": "Figure 11. Victoria Regia encounter.",
+            "description": "An in-game scene depicting an encounter with the mythical Brazilian folklore character, Victoria Regia.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Meta Quest 2 & Controls",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_1",
+            "caption": "Figure 12. (a) Meta Quest 2 VR headset and controllers, and (b) Event control mechanics mapped for the VR game.",
+            "description": "The Meta Quest 2 VR headset and controllers used for the Caturama VR game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "VR Control Mechanics",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12_2",
+            "caption": "Figure 12. (a) Meta Quest 2 VR headset and controllers, and (b) Event control mechanics mapped for the VR game.",
+            "description": "Illustration of the event control mechanics mapped for the VR game, detailing player inputs.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Dynamic Trailing Effect",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13",
+            "caption": "Figure 13. Visualization of the dynamic trailing effect, for guiding players to legend locations in the VR game environment. The white trail effect is depicted in the background, ascending the hill on the left, in a thin white curve.",
+            "description": "Visualization of the dynamic trailing effect used to guide players to legend locations in the VR game environment.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Game Visual (Placeholder)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG14",
+            "caption": "(no caption extracted)",
+            "description": "An additional visual representation from the game environment.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "Game Over Scenes",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG15",
+            "caption": "Figure 15. Game over scenes.",
+            "description": "Illustrations of the various 'game over' scenes players might encounter in Caturama VR.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "table-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Computational Resource Consumption per 3D Environment (TAB1)",
+      "whyThisUnit": "Provides quantitative data on the game's performance across different environments, crucial for evaluating optimization efforts.",
+      "stackLabel": "Performance Metrics",
+      "items": [
+        {
+          "index": 1,
+          "title": "Resource Consumption",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": null,
+            "description": "Average CPU, RAM, and GPU consumption for different 3D environments within the Caturama VR game, showing performance optimization insights.",
+            "chartType": "table",
+            "title": "Computational resource consumption per environment",
+            "data": {
+              "columns": [
+                "{'id': 'envi...",
+                "{'id': 'cpu'...",
+                "{'id': 'ram'...",
+                "{'id': 'gpu'..."
+              ],
+              "rows": [
+                {
+                  "environment": "Curupira",
+                  "cpu": "8.8",
+                  "ram": "530",
+                  "gpu": "49.0"
+                },
+                {
+                  "environment": "Victoria Regia",
+                  "cpu": "29.8",
+                  "ram": "537",
+                  "gpu": "69.0"
+                },
+                {
+                  "environment": "Pink Dolphin",
+                  "cpu": "16.0",
+                  "ram": "541",
+                  "gpu": "96.0"
+                },
+                {
+                  "environment": "Iara",
+                  "cpu": "7.9",
+                  "ram": "544",
+                  "gpu": "53.9"
+                },
+                {
+                  "environment": "Saci",
+                  "cpu": "26.0",
+                  "ram": "547",
+                  "gpu": "50.8"
+                },
+                {
+                  "environment": "Tribal Village",
+                  "cpu": "22.6",
+                  "ram": "410",
+                  "gpu": "61.4"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Caturama VR: Serious Game",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Caturama VR Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "VR Journey Map",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Game Visuals & Encounters",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Performance Metrics",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 2,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

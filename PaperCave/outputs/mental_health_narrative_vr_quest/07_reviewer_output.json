@@ -1,30 +1,26 @@
 {
-  "paperTitle": "Porting and Enhancing a Mental Health Narrative Game from Desktop to Meta Quest 2 VR",
-  "centralContribution": "This paper details the intricate process of porting and enhancing a mental health narrative game from a desktop platform to the Meta Quest 2 virtual reality (VR) platform, offering valuable insights and a roadmap for future VR game design and development. The core contribution lies in adapting the game to VR's unique capabilities and limitations while innovatively incorporating new features—such as updated object interactions, direct VR interactions, an overhauled user interface, and a virtual body—to improve gameplay, intensify player presence and immersion, and enhance mental health awareness.",
-  "unitCount": 5,
+  "paperTitle": "Porting and Enhancing a Mental Health Narrative Game to Meta Quest 2 VR",
+  "centralContribution": "This paper details the intricate process of porting and significantly enhancing a mental health narrative desktop game to the Meta Quest 2 VR platform, introducing novel features and optimizations to leverage VR's immersive capabilities. The work provides a comprehensive roadmap and valuable insights for future VR game design and development, focusing on performance, comfort, safety, interaction, and immersion to promote mental health awareness effectively.",
+  "unitCount": 4,
   "units": [
     {
-      "id": "unit_01",
+      "id": "contribution_card",
       "type": "card",
       "priority": "primary",
-      "title": "VR Mental Health Game Port",
+      "title": "Main Contribution",
       "category": "contribution",
-      "summary": "Porting and enhancing a mental health game to Meta Quest 2 VR, adding feature...",
+      "summary": "Porting and enhancing a mental health game to Meta Quest 2 VR with novel feat...",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "This paper details the intricate process of porting and enhancing a mental health narrative game from a desktop platform to the Meta Quest 2 virtual reality (VR) platform, offering valuable insights and a roadmap for future VR game design and development. The core contribution lies in adapting the game to VR's unique capabilities and limitations while innovatively incorporating new features—such as updated object interactions, direct VR interactions, an overhauled user interface, and a virtual body—to improve gameplay, intensify player presence and immersion, and enhance mental health awareness.",
+        "description": "The paper describes the detailed process of porting and significantly enhancing a mental health narrative desktop game to the Meta Quest 2 VR platform. It highlights the introduction of novel features and optimizations specifically designed to leverage VR's immersive capabilities, providing a comprehensive roadmap and valuable insights for future VR game design and development focused on performance, comfort, safety, interaction, and immersion for effective mental health awareness.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Central Contribution of the Paper",
-      "whyThisUnit": "This unit presents the core innovation and primary contribution of the research: successfully adapting and enriching a mental health game for the VR platform.",
+      "conceptualOrigin": "Core Paper Information",
+      "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -33,27 +29,23 @@
       }
     },
     {
-      "id": "unit_02",
+      "id": "abstract_card",
       "type": "card",
       "priority": "secondary",
-      "title": "Game VR Environments",
-      "category": "graphical_representation",
-      "summary": "Screenshots illustrating diverse virtual environments within the mental healt...",
-      "contentType": "figure",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "VR potential for mental health, challenges of porting desktop games to VR, an...",
+      "contentType": "text_panel",
       "content": {
-        "assetReference": "FIG1",
-        "caption": "Figure 1: Some screenshots from the perspective of Meta Quest 2 illustrate various virtual environments within the game.",
-        "description": "Various virtual environments within the mental health game, showcasing the diverse settings players can experience in VR.",
+        "assetReference": null,
+        "caption": null,
+        "description": "Virtual Reality (VR), especially standalone devices like Meta Quest 2, offers immense potential for addressing global health challenges like depression. While games can foster mental health awareness, adapting existing desktop interactive narratives to VR presents significant challenges, including preventing motion sickness, designing intuitive 3D interactions, ensuring realistic embodiment, and overcoming hardware limitations. This paper addresses these complexities by detailing the porting and enhancement of a mental health narrative game to VR.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Figure 1",
-      "whyThisUnit": "This figure is the primary visual representation of the game world, demonstrating the VR experience directly.",
+      "conceptualOrigin": "Core Paper Information",
+      "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
       "styleHint": {
@@ -62,123 +54,32 @@
       }
     },
     {
-      "id": "unit_03",
+      "id": "graphical_representation_card",
       "type": "card",
       "priority": "secondary",
-      "title": "VR Game Adaptation Summary",
-      "category": "abstract",
-      "summary": "Key aspects of adapting a mental health game to VR, including performance, co...",
-      "contentType": "text_panel",
+      "title": "VR Controller Mappings",
+      "category": "graphical_representation",
+      "summary": "Key VR headset and controller button mappings for in-game interactions.",
+      "contentType": "figure",
       "content": {
-        "assetReference": null,
-        "caption": null,
-        "description": "The comprehensive process of adapting the desktop game to the Meta Quest 2 VR platform, focusing on performance, comfort, interaction, UI, and other VR-specific aspects. Techniques applied include reducing polygon counts, disabling invisible objects, lowering render buffer resolution, and simplifying meshes to maintain high Frames Per Second (FPS) on Meta Quest 2 without sacrificing visual quality. Strategies like prioritizing high FPS, offering comfortable movement options (teleportation, snap turning), adding a 3D avatar, and carefully programming camera movements were used to mitigate VR motion sickness.",
+        "assetReference": "FIG2",
+        "caption": "Meta Quest 2 Controller Mappings",
+        "description": "Figure 2 illustrates the Meta Quest 2 VR headset and its controllers, detailing the button mappings (A/B for emergency pause/exit, C for movement/rotation, D for Oculus system, E for object interaction, F for grasping) used to enable 6 Degrees of Freedom (6DoF) interactions within the VR game.",
         "chartType": null,
         "title": null,
-        "data": null,
-        "frameCount": null,
-        "frames": null,
-        "transitionType": null,
-        "looping": null
+        "data": null
       },
-      "conceptualOrigin": "Abstract section of the paper",
-      "whyThisUnit": "This unit provides a concise overview of the paper's scope, methodologies, and key challenges addressed in the VR adaptation.",
+      "conceptualOrigin": "VR Interaction System",
+      "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
-      "styleHint": {
-        "categoryColor": "#0A1628",
-        "colorName": "dark blue"
-      }
-    },
-    {
-      "id": "unit_04",
-      "type": "stack",
-      "priority": "secondary",
-      "title": null,
-      "category": "image",
-      "summary": null,
-      "contentType": null,
-      "content": null,
-      "conceptualOrigin": null,
-      "whyThisUnit": "These figures illustrate fundamental VR interactions, the core gameplay loop mechanisms, and essential VR hardware.",
-      "stackLabel": "Key Visuals & Interactions",
-      "items": [
-        {
-          "index": 1,
-          "title": "Meta Quest 2 Setup",
-          "contentType": "figure",
-          "content": {
-            "assetReference": "FIG2",
-            "caption": "Figure 2: Meta Quest 2 VR headset and hand controllers mapped for the VR game.",
-            "description": "Visual representation of the Meta Quest 2 VR headset and controllers, showing their mapping for in-game actions.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        },
-        {
-          "index": 2,
-          "title": "Object Colliders",
-          "contentType": "figure",
-          "content": {
-            "assetReference": "FIG5",
-            "caption": "Figure 5: Colliders applied to all interactable game objects.",
-            "description": "Illustration of colliders applied to game objects, enabling player interaction with environmental elements.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        },
-        {
-          "index": 3,
-          "title": "Positive Habits Reward",
-          "contentType": "figure",
-          "content": {
-            "assetReference": "FIG6",
-            "caption": "Figure 6: The VR game rewards positive habits, like maintaining a tidy environment, by improving the mental health level and reducing the size of the antagonist, as symbolized by the neatly made bed on the right.",
-            "description": "Shows how positive habits like tidying improve mental health and affect the antagonist's size in-game.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        },
-        {
-          "index": 4,
-          "title": "Mirror Interaction",
-          "contentType": "figure",
-          "content": {
-            "assetReference": "FIG9",
-            "caption": "Figure 9: Interaction between protagonist and antagonist via a standing mirror. The left side shows the external view, complete with an interaction button, while the right side offers the perspective from within the mirror.",
-            "description": "Demonstrates player interaction with the antagonist through a mirror, illustrating dual perspectives.",
-            "chartType": null,
-            "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
-          }
-        }
-      ],
       "styleHint": {
         "categoryColor": "#00D4FF",
         "colorName": "cyan blue"
       }
     },
     {
-      "id": "unit_05",
+      "id": "image_stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
@@ -186,76 +87,164 @@
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": null,
-      "whyThisUnit": "These figures provide further insight into specific gameplay elements, narrative delivery, and interactive objects.",
-      "stackLabel": "Gameplay Details",
+      "conceptualOrigin": "Visual Content",
+      "whyThisUnit": "",
+      "stackLabel": "In-Game Visuals",
       "items": [
         {
+          "index": 0,
+          "title": "Virtual Environments",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": null,
+            "description": "Some screenshots from the perspective of Meta Quest 2 illustrate various virtual environments within the game.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
           "index": 1,
-          "title": "In-Game Text & Dialogue",
+          "title": "3D UI & Dialogue",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG3",
-            "caption": "Figure 3: In-game text messages and dialogue boxes are scattered throughout the game scene, providing additional narrative and gameplay information.",
-            "description": "Examples of in-game text messages and dialogue boxes crucial for narrative and gameplay information.",
+            "caption": null,
+            "description": "Figure 3 shows various in-game text messages and dialogue boxes integrated into the 3D game space. This demonstrates the UI overhaul, where UI elements float and follow the player's head movement using linear interpolation for an immersive experience without distraction.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 2,
-          "title": "Accelerated Time",
+          "title": "In-Game Time Progression",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG4",
-            "caption": "Figure 4: Screenshots of the accelerated in-game time mechanism, capturing the transition from dawn to dusk, with time points approximately at 5 AM, 12 PM, 6 PM, and 8 PM.",
-            "description": "Visualizes the accelerated in-game time mechanism, showing the transition from dawn to dusk.",
+            "caption": null,
+            "description": "Figure 4 presents a series of screenshots showing the progression of an accelerated in-game day-night cycle, from 5 AM to 8 PM. This system simulates time, adjusting skybox illumination and contributing to the game's immersive environment.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 3,
-          "title": "Consumable Items",
+          "title": "Object Colliders",
           "contentType": "figure",
           "content": {
-            "assetReference": "FIG7",
-            "caption": "Figure 7: Each consumable item in the sushi tray boosts the protagonist’s in-game mental health system.",
-            "description": "Shows how consumable items, like those in a sushi tray, boost the protagonist’s mental health level.",
+            "assetReference": "FIG5",
+            "caption": null,
+            "description": "Figure 5 visually represents or highlights the colliders applied to various interactable objects within the game scene. This demonstrates a fundamental technical aspect enabling physical interaction and collision detection in the VR environment, crucial for player engagement.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
           }
         },
         {
           "index": 4,
+          "title": "Mental Health System",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6",
+            "caption": null,
+            "description": "Figure 6 displays an in-game scene of a neatly made bed, symbolizing the game's core mechanic where positive habits (like making the bed) increase the protagonist's mental health level and reduce the antagonist's size. This visually represents the therapeutic gameplay loop directly linked to mental well-being.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Consumable Items",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7",
+            "caption": null,
+            "description": "Each consumable item in the sushi tray boosts the protagonist’s in-game mental health system.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
           "title": "Object Interaction",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG8",
-            "caption": "Figure 8: In the VR game, players can interact with almost all objects, such as books, Star Wars figures, posters, and personal notes, by hitting and inspecting them.",
-            "description": "Illustrates the wide range of interactable objects within the VR game environment.",
+            "caption": null,
+            "description": "In the VR game, players can interact with almost all objects, such as books, Star Wars figures, posters, and personal notes, by hitting and inspecting them.",
             "chartType": null,
             "title": null,
-            "data": null,
-            "frameCount": null,
-            "frames": null,
-            "transitionType": null,
-            "looping": null
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Protagonist-Antagonist Mirror",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG9",
+            "caption": null,
+            "description": "Interaction between protagonist and antagonist via a standing mirror. The left side shows the external view, complete with an interaction button, while the right side offers the perspective from within the mirror.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "In-Game Guidance",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG10",
+            "caption": null,
+            "description": "Figure 10 depicts an in-game scene with blue arrows indicating navigation paths and a depression medicine bottle highlighted on the toilet floor, alongside an antagonist character. This illustrates the guidance system designed to direct players to interactive elements and target locations.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Configurable Joint",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG11",
+            "caption": null,
+            "description": "An example of a configurable joint object.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Interactive Drawing",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG12",
+            "caption": null,
+            "description": "Figure 12 shows the protagonist interacting with a 'drawable object,' specifically writing 'SVR 2023' on a virtual canvas using an in-game brush tool. This highlights an innovative feature for player agency and creative expression within the VR environment.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "DALL-E Wall Painting",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG13",
+            "caption": null,
+            "description": "Figure 13 displays an in-game wall painting generated using DALL-E generative AI from the prompt 'Blue and red butterflies feeling depressed, but still holding hope (Salvador Dalí style, on a light grey background)'. This showcases the integration of AI-generated art for dynamic environmental content.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         }
       ],
@@ -267,32 +256,26 @@
   ],
   "objectScores": [
     {
-      "suggestedName": "VR Mental Health Game Port",
-      "score": 0.75,
-      "confidence": "medium",
-      "feedback": ""
-    },
-    {
-      "suggestedName": "Game VR Environments",
-      "score": 0.75,
-      "confidence": "medium",
-      "feedback": ""
-    },
-    {
-      "suggestedName": "VR Game Adaptation Summary",
-      "score": 0.75,
-      "confidence": "medium",
-      "feedback": ""
-    },
-    {
-      "suggestedName": "Key Visuals & Interactions",
-      "score": 0.95,
+      "suggestedName": "Main Contribution",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     },
     {
-      "suggestedName": "Gameplay Details",
-      "score": 0.95,
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "VR Controller Mappings",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "In-Game Visuals",
+      "score": 1.0,
       "confidence": "high",
       "feedback": ""
     }

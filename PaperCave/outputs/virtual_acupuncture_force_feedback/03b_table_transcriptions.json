@@ -1,0 +1,8 @@
+{
+  "transcriptions": [
+    {
+      "filename": "TAB1.png",
+      "markdown_content": "| Parâmetros de Configuração | Valor |\n|---|---|\n| **Parâmetros de Inicialização da Simulação** | |\n| Raio das partículas | 2 mm |\n| Número de partículas | 10000 |\n| Rigidez na extensão | 0.8 g/cm³ |\n| Rigidez na dobra | 0.8 g/cm³ |\n| Parâmetro de rigidez | 1 g/cm³ |\n| Massa de cada partícula | 1 g |\n| Coeficiente de fricção da malha geométrica | 0.2 |\n| Coeficiente de fricção da partícula | 0.3 |\n| **Parâmetros de Execução da Simulação** | |\n| Quadros por segundo | 60 |\n| Número de sub-passos | 3 |\n| Número de iterações por sub-passo | 9 |\n| Aceleração da gravidade | 9,8 m/s² |"
+    }
+  ]
+}

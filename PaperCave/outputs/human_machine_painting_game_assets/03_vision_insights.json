@@ -1,0 +1,123 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure appears to show five sequential stages in the creation of a 'Trajes Fatais: Suits of Fate' character sprite, starting from a line-art sketch and progressing through shading, coloring, combined encoding, to the final in-game sprite with its default palette.",
+      "relevance": "This figure provides crucial context by illustrating the intricate multi-stage process of traditional game sprite creation, highlighting the specific artistic assets and transformations that the paper's proposed solution aims to automate or enhance.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely displays two distinct early sketch iterations of a character named Sarah, presumably from the 'Trajes Fatais' game.",
+      "relevance": "This figure demonstrates the initial conceptual and artistic phase of character design, further contextualizing the raw input data or early developmental stages that the paper's methodology might interact with or be inspired by.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_1.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_2.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG3_3.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure depicts a high-level architectural diagram of the proposed solution, clearly indicating encoder and decoder layers using yellow and green, respectively, and illustrating dense supervision inputs in blue and outputs in orange.",
+      "relevance": "This figure is central to the paper's technical contribution, providing a comprehensive overview of the system's design and how its components (encoder, decoder, supervision) interact to achieve the intended sprite processing tasks.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG5.png",
+      "description": "This figure illustrates the internal structure of a dense block, showing how multiple smaller convolutions are used and their outputs stacked to form a tensor, with an added residual connection to enhance gradient flow.",
+      "relevance": "This figure details a key component of the proposed architecture, explaining a specific design choice that contributes to the method's performance or training stability, thereby clarifying an important technical aspect of the paper's innovation.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG6_1.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6_2.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_1.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_2.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_3.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_4.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_5.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_6.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_1.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_2.png",
+      "description": "Without a caption, this figure likely represents an input image, an intermediate processing step, or a generated output related to game sprite development, given the context of the paper.",
+      "relevance": "Its relevance would depend on its specific content, likely demonstrating an aspect of the data, methodology, or results that supports the paper's contribution to sprite processing.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

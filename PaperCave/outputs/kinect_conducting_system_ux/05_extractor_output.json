@@ -1,86 +1,87 @@
 {
-  "paperTitle": "A Kinect-based conducting system that leverages gestural control for the real-time visualization of musical structures, primarily for educational purposes, and evaluates its user experience with professional conductors, musicians, and general users.",
-  "centralContribution": "The paper presents a Kinect-based conducting system that leverages gestural control for the real-time visualization of musical structures, primarily for educational purposes, and evaluates its user experience with professional conductors, musicians, and general users. This system provides an immersive tool for practicing conducting and understanding complex musical pieces without a live orchestra, offering audiovisual feedback via particle systems and gesture trajectory.",
+  "paperTitle": "A Novel Kinect-based Conducting System for Real-time Audiovisual Musical Visualization",
+  "centralContribution": "This work presents a novel Kinect-based conducting system that utilizes a gestural interface for the real-time audiovisual visualization of complex musical structures, primarily aimed at educational purposes. The system was rigorously evaluated through a user experience (UX) study involving professional conductors, musicians, and users without musical knowledge to validate its viability as a supportive tool for learning conducting and musical theory.",
   "elements": [
     {
-      "name": "Kinect-based Conducting System",
+      "name": "Central Contribution",
       "category": "contribution",
-      "description": "The proposed system that uses a Microsoft Kinect sensor for gestural control and Unreal Engine for real-time visualization of musical structures, primarily designed for educational purposes.",
+      "description": "A novel Kinect-based conducting system with a gestural interface for real-time audiovisual visualization of complex musical structures, designed for educational purposes and validated through a user experience study.",
       "relevanceScore": 10,
-      "justification": "This is the central artifact and innovative contribution of the paper, addressing the need for an interactive tool for conducting practice and music education.",
-      "groupingHint": "null"
+      "justification": "This is the core innovation and primary objective of the entire paper, as explicitly stated.",
+      "groupingHint": "Overall Paper Summary",
+      "data": {}
     },
     {
-      "name": "Musical Structure Visualization",
-      "category": "method",
-      "description": "The system's approach to visually representing three sound characteristics: pitch (particle color using Castel’s 1734 color mapping), intensity (particle size), and timbre (3D object shapes as particle emitters for orchestra sections).",
+      "name": "Abstract Summary",
+      "category": "abstract",
+      "description": "There is a need for immersive educational tools to teach conducting without a physical orchestra. Existing interactive conducting systems are often costly or require physical contact. While gestural devices like Kinect offer affordable, contact-free interaction, challenges remain in accurate gesture identification and effective 3D musical visualization. This paper addresses these issues by developing an affordable, interactive, and visually rich Kinect-based system for instrumental conducting education.",
+      "relevanceScore": 10,
+      "justification": "This element summarizes the problem context, existing solutions, and the motivation for the paper's contribution, providing a comprehensive overview of the research.",
+      "groupingHint": "Overall Paper Summary",
+      "data": {}
+    },
+    {
+      "name": "Figure 1: System Architecture",
+      "category": "graphical_representation",
+      "description": "A diagram illustrating the main components of the Kinect-based conducting system, including the MIDI Processor, Gesture Identifier, Particle System Manager, Kinect device, Unreal Engine, and their interconnections, providing an architectural overview.",
       "relevanceScore": 9,
-      "justification": "This is a core innovation that enhances the educational value and immersive experience, directly enabling users to understand complex musical pieces. Visual insights from Fig. 3, 4, and 5 illustrate these mappings effectively.",
-      "groupingHint": "Particle System Manager"
+      "justification": "This figure is crucial for understanding the fundamental design and interaction of the system's various components, which is central to the paper's methodology.",
+      "groupingHint": "System Design",
+      "data": {}
     },
     {
-      "name": "Gesture Recognition Algorithm",
-      "category": "method",
-      "description": "An algorithm, based on Caramiaux et al. and Gesture Tracker VR, that processes Kinect hand joint data by dividing gesture paths into segments and using dot product for similarity to identify conducting gestures.",
+      "name": "Figure 10: Particle Size and Gesture Path Visualization",
+      "category": "image",
+      "description": "An animation frame depicting an increase in particle size, directly related to the amplitude of a conductor's gesture, with the real-time path of the gesture also visualized on screen, demonstrating dynamic visual feedback.",
+      "relevanceScore": 9,
+      "justification": "This figure visually demonstrates a key aspect of the system's real-time audiovisual mapping, showing how gestural input directly translates into dynamic visual changes and user feedback.",
+      "groupingHint": "Audiovisual Mapping and Feedback",
+      "data": {}
+    },
+    {
+      "name": "Table 2: Average Time per Task by User Group",
+      "category": "table",
+      "description": "Quantitative results from the User Experience study, showing the average time (in seconds) taken by professional conductors (Group 1), musicians (Group 2), and ordinary users (Group 3) to complete each of the 11 defined tasks.",
+      "relevanceScore": 9,
+      "justification": "This table presents the primary quantitative results of the UX study, directly supporting the evaluation of the system's viability and performance across different user groups.",
+      "groupingHint": "User Study Results",
+      "data": {}
+    },
+    {
+      "name": "Table 3: Median Attempts per Task by User Group",
+      "category": "table",
+      "description": "Quantitative results showing the median number of attempts required by professional conductors (Group 1), musicians (Group 2), and ordinary users (Group 3) to successfully complete each of the 11 tasks in the User Experience study.",
       "relevanceScore": 8,
-      "justification": "This algorithm is fundamental to the system's interactive nature, translating physical gestures into control commands and musical feedback.",
-      "groupingHint": "Conducting Patterns"
+      "justification": "This table provides additional quantitative insights into user performance and task difficulty, complementing the average time data and reinforcing the system's evaluation.",
+      "groupingHint": "User Study Results",
+      "data": {}
     },
     {
-      "name": "Challenges in Interactive Conducting Systems",
-      "category": "problem",
-      "description": "Existing systems often lack accurate gesture recognition, satisfactory 3D visualization of musical structures, and adequate support for a constructive learning environment for aspiring conductors without a physical ensemble.",
+      "name": "Figure 2: Basic Conducting Patterns",
+      "category": "image",
+      "description": "Diagrams representing four basic conducting patterns (Binary, Ternary, Quaternary, Compound Binary) generated by the authors, which are used as reference gestures for the system's gesture recognition.",
       "relevanceScore": 8,
-      "justification": "This element establishes the context and the specific gaps that the proposed Kinect-based system aims to address, highlighting the motivation for the research.",
-      "groupingHint": "Kinect-based Conducting System"
+      "justification": "This figure introduces the fundamental gestural inputs that the system processes, directly relating to the gesture identification component and the core interaction mechanism.",
+      "groupingHint": "System Input and Gestures",
+      "data": {}
     },
     {
-      "name": "Particle System Manager",
-      "category": "method",
-      "description": "A component within the system architecture responsible for synchronizing audio and visual outputs, mapping extracted musical data from MIDI to their real-time visual representations in the 3D scene.",
-      "relevanceScore": 8,
-      "justification": "This manager is a key architectural piece (Fig. 1) that brings together musical analysis and visual effects, essential for the system's real-time audiovisual feedback.",
-      "groupingHint": "Kinect-based Conducting System"
-    },
-    {
-      "name": "Conducting Patterns",
-      "category": "artifact",
-      "description": "The specific gestural commands implemented for system control, including right-hand gestures for musical meters (Binary, Ternary, Quaternary, Compound Binary), left-hand gestures for instrument emphasis, and both hands for overall music execution.",
+      "name": "Table 1: User Study Tasks",
+      "category": "table",
+      "description": "A list of the 11 specific tasks performed by participants in the User Experience study, outlining the gestural controls and musical interactions evaluated.",
       "relevanceScore": 7,
-      "justification": "These patterns represent the user's primary means of interaction with the system, making them crucial for understanding the system's functionality and evaluated usability (Fig. 2, Fig. 9).",
-      "groupingHint": "Gesture Recognition Algorithm"
+      "justification": "This table details the experimental setup and the specific actions users performed, providing context for understanding the results presented in Tables 2 and 3.",
+      "groupingHint": "User Study Methodology",
+      "data": {}
     },
     {
-      "name": "Kinect Sensor",
-      "category": "artifact",
-      "description": "The primary hardware device used for gestural control, chosen for its cost-effectiveness, precision, hygienic benefits over other systems, and greater freedom of movement compared to alternatives like Leap Motion.",
+      "name": "Figure 3: Castel's Color Mapping for Pitch",
+      "category": "image",
+      "description": "A visual representation of Newton's and Castel's color maps, adapted by the authors, showcasing how different musical pitches are mapped to distinct colors in the 3D scene.",
       "relevanceScore": 7,
-      "justification": "The Kinect sensor is the foundational input technology that enables the entire gestural interaction of the system, addressing limitations of prior gestural interfaces.",
-      "groupingHint": "Kinect-based Conducting System"
-    },
-    {
-      "name": "Gesture Recognition Latency",
-      "category": "limitation",
-      "description": "A critical perceived delay in the system's response, where visual and audio changes only occur after a complete gesture is recognized, contrasting with real-world conducting where musicians react to individual beats.",
-      "relevanceScore": 7,
-      "justification": "This limitation significantly impacts the realism and responsiveness of the conducting experience, identified by professional conductors as a key area for improvement.",
-      "groupingHint": "Gesture Recognition Algorithm"
-    },
-    {
-      "name": "Performance Metrics",
-      "category": "metric",
-      "description": "Quantitative measurements, such as average time spent and median attempts per task, and qualitative feedback from a usability study, used to evaluate the system's effectiveness across different user groups.",
-      "relevanceScore": 7,
-      "justification": "These metrics provide empirical evidence of the system's usability and areas for improvement, showing how different user groups interacted with the system (Tables 2 and 3).",
-      "groupingHint": "Usability Study"
-    },
-    {
-      "name": "Usability Study",
-      "category": "method",
-      "description": "A traditional study involving 18 participants categorized into professional conductors, musicians, and ordinary users, who performed 11 tasks to evaluate the system's controls, gesture recognition, and dynamic/tempo modification features.",
-      "relevanceScore": 6,
-      "justification": "This method details how the system's practical application and user experience were evaluated, providing the context for the derived performance metrics and qualitative feedback.",
-      "groupingHint": "Kinect-based Conducting System"
+      "justification": "This figure details a specific and important aspect of the system's visual appearance mapping, showing how musical data (pitch) is transformed into visual elements (color), supporting the 'audiovisual visualization' aspect of the contribution.",
+      "groupingHint": "Audiovisual Mapping",
+      "data": {}
     }
   ]
 }

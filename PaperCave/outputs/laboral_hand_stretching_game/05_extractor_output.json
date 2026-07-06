@@ -1,77 +1,86 @@
 {
-  "paperTitle": "LABORAL: A Transformational Game for LER/DORT Prevention through Gesture-Interactions",
-  "centralContribution": "This work introduces LABORAL, a transformational game designed for hand stretching using gesture-interactions, aiming to prevent and educate users about occupational diseases such as LER (Lesão por Esforço Repetitivo) / RSI (Repetitive Strain Injury) and DORT (Distúrbio Osteomuscular Relacionado ao Trabalho) / WMSD (Work-Related Musculoskeletal Disorder), particularly for individuals who perform repetitive computer movements. The game fosters engaging learning and behavioral transformation regarding upper limb health.",
+  "paperTitle": "LABORAL: A Transformational Game for Preventing Occupational Diseases via Leap Motion Hand Gesture Recognition",
+  "centralContribution": "This work presents LABORAL, a transformational game developed in Unity using the Leap Motion sensor, designed to educate and train individuals, particularly computer users, in hand and wrist stretching exercises through gestural interactions to prevent occupational diseases like LER (Lesão por Esforço Repetitivo) and DORT (Distúrbio Osteomuscular Relacionado ao Trabalho). The game utilizes a sequence of 17 physiotherapist-defined hand poses, requiring players to sustain correct postures for 10 seconds via real-time gesture recognition, offering an engaging approach to upper limb health education and behavioral transformation.",
   "elements": [
     {
       "name": "Paper Abstract",
       "category": "abstract",
-      "description": "The increasing informatization of workplaces leads to prolonged occupational computer use, causing pain and severe occupational diseases like LER/DORT, which primarily affect upper limbs. While occupational gymnastics are preventive, their implementation is often lacking. Gesture recognition technologies, like the Leap Motion sensor, offer engaging alternatives for motor rehabilitation. This paper introduces LABORAL, a 3D transformational game developed with Unity and Leap Motion, focusing on precise, physiotherapist-defined stretching exercises to prevent LER/DORT, extending previous research by targeting specific therapeutic movements.",
+      "description": "The widespread informatization of workplaces leads individuals, especially IT professionals, to spend long periods performing repetitive computer movements, causing pain and impacting performance. This sedentary workload is a primary cause of occupational diseases such as LER (Repetitive Strain Injury) and DORT (Work-Related Musculoskeletal Disorder), which affect muscles, tendons, nerves, and ligaments, primarily in the upper limbs. While labor gymnastics is a proven preventive strategy, traditional methods often lack engagement. Gesture recognition sensors, like Leap Motion, are promising but face challenges in continuous, precise gesture identification, necessitating robust and engaging interactive applications for prevention.",
       "relevanceScore": 10,
-      "justification": "This element provides a concise overview of the paper's context, problem, methodology, and aim, which is fundamental for understanding the entire work.",
-      "groupingHint": "Paper Overview",
+      "justification": "This element provides the essential background, problem statement, and context for the entire paper, setting the stage for the proposed solution.",
+      "groupingHint": "Core Paper Information",
       "data": {}
     },
     {
-      "name": "Central Contribution of LABORAL Game",
+      "name": "LABORAL Game System",
       "category": "contribution",
-      "description": "LABORAL is introduced as a transformational game for hand stretching, utilizing gesture-interactions to prevent and educate users about occupational diseases like LER/DORT. Its primary innovation lies in fostering engaging learning and behavioral transformation concerning upper limb health, particularly for individuals performing repetitive computer movements, by precisely implementing physiotherapist-defined stretching exercises.",
+      "description": "LABORAL is a transformational game developed in Unity using the Leap Motion sensor to educate and train individuals in hand and wrist stretching exercises via gestural interactions. Its primary goal is to prevent occupational diseases like LER and DORT by guiding users through 17 physiotherapist-defined hand poses, requiring sustained correct postures for 10 seconds through real-time gesture recognition, promoting upper limb health and behavioral change.",
       "relevanceScore": 10,
-      "justification": "This element directly states the core innovation and purpose of the paper, making it the most critical conceptual extract.",
-      "groupingHint": "Paper Overview",
+      "justification": "This directly states the central innovation and the main purpose of the research presented in the paper.",
+      "groupingHint": "Core Paper Information",
       "data": {}
     },
     {
-      "name": "LABORAL Game System Architecture",
+      "name": "LABORAL Game Workflow Diagram",
       "category": "graphical_representation",
-      "description": "A conceptual representation of the LABORAL game's architecture, illustrating its development with the Unity engine, the integration of the Leap Motion sensor for real-time gestural interaction, and the user interface design featuring pose cards, recognition indicators, exercise names, and a countdown timer. It demonstrates how these components collaborate to facilitate interactive hand stretching exercises.",
+      "description": "A diagram outlining the various activities or flow within the LABORAL game, illustrating how health exercises are integrated into gameplay and the sequence of interactions.",
       "relevanceScore": 9,
-      "justification": "This element provides a high-level visual understanding of how the game's core components (Unity, Leap Motion, UI) are integrated to deliver the central contribution.",
-      "groupingHint": "System Design",
+      "justification": "This figure provides a crucial structural overview of the LABORAL game's internal logic and how the health exercises are orchestrated, making it the most important conceptual diagram.",
+      "groupingHint": "System Architecture",
       "data": {}
     },
     {
-      "name": "User Interface for Hand Pose Imitation",
-      "category": "image",
-      "description": "A visual depiction of the LABORAL game's user interface, highlighting the sequence of 'cards' displaying reference hand poses for the user to imitate. It also shows the black-outlined square for real-time pose recognition, the exercise name on the left, and a 10-second countdown timer on the top-left, which guides the player and provides immediate feedback.",
-      "relevanceScore": 8,
-      "justification": "Understanding the user interface is critical to grasping how players interact with the game and how the therapeutic exercises are presented and recognized.",
-      "groupingHint": "Game Interaction",
-      "data": {}
-    },
-    {
-      "name": "Defined Physiotherapy Stretching Sequences",
+      "name": "Physiotherapist-Defined Hand Poses",
       "category": "table",
-      "description": "A table outlining the five fundamental hand stretching sequences defined by a collaborating physiotherapist, designed to target specific occupational conditions like tendinitis, carpal tunnel syndrome, and epicondylitis. Each sequence's name, the number of poses it includes, and examples of target conditions are provided.",
+      "description": "Lists the 17 distinct hand poses defined by a physiotherapist, which form the core of the stretching exercises and the basis for gesture recognition within the LABORAL game.",
       "relevanceScore": 9,
-      "justification": "This table directly presents the therapeutic content and structure of the game's exercises, which are central to its preventative goal for LER/DORT.",
-      "groupingHint": "Game Content",
+      "justification": "This table is fundamental as it defines the specific physical actions and gestures that the game is built upon, directly supporting its health prevention goals.",
+      "groupingHint": "Exercise Design",
       "data": {}
     },
     {
-      "name": "Median Pose Recognition Times for Individual Exercises",
-      "category": "graph",
-      "description": "A graph illustrating the median recognition times for the 17 individual physiotherapy poses when detected by the Leap Motion sensor. It highlights the variability in recognition speed across different poses, with open hands generally being easier and certain complex or closed-hand poses taking significantly longer to recognize.",
-      "relevanceScore": 8,
-      "justification": "This element quantifies the performance of the core technology (Leap Motion) in recognizing the individual therapeutic gestures, which is vital for the game's efficacy.",
-      "groupingHint": "Performance Metrics",
-      "data": {}
-    },
-    {
-      "name": "Sequential Exercise Test Results: Execution Time and Failures",
-      "category": "table",
-      "description": "A comprehensive table presenting the average continuous execution times, the types of poses that frequently caused failures, and the overhead time compared to discrete pose recognition for each of the five defined exercise sequences. This data highlights the practical challenges in continuous gesture recognition.",
-      "relevanceScore": 9,
-      "justification": "This table summarizes the main experimental results, demonstrating the practical performance of the game's sequences and highlighting specific recognition challenges in a continuous gameplay context.",
-      "groupingHint": "Performance Metrics",
-      "data": {}
-    },
-    {
-      "name": "Leap Motion Recognition Limitations and Challenges",
+      "name": "LABORAL Gameplay Screenshot",
       "category": "image",
-      "description": "A conceptual illustration or detailed description of the Leap Motion sensor's difficulties in consistently recognizing specific hand movements. This includes challenges with closed hands (e.g., Supination, Pronation) and claw positions, as well as occasional temporary disconnections potentially due to overheating, indicating areas for future system improvement.",
+      "description": "A screenshot or photograph of the LABORAL game being played, illustrating its user interface and interactive elements, showing a user performing a hand pose over the Leap Motion sensor.",
+      "relevanceScore": 8,
+      "justification": "This image provides a concrete visual representation of the game in action, showcasing its interface and how users interact with the core functionality.",
+      "groupingHint": "User Interface and Interaction",
+      "data": {}
+    },
+    {
+      "name": "Leap Motion Pose Recognition Times",
+      "category": "table",
+      "description": "Shows the individual recognition times for various hand poses by the Leap Motion sensor across 15 repetitions, presented as median values, highlighting specific poses that were more challenging to recognize.",
+      "relevanceScore": 8,
+      "justification": "This table presents critical empirical data on the performance and limitations of the Leap Motion sensor in recognizing individual hand gestures, which is central to the game's functionality.",
+      "groupingHint": "Performance Evaluation",
+      "data": {}
+    },
+    {
+      "name": "Pose Sustenance Failure Analysis",
+      "category": "table",
+      "description": "Details the total number of failures and the number of tests in which failures occurred for sustaining each hand pose for 10 seconds, identifying the poses most prone to interruptions.",
+      "relevanceScore": 8,
+      "justification": "This table provides crucial insights into the reliability and robustness of the gesture recognition system for sustained poses, which directly impacts the user experience and the effectiveness of the exercise.",
+      "groupingHint": "Performance Evaluation",
+      "data": {}
+    },
+    {
+      "name": "Continuous Exercise Sequence Performance",
+      "category": "table",
+      "description": "Presents the total execution time and number of failures for five repetitions of each of the five continuous exercise sequences in LABORAL, detailing the performance of the integrated exercise routines.",
       "relevanceScore": 7,
-      "justification": "This element addresses the practical limitations and unresolved issues of the underlying technology, crucial for a complete understanding of the system's current state and future research directions.",
-      "groupingHint": "System Limitations",
+      "justification": "This table evaluates the system's performance in a more realistic continuous usage scenario, showing how individual pose recognitions translate into complete exercise routines.",
+      "groupingHint": "Integrated System Performance",
+      "data": {}
+    },
+    {
+      "name": "Summary of Continuous Exercise Metrics",
+      "category": "table",
+      "description": "Summarizes the average execution time, ideal sustenance and recognition times, the difference from the ideal, and total failures for each of the five continuous exercise sequences, providing an overall performance metric of the game's exercise flow.",
+      "relevanceScore": 7,
+      "justification": "This table offers an aggregated view of the system's performance across all defined exercise sequences, providing a concise summary of the overall efficacy and challenges.",
+      "groupingHint": "Integrated System Performance",
       "data": {}
     }
   ]

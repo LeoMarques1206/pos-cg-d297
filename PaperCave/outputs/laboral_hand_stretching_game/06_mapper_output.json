@@ -1,25 +1,25 @@
 {
-  "paperTitle": "LABORAL: A Transformational Game for LER/DORT Prevention through Gesture-Interactions",
-  "centralContribution": "This work introduces LABORAL, a transformational game designed for hand stretching using gesture-interactions, aiming to prevent and educate users about occupational diseases such as LER (Lesão por Esforço Repetitivo) / RSI (Repetitive Strain Injury) and DORT (Distúrbio Osteomuscular Relacionado ao Trabalho) / WMSD (Work-Related Musculoskeletal Disorder), particularly for individuals who perform repetitive computer movements. The game fosters engaging learning and behavioral transformation regarding upper limb health.",
+  "paperTitle": "LABORAL: A Transformational Game for Preventing Occupational Diseases via Leap Motion Hand Gesture Recognition",
+  "centralContribution": "This work presents LABORAL, a transformational game developed in Unity using the Leap Motion sensor, designed to educate and train individuals, particularly computer users, in hand and wrist stretching exercises through gestural interactions to prevent occupational diseases like LER (Lesão por Esforço Repetitivo) and DORT (Distúrbio Osteomuscular Relacionado ao Trabalho). The game utilizes a sequence of 17 physiotherapist-defined hand poses, requiring players to sustain correct postures for 10 seconds via real-time gesture recognition, offering an engaging approach to upper limb health education and behavioral transformation.",
   "unitCount": 5,
   "units": [
     {
-      "id": "contribution_card",
+      "id": "contribution-card",
       "type": "card",
       "priority": "primary",
-      "title": "LABORAL: Central Contribution",
+      "title": "LABORAL Game System",
       "category": "contribution",
-      "summary": "Transformational game for LER/DORT prevention using gesture-interactions.",
+      "summary": "LABORAL is a transformational game preventing occupational diseases via gestu...",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "LABORAL is introduced as a transformational game for hand stretching, utilizing gesture-interactions to prevent and educate users about occupational diseases like LER/DORT. Its primary innovation lies in fostering engaging learning and behavioral transformation concerning upper limb health, particularly for individuals performing repetitive computer movements, by precisely implementing physiotherapist-defined stretching exercises.",
+        "description": "LABORAL is a transformational game developed in Unity using the Leap Motion sensor to educate and train individuals in hand and wrist stretching exercises via gestural interactions. Its primary goal is to prevent occupational diseases like LER and DORT by guiding users through 17 physiotherapist-defined hand poses, requiring sustained correct postures for 10 seconds through real-time gesture recognition, promoting upper limb health and behavioral change.",
         "chartType": null,
         "title": null,
-        "data": {}
+        "data": null
       },
-      "conceptualOrigin": "Central Contribution of LABORAL Game",
+      "conceptualOrigin": "LABORAL Game System",
       "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
@@ -29,20 +29,20 @@
       }
     },
     {
-      "id": "abstract_card",
+      "id": "abstract-card",
       "type": "card",
       "priority": "secondary",
       "title": "Paper Abstract",
       "category": "abstract",
-      "summary": "Overview of LER/DORT prevention via a 3D gesture-based game, LABORAL.",
+      "summary": "Presents LABORAL, a transformational game preventing occupational diseases vi...",
       "contentType": "text_panel",
       "content": {
         "assetReference": null,
         "caption": null,
-        "description": "The increasing informatization of workplaces leads to prolonged occupational computer use, causing pain and severe occupational diseases like LER/DORT, which primarily affect upper limbs. While occupational gymnastics are preventive, their implementation is often lacking. Gesture recognition technologies, like the Leap Motion sensor, offer engaging alternatives for motor rehabilitation. This paper introduces LABORAL, a 3D transformational game developed with Unity and Leap Motion, focusing on precise, physiotherapist-defined stretching exercises to prevent LER/DORT, extending previous research by targeting specific therapeutic movements.",
+        "description": "The widespread informatization of workplaces leads individuals, especially IT professionals, to spend long periods performing repetitive computer movements, causing pain and impacting performance. This sedentary workload is a primary cause of occupational diseases such as LER (Repetitive Strain Injury) and DORT (Work-Related Musculoskeletal Disorder), which affect muscles, tendons, nerves, and ligaments, primarily in the upper limbs. While labor gymnastics is a proven preventive strategy, traditional methods often lack engagement. Gesture recognition sensors, like Leap Motion, are promising but face challenges in continuous, precise gesture identification, necessitating robust and engaging interactive applications for prevention.",
         "chartType": null,
         "title": null,
-        "data": {}
+        "data": null
       },
       "conceptualOrigin": "Paper Abstract",
       "whyThisUnit": "",
@@ -54,22 +54,22 @@
       }
     },
     {
-      "id": "graphical_representation_card",
+      "id": "graphical-representation-card",
       "type": "card",
       "priority": "secondary",
-      "title": "LABORAL System Architecture",
+      "title": "LABORAL Workflow Diagram",
       "category": "graphical_representation",
-      "summary": "Overall architecture of the LABORAL game with Unity and Leap Motion.",
+      "summary": "Key diagram showing LABORAL's activity flow and exercise integration.",
       "contentType": "figure",
       "content": {
         "assetReference": "FIG7",
-        "caption": null,
-        "description": "A conceptual representation of the LABORAL game's architecture, illustrating its development with the Unity engine, the integration of the Leap Motion sensor for real-time gestural interaction, and the user interface design featuring pose cards, recognition indicators, exercise names, and a countdown timer. It demonstrates how these components collaborate to facilitate interactive hand stretching exercises.",
+        "caption": "Figura 7: Diagrama de atividades do jogo LABORAL.",
+        "description": "A diagram outlining the various activities or flow within the LABORAL game, illustrating how health exercises are integrated into gameplay and the sequence of interactions.",
         "chartType": null,
         "title": null,
-        "data": {}
+        "data": null
       },
-      "conceptualOrigin": "LABORAL Game System Architecture",
+      "conceptualOrigin": "LABORAL Game Workflow Diagram",
       "whyThisUnit": "",
       "stackLabel": null,
       "items": null,
@@ -79,133 +79,172 @@
       }
     },
     {
-      "id": "image_stack",
+      "id": "image-stack",
       "type": "stack",
       "priority": "secondary",
       "title": null,
       "category": "image",
-      "summary": "Visuals of LABORAL gameplay and exercise poses.",
+      "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": null,
+      "conceptualOrigin": "Various game screenshots and exercise illustrations",
       "whyThisUnit": "",
       "stackLabel": "Game & Exercise Visuals",
       "items": [
         {
           "index": 0,
-          "title": "Hand Pose Imitation UI",
+          "title": "LABORAL Gameplay",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG1",
-            "caption": null,
-            "description": "LABORAL game's user interface showing reference hand poses as 'cards' for user imitation. Displays real-time pose recognition area, exercise name, and a 10-second countdown, guiding players with immediate feedback.",
+            "caption": "Figura 1: Um exemplo do LABORAL sendo jogado.",
+            "description": "An example of LABORAL gameplay, showing a user interacting with the system to perform a hand stretching exercise guided by the game's interface.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 1,
-          "title": "Tendinitis Prevention #1",
+          "title": "Tendinitis Prev. Exercise 1",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG2_1",
-            "caption": null,
-            "description": "First image showing a specific hand stretching exercise designed for tendinitis prevention, as integrated into the LABORAL game experience.",
+            "caption": "Figura 2: Prevenc¸˜ao de Tendinite #1 (fonte: os pr´oprios autores).",
+            "description": "One of the physiotherapist-defined exercises for preventing tendinitis, demonstrating the specific hand posture required from the player.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 2,
-          "title": "Tendinitis Prevention #1, Alt.",
+          "title": "Tendinitis Prev. Exercise 1...",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG2_2",
-            "caption": null,
-            "description": "Second image showing a specific hand stretching exercise designed for tendinitis prevention, as integrated into the LABORAL game experience.",
+            "caption": "Figura 2: Prevenc¸˜ao de Tendinite #1 (fonte: os pr´oprios autores).",
+            "description": "Another view of a tendinitis prevention exercise, illustrating the precise hand and wrist positioning as part of the LABORAL game's instruction.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 3,
-          "title": "Tendinitis Prevention #2",
+          "title": "Tendinitis Prev. Exercise 2",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG3",
-            "caption": null,
-            "description": "Hand stretching exercise #2 within LABORAL, targeting tendinitis prevention through specific movement patterns.",
+            "caption": "Figura 3: Prevenc¸˜ao de Tendinite #2 (fonte: os pr´oprios autores).",
+            "description": "A second example of a tendinitis prevention exercise in LABORAL, highlighting a different hand pose designed to strengthen and stretch key muscles.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 4,
-          "title": "Tendinitis Prevention #3",
+          "title": "Tendinitis Prev. Exercise 3",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG4",
-            "caption": null,
-            "description": "Hand stretching exercise #3 for tendinitis prevention in LABORAL, demonstrating another key therapeutic pose.",
+            "caption": "Figura 4: Prevenc¸˜ao de Tendinite #3 (fonte: os pr´oprios autores).",
+            "description": "The third exercise for tendinitis prevention in LABORAL, showcasing a distinct hand gesture aimed at promoting flexibility and reducing strain.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 5,
-          "title": "Carpal Tunnel Prevention",
+          "title": "Carpal Tunnel Prev. Exercise",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG5",
-            "caption": null,
-            "description": "Specific hand pose designed to prevent Carpal Tunnel Syndrome, as taught and recognized within the LABORAL game environment.",
+            "caption": "Figura 5: Prevenc¸˜ao da S´ındrome do T´unel do Carpo (fonte: os pr´oprios autores).",
+            "description": "An exercise specifically designed for the prevention of Carpal Tunnel Syndrome, focusing on targeted hand and wrist movements within LABORAL.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 6,
-          "title": "Epicondylitis Prevention",
+          "title": "Epicondylitis Prev. Exercise",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG6",
-            "caption": null,
-            "description": "Hand stretching exercise aimed at preventing Lateral and Medial Epicondylitis, a crucial component of LABORAL's therapeutic repertoire.",
+            "caption": "Figura 6: Prevenc¸˜ao de Epicondilite Lateral e Medial (fonte: os pr´oprios autores).",
+            "description": "An exercise targeting the prevention of Lateral and Medial Epicondylitis, illustrating the correct arm and hand posture as taught by the game.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 7,
-          "title": "LABORAL Exercises #1",
+          "title": "LABORAL Exercise Example A",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG8_1",
-            "caption": null,
-            "description": "An example of a therapeutic exercise performed in the LABORAL game, showcasing the interactive hand movements for LER/DORT prevention.",
+            "caption": "Figura 8: Exerc´ıcios no LABORAL.",
+            "description": "An illustration of one of the hand exercises within LABORAL, demonstrating the posture players need to replicate for successful gesture recognition.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
           }
         },
         {
           "index": 8,
-          "title": "LABORAL Exercises #2",
+          "title": "LABORAL Exercise Example B",
           "contentType": "figure",
           "content": {
             "assetReference": "FIG8_2",
-            "caption": null,
-            "description": "Another example of a therapeutic exercise performed in the LABORAL game, emphasizing the precise hand movements for effective LER/DORT prevention.",
+            "caption": "Figura 8: Exerc´ıcios no LABORAL.",
+            "description": "A visual representation of another exercise in LABORAL, emphasizing the precision required for hand and finger placement during gameplay.",
             "chartType": null,
             "title": null,
-            "data": {}
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "LABORAL Exercise Example C",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_3",
+            "caption": "Figura 8 (Cont.): Exerc´ıcios no LABORAL.",
+            "description": "Detailed view of a hand posture in LABORAL, part of the guided exercises for upper limb health and occupational disease prevention.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "LABORAL Exercise Example D",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_4",
+            "caption": "Figura 8 (Cont.): Exerc´ıcios no LABORAL.",
+            "description": "A specific hand gesture from the LABORAL game, designed to aid in stretching and strengthening to prevent repetitive strain injuries.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "LABORAL Exercise Example E",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_5",
+            "caption": "Figura 8 (Cont.): Exerc´ıcios no LABORAL.",
+            "description": "Final example of a hand exercise from LABORAL, showing a unique posture for comprehensive upper limb health and flexibility training.",
+            "chartType": null,
+            "title": null,
+            "data": null
           }
         }
       ],
@@ -223,76 +262,85 @@
       "summary": null,
       "contentType": null,
       "content": null,
-      "conceptualOrigin": "Defined Physiotherapy Stretching Sequences, Sequential Exercise Test Results: Execution Time and Failures",
+      "conceptualOrigin": "Various performance evaluation tables",
       "whyThisUnit": "",
-      "stackLabel": "Physiotherapy & Results",
+      "stackLabel": "Performance Data Tables",
       "items": [
         {
           "index": 0,
-          "title": "Physiotherapy Sequences",
+          "title": "Physiotherapist Hand Poses",
           "contentType": "table",
           "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "Outlines five fundamental hand stretching sequences, defined by a physiotherapist. Designed to target occupational conditions like tendinitis, carpal tunnel syndrome, and epicondylitis, detailing sequence names, number of poses, and target conditions.",
+            "assetReference": "TAB1",
+            "caption": "TAB1: Physiotherapist-Defined Hand Poses",
+            "description": "Lists the 17 distinct hand poses defined by a physiotherapist, which form the core of the stretching exercises and the basis for gesture recognition within the LABORAL game.",
             "chartType": "table",
-            "title": "Defined Physiotherapy Stretching Sequences",
-            "data": {
-              "columns": [
-                "Sequence Name",
-                "Number of Poses",
-                "Target Condi..."
-              ],
-              "rows": []
-            }
+            "title": "Physiotherapist-Defined Hand Poses",
+            "data": {}
           }
         },
         {
           "index": 1,
-          "title": "Exercise Test Results",
+          "title": "Leap Motion Recognition Times",
           "contentType": "table",
           "content": {
-            "assetReference": null,
-            "caption": null,
-            "description": "Presents average continuous execution times, frequent pose failure types, and overhead time versus discrete pose recognition for five exercise sequences. Highlights practical challenges in continuous gesture recognition for game efficacy.",
+            "assetReference": "TAB2",
+            "caption": "TAB2: Leap Motion Pose Recognition Times",
+            "description": "Shows the individual recognition times for various hand poses by the Leap Motion sensor across 15 repetitions, presented as median values, highlighting specific poses that were more challenging to recognize.",
             "chartType": "table",
-            "title": "Sequential Exercise Test Results",
-            "data": {
-              "columns": [
-                "Exercícios",
-                "Poses",
-                "t Médio (hh:mm)",
-                "t Sustentaçã...",
-                "t Reconhecim...",
-                "t Total (hh:mm)",
-                "Diferença (s)",
-                "#Falhas"
-              ],
-              "rows": [
-                [
-                  "1.1",
-                  "Flexão do Polegar",
-                  "01:27",
-                  "40",
-                  "17.5",
-                  "00:57",
-                  "29.5",
-                  "0"
-                ]
-              ]
-            }
+            "title": "Leap Motion Pose Recognition Times",
+            "data": {}
+          }
+        },
+        {
+          "index": 2,
+          "title": "Pose Sustenance Failures",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB3",
+            "caption": "TAB3: Pose Sustenance Failure Analysis",
+            "description": "Details the total number of failures and the number of tests in which failures occurred for sustaining each hand pose for 10 seconds, identifying the poses most prone to interruptions.",
+            "chartType": "table",
+            "title": "Pose Sustenance Failure Analysis",
+            "data": {}
+          }
+        },
+        {
+          "index": 3,
+          "title": "Continuous Ex. Performance",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB4",
+            "caption": "TAB4: Continuous Exercise Sequence Performance",
+            "description": "Presents the total execution time and number of failures for five repetitions of each of the five continuous exercise sequences in LABORAL, detailing the performance of the integrated exercise routines.",
+            "chartType": "table",
+            "title": "Continuous Exercise Sequence Performance",
+            "data": {}
+          }
+        },
+        {
+          "index": 4,
+          "title": "Summary of Exercise Metrics",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB5",
+            "caption": "TAB5: Summary of Continuous Exercise Metrics",
+            "description": "Summarizes the average execution time, ideal sustenance and recognition times, the difference from the ideal, and total failures for each of the five continuous exercise sequences, providing an overall performance metric of the game's exercise flow.",
+            "chartType": "table",
+            "title": "Summary of Continuous Exercise Metrics",
+            "data": {}
           }
         }
       ],
       "styleHint": {
-        "categoryColor": "#E8F0FE",
-        "colorName": "metallic white"
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
       }
     }
   ],
   "objectScores": [
     {
-      "suggestedName": "LABORAL: Central Contribution",
+      "suggestedName": "LABORAL Game System",
       "score": 1.0,
       "confidence": "high",
       "feedback": ""
@@ -304,7 +352,7 @@
       "feedback": ""
     },
     {
-      "suggestedName": "LABORAL System Architecture",
+      "suggestedName": "LABORAL Workflow Diagram",
       "score": 1.0,
       "confidence": "high",
       "feedback": ""
@@ -316,13 +364,13 @@
       "feedback": ""
     },
     {
-      "suggestedName": "Physiotherapy & Results",
-      "score": 1.0,
-      "confidence": "high",
+      "suggestedName": "Performance Data Tables",
+      "score": 0.2,
+      "confidence": "low",
       "feedback": ""
     }
   ],
-  "totalAttempts": 2,
+  "totalAttempts": 1,
   "assembledFromMultipleAttempts": false,
   "implementationNotes": {
     "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",

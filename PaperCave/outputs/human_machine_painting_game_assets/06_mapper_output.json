@@ -1,0 +1,394 @@
+{
+  "paperTitle": "Generating Pixel Art Sprites from Line Art Sketches using Deep Learning",
+  "centralContribution": "This work demonstrates that state-of-the-art deep learning algorithms can generate pixel art sprites from line art sketches with sufficient quality for direct integration into game products, requiring little to no manual editing by human artists. The study introduces a novel U-Net-based architecture incorporating dense connections, multi-level supervision, and class-weighted focal loss to address the specific challenges of game art generation, which include limited datasets, deviation from natural images, and extreme intolerance to errors.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution-main",
+      "type": "card",
+      "priority": "primary",
+      "title": "Main Contribution",
+      "category": "contribution",
+      "summary": "Deep learning generates pixel art sprites from line art sketches, minimizing ...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The paper demonstrates that deep learning can generate production-quality pixel art sprites from line art sketches with minimal manual editing. It introduces a novel U-Net-based architecture with dense connections, multi-level supervision, and class-weighted focal loss, specifically designed for the challenges of game art generation, such as limited datasets and high error intolerance.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Central Contribution of the Paper",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber"
+      }
+    },
+    {
+      "id": "abstract-summary",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract Summary",
+      "category": "abstract",
+      "summary": "Addresses automatic sprite generation for games using a novel semantic segmen...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "Modern game development faces challenges in porting artistic work, with procedural content generation (PCG) seeking automation. Existing image generation techniques are unsuitable for game art due to small datasets, high detail requirements, and intolerance to noise. This paper addresses the scarcity of automatic sprite generation methods by reframing the problem of converting line-art sketches into shaded and colored pixel art as a per-pixel semantic segmentation task, building on previous work's shortcomings with noise and artifacts in coloring.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Paper Abstract Summary",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-main",
+      "type": "card",
+      "priority": "secondary",
+      "title": "U-Net Architecture Overview",
+      "category": "graphical_representation",
+      "summary": "Main architecture of the deep learning solution for pixel art.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG4",
+        "caption": "Fig. 4. Overview of our solution’s architecture. Encoder/Decoder layers are in yellow and green, respectively, while the dense supervision is in blue (inputs) and orange (outputs).",
+        "description": "High-level architectural diagram of the proposed deep learning solution. It illustrates the U-Net structure with encoder-decoder layers, skip connections, and dense supervision for converting line-art sketches into pixel art sprites via semantic segmentation.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Proposed U-Net Architecture for Sprite Generation (FIG4)",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "Visuals & Architecture Details",
+      "items": [
+        {
+          "index": 1,
+          "title": "Sprite Workflow Stages",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1",
+            "caption": "Fig. 1. Stages of a Trajes Fatais: Suits of Fate sprite. From left to right, the initial line-art sketch, the shading sprite, the coloring sprite, the shading & color sprites encoded together, and the final in-game sprite, using the character’s default palette.",
+            "description": "Illustrates the five sequential stages of traditional pixel art sprite creation, from line-art sketch to final in-game sprite. Provides context for the automated process the paper aims to replace.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Early Sarah Sprites",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "Fig. 2. Two Sarah sprites in their early sketch stages.",
+            "description": "Two early sketch stages of Sarah sprites, demonstrating the initial phase of pixel art creation.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Sprite Example 3.1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_1",
+            "caption": "no caption extracted",
+            "description": "A sprite example, likely showcasing intermediate or final pixel art generated by the system.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Sprite Example 3.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_2",
+            "caption": "no caption extracted",
+            "description": "Another sprite example, contributing to the visual understanding of the generated output.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Sprite Example 3.3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG3_3",
+            "caption": "no caption extracted",
+            "description": "A further sprite example, illustrating variations or specific features of the generated pixel art.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Dense Block Internal Layout",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "Fig. 5. Internal layout of a dense block. Instead of using a single large convolution, several smaller ones are used and their outputs are stacked to create the intended tensor. Finally, a residual connection is added to improve the gradient flow.",
+            "description": "Illustrates the internal structure of a dense block in the U-Net architecture. Shows how multiple smaller convolutions are stacked with a residual connection for enhanced gradient flow and reduced parameters.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Generated Output Example 6.1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_1",
+            "caption": "no caption extracted",
+            "description": "An example of generated output, possibly showing different stages or variations of the pixel art sprites.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Generated Output Example 6.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_2",
+            "caption": "no caption extracted",
+            "description": "Another example of generated output, contributing to the visual evaluation.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Comparison Sample 7.1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_1",
+            "caption": "no caption extracted",
+            "description": "Part of a set of comparison images, highlighting features or results of the sprite generation process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Comparison Sample 7.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_2",
+            "caption": "no caption extracted",
+            "description": "Part of a set of comparison images, highlighting features or results of the sprite generation process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 11,
+          "title": "Comparison Sample 7.3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_3",
+            "caption": "no caption extracted",
+            "description": "Part of a set of comparison images, highlighting features or results of the sprite generation process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 12,
+          "title": "Comparison Sample 7.4",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_4",
+            "caption": "no caption extracted",
+            "description": "Part of a set of comparison images, highlighting features or results of the sprite generation process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 13,
+          "title": "Comparison Sample 7.5",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_5",
+            "caption": "no caption extracted",
+            "description": "Part of a set of comparison images, highlighting features or results of the sprite generation process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 14,
+          "title": "Comparison Sample 7.6",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_6",
+            "caption": "no caption extracted",
+            "description": "Part of a set of comparison images, highlighting features or results of the sprite generation process.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 15,
+          "title": "Final Result Sample 8.1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_1",
+            "caption": "no caption extracted",
+            "description": "A sample of the final generated pixel art sprites or intermediate results from the model.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 16,
+          "title": "Final Result Sample 8.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8_2",
+            "caption": "no caption extracted",
+            "description": "A sample of the final generated pixel art sprites or intermediate results from the model.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "table-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": null,
+      "whyThisUnit": "",
+      "stackLabel": "Quantitative Results",
+      "items": [
+        {
+          "index": 1,
+          "title": "Shading & Coloring Metrics",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB1",
+            "caption": null,
+            "description": "Presents evaluation metrics (Accuracy, Balanced Accuracy, Top-3, Top-5 Accuracy) for generated shading and coloring sprites across three characters, showing the model's quantitative performance.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        },
+        {
+          "index": 2,
+          "title": "Ablation Study Results",
+          "contentType": "table",
+          "content": {
+            "assetReference": "TAB2",
+            "caption": null,
+            "description": "Details an ablation study on Lucy's coloring sprites, showing the incremental impact of each architectural component (Dense Supervision, Loss Weighing, etc.) on accuracy and model weights.",
+            "chartType": "table",
+            "title": null,
+            "data": {}
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Main Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract Summary",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "U-Net Architecture Overview",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Visuals & Architecture Details",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Quantitative Results",
+      "score": 0.2,
+      "confidence": "low",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}

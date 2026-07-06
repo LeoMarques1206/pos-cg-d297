@@ -1,0 +1,151 @@
+{
+  "insights": [
+    {
+      "filename": "FIG1.png",
+      "description": "This figure likely shows a diagrammatic representation of the 'Hero's Journey' narrative structure as applied to the game's progression. It probably illustrates different stages of the journey and how they correspond to game phases.",
+      "relevance": "This figure is relevant as it introduces the underlying narrative framework, the Hero's Journey, which structures the educational game designed to promote oral health, providing a conceptual basis for the game's design.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG10.png",
+      "description": "This figure appears to be a screenshot from the game's third phase on Day 3, depicting a scene where players identify and dispose of items representing 'enemies' of oral health into a trash bin.",
+      "relevance": "This figure demonstrates a specific interactive gameplay segment focused on educating children about detrimental oral health factors and reinforces good hygiene practices by visualizing the removal of these 'enemies.'",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG11.png",
+      "description": "This figure likely shows a screenshot or visual representation of the first part of 'Minigame 3,' titled 'Facing the Enemies,' which is an interactive component of the game.",
+      "relevance": "This image illustrates a key minigame designed to engage players in confronting and understanding the 'enemies' of oral health, directly contributing to the paper's goal of teaching dental hygiene through gameplay.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG12.png",
+      "description": "This figure appears to display the correct answer or feedback screen following a quiz within the game, possibly showing the correct option highlighted or an explanation.",
+      "relevance": "This figure highlights an assessment mechanism within the game that evaluates the player's understanding of oral health concepts and provides immediate feedback, reinforcing learning outcomes.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG13.png",
+      "description": "This figure likely shows a screenshot of an in-game quiz, presenting a question and multiple-choice options to the player.",
+      "relevance": "This figure demonstrates a pedagogical tool integrated into the game for assessing player knowledge about oral health, which is central to the paper's objective of delivering educational content.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG14.png",
+      "description": "This figure likely presents a screenshot or visual from the second part of 'Minigame 4,' also focused on 'Facing the Enemies,' within the game.",
+      "relevance": "This image shows a further interactive minigame segment that builds upon the theme of identifying and managing detrimental oral health factors, contributing to the game's comprehensive educational approach.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG15.png",
+      "description": "This figure likely displays the main user interface of the game, highlighting the player's final score in the top right corner and navigational buttons for minigames on the left and the daily agenda on the right.",
+      "relevance": "This figure illustrates the overall game interface, showcasing the design for player interaction, progress tracking (score), and content navigation, which are crucial for the game's usability and educational delivery.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG2.png",
+      "description": "This figure likely provides a high-level overview of the game, potentially showing its structural components, main characters, or general visual style.",
+      "relevance": "This figure helps readers understand the general design and scope of the game, which is the core educational tool developed in the paper.",
+      "mode": "text_inferred",
+      "visualType": "diagram_or_flowchart"
+    },
+    {
+      "filename": "FIG3.png",
+      "description": "This figure appears to be a screenshot from the first phase of the game on Day 1, illustrating the scene where the child player encounters and accepts a challenge from their mentor character.",
+      "relevance": "This figure demonstrates the initial engagement point of the game, where the narrative begins and the player is introduced to their role and objectives, crucial for setting up the educational journey.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG4.png",
+      "description": "This figure likely shows a screenshot or depiction of a 'treasure hunting' minigame or activity within the main game.",
+      "relevance": "This figure illustrates an interactive gameplay element designed to make learning engaging and fun, contributing to the paper's goal of improving oral health education through gamification.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_1.png",
+      "description": "This figure likely shows a visual representation or screenshot of a scene set in a dentist's office, depicting moments or interactions related to dental care.",
+      "relevance": "This image highlights a scenario directly relevant to the paper's focus on oral health education, familiarizing players with the dental environment and related practices.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG5_2.png",
+      "description": "This figure likely shows another visual representation or screenshot of a scene set in a dentist's office, depicting different moments or interactions related to dental care.",
+      "relevance": "This image further illustrates various aspects or scenarios within a dentist's office, reinforcing the educational context of oral health care within the game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG6.png",
+      "description": "This figure likely displays the in-game daily agenda, outlining tasks or activities planned for players over a seven-day period.",
+      "relevance": "This figure showcases a key structural element of the game that organizes daily learning and activities, ensuring consistent engagement and progress in oral health education over time.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_1.png",
+      "description": "This figure appears to be a screenshot or visual depiction of the first minigame, titled 'Memory,' suggesting a memory-matching or recall activity.",
+      "relevance": "This image introduces one of the interactive minigames designed to train cognitive skills relevant to learning and retention, supporting the educational objectives of the oral health game.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG7_2.png",
+      "description": "This figure appears to be another screenshot or visual depiction of the 'Memory' minigame, possibly showing a different stage or aspect of the game.",
+      "relevance": "This image further illustrates the 'Memory' minigame, providing more insight into its gameplay mechanics which are used to engage players in the learning process about oral health.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_1.png",
+      "description": "This figure likely shows a screenshot from the game's second phase on Day 2, illustrating the player's task of identifying and securing 'oral health friends' within their virtual home.",
+      "relevance": "This image demonstrates a gameplay segment that encourages players to recognize and value elements beneficial for oral health, reinforcing positive associations and care practices.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG8_2.png",
+      "description": "This figure likely shows another screenshot from the game's second phase on Day 2, depicting a different moment or aspect of the task involving 'oral health friends' in the player's virtual home.",
+      "relevance": "This image further illustrates the interactive segment focused on identifying and protecting 'oral health friends,' providing more context on how the game educates players on beneficial habits.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9_1.png",
+      "description": "This figure appears to be a screenshot or visual from 'Minigame 2,' titled 'Crossroads,' which likely involves decision-making or navigation through different paths.",
+      "relevance": "This image showcases an interactive minigame that likely presents players with choices related to oral health, simulating real-world decision-making and reinforcing knowledge through consequences.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9_2.png",
+      "description": "This figure appears to be another screenshot or visual from 'Minigame 2: Crossroads,' offering a different view or stage of the decision-making gameplay.",
+      "relevance": "This image provides additional context for the 'Crossroads' minigame, demonstrating how the game engages players in scenarios requiring choices relevant to oral health outcomes.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9_3.png",
+      "description": "This figure appears to be a third screenshot or visual from 'Minigame 2: Crossroads,' further illustrating the interactive choices or pathways within the game.",
+      "relevance": "This image continues to illustrate the 'Crossroads' minigame, showing the depth of its interactive elements in guiding players through decisions impactful to oral health knowledge.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    },
+    {
+      "filename": "FIG9_4.png",
+      "description": "This figure appears to be a fourth screenshot or visual from 'Minigame 2: Crossroads,' offering yet another perspective on the decision-making process within this minigame.",
+      "relevance": "This image provides comprehensive insight into the 'Crossroads' minigame, demonstrating the various decision points and their role in educating players about oral health choices.",
+      "mode": "text_inferred",
+      "visualType": "photo_or_screenshot"
+    }
+  ]
+}

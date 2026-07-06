@@ -1,0 +1,316 @@
+{
+  "paperTitle": "Virtual Acupuncture Simulator with Force Feedback and Deformable Body Models",
+  "centralContribution": "This work presents a virtual acupuncture simulator that leverages a physics engine and force feedback to simulate deformable human body models, offering an immersive and realistic training experience for acupuncturists. It integrates visual and tactile representations of deformations and the activation of energy flows, based on a real-world use case, addressing previous limitations in acupuncture simulation depth and realism.",
+  "unitCount": 5,
+  "units": [
+    {
+      "id": "contribution-card",
+      "type": "card",
+      "priority": "primary",
+      "title": "Central Contribution",
+      "category": "contribution",
+      "summary": "Presents a virtual acupuncture simulator with physics engine and force feedback.",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "This work presents a virtual acupuncture simulator that leverages a physics engine and force feedback to simulate deformable human body models, offering an immersive and realistic training experience for acupuncturists. It integrates visual and tactile representations of deformations and the activation of energy flows, based on a real-world use case, addressing previous limitations in acupuncture simulation depth and realism.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Central Contribution",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#FFB800",
+        "colorName": "golden amber emissive"
+      }
+    },
+    {
+      "id": "abstract-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Paper Abstract",
+      "category": "abstract",
+      "summary": "VR and haptic devices for acupuncture training, addressing current simulator ...",
+      "contentType": "text_panel",
+      "content": {
+        "assetReference": null,
+        "caption": null,
+        "description": "The medical field increasingly uses VR and haptic devices for training. Acupuncture requires precise needle insertion into acupoints to stimulate energy flows. Existing simulators often lack comprehensive modeling of acupoints, internal systems, and accurate physiological responses, leading to a demand for advanced simulators with realistic tactile and visual feedback for practitioner training.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Paper Abstract",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "graphical-representation-card",
+      "type": "card",
+      "priority": "secondary",
+      "title": "Haptic Feedback Architecture",
+      "category": "graphical_representation",
+      "summary": "Diagram showing tactile feedback integration in simulator.",
+      "contentType": "figure",
+      "content": {
+        "assetReference": "FIG3",
+        "caption": "FIG3: Diagram illustrating the flow of tactile feedback, integrated into the hardware and software layers of the simulator.",
+        "description": "An illustrative diagram outlining the architectural flow of tactile feedback, integrating hardware and software layers of the simulator. Crucial for understanding the technical design and implementation of the haptic feedback mechanism.",
+        "chartType": null,
+        "title": null,
+        "data": null
+      },
+      "conceptualOrigin": "Haptic Feedback System Architecture (FIG3.png)",
+      "whyThisUnit": "",
+      "stackLabel": null,
+      "items": null,
+      "styleHint": {
+        "categoryColor": "#00D4FF",
+        "colorName": "cyan blue"
+      }
+    },
+    {
+      "id": "image-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "image",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Multiple Image Figures",
+      "whyThisUnit": "",
+      "stackLabel": "Simulation Visuals",
+      "items": [
+        {
+          "index": 0,
+          "title": "Haptic Device (3D Touch)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_1",
+            "caption": "FIG1: (a) and (b) respectively, the 3D Systems Touch and Falcon haptic devices.",
+            "description": "The 3D Systems Touch haptic device, used for tactile feedback in the simulator.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 1,
+          "title": "Haptic Device (Falcon)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG1_2",
+            "caption": "FIG1: (a) and (b) respectively, the 3D Systems Touch and Falcon haptic devices.",
+            "description": "The Falcon haptic device, another device providing tactile feedback.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 2,
+          "title": "Acupuncture Environment",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG2",
+            "caption": "FIG2: One of the system's viewpoints, showing the initial user interface of the acupuncture environment.",
+            "description": "One viewpoint of the system, showing the initial user interface of the acupuncture environment.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 3,
+          "title": "Vertex Distribution",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG4",
+            "caption": "FIG4: Distribution of vertices t1, t2, t3, and t4.",
+            "description": "Distribution of vertices t1, t2, t3, and t4 in the deformable model.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 4,
+          "title": "Deformable Model Structure",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG5",
+            "caption": "FIG5: Representation of the virtual human's deformable model structure, from a static mesh.",
+            "description": "Structural representation of the virtual human's deformable model from a static mesh.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 5,
+          "title": "Acupoint Guidance (a)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_1",
+            "caption": "FIG6: Top view of the virtual patient. In (a), (b) and (c), green spheres correspond to acupoints to be activated.",
+            "description": "Top-down view of the patient, with green spheres indicating active acupoints for needling.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 6,
+          "title": "Acupoint Guidance (b)",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG6_2",
+            "caption": "FIG6: Top view of the virtual patient. In (a), (b) and (c), green spheres correspond to acupoints to be activated.",
+            "description": "Top-down view of the patient, with red spheres indicating acupoints to be avoided.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 7,
+          "title": "Additional Visual 7.1",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_1",
+            "caption": "FIG7.1: An additional visual representation from the paper.",
+            "description": "An additional visual representation from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 8,
+          "title": "Additional Visual 7.2",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_2",
+            "caption": "FIG7.2: An additional visual representation from the paper.",
+            "description": "An additional visual representation from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 9,
+          "title": "Additional Visual 7.3",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG7_3",
+            "caption": "FIG7.3: An additional visual representation from the paper.",
+            "description": "An additional visual representation from the paper.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        },
+        {
+          "index": 10,
+          "title": "Deformation Example",
+          "contentType": "figure",
+          "content": {
+            "assetReference": "FIG8",
+            "caption": "FIG8: An example of surface deformation on the virtual patient's body after needling: in (a) and (b), respectively, in rendered and unrendered mesh.",
+            "description": "Example of surface deformation on the virtual patient's body after needle insertion.",
+            "chartType": null,
+            "title": null,
+            "data": null
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#E8F0FE",
+        "colorName": "metallic white"
+      }
+    },
+    {
+      "id": "table-stack",
+      "type": "stack",
+      "priority": "secondary",
+      "title": null,
+      "category": "table",
+      "summary": null,
+      "contentType": null,
+      "content": null,
+      "conceptualOrigin": "Multiple Table Elements",
+      "whyThisUnit": "",
+      "stackLabel": "Simulation Parameters",
+      "items": [
+        {
+          "index": 0,
+          "title": "Simulation Configuration",
+          "contentType": "table",
+          "content": {
+            "assetReference": null,
+            "caption": "TAB1: Configuration parameters for the simulation's deformable mesh and physics.",
+            "description": "Table detailing configuration parameters for the simulation, including particle radius, number of particles, stiffness values, particle mass, friction, FPS, sub-steps, iterations, and gravity.",
+            "chartType": "table",
+            "title": "Simulation Configuration Parameters",
+            "data": {}
+          }
+        }
+      ],
+      "styleHint": {
+        "categoryColor": "#00FF88",
+        "colorName": "neon green"
+      }
+    }
+  ],
+  "objectScores": [
+    {
+      "suggestedName": "Central Contribution",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Paper Abstract",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Haptic Feedback Architecture",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Simulation Visuals",
+      "score": 1.0,
+      "confidence": "high",
+      "feedback": ""
+    },
+    {
+      "suggestedName": "Simulation Parameters",
+      "score": 0.2,
+      "confidence": "low",
+      "feedback": ""
+    }
+  ],
+  "totalAttempts": 1,
+  "assembledFromMultipleAttempts": false,
+  "implementationNotes": {
+    "paperFiguresPath": "Assets/PaperCaveData/{paper_id}/images/",
+    "manifestPath": "Assets/PaperCaveData/{paper_id}/manifest.json",
+    "styleGuide": "See INTEGRATION_PLAN_V2.md Section 3 — Card Defaults",
+    "sceneLayout": "Place priority='primary' unit at (0, 0, 0). Arrange secondary units in an arc. Use PaperCaveManifestLoader via Tools > PaperCave > Build Cards From Manifest..."
+  }
+}
